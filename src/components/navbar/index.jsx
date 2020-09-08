@@ -21,31 +21,13 @@ function Navbar(){
     return(
         <nav className="navbar">
             <div className="navbar__buttons --space-between">
-                <ul className="navbar__redirectors --space-between">
-                    <NavbarLink 
-                        currentPage='inicio'
-                        redirector='início'
-                    />
-                    <NavbarLink 
-                        currentPage='inicio'
-                        redirector='blog'
-                    />
-                    <NavbarLink 
-                        currentPage='inicio'
-                        redirector='loja'
-                    />
-                    <NavbarLink 
-                        currentPage='inicio'
-                        redirector='podcasts'
-                    />
-                    <NavbarLink 
-                        currentPage='inicio'
-                        redirector='cursos'
-                    />
-                    <NavbarLink 
-                        currentPage='inicio'
-                        redirector='contato'
-                    />
+                <ul className="navbar__redirectors --links --space-between">
+                    <NavbarLink  redirector='início' />
+                    <NavbarLink redirector='blog' />
+                    <NavbarLink redirector='loja' />
+                    <NavbarLink redirector='podcasts' />
+                    <NavbarLink redirector='cursos' />
+                    <NavbarLink redirector='contato' />
                 </ul>
                 <NavbarBrand 
                     logoURL={img_logo}
