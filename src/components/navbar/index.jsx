@@ -52,43 +52,32 @@ function Navbar(){
                     logAlt='logo'
                 />
                 <ul className="navbar__redirectors --space-between --reverse">
-                    <li className="navbar__redirector">
-                        <NavbarImage 
-                            imageURL={img_search}
-                            imageAlt='Search'
-                        />
-                    </li>
-                    <li className="navbar__redirector">
-                        <NavbarImage 
-                            imageURL={img_profile}
-                            imageAlt='Profile'
-                        />
-                    </li>
-                    <li className="navbar__redirector">
-                        <NavbarImage 
-                            imageURL={img_orders}
-                            imageAlt='Orders'
-                        />
-                    </li>
-                    <li className="navbar__redirector">
-                        <NavbarImage 
-                            imageURL={img_wishes}
-                            imageAlt='Wishlist'
-                        />
-                    </li>
-                    <li className="navbar__redirector">
+                    <NavbarImage 
+                        imageURL={img_search}
+                        imageAlt='Search'
+                    />
+                    <NavbarImage 
+                        imageURL={img_profile}
+                        imageAlt='Profile'
+                    />
+                    <NavbarImage 
+                        imageURL={img_orders}
+                        imageAlt='Orders'
+                    />
+                    <NavbarImage 
+                        imageURL={img_wishes}
+                        imageAlt='Wishlist'
+                    />
+                    <NavbarImage 
+                        imageURL={img_cart}
+                        imageAlt='Cart'
+                    >
                         <div className="navbar__cart-index">99</div>
-                        <NavbarImage 
-                            imageURL={img_cart}
-                            imageAlt='Cart'
-                        />
-                    </li>
-                    <li className="navbar__redirector">
-                        <NavbarImage 
-                            imageURL={img_logout}
-                            imageAlt='Log out'
-                        />
-                    </li>
+                    </NavbarImage>
+                    <NavbarImage 
+                        imageURL={img_logout}
+                        imageAlt='Log out'
+                    />
                 </ul>
             </div>
         </nav>
