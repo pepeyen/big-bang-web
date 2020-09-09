@@ -13,9 +13,9 @@ import img_cart from  '../../assets/images/navbar/icon-cart.svg';
 import img_logout from  '../../assets/images/navbar/icon-logout.svg';
 
 //Components
-import NavbarLink from './NavbarLink';
-import NavbarBrand from './NavbarBrand';
-import NavbarImage from './NavbarImage';
+import NavbarLink from './navbarLink';
+import NavbarBrand from './navbarBrand';
+import NavbarImage from './navbarImage';
 
 function Navbar(){
     return(
