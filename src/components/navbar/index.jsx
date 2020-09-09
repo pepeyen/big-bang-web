@@ -22,7 +22,7 @@ function Navbar(){
         <nav className="navbar">
             <div className="navbar__buttons --space-between">
                 <ul className="navbar__redirectors --links --space-between">
-                    <NavbarLink  redirector='início' />
+                    <NavbarLink redirector='início' />
                     <NavbarLink redirector='blog' />
                     <NavbarLink redirector='loja' />
                     <NavbarLink redirector='podcasts' />

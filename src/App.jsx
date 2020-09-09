@@ -17,7 +17,6 @@ function App() {
     <React.Fragment>
       <Switch>
           <Route exact path="/" component={Inicio} />
-          <Route path="/inicio" component={Inicio} />
           <Route path="/blog" component={Blog} />
           <Route path="/loja" component={Loja} />
           <Route path="/podcasts" component={Podcasts} />
