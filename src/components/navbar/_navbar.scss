@@ -4,7 +4,7 @@
     background-color: transparent;
     width: 100%;
     min-height: 3.5rem;
-    border-bottom: .1rem solid #C4C4C4;
+    border-bottom: .05rem solid #C4C4C4;
     padding: .5rem 0 .5rem 0;
 
     &__redirectors{
@@ -56,7 +56,7 @@
 .--reverse{
     margin: 1.5rem 2rem 0 1rem;
 }
-@media (min-width: 801px) {
+@media (min-width: 801px){
     .navbar{
         min-height: 7vh;
         border-bottom: .2vh solid #C4C4C4;

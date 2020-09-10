@@ -1,0 +1,183 @@
+//Mods
+.--light-text{
+    color: #ffffff;
+}
+.--grey-text{
+    color: #666666;
+}
+.--dark-text{
+    color: #000000;
+}
+.--centralized-text{
+    text-align: center;
+}
+.--first-post{
+    background-image: url('../../assets/images/post/bg-post1.jpg');
+}
+.--flex-end-self{
+    align-self: flex-end;
+}
+.--central{
+    width: 90%;
+}
+.--two-to-one{
+    grid-template-areas: 
+    "post podcast podcast"
+    "post course product";
+}
+.--thin-borders{
+    border: .05rem solid #c4c4c4;
+}
+//End Mods
+.page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem 0 0 0;
+
+    &__banner{
+        display: flex;
+        flex-direction: column;
+        background-repeat: no-repeat;
+        background-size: 33rem;
+        height: 4.3rem;
+        padding: 1.5rem 0 1rem 0;
+
+        &-headline{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 .5rem 0 0;
+        }
+        &-title{
+            font-family: 'Chloe-Regular';
+            font-size: 1rem;
+            width: 8rem;
+        }
+        &-text{
+            font-family: 'ProximaNova-Regular';
+            font-size: .8rem;
+            margin: 1rem 0 0 0;
+        }
+    }
+    &__cluster{
+        &-post{
+            background-image: url('../../assets/images/post/bg-post2.jpg');
+            background-repeat: no-repeat;
+        }
+        &-podcast{
+            background-image: url('../../assets/images/post/bg-post3.jpg');
+            background-repeat: no-repeat;
+        }
+        &-course{
+            background-image: url('../../assets/images/post/bg-post4.jpg');
+            background-repeat: no-repeat;
+        }
+        &-product{
+            background-image: url('../../assets/images/product/bg-product1.jpg');
+            background-repeat: no-repeat;
+        }
+    }
+    &__button{
+        font-family: 'ProximaNova-Semibold';
+        background-color: #73A8A0;
+        display: none;
+    }
+}
+@media (min-width: 768px){
+    .page{
+
+        &__banner{
+    
+            &-headline{
+                margin: 0 5rem 0 0;
+            }
+        }
+    }
+}
+@media (min-width: 801px){
+    .page{
+        padding: 5vh 0 0 0;
+
+        &__banner{
+            height: 20.5vh;
+            background-size: 128vh;
+            padding: 3vh 0 3vh 0;
+            margin: 0 0 5vh 0;
+
+            &-headline{
+                margin: 0 20vh 0 0;
+            }
+            &-title{
+                font-size: 4vh;
+                width: 35vh;
+            }
+            &-text{
+                font-size: 2vh;
+                margin: 2.3vh 0 0 0;
+            }
+        }
+        &__button{
+            display: block;
+            font-size: 1.7vh;
+            margin: 2.3vh 0 0 0;
+            padding: 1.5vh;
+
+            &:hover{
+                cursor: pointer;
+                background-color: #7bb3aa;
+            }
+        }
+        &__cluster{
+            display: grid;
+            grid-template-rows: auto;
+            height: 50vh;
+
+            &-post{
+                display: flex;
+                flex-direction: row;
+                grid-area: post;
+                background-size: 100%;
+                margin: 0 2vh 0 0;
+            }
+            &-podcast{
+                display: flex;
+                flex-direction: row;
+                grid-area: podcast;
+                margin: 0 0 2vh 0;
+                background-size: 100%;
+                width: 51vh;
+            }
+            &-course{
+                display: flex;
+                flex-direction: row;
+                grid-area: course;
+                margin: 2vh 2vh 0 0;
+                background-size: 100%;
+            }
+            &-product{
+                display: flex;
+                flex-direction: row;
+                grid-area: product;
+                margin: 2vh 0 0 0;
+                background-size: 100%;
+            }
+        }
+    }
+    //Mods
+    .--central{
+        width: 65%;
+    }
+    .--thin-borders{
+        border: .1vh solid #c4c4c4;
+    }
+    .--two-to-one{
+        grid-template-columns:30% 30% 20% 20%;
+        grid-template-areas: 
+        "post post podcast podcast"
+        "post post course product";
+    }
+    //End Mods
+}
