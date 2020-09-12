@@ -1,13 +1,16 @@
 import React from 'react';
 
 //Component
-import Navbar from '../../components/navbar';
+import Navbar from '../../components/Navbar';
+import Banner from '../../components/Banner';
+import Button from '../../components/Button';
+import Clusters from '../../components/Clusters';
+import Cluster from '../../components/Cluster';
+import Carousel from '../../components/Carousel';
+import CarouselLink from '../../components/CarouselLink';
 
 //Styles
 import './_page.scss';
-
-//Images
-import img_foward from '../../assets/images/button/button-foward.svg';
 
 function Inicio(){
     return(
@@ -17,69 +20,49 @@ function Inicio(){
             </header>
             <main>
                 <section className="page">
-                    <div className="page__banner --central --first-post --thin-borders ">
-                        <div className="page__banner-headline --flex-end-self">
-                            <p className="page__banner-title --centralized-text --dark-text">
-                                Lorem ipsum dolor sit amet
-                            </p>
-                            <p className="page__banner-text --centralized-text --grey-text">
-                                Lorem ipsum dolor sit amet
-                            </p>
-                            <div className="page__button --centralized-text --light-text"> 
-                                <span>LOREM IPSUM</span>
-                            </div>
-                        </div>
-                    </div>
-                    <ul className="page__cluster --central --two-to-one">
-                        <li className="page__cluster-post -light-text">
-                            <div className="page__banner-content --flex-end-self">
-                                <p className="page__banner-title">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                                </p>
-                                <p className="page__banner-text">
-                                    VIAGEM
-                                </p>
-                                <p className="page__banner-text">
-                                    por Fulano de Tal
-                                </p>
-                            </div>
-                        </li>
-                        <li className="page__cluster-podcast --light-text">
-                            <div className="page__banner-content --flex-end-self">
-                                <p className="page__banner-text">
-                                    Namahcast #122
-                                </p>
-                                <p className="page__banner-title">
-                                    Nome do episódio do podcast lorem ipsum dolor sit amet consectetur eli
-                                </p>
-                            </div>
-                        </li>
-                        <li className="page__cluster-course --light-text">
-                            <div className="page__banner-content --flex-end-self">
-                                <p className="page__banner-text">
-                                    CURSO - 04 ABR
-                                </p>
-                                <p className="page__banner-title">
-                                    Imersão Vinyasa Flow
-                                </p>
-                            </div>
-                        </li>
-                        <li className="page__cluster-product --light-text">
-                            <div className="page__banner-content --flex-end-self">
-                                <p className="page__banner-title">
-                                    Condicionador Namah
-                                </p>
-                                <p className="page__banner-text">
-                                    COMPRE AGORA
-                                </p>
-                                <img 
-                                    className="page__product-foward"
-                                    src={img_foward} 
-                                    alt="Go to the product page" 
-                                />
-                            </div>
-                        </li>
-                    </ul>
+                    <Banner 
+                        title="Lorem ipsum dolor sit amet"
+                        text="Lorem ipsum dolor sit amet"
+                    >
+                        <Button text="LOREM IPSUM" />
+                    </Banner>
+                    <Clusters type='two-to-one'>
+                        <Cluster 
+                            type="post"
+                            theme="light"
+                            title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+                            info={["VIAGEM","por Fulano de Tal"]}
+                        />
+                        <Cluster 
+                            type="podcast"
+                            theme="light"
+                            title="Nome do episódio do podcast lorem ipsum dolor sit amet consectetur eli..."
+                            info={["Namahcast #122"]}
+                        />
+                        <Cluster 
+                            type="course"
+                            theme="light"
+                            title="Imersão Vinyasa Flow"
+                            info={["CURSO","04 ABR"]}
+                        />
+                        <Cluster 
+                            type="product"
+                            theme="light"
+                            title="Imersão Vinyasa Flow"
+                            info={["COMPRE AGORA"]}
+                        />
+                    </Clusters>
+                    <Carousel
+                        title="recomendam"
+                        text="nossos especialistas"
+                    >
+                        <CarouselLink productId={0} />
+                        <CarouselLink productId={1} />
+                        <CarouselLink productId={2} />
+                        <CarouselLink productId={0} />
+                        <CarouselLink productId={1} />
+                        <CarouselLink productId={2} />
+                    </Carousel>
                 </section>
             </main>
         </React.Fragment>

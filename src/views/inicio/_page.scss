@@ -14,6 +14,18 @@
 .--first-post{
     background-image: url('../../assets/images/post/bg-post1.jpg');
 }
+.--post{
+    background-image: url('../../assets/images/post/bg-post2.jpg');
+}
+.--podcast{
+    background-image: url('../../assets/images/post/bg-post3.jpg');
+}
+.--course{
+    background-image: url('../../assets/images/post/bg-post4.jpg');
+}
+.--product{
+    background-image: url('../../assets/images/product/bg-product1.jpg');
+}
 .--flex-end-self{
     align-self: flex-end;
 }
@@ -34,7 +46,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 2rem 0 0 0;
 
     &__banner{
         display: flex;
@@ -51,6 +62,10 @@
             justify-content: center;
             margin: 0 .5rem 0 0;
         }
+        &-content{
+            background: rgb(0,0,0);
+            background: linear-gradient(0deg, rgba(0,0,0,0.65) 60%, rgba(255,255,255,0) 100%);
+        }
         &-title{
             font-family: 'Chloe-Regular';
             font-size: 1rem;
@@ -63,22 +78,9 @@
         }
     }
     &__cluster{
-        &-post{
-            background-image: url('../../assets/images/post/bg-post2.jpg');
-            background-repeat: no-repeat;
-        }
-        &-podcast{
-            background-image: url('../../assets/images/post/bg-post3.jpg');
-            background-repeat: no-repeat;
-        }
-        &-course{
-            background-image: url('../../assets/images/post/bg-post4.jpg');
-            background-repeat: no-repeat;
-        }
-        &-product{
-            background-image: url('../../assets/images/product/bg-product1.jpg');
-            background-repeat: no-repeat;
-        }
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: row;
     }
     &__button{
         font-family: 'ProximaNova-Semibold';
@@ -99,13 +101,11 @@
 }
 @media (min-width: 801px){
     .page{
-        padding: 5vh 0 0 0;
 
         &__banner{
             height: 20.5vh;
             background-size: 128vh;
             padding: 3vh 0 3vh 0;
-            margin: 0 0 5vh 0;
 
             &-headline{
                 margin: 0 20vh 0 0;
@@ -130,54 +130,144 @@
                 background-color: #7bb3aa;
             }
         }
-        &__cluster{
+        &__clusters{
             display: grid;
             grid-template-rows: auto;
-            height: 50vh;
+            height: 55vh;
+        }
+        &__carousel{
+            display: flex;
+            flex-direction: row;
+            margin: 2vh 0 2vh 0 !important;
 
-            &-post{
+
+            &-products{
                 display: flex;
-                flex-direction: row;
-                grid-area: post;
-                background-size: 100%;
-                margin: 0 2vh 0 0;
-            }
-            &-podcast{
-                display: flex;
-                flex-direction: row;
-                grid-area: podcast;
-                margin: 0 0 2vh 0;
-                background-size: 100%;
-                width: 51vh;
-            }
-            &-course{
-                display: flex;
-                flex-direction: row;
-                grid-area: course;
-                margin: 2vh 2vh 0 0;
-                background-size: 100%;
+                justify-content: space-between;
+                margin: 1vh 0 0 0;
+                width: 82%;
             }
             &-product{
-                display: flex;
-                flex-direction: row;
-                grid-area: product;
-                margin: 2vh 0 0 0;
-                background-size: 100%;
+
+                &-image{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            &-info{
+                width: 18%;
+                text-align: center;
+
+                & .page__banner-text{
+                    font-size: 1.65vh;
+                    margin: 7vh 0 0 0;
+                    width: 100%;
+                }
+                & .page__banner-title{
+                    font-size: 3vh;
+                    width: 100%;
+                }
             }
         }
     }
     //Mods
     .--central{
         width: 65%;
+        margin:  5vh 0 0 0;
+    }
+    .--top-thin-borders{
+        border-top: .1vh solid #c4c4c4;
+    }
+    .--bottom-thin-borders{
+        border-bottom: .1vh solid #c4c4c4;
     }
     .--thin-borders{
         border: .1vh solid #c4c4c4;
     }
     .--two-to-one{
-        grid-template-columns:30% 30% 20% 20%;
+        grid-template-columns: 67% 16.5% 16.5%;
+        grid-template-rows: auto 30vh;
         grid-template-areas: 
-        "post post podcast podcast"
-        "post post course product";
+        "post podcast podcast"
+        "post course product";
+    }
+    .--post{
+        background-size: 100% 55vh;
+        grid-area: post;
+        margin: 0 2vh 0 0;
+
+        & .page__banner-title{
+            width: 90%;
+            margin: 0 2vh 0 2vh;
+            font-size: 4vh;
+        }
+        & .page__banner-info{
+            display: flex;
+            flex-direction: row;
+            margin: 2vh 2vh 0 2vh;
+
+            & .page__banner-text{
+                margin: 0 4vh 2vh 0;
+            }
+        }
+    }
+    .--podcast{
+        grid-area: podcast;
+        margin: 0 0 2vh 0;
+        background-size: cover;
+
+        & .page__banner-title{
+            width: 90%;
+            margin: 0 0 .6vh 1vh;
+            font-size: 2.5vh;
+
+            & .page__banner-text{
+                margin: 0;
+                font-size: 1.5vh;
+            }
+        }
+        & .page__banner-info{
+            margin: 0 0 1.5vh 1vh;
+        }
+    }
+    .--course{
+        grid-area: course;
+        margin: 0 2vh 0 0;
+        background-size: 100% 30vh;
+
+        & .page__banner-title{
+            width: 70%;
+            margin: 0 0 .6vh 1vh;
+            font-size: 2.5vh;
+        }
+        & .page__banner-info{
+            margin: 0 0 1.5vh 1vh;
+
+            & .page__banner-text{
+                margin: 0;
+                font-size: 1.5vh;
+            }
+        }
+    }
+    .--product{
+        grid-area: product;
+        background-size: cover;
+
+        & .page__banner-title{
+            width: 70%;
+            margin: 0 0 .6vh 1vh;
+            font-size: 2.5vh;
+        }
+        & .page__banner-info{
+            display: flex;
+            flex-direction: row;
+            margin: 0 0 1vh 1vh;
+
+            & .page__banner-text{
+                margin: 0 1vh 0 0;
+                font-size: 1.5vh;
+            }
+        }
     }
     //End Mods
 }
