@@ -11,7 +11,7 @@ function Filler(props){
                     {props.title}
                 </p>
             </div>
-            <ul className="page__filler-products">
+            <ul className="page__filler-content">
                 {props.children}
             </ul>
         </div>
