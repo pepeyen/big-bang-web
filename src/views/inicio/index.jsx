@@ -25,7 +25,10 @@ function Inicio(){
                         title="Lorem ipsum dolor sit amet"
                         text="Lorem ipsum dolor sit amet"
                     >
-                        <Button text="LOREM IPSUM" />
+                        <Button 
+                            text="LOREM IPSUM" 
+                            root="banner"
+                        />
                     </Banner>
                     <Clusters type='two-to-one'>
                         <Cluster 

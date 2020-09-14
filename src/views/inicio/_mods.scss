@@ -10,6 +10,13 @@
 .--centralized-text{
     text-align: center;
 }
+.--root-banner{
+    display: none;
+}
+.--root-post{
+    padding: 0.7rem 0 0.7rem 0;
+    width: 90%;
+}
 .--first-post{
     background-image: url('../../assets/images/post/bg-post1.jpg');
 }
@@ -155,6 +162,14 @@
         width: 65%;
         margin:  5vh 0 0 0;
     }
+    .--root-banner{
+        display: block;
+        padding: 1.5vh 5vh 1.2vh 5vh;
+    }
+    .--root-post{
+        padding: 1.5vh 4vh 1.2vh 4vh;
+        width: auto;
+    }
     .--top-thin-borders{
         border-top: .1vh solid #c4c4c4;
     }
@@ -172,8 +187,8 @@
         "post course product";
     }
     .--post{
-        background-size: 100% 55vh;
-        height: 55vh;
+        background-size: 100% 57vh;
+        height: 57vh;
         margin: 0 1vh 0 0;
 
         & .page__banner-title{
@@ -189,13 +204,13 @@
         }
     }
     .--podcast{
-        background-size: 100% 23vh;
-        height: 23vh;
+        background-size: 100% 25vh;
+        height: 25vh;
         margin: 0 0 2vh 1vh;
 
         & .page__banner-title{
             margin: 0 0 .6vh 1vh;
-            font-size: 2.5vh;
+            font-size: 2.4vh;
 
             & .page__banner-text{
                 margin: 0;
