@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Carousel(props){
+function Filler(props){
     return(
-        <div className="page__carousel --central --top-thin-borders --bottom-thin-borders">
-            <div className="page__carousel-info">
+        <div className="page__filler --central --top-thin-borders --bottom-thin-borders">
+            <div className="page__filler-info">
                 <p className="page__banner-text">
                     {props.text}
                 </p>
@@ -11,11 +11,11 @@ function Carousel(props){
                     {props.title}
                 </p>
             </div>
-            <ul className="page__carousel-products">
+            <ul className="page__filler-products">
                 {props.children}
             </ul>
         </div>
     );
 }
 
-export default Carousel;
+export default Filler;

@@ -6,8 +6,8 @@ import Banner from '../../components/Banner';
 import Button from '../../components/Button';
 import Clusters from '../../components/Clusters';
 import Cluster from '../../components/Cluster';
-import Carousel from '../../components/Carousel';
-import CarouselLink from '../../components/CarouselLink';
+import Filler from '../../components/Filler';
+import FillerProduct from '../../components/FillerProduct';
 
 //Styles
 import './_page.scss';
@@ -52,17 +52,17 @@ function Inicio(){
                             info={["COMPRE AGORA"]}
                         />
                     </Clusters>
-                    <Carousel
+                    <Filler
                         title="recomendam"
                         text="nossos especialistas"
                     >
-                        <CarouselLink productId={0} />
-                        <CarouselLink productId={1} />
-                        <CarouselLink productId={2} />
-                        <CarouselLink productId={0} />
-                        <CarouselLink productId={1} />
-                        <CarouselLink productId={2} />
-                    </Carousel>
+                        <FillerProduct productId={0} />
+                        <FillerProduct productId={1} />
+                        <FillerProduct productId={2} />
+                        <FillerProduct productId={0} />
+                        <FillerProduct productId={1} />
+                        <FillerProduct productId={2} />
+                    </Filler>
                 </section>
             </main>
         </React.Fragment>
