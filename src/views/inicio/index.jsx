@@ -11,6 +11,7 @@ import FillerProduct from '../../components/FillerProduct';
 
 //Styles
 import './_page.scss';
+import './_mods.scss';
 
 function Inicio(){
     return(
@@ -48,7 +49,7 @@ function Inicio(){
                         <Cluster 
                             type="product"
                             theme="light"
-                            title="Imersão Vinyasa Flow"
+                            title="Condicionador Namah"
                             info={["COMPRE AGORA"]}
                         />
                     </Clusters>

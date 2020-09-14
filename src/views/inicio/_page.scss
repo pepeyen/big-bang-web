@@ -1,46 +1,3 @@
-//Mods
-.--light-text{
-    color: #ffffff;
-}
-.--grey-text{
-    color: #666666;
-}
-.--dark-text{
-    color: #000000;
-}
-.--centralized-text{
-    text-align: center;
-}
-.--first-post{
-    background-image: url('../../assets/images/post/bg-post1.jpg');
-}
-.--post{
-    background-image: url('../../assets/images/post/bg-post2.jpg');
-}
-.--podcast{
-    background-image: url('../../assets/images/post/bg-post3.jpg');
-}
-.--course{
-    background-image: url('../../assets/images/post/bg-post4.jpg');
-}
-.--product{
-    background-image: url('../../assets/images/product/bg-product1.jpg');
-}
-.--flex-end-self{
-    align-self: flex-end;
-}
-.--central{
-    width: 90%;
-}
-.--two-to-one{
-    grid-template-areas: 
-    "post podcast podcast"
-    "post course product";
-}
-.--thin-borders{
-    border: .05rem solid #c4c4c4;
-}
-//End Mods
 .page{
     display: flex;
     align-items: center;
@@ -63,7 +20,6 @@
             margin: 0 .5rem 0 0;
         }
         &-content{
-            background: rgb(0,0,0);
             background: linear-gradient(0deg, rgba(0,0,0,0.65) 60%, rgba(255,255,255,0) 100%);
         }
         &-title{
@@ -75,7 +31,16 @@
             font-family: 'ProximaNova-Regular';
             font-size: .8rem;
             margin: 1rem 0 0 0;
+
+            & .page__banner-info{
+                display: flex;
+                flex-direction: row;
+            }
         }
+    }
+    &__clusters{
+        display: grid;
+        grid-template-rows: auto;
     }
     &__cluster{
         background-repeat: no-repeat;
@@ -87,12 +52,63 @@
         background-color: #73A8A0;
         display: none;
     }
+    &__filler{
+        display: flex;
+        flex-direction: row;
+        overflow-x: scroll;
+        margin: 1rem 0 1rem 0;
+
+        &-content{
+            display: flex;
+            margin: .6rem 0 .6rem 0;
+            width: 100rem;
+        }
+        &-product{
+            display: flex;
+            flex-direction: column;
+            width: 8rem;
+
+            margin: 0 0 0 1rem;
+
+
+            &-image{
+                width: 100%;
+                height: 7rem;
+            }
+            &-name{
+                font-family: 'ProximaNova-Regular';
+                font-size: .7rem;
+                margin: .5rem 0 0 0;
+            }
+            &-info{
+                font-family: 'ProximaNova-Regular';
+                font-size: .6rem;
+            }
+            &-price{
+                font-family: 'ProximaNova-Regular';
+                font-size: .7rem;
+                margin: .5rem 0 0 0;
+            }
+        }
+        &-info{
+            width: 40%;
+            text-align: center;
+
+            & .page__banner-text{
+                font-size: 0.85rem;
+                margin: 50% 0 0 0;
+                width: 100%;
+            }
+            & .page__banner-title{
+                font-size: 1.5rem;
+                width: 100%;
+            }
+        }
+    }
 }
 @media (min-width: 768px){
     .page{
-
         &__banner{
-    
             &-headline{
                 margin: 0 5rem 0 0;
             }
@@ -130,144 +146,44 @@
                 background-color: #7bb3aa;
             }
         }
-        &__clusters{
-            display: grid;
-            grid-template-rows: auto;
-            height: 55vh;
-        }
         &__filler{
-            display: flex;
-            flex-direction: row;
-            margin: 2vh 0 2vh 0 !important;
-
-
-            &-products{
-                display: flex;
-                justify-content: space-between;
-                margin: 1vh 0 0 0;
-                width: 82%;
+            margin: 2vh 0 2vh 0;
+            overflow-x: auto;
+            
+            &-content{
+                margin: 1vh 0 1vh 0;
+                width: 100%;
             }
             &-product{
+                width: auto;
 
                 &-image{
-                    width: 100%;
-                    height: 100%;
+                    height: 15vh;
+                }
+                &-name{
+                    margin: .8vh 0 0 0;
+                    font-size: 1.6vh;
+                }
+                &-info{
+                    margin: .5vh 0 0 0;
+                    font-size: 1.4vh;
+                }
+                &-price{
+                    margin: 1vh 0 0 0;
+                    font-size: 1.5vh;
                 }
             }
             &-info{
                 width: 18%;
-                text-align: center;
 
                 & .page__banner-text{
                     font-size: 1.65vh;
-                    margin: 7vh 0 0 0;
                     width: 100%;
                 }
                 & .page__banner-title{
                     font-size: 3vh;
-                    width: 100%;
                 }
             }
         }
     }
-    //Mods
-    .--central{
-        width: 65%;
-        margin:  5vh 0 0 0;
-    }
-    .--top-thin-borders{
-        border-top: .1vh solid #c4c4c4;
-    }
-    .--bottom-thin-borders{
-        border-bottom: .1vh solid #c4c4c4;
-    }
-    .--thin-borders{
-        border: .1vh solid #c4c4c4;
-    }
-    .--two-to-one{
-        grid-template-columns: 67% 16.5% 16.5%;
-        grid-template-rows: auto 30vh;
-        grid-template-areas: 
-        "post podcast podcast"
-        "post course product";
-    }
-    .--post{
-        background-size: 100% 55vh;
-        grid-area: post;
-        margin: 0 2vh 0 0;
-
-        & .page__banner-title{
-            width: 90%;
-            margin: 0 2vh 0 2vh;
-            font-size: 4vh;
-        }
-        & .page__banner-info{
-            display: flex;
-            flex-direction: row;
-            margin: 2vh 2vh 0 2vh;
-
-            & .page__banner-text{
-                margin: 0 4vh 2vh 0;
-            }
-        }
-    }
-    .--podcast{
-        grid-area: podcast;
-        margin: 0 0 2vh 0;
-        background-size: cover;
-
-        & .page__banner-title{
-            width: 90%;
-            margin: 0 0 .6vh 1vh;
-            font-size: 2.5vh;
-
-            & .page__banner-text{
-                margin: 0;
-                font-size: 1.5vh;
-            }
-        }
-        & .page__banner-info{
-            margin: 0 0 1.5vh 1vh;
-        }
-    }
-    .--course{
-        grid-area: course;
-        margin: 0 2vh 0 0;
-        background-size: 100% 30vh;
-
-        & .page__banner-title{
-            width: 70%;
-            margin: 0 0 .6vh 1vh;
-            font-size: 2.5vh;
-        }
-        & .page__banner-info{
-            margin: 0 0 1.5vh 1vh;
-
-            & .page__banner-text{
-                margin: 0;
-                font-size: 1.5vh;
-            }
-        }
-    }
-    .--product{
-        grid-area: product;
-        background-size: cover;
-
-        & .page__banner-title{
-            width: 70%;
-            margin: 0 0 .6vh 1vh;
-            font-size: 2.5vh;
-        }
-        & .page__banner-info{
-            display: flex;
-            flex-direction: row;
-            margin: 0 0 1vh 1vh;
-
-            & .page__banner-text{
-                margin: 0 1vh 0 0;
-                font-size: 1.5vh;
-            }
-        }
-    }
-    //End Mods
 }
