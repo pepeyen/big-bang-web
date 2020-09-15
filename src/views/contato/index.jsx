@@ -10,7 +10,9 @@ function Contato(){
                 <Navbar />
             </header>
             <main>
-                <p>Contato</p>
+                <section className="page">
+                    <p className="page__place-holder">Contato</p>
+                </section>
             </main>
         </React.Fragment>
     );

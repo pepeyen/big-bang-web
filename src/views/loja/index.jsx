@@ -10,7 +10,9 @@ function Loja(){
                 <Navbar />
             </header>
             <main>
-                <p>Loja</p>
+                <section className="page">
+                    <p className="page__place-holder">Loja</p>
+                </section>
             </main>
         </React.Fragment>
     );

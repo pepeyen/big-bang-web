@@ -4,6 +4,11 @@
     justify-content: center;
     flex-direction: column;
 
+    &__place-holder{
+        font-family: 'ProximaNova-Regular';
+        margin: 2rem 0 0 0;
+        font-size: 2.5rem;
+    }
     &__banner{
         display: flex;
         flex-direction: column;
@@ -126,6 +131,18 @@
             padding: 0 1vh 0 1vh;
         }
     }
+    &__product{
+        display: flex;
+        flex-direction: row;
+        margin: 3rem 0 0 0;
+
+        &-info{
+            text-align: center;
+            align-self: flex-end;
+            font-family: 'ProximaNova-Regular';
+            margin: 0 0 0 2rem;
+        }
+    }
 }
 @media (min-width: 768px){
     .page{
@@ -138,6 +155,10 @@
 }
 @media (min-width: 801px){
     .page{
+        &__place-holder{
+            margin: 5vh 0 0 0;
+            font-size: 3vh;
+        }
         &__banner{
             height: 20.5vh;
             background-size: 128vh;
@@ -221,6 +242,13 @@
                 font-size: 5vh;
                 margin: -3vh 0 5vh 0;
                 padding: 0 1vh 0 1vh;
+            }
+        }
+        &__product{
+            margin: 6vh 0 0 0;
+
+            &-info{
+                margin: 0 0 0 4vh;
             }
         }
     }

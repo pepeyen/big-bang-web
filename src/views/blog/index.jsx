@@ -10,7 +10,9 @@ function Blog(){
                 <Navbar />
             </header>
             <main>
-                <p>Blog</p>
+                <section className="page">
+                    <p className="page__place-holder">Blog</p>
+                </section>
             </main>
         </React.Fragment>
     );

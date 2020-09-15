@@ -10,7 +10,9 @@ function Cursos(){
                 <Navbar />
             </header>
             <main>
-                <p>Cursos</p>
+                <section className="page">
+                    <p className="page__place-holder">Cursos</p>
+                </section>
             </main>
         </React.Fragment>
     );
