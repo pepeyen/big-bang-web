@@ -11,8 +11,8 @@ import FillerProduct from '../../components/FillerProduct';
 import Post from '../../components/Post';
 
 //Styles
-import './_page.scss';
-import './_mods.scss';
+import '../_page.scss';
+import '../_mods.scss';
 
 function Inicio(){
     return(
@@ -75,6 +75,7 @@ function Inicio(){
                     <Post title="Blog">
                         <Button
                             root="post" 
+                            target="blog"
                             text="Veja todos os posts"
                         />
                     </Post>
@@ -82,26 +83,25 @@ function Inicio(){
 
                         <Button
                             root="post" 
-                            text="Veja todos os posts"
+                            target="loja"
+                            text="Veja todos os produtos"
                         />
                     </Post>
                     <Post title="Cursos">                
                         <Button
                             root="post" 
-                            text="Veja todos os posts"
+                            target="cursos"
+                            text="Veja todos os cursos"
                         />
                     </Post>
                     <Post title="Podcasts">               
                         <Button
                             root="post" 
-                            text="Veja todos os posts"
+                            target="podcasts"
+                            text="Veja todos os podcasts"
                         />
                     </Post>
-                    <Post title="@namah.concept">                 
-                        <Button
-                            root="post" 
-                            text="Veja todos os posts"
-                        />
+                    <Post title="@namah.concept">
                     </Post>
                 </section>
             </main>

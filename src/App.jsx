@@ -8,6 +8,7 @@ import Loja from './views/loja';
 import Podcasts from './views/podcasts';
 import Cursos from './views/cursos';
 import Contato from './views/contato';
+import Produto from './views/produto';
 
 //Styles
 import './App.scss';
@@ -17,11 +18,12 @@ function App() {
     <React.Fragment>
       <Switch>
           <Route exact path="/" component={Inicio} />
-          <Route path="/blog" component={Blog} />
-          <Route path="/loja" component={Loja} />
-          <Route path="/podcasts" component={Podcasts} />
-          <Route path="/cursos" component={Cursos} />
-          <Route path="/contato" component={Contato} />
+          <Route exact path="/blog" component={Blog} />
+          <Route exact path="/loja" component={Loja} />
+          <Route exact path="/podcasts" component={Podcasts} />
+          <Route exact path="/cursos" component={Cursos} />
+          <Route exact path="/contato" component={Contato} />
+          <Route exact path="/loja/produto/:currentProductId" component={Produto} />
       </Switch>
     </React.Fragment>
   );
