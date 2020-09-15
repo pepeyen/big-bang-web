@@ -19,19 +19,19 @@
     width: 100%;
 }
 .--first-post{
-    background-image: url('../../assets/images/post/bg-post1.jpg');
+    background-image: url('../assets/images/post/bg-post1.jpg');
 }
 .--post{
-    background-image: url('../../assets/images/post/bg-post2.jpg');
+    background-image: url('../assets/images/post/bg-post2.jpg');
 }
 .--podcast{
-    background-image: url('../../assets/images/post/bg-post3.jpg');
+    background-image: url('../assets/images/post/bg-post3.jpg');
 }
 .--course{
-    background-image: url('../../assets/images/post/bg-post4.jpg');
+    background-image: url('../assets/images/post/bg-post4.jpg');
 }
 .--product{
-    background-image: url('../../assets/images/product/bg-product1.jpg');
+    background-image: url('../assets/images/product/bg-product1.jpg');
 }
 .--flex-end-self{
     align-self: flex-end;
@@ -176,7 +176,7 @@
     .--root-post{
         padding: 2vh 4vh 1.5vh 4vh;
         margin: 5vh 0 0 0;
-        width: 20%;
+        width: 25%;
     }
     .--top-thin-borders{
         border-top: .1vh solid #c4c4c4;
@@ -198,7 +198,7 @@
         background-size: 100% 57vh;
         height: 57vh;
         margin: 0 1vh 0 0;
-
+        
         & .page__banner-title{
             margin: 0 2vh 0 2vh;
             font-size: 4vh;
