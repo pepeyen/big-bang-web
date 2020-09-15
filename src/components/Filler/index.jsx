@@ -2,7 +2,7 @@ import React from 'react';
 
 function Filler(props){
     return(
-        <div className="page__filler --central --top-thin-borders --bottom-thin-borders">
+        <div className="page__filler --top-thin-borders --bottom-thin-borders">
             <div className="page__filler-info">
                 <p className="page__banner-text">
                     {props.text}
