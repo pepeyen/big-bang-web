@@ -13,14 +13,14 @@ function Node(props){
                 return(
                     <div className="page__banner-content --flex-end-self">
                         <p className="page__banner-title">
-                            {posts[props.postId].title}
+                            {posts[props.id].title}
                         </p>
                         <div className="page__banner-info">
                             <p className="page__banner-text">
-                                {posts[props.postId].info[0]}
+                                {posts[props.id].info[0]}
                             </p>
                             <p className="page__banner-text">
-                                {posts[props.postId].info[1]}
+                                {posts[props.id].info[1]}
                             </p>
                         </div>
                     </div>
@@ -30,11 +30,11 @@ function Node(props){
                     <div className="page__banner-content --flex-end-self">
                         <div className="page__banner-info">
                             <p className="page__banner-text">
-                                {posts[props.postId].info[0]}
+                                {posts[props.id].info[0]}
                             </p>
                         </div>
                         <p className="page__banner-title">
-                            {posts[props.postId].title}
+                            {posts[props.id].title}
                         </p>
                     </div>
                 );
@@ -43,11 +43,11 @@ function Node(props){
                     <div className="page__banner-content --flex-end-self">
                         <div className="page__banner-info">
                             <p className="page__banner-text">
-                                {posts[props.postId].info[0]} - {posts[props.postId].info[1]}
+                                {posts[props.id].info[0]} - {posts[props.id].info[1]}
                             </p>
                         </div>
                         <p className="page__banner-title">
-                            {posts[props.postId].title}
+                            {posts[props.id].title}
                         </p>
                     </div>
                 );
@@ -55,11 +55,11 @@ function Node(props){
                 return(
                     <div className="page__banner-content --flex-end-self">
                         <p className="page__banner-title">
-                            {posts[props.postId].title}
+                            {posts[props.id].title}
                         </p>
                         <div className="page__banner-info">
                             <p className="page__banner-text">
-                                {posts[props.postId].info[0]}
+                                {posts[props.id].info[0]}
                             </p>
                             <img 
                                 className="page__product-foward"
@@ -80,7 +80,7 @@ function Node(props){
     return(
         <li 
             className={`page__node --${props.size}-${props.position} --${props.type} --${props.theme}-text`}
-            style={{backgroundImage: `url(${posts[props.postId].banner})`}}
+            style={{backgroundImage: `url(${posts[props.id].bannerURL})`}}
         >
             {nodeChildren}
         </li>
