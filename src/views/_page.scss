@@ -44,11 +44,11 @@
             }
         }
     }
-    &__clusters{
+    &__cluster{
         display: grid;
         grid-template-rows: auto;
     }
-    &__cluster{
+    &__node{
         background-repeat: no-repeat;
         display: flex;
         flex-direction: row;
@@ -184,7 +184,7 @@
                 background-color: #7bb3aa;
             }
         }
-        &__cluster{
+        &__node{
             &:hover{
                 cursor: pointer;
             }
@@ -240,7 +240,7 @@
         &__post{
             &-title{
                 font-size: 5vh;
-                margin: -3vh 0 5vh 0;
+                margin: -3vh 0 5vh 0; 
                 padding: 0 1vh 0 1vh;
             }
         }

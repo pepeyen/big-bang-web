@@ -21,18 +21,6 @@
 .--first-post{
     background-image: url('../assets/images/post/bg-post1.jpg');
 }
-.--post{
-    background-image: url('../assets/images/post/bg-post2.jpg');
-}
-.--podcast{
-    background-image: url('../assets/images/post/bg-post3.jpg');
-}
-.--course{
-    background-image: url('../assets/images/post/bg-post4.jpg');
-}
-.--product{
-    background-image: url('../assets/images/product/bg-product1.jpg');
-}
 .--flex-end-self{
     align-self: flex-end;
 }
@@ -55,16 +43,36 @@
     grid-template-columns: 50% 50%;
     grid-template-rows: auto;
     grid-template-areas: 
-    "post post"
-    "podcast podcast"
-    "course product";
+    "big-left big-left"
+    "top-small-right top-small-right"
+    "bottom-small-left bottom-small-right";
+
+    & .--big-left{
+        grid-area: big-left;
+        background-size: 100% 16rem;
+        height: 16rem;
+        margin: 0 0 1.5rem 0;
+    }
+    & .--small-top-right{
+        grid-area: top-small-right;
+        background-size: 100% 16rem;
+        height: 16rem;
+        margin: 0 0 1.5rem 0;
+    }
+    & .--small-bottom-halfed-left{
+        grid-area: bottom-small-left;
+        background-size: 100% 16rem;
+        height: 16rem;
+        margin: 0 .5rem 0 0;
+    }
+    & .--small-bottom-halfed-right{
+        grid-area: bottom-small-right;
+        background-size: 100% 16rem;
+        height: 16rem;
+        margin: 0 0 0 .5rem;
+    }
 }
 .--post{
-    grid-area: post;
-    background-size: 100% 16rem;
-    height: 16rem;
-    margin: 0 0 1.5rem 0;
-
     & .page__banner-content{
         display: flex;
         flex-direction: column;
@@ -86,11 +94,6 @@
     }
 }
 .--podcast{
-    grid-area: podcast;
-    background-size: 100% 16rem;
-    height: 16rem;
-    margin: 0 0 1.5rem 0;
-
     & .page__banner-content{
         display: flex;
         flex-direction: column;
@@ -110,18 +113,13 @@
     }
 }
 .--course{
-    grid-area: course;
-    background-size: 100% 16rem;
-    height: 16rem;
-    margin: 0 .5rem 0 0;
-
     & .page__banner-content{
         display: flex;
         flex-direction: column;
         width: 100%;
     }
     & .page__banner-title{
-        width: 70%;
+        width: 80%;
         margin: 0 0 1rem .6rem;
         font-size: 1.4rem;
     }
@@ -134,11 +132,6 @@
     }
 }
 .--product{
-    grid-area: product;
-    background-size: 100% 16rem;
-    height: 16rem;
-    margin: 0 0 0 .5rem;
-
     & .page__banner-content{
         display: flex;
         flex-direction: column;
@@ -191,14 +184,31 @@
         grid-template-columns: 67% 16.5% 16.5%;
         grid-template-rows: auto 30vh;
         grid-template-areas: 
-        "post podcast podcast"
-        "post course product";
+        "big-left top-small-right top-small-right"
+        "big-left bottom-small-left bottom-small-right";
+
+        & .--big-left{
+            background-size: 100% 57vh;
+            height: 57vh;
+            margin: 0 1vh 0 0;
+        }
+        & .--small-top-right{
+            background-size: 100% 25vh;
+            height: 25vh;
+            margin: 0 0 2vh 1vh;
+        }
+        & .--small-bottom-halfed-left{
+            margin: 0 1vh 0 1vh;
+            background-size: 100% 30vh;
+            height: 30vh;
+        }
+        & .--small-bottom-halfed-right{
+            margin: 0 0 0 1vh;
+            background-size: 100% 30vh;
+            height: 30vh;
+        }
     }
     .--post{
-        background-size: 100% 57vh;
-        height: 57vh;
-        margin: 0 1vh 0 0;
-        
         & .page__banner-title{
             margin: 0 2vh 0 2vh;
             font-size: 4vh;
@@ -212,10 +222,6 @@
         }
     }
     .--podcast{
-        background-size: 100% 25vh;
-        height: 25vh;
-        margin: 0 0 2vh 1vh;
-
         & .page__banner-title{
             margin: 0 0 .6vh 1vh;
             font-size: 2.4vh;
@@ -230,10 +236,6 @@
         }
     }
     .--course{
-        margin: 0 1vh 0 1vh;
-        background-size: 100% 30vh;
-        height: 30vh;
-
         & .page__banner-title{
             margin: 0 0 .6vh 1vh;
             font-size: 2.5vh;
@@ -248,10 +250,6 @@
         }
     }
     .--product{
-        margin: 0 0 0 1vh;
-        background-size: 100% 30vh;
-        height: 30vh;
-
         & .page__banner-title{
             margin: 1vh 0 .6vh 1vh;
             font-size: 2.5vh;

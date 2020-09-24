@@ -4,8 +4,8 @@ import React from 'react';
 import Navbar from '../../components/Navbar';
 import Banner from '../../components/Banner';
 import Button from '../../components/Button';
-import Clusters from '../../components/Clusters';
 import Cluster from '../../components/Cluster';
+import Node from '../../components/Node';
 import Filler from '../../components/Filler';
 import FillerProduct from '../../components/FillerProduct';
 import Post from '../../components/Post';
@@ -23,10 +23,7 @@ function Inicio(){
             <main>
                 <section className="page">
                     <Post>
-                        <Banner 
-                            title="Lorem ipsum dolor sit amet"
-                            text="Lorem ipsum dolor sit amet"
-                        >
+                        <Banner bannerId={0}>
                             <Button 
                                 text="LOREM IPSUM" 
                                 root="banner"
@@ -34,32 +31,36 @@ function Inicio(){
                         </Banner>
                     </Post>
                     <Post>
-                        <Clusters type='two-to-one'>
-                            <Cluster 
+                        <Cluster type='two-to-one'>
+                            <Node
+                                size="big"
+                                position="left" 
                                 type="post"
                                 theme="light"
-                                title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-                                info={["VIAGEM","por Fulano de Tal"]}
+                                postId={0}
                             />
-                            <Cluster 
+                            <Node 
+                                size="small"
+                                position="top-right"
                                 type="podcast"
                                 theme="light"
-                                title="Nome do episódio do podcast lorem ipsum dolor sit amet consectetur eli..."
-                                info={["Namahcast #122"]}
+                                postId={1}
                             />
-                            <Cluster 
+                            <Node 
+                                size="small"
+                                position="bottom-halfed-left"
                                 type="course"
                                 theme="light"
-                                title="Imersão Vinyasa Flow"
-                                info={["CURSO","04 ABR"]}
+                                postId={2}
                             />
-                            <Cluster 
+                            <Node 
+                                size="small"
+                                position="bottom-halfed-right"
                                 type="product"
                                 theme="light"
-                                title="Condicionador Namah"
-                                info={["COMPRE AGORA"]}
+                                postId={3}
                             />
-                        </Clusters>
+                        </Cluster>
                         <Filler
                             title="recomendam"
                             text="nossos especialistas"
