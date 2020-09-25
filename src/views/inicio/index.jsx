@@ -1,5 +1,8 @@
 import React from 'react';
 
+//Mock up data
+import {products} from '../../services/mockData';
+
 //Component
 import Navbar from '../../components/Navbar';
 import Banner from '../../components/Banner';
@@ -23,7 +26,7 @@ function Inicio(){
             <main>
                 <section className="page">
                     <Post>
-                        <Banner bannerId={0}>
+                        <Banner id={0}>
                             <Button 
                                 text="LOREM IPSUM" 
                                 root="banner"
@@ -37,40 +40,54 @@ function Inicio(){
                                 position="left" 
                                 type="post"
                                 theme="light"
-                                postId={0}
+                                id={0}
                             />
                             <Node 
                                 size="small"
                                 position="top-right"
                                 type="podcast"
                                 theme="light"
-                                postId={1}
+                                id={1}
                             />
                             <Node 
                                 size="small"
                                 position="bottom-halfed-left"
                                 type="course"
                                 theme="light"
-                                postId={2}
+                                id={2}
                             />
                             <Node 
                                 size="small"
                                 position="bottom-halfed-right"
                                 type="product"
                                 theme="light"
-                                postId={3}
+                                id={3}
                             />
                         </Cluster>
                         <Filler
                             title="recomendam"
                             text="nossos especialistas"
                         >
-                            <FillerProduct productId={0} />
-                            <FillerProduct productId={1} />
-                            <FillerProduct productId={2} />
-                            <FillerProduct productId={0} />
-                            <FillerProduct productId={1} />
-                            <FillerProduct productId={2} />
+                            {
+                                products.map(element => {
+                                    return(
+                                        <FillerProduct 
+                                            key={element.id}
+                                            id={element.id} 
+                                        />
+                                    )
+                                })
+                            }
+                            {
+                                products.map(element => {
+                                    return(
+                                        <FillerProduct 
+                                            key={element.id}
+                                            id={element.id} 
+                                        />
+                                    )
+                                })
+                            }
                         </Filler>
                     </Post>
                     <Post title="Blog">
