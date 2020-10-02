@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 //Services
-import getCurrentPage from '../../services/getCurrentPage';
+import {getCurrentPage} from '../../services/getCurrentPage';
 
 function NavbarLink(props){
     const currentPage = getCurrentPage();
