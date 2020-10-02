@@ -1,19 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 //Mock up data
 import {products} from '../../services/mockData';
 
 function FillerProduct(props){
-    const linkHandler = () =>{
-        sessionStorage.setItem('currentProductId',props.id);
-    }
     return(
         <li className="page__filler-product --centralized-text">
-            <Link 
-                to={`/loja/produto/${props.id}`}
-                onClick={linkHandler}
-            >
+            <Link to={`/loja/produto/?id=${products[props.id].ID}`}>
                 <img
                     className="page__filler-product-image"
                     src={products[props.id].bannerURL}

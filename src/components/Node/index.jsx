@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 //Mock up data
 import {posts} from '../../services/mockData';
@@ -11,7 +12,10 @@ function Node(props){
         switch (props.type) {
             case 'post':
                 return(
-                    <div className="page__banner-content --flex-end-self">
+                    <Link 
+                        to={`/blog/post/?id=${posts[props.id].ID}`}
+                        className="page__banner-content --flex-end-self"
+                    >
                         <p className="page__banner-title">
                             {posts[props.id].title}
                         </p>
@@ -23,11 +27,14 @@ function Node(props){
                                 {posts[props.id].info[1]}
                             </p>
                         </div>
-                    </div>
+                    </Link>
                 );
             case 'podcast':
                 return(
-                    <div className="page__banner-content --flex-end-self">
+                    <Link 
+                        to={`/podcasts/post/?id=${posts[props.id].ID}`} 
+                        className="page__banner-content --flex-end-self"
+                    >
                         <div className="page__banner-info">
                             <p className="page__banner-text">
                                 {posts[props.id].info[0]}
@@ -36,11 +43,14 @@ function Node(props){
                         <p className="page__banner-title">
                             {posts[props.id].title}
                         </p>
-                    </div>
+                    </Link>
                 );
             case 'course':
                 return(
-                    <div className="page__banner-content --flex-end-self">
+                    <Link
+                        to={`/curso/post/?id=${posts[props.id].ID}`} 
+                        className="page__banner-content --flex-end-self"
+                    >
                         <div className="page__banner-info">
                             <p className="page__banner-text">
                                 {posts[props.id].info[0]} - {posts[props.id].info[1]}
@@ -49,11 +59,14 @@ function Node(props){
                         <p className="page__banner-title">
                             {posts[props.id].title}
                         </p>
-                    </div>
+                    </Link>
                 );
             case 'product':
                 return(
-                    <div className="page__banner-content --flex-end-self">
+                    <Link 
+                        to={`/loja/produto/?id=${posts[props.id].ID}`} 
+                        className="page__banner-content --flex-end-self"
+                    >
                         <p className="page__banner-title">
                             {posts[props.id].title}
                         </p>
@@ -67,7 +80,7 @@ function Node(props){
                                 alt="Go to the product page" 
                             />
                         </div>
-                    </div>
+                    </Link>
                 );
             default:
                 return(
@@ -82,7 +95,7 @@ function Node(props){
             className={`page__node --${props.size}-${props.position} --${props.type} --${props.theme}-text`}
             style={{backgroundImage: `url(${posts[props.id].bannerURL})`}}
         >
-            {nodeChildren}
+            {nodeChildren}      
         </li>
     );
 }
