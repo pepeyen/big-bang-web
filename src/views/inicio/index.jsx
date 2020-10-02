@@ -13,10 +13,6 @@ import Filler from '../../components/Filler';
 import FillerProduct from '../../components/FillerProduct';
 import Post from '../../components/Post';
 
-//Styles
-import '../_page.scss';
-import '../_mods.scss';
-
 function Inicio(){
     return(
         <React.Fragment>
@@ -40,28 +36,28 @@ function Inicio(){
                                 position="left" 
                                 type="post"
                                 theme="light"
-                                id={0}
+                                id={1}
                             />
                             <Node 
                                 size="small"
                                 position="top-right"
                                 type="podcast"
                                 theme="light"
-                                id={1}
+                                id={0}
                             />
                             <Node 
                                 size="small"
                                 position="bottom-halfed-left"
                                 type="course"
                                 theme="light"
-                                id={2}
+                                id={3}
                             />
                             <Node 
                                 size="small"
                                 position="bottom-halfed-right"
                                 type="product"
                                 theme="light"
-                                id={3}
+                                id={2} 
                             />
                         </Cluster>
                         <Filler
@@ -69,21 +65,27 @@ function Inicio(){
                             text="nossos especialistas"
                         >
                             {
-                                products.map(element => {
+                                products.map((element,index) => {
+                                    if(index === 3){
+                                        return;
+                                    }
                                     return(
                                         <FillerProduct 
-                                            key={element.id}
-                                            id={element.id} 
+                                            key={index}
+                                            id={index} 
                                         />
                                     )
                                 })
                             }
                             {
-                                products.map(element => {
+                                products.map((element,index) => {
+                                    if(index === 3){
+                                        return;
+                                    }
                                     return(
                                         <FillerProduct 
-                                            key={element.id}
-                                            id={element.id} 
+                                            key={index}
+                                            id={index} 
                                         />
                                     )
                                 })
@@ -98,7 +100,6 @@ function Inicio(){
                         />
                     </Post>
                     <Post title="Namah Shop">
-
                         <Button
                             root="post" 
                             target="loja"
