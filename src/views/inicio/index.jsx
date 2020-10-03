@@ -66,28 +66,26 @@ function Inicio(){
                         >
                             {
                                 products.map((element,index) => {
-                                    if(index === 3){
-                                        return;
-                                    }
-                                    return(
-                                        <FillerProduct 
-                                            key={index}
-                                            id={index} 
-                                        />
-                                    )
+                                    if(index !== 3){
+                                        return(
+                                            <FillerProduct 
+                                                key={index}
+                                                id={index} 
+                                            />
+                                        );
+                                    }else return undefined
                                 })
                             }
                             {
                                 products.map((element,index) => {
-                                    if(index === 3){
-                                        return;
-                                    }
-                                    return(
-                                        <FillerProduct 
-                                            key={index}
-                                            id={index} 
-                                        />
-                                    )
+                                    if(index !== 3){
+                                        return(
+                                            <FillerProduct 
+                                                key={index}
+                                                id={index} 
+                                            />
+                                        )
+                                    }else return undefined
                                 })
                             }
                         </Filler>
