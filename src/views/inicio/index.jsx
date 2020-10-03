@@ -96,14 +96,14 @@ function Inicio(){
                     <Post title="Namah Shop">
                         <Button
                             root="post" 
-                            target="loja"
+                            target="store"
                             text="Veja todos os produtos"
                         />
                     </Post>
-                    <Post title="Cursos">                
+                    <Post title="Courses">                
                         <Button
                             root="post" 
-                            target="cursos"
+                            target="courses"
                             text="Veja todos os cursos"
                         />
                     </Post>

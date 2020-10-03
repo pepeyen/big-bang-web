@@ -11,7 +11,7 @@ function Contato(){
             </header>
             <main>
                 <section className="page">
-                    <p className="page__place-holder">Contato</p>
+                    <p className="page__place-holder">Contact</p>
                 </section>
             </main>
         </React.Fragment>

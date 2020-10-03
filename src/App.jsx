@@ -11,6 +11,7 @@ import Contato from './views/contato';
 import Post from './views/post';
 import Produto from './views/produto';
 import NotFound from './views/notFound';
+import Podcast from './views/podcast';
 
 //Styles
 import './App.scss';
@@ -29,7 +30,7 @@ function App() {
             component={Blog} 
           />
           <Route 
-            exact path="/loja" 
+            exact path="/store" 
             component={Loja} 
           />
           <Route 
@@ -37,11 +38,11 @@ function App() {
             component={Podcasts} 
           />
           <Route 
-            exact path="/cursos" 
+            exact path="/courses" 
             component={Cursos}
           />
           <Route 
-            exact path="/contato" 
+            exact path="/contact" 
             component={Contato} 
           />
           <Route 
@@ -49,8 +50,12 @@ function App() {
             component={Post} 
           />          
           <Route 
-            exact path="/loja/produto" 
+            exact path="/store/product" 
             component={Produto} 
+          />
+          <Route 
+            exact path="/podcasts/podcast" 
+            component={Podcast} 
           />
           <Route
             path="/error/404"

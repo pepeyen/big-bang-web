@@ -22,12 +22,12 @@ function Navbar(){
         <nav className="navbar">
             <div className="navbar__buttons --space-between">
                 <ul className="navbar__redirectors --links --space-between">
-                    <NavbarLink redirector='início' />
+                    <NavbarLink redirector='home' />
                     <NavbarLink redirector='blog' />
-                    <NavbarLink redirector='loja' />
+                    <NavbarLink redirector='store' />
                     <NavbarLink redirector='podcasts' />
-                    <NavbarLink redirector='cursos' />
-                    <NavbarLink redirector='contato' />
+                    <NavbarLink redirector='courses' />
+                    <NavbarLink redirector='contact' />
                 </ul>
                 <NavbarBrand 
                     logoURL={img_logo}

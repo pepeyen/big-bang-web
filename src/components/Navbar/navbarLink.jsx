@@ -8,7 +8,7 @@ function NavbarLink(props){
     const currentPage = getCurrentPage();
     let redirectorNormalized = props.redirector.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
-    if(redirectorNormalized === 'inicio'){
+    if(redirectorNormalized === 'home'){
         redirectorNormalized = ''
     }
     return(

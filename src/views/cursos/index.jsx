@@ -17,7 +17,7 @@ function Cursos(){
             </header>
             <main>
                 <section className="page">
-                    <p className="page__place-holder">Cursos</p>
+                    <p className="page__place-holder">Courses</p>
                     {postsByType.map((element,index) => {
                         return(
                             <React.Fragment key={index}>

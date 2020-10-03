@@ -37,7 +37,7 @@ function Node(props){
             case 'podcast':
                 return(
                     <Link 
-                        to={`/podcasts/post/?id=${posts[nodeID].ID}`} 
+                        to={`/podcasts/podcast/?id=${posts[nodeID].ID}`} 
                         className="page__banner-content --flex-end-self"
                     >
                         <div className="page__banner-info">
@@ -53,7 +53,7 @@ function Node(props){
             case 'course':
                 return(
                     <Link
-                        to={`/curso/post/?id=${posts[nodeID].ID}`} 
+                        to={`/course/post/?id=${posts[nodeID].ID}`} 
                         className="page__banner-content --flex-end-self"
                     >
                         <div className="page__banner-info">
@@ -69,7 +69,7 @@ function Node(props){
             case 'product':
                 return(
                     <Link 
-                        to={`/loja/produto/?id=${posts[nodeID].ID}`} 
+                        to={`/store/product/?id=${posts[nodeID].ID}`} 
                         className="page__banner-content --flex-end-self"
                     >
                         <p className="page__banner-title">

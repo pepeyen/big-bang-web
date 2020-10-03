@@ -7,7 +7,7 @@ import {products} from '../../services/mockData';
 function FillerProduct(props){
     return(
         <li className="page__filler-product --centralized-text">
-            <Link to={`/loja/produto/?id=${products[props.id].ID}`}>
+            <Link to={`/store/product/?id=${products[props.id].ID}`}>
                 <img
                     className="page__filler-product-image"
                     src={products[props.id].bannerURL}
