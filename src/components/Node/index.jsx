@@ -21,10 +21,10 @@ function Node(props){
                         </p>
                         <div className="page__banner-info">
                             <p className="page__banner-text">
-                                {posts[props.id].info[0]}
+                                {posts[props.id].info.type}
                             </p>
                             <p className="page__banner-text">
-                                {posts[props.id].info[1]}
+                                por {posts[props.id].info.onwerShip}
                             </p>
                         </div>
                     </Link>
@@ -37,7 +37,7 @@ function Node(props){
                     >
                         <div className="page__banner-info">
                             <p className="page__banner-text">
-                                {posts[props.id].info[0]}
+                                {posts[props.id].info.userNickname} #{posts[props.id].info.userId} 
                             </p>
                         </div>
                         <p className="page__banner-title">
@@ -53,7 +53,7 @@ function Node(props){
                     >
                         <div className="page__banner-info">
                             <p className="page__banner-text">
-                                {posts[props.id].info[0]} - {posts[props.id].info[1]}
+                                {posts[props.id].info.type} - {posts[props.id].info.date.day} {posts[props.id].info.date.month}
                             </p>
                         </div>
                         <p className="page__banner-title">
@@ -71,9 +71,7 @@ function Node(props){
                             {posts[props.id].title}
                         </p>
                         <div className="page__banner-info">
-                            <p className="page__banner-text">
-                                {posts[props.id].info[0]}
-                            </p>
+                            <p className="page__banner-text">COMPRE AGORA</p>
                             <img 
                                 className="page__product-foward"
                                 src={img_foward} 
