@@ -4,12 +4,9 @@ import React from 'react';
 import Navbar from '../../components/Navbar';
 
 //Services
-import {posts} from '../../services/mockData';
-import filterByType from '../../services/filterByType';
+import {products} from '../../services/mockData';
 
 function Loja(){
-    const postsByType = filterByType('product',posts);
-
     return(
         <React.Fragment>
             <header>
@@ -18,14 +15,14 @@ function Loja(){
             <main>
                 <section className="page">
                     <p className="page__place-holder">Loja</p>
-                    {postsByType.map(element => {
+                    {products.map((element,index) => {
                         return(
-                            <React.Fragment>
-                                <p className="">{posts[element.ID].title}</p>
+                            <React.Fragment key={index}>
+                                <p className="">{element.title}</p>
                                 
                                 <img 
                                     className=""
-                                    src={posts[element.ID].bannerURL} alt={posts[element.ID].title} 
+                                    src={element.bannerURL} alt={element.title} 
                                 />
                             </React.Fragment>
                         );
