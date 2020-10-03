@@ -11,6 +11,7 @@ import filterByID from '../../services/filterByID';
 
 function Post(){
     const postID = filterByID(getCurrentPageID(),posts);
+    
     if(postID !== -1){
         return(
             <React.Fragment>
@@ -22,7 +23,8 @@ function Post(){
                         <div className="page__post --central">
                             <img 
                                 className="page__post-banner"
-                                src={posts[postID].bannerURL} alt={posts[postID].title} 
+                                src={posts[postID].bannerURL} 
+                                alt={posts[postID].title} 
                             />
                             <p className="page__post-title">{posts[postID].title}</p>
                             <div className="page__post-info">
