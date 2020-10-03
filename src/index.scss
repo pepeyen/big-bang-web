@@ -7,6 +7,14 @@
          url('./assets/fonts/Chloe/Regular/Chloe-Regular.svg#svgChloe-Regular') format('svg'); /* Legacy iOS */
 }
 @font-face {
+    font-family: 'Adamina-Regular';
+    src: url('./assets/fonts/Adamina/Regular/Adamina-Regular.eot'); /* IE9 Compat Modes */
+    src: url('./assets/fonts/Adamina/Regular/Adamina-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./assets/fonts/Adamina/Regular/Adamina-Regular.woff') format('woff'), /* Modern Browsers */
+         url('./assets/fonts/Adamina/Regular/Adamina-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('./assets/fonts/Adamina/Regular/Adamina-Regular.svg#svgAdamina-Regular') format('svg'); /* Legacy iOS */
+}
+@font-face {
     font-family: 'ProximaNova-Regular';
     src: url('./assets/fonts/ProximaNova/Regular/ProximaNova-Regular.eot'); /* IE9 Compat Modes */
     src: url('./assets/fonts/ProximaNova/Regular/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
