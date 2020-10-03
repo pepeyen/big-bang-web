@@ -66,6 +66,9 @@
         &-foward{
             margin: 0 0 0 .7rem;
         }
+        &-play{
+            display: none;
+        }
     }
     &__filler{
         display: flex;
@@ -183,7 +186,46 @@
         display: flex;
         flex-direction: row;
         text-decoration: none;
-        width: 100%;
+        margin: 0 0 2rem 0;
+    }
+    &__type{
+        &-post{
+            width: 100%;
+            & .page__redirector-info{
+                display: flex;
+                flex-direction: column;
+            }
+            & .page__redirector-banner{
+                margin: 0 0 0 auto;
+                width: 10rem;
+                height: 5rem;
+            }
+        }
+        &-product{
+            width: 100%;
+
+            & .--title-info{
+                font-size: 1rem;
+            }
+            & .page__redirector-info{
+                padding: 2rem 0 0 .5rem;
+            }
+            & .page__redirector-banner{
+                margin: 0 0 0 auto;
+                width: 6.3rem;
+                height: 6.3rem;
+            }
+        }
+        &-podcast{
+            width: 100%;
+            & .page__redirector-banner{
+                display: flex;
+                background-size: 8rem 5rem;
+                margin: 0 0 0 auto;
+                width: 20rem;
+                height: 5rem;
+            }
+        }
     }
 }
 @media (min-width: 768px){
@@ -228,10 +270,17 @@
         }
         &__button{
             font-size: 2vh;
-
+            
             &:hover{
                 cursor: pointer;
                 background-color: #7bb3aa;
+            }
+            &-play{
+                display: inline-block;
+                visibility: hidden;
+                margin: auto;
+                width: 10vh;
+                height: 10vh;
             }
         }
         &__filler{
@@ -311,19 +360,80 @@
         }
         &__redirector{
             margin: 0 0 4vh 0;
-            
-            &:hover .--title-info{
-                border-color: #73A8A0;
+        }
+        &__type{
+            &-post{
+                &:hover{
+                    box-shadow: 1.5vh 1.5vh 2.5vh #d9d9d9, 
+                                -1.5vh -1.5vh 3.5vh #ffff;
+                    transition: box-shadow .3s ease-in-out;
+                    -moz-transition: box-shadow .3s ease-in-out;
+                }
+                &:hover .--title-info{
+                    border-color: #73A8A0;
+                }
+                & .page__redirector-info{
+                    display: flex;
+                    flex-direction: column;
+                    padding: 6vh 0 5vh 5vh;
+                }
+                & .page__redirector-banner{
+                    margin: 0 0 0 auto;
+                    width: 30vh;
+                    height: 20vh;
+                }
             }
-            &-info{
-                display: flex;
-                flex-direction: column;
-                padding: 6vh 0 5vh 5vh;
+            &-product{
+                width: 80%;
+
+                &:hover{
+                    box-shadow: 1.5vh 1.5vh 2.5vh #d9d9d9, 
+                                -1.5vh -1.5vh 3.5vh #ffff;
+                    transition: box-shadow .3s ease-in-out;
+                    -moz-transition: box-shadow .3s ease-in-out;
+                }
+                &:hover .--title-info{
+                    border-color: #73A8A0;
+                }
+                & .--title-info{
+                    font-size: 2vh;
+                }
+                & .page__redirector-info{
+                    padding: 6vh 0 0 5vh;
+                }
+                & .page__redirector-banner{
+                    width: 16vh;
+                    height: 16vh;
+                }
             }
-            &-banner{
-                margin: 0 0 0 auto;
-                width: 30vh;
-                height: 20vh;
+            &-podcast{ 
+                &:hover{
+                    box-shadow: 1.5vh 1.5vh 2.5vh #d9d9d9, 
+                                -1.5vh -1.5vh 3.5vh #ffff;
+                    transition: all .3s ease-in-out;
+                    -moz-transition: box-shadow .3s ease-in-out;
+                }
+                &:hover .page__redirector-banner{
+                    opacity: 0.8;
+                }
+                &:hover .page__button-play{
+                    visibility: visible;
+                }
+                &:hover .--title-info{
+                    border-color: #73A8A0;
+                }
+                & .page__redirector-info{
+                    display: flex;
+                    flex-direction: column;
+                    padding: 6vh 0 5vh 5vh;
+                }
+                & .page__redirector-banner{
+                    display: flex;
+                    background-size: 30vh 20vh;
+                    margin: 0 0 0 auto;
+                    width: 30vh;
+                    height: 20vh;
+                }
             }
         }
     }
