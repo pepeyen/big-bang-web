@@ -26,8 +26,8 @@ function Post(){
                             />
                             <p className="page__post-title">{posts[postID].title}</p>
                             <div className="page__post-info">
-                                <span className="page__post-type --grey-text --bottom-thin-borders">{posts[postID].info[0]}</span>
-                                <span className="page__post-onwership --grey-text --bottom-thin-borders">{posts[postID].info[1]}</span>
+                                <span className="page__post-type --grey-text --bottom-thin-borders">{posts[postID].info.type}</span>
+                                <span className="page__post-onwership --grey-text --bottom-thin-borders">por {posts[postID].info.onwerShip}</span>
                             </div>
                             <div className="page__post-article --dark-grey-text">
                                 {posts[postID].article.map(element => {
