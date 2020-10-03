@@ -19,13 +19,23 @@ function Post(){
                 </header>
                 <main>
                     <section className="page">
-                        <img 
-                            className=""
-                            src={posts[postID].bannerURL} alt={posts[postID].title} 
-                        />
-                        <div className="">
-                            <p className="">{posts[postID].title}</p>
-                            <p className="">{posts[postID].info}</p>
+                        <div className="page__post --central">
+                            <img 
+                                className="page__post-banner"
+                                src={posts[postID].bannerURL} alt={posts[postID].title} 
+                            />
+                            <p className="page__post-title">{posts[postID].title}</p>
+                            <div className="page__post-info">
+                                <span className="page__post-type --grey-text --bottom-thin-borders">{posts[postID].info[0]}</span>
+                                <span className="page__post-onwership --grey-text --bottom-thin-borders">{posts[postID].info[1]}</span>
+                            </div>
+                            <div className="page__post-article --dark-grey-text">
+                                {posts[postID].article.map(element => {
+                                    return(
+                                    <p className={`page__post-article-${element.type}`}>{element.text}</p>
+                                    );
+                                })}
+                            </div>
                         </div>
                     </section>
                 </main>
