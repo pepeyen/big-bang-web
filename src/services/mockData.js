@@ -16,6 +16,36 @@ export const posts = [
         bannerURL: require('../assets/images/post/bg-post2.jpg'),
         title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
         info: ["VIAGEM","por Fulano de Tal"],
+        article: [
+            {
+                type: 'title',
+                text: 'Lorem'
+            },
+            {
+                type: 'text',
+                text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius possimus qui commodi architecto in ipsum voluptates sint. Rerum ducimus nihil, explicabo facere quisquam animi enim placeat temporibus rem, eaque nostrum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, eveniet cum itaque dolorem neque dolor esse, modi expedita deleniti eaque fugit voluptate temporibus aliquam nostrum reprehenderit reiciendis dolore officiis nesciunt?"
+            },
+            {
+                type: 'text',
+                text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius possimus qui commodi architecto in ipsum voluptates sint. Rerum ducimus nihil, explicabo facere quisquam animi enim placeat temporibus rem, eaque nostrum!"
+            },
+            {
+                type: 'text',
+                text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius possimus qui commodi architecto in ipsum voluptates sint. Rerum ducimus nihil, explicabo facere quisquam animi enim placeat temporibus rem, eaque nostrum!Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius possimus qui commodi architecto in ipsum voluptates sint. Rerum ducimus nihil, explicabo facere quisquam animi enim placeat temporibus rem, eaque nostrum!"
+            },
+            {
+                type: 'title',
+                text: 'Ipsum'
+            },
+            {
+                type: 'text',
+                text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius possimus qui commodi architecto in ipsum voluptates sint. Rerum ducimus nihil, explicabo facere quisquam animi enim placeat temporibus rem, eaque nostrum!Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius possimus qui commodi architecto in ipsum voluptates sint. Rerum ducimus nihil, explicabo facere quisquam animi enim placeat temporibus rem, eaque nostrum!Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius possimus qui commodi architecto in ipsum voluptates sint. Rerum ducimus nihil, explicabo facere quisquam animi enim placeat temporibus rem, eaque nostrum!"
+            },
+            {
+                type: 'text',
+                text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius possimus qui commodi architecto in ipsum voluptates sint. Rerum ducimus nihil, explicabo facere quisquam animi enim placeat temporibus rem, eaque nostrum!Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius possimus qui commodi architecto in ipsum voluptates sint. Rerum ducimus nihil, explicabo facere quisquam animi enim placeat temporibus rem, eaque nostrum!Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius possimus qui commodi architecto in ipsum voluptates sint. Rerum ducimus nihil, explicabo facere quisquam animi enim placeat temporibus rem, eaque nostrum!Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius possimus qui commodi architecto in ipsum voluptates sint. Rerum ducimus nihil, explicabo facere quisquam animi enim placeat temporibus rem, eaque nostrum!Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius possimus qui commodi architecto in ipsum voluptates sint. Rerum ducimus nihil, explicabo facere quisquam animi enim placeat temporibus rem, eaque nostrum!"
+            }
+        ],
         ID: 681
     },
     {
