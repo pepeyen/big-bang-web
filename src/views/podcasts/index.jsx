@@ -18,9 +18,9 @@ function Podcasts(){
             <main>
                 <section className="page">
                     <p className="page__place-holder">Podcasts</p>
-                    {postsByType.map(element => {
+                    {postsByType.map((element,index) => {
                         return(
-                            <React.Fragment>
+                            <React.Fragment key={index}>
                                 <p className="">{posts[element.ID].title}</p>
                                 <p className="">{posts[element.ID].info.userNickname} #{posts[element.ID].info.userId}</p>
                                 <img 

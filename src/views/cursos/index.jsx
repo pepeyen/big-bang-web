@@ -18,9 +18,9 @@ function Cursos(){
             <main>
                 <section className="page">
                     <p className="page__place-holder">Cursos</p>
-                    {postsByType.map(element => {
+                    {postsByType.map((element,index) => {
                         return(
-                            <React.Fragment>
+                            <React.Fragment key={index}>
                                 <p className="">{posts[element.ID].title}</p>
                                 <p className="">{posts[element.ID].info.type} - {posts[element.ID].info.date.day} {posts[element.ID].info.date.month}</p>
                                 <img 

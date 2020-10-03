@@ -18,9 +18,9 @@ function Blog(){
             <main>
                 <section className="page">
                     <p className="page__place-holder">Blog</p>
-                    {postsByType.map(element => {
+                    {postsByType.map((element,index) => {
                         return(
-                            <React.Fragment>
+                            <React.Fragment key={index}>
                                 <p className="">{posts[element.ID].title}</p>
                                 <p className="">{posts[element.ID].info.type}</p>
                                 <p className="">{posts[element.ID].info.onwerShip}</p>
