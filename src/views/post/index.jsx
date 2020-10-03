@@ -30,9 +30,14 @@ function Post(){
                                 <span className="page__post-onwership --grey-text --bottom-thin-borders">por {posts[postID].info.onwerShip}</span>
                             </div>
                             <div className="page__post-article --dark-grey-text">
-                                {posts[postID].article.map(element => {
+                                {posts[postID].article.map((element,index) => {
                                     return(
-                                    <p className={`page__post-article-${element.type}`}>{element.text}</p>
+                                        <p 
+                                            className={`page__post-article-${element.type}`}
+                                            key={index}
+                                        >
+                                            {element.text}
+                                        </p>
                                     );
                                 })}
                             </div>
