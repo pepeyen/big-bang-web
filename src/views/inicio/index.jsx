@@ -34,30 +34,26 @@ function Inicio(){
                             <Node
                                 size="big"
                                 position="left" 
-                                type="post"
                                 theme="light"
-                                id={1}
+                                ID={681}
                             />
                             <Node 
                                 size="small"
                                 position="top-right"
-                                type="podcast"
                                 theme="light"
-                                id={0}
+                                ID={11}
                             />
                             <Node 
                                 size="small"
                                 position="bottom-halfed-left"
-                                type="course"
                                 theme="light"
-                                id={3}
+                                ID={12023452}
                             />
                             <Node 
                                 size="small"
                                 position="bottom-halfed-right"
-                                type="product"
                                 theme="light"
-                                id={2} 
+                                ID={404} 
                             />
                         </Cluster>
                         <Filler

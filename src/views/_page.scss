@@ -1,3 +1,6 @@
+//Mods
+@import './mods';
+
 .page{
     display: flex;
     align-items: center;
@@ -176,6 +179,12 @@
             margin: 0 0 0 2rem;
         }
     }
+    &__redirector{
+        display: flex;
+        flex-direction: row;
+        text-decoration: none;
+        width: 100%;
+    }
 }
 @media (min-width: 768px){
     .page{
@@ -298,6 +307,23 @@
 
             &-info{
                 margin: 0 0 0 4vh;
+            }
+        }
+        &__redirector{
+            margin: 0 0 4vh 0;
+            
+            &:hover .--title-info{
+                border-color: #73A8A0;
+            }
+            &-info{
+                display: flex;
+                flex-direction: column;
+                padding: 6vh 0 5vh 5vh;
+            }
+            &-banner{
+                margin: 0 0 0 auto;
+                width: 30vh;
+                height: 20vh;
             }
         }
     }

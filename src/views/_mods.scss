@@ -156,6 +156,15 @@
 .--spaced-top{
     margin: 6rem 0 0 0;
 }
+.--type-info{
+    font-family: 'ProximaNova-SemiBold';
+}
+.--title-info{
+    font-family: 'ProximaNova-Bold';
+}
+.--user-info{
+    font-family: 'ProximaNova-Regular';
+}
 @media (min-width: 801px){
     .--central{
         width: 65%;
@@ -265,5 +274,17 @@
     }
     .--spaced-top{
         margin: 15vh 0 0 0;
+    }
+    .--type-info{
+        font-size: 1.3vh;
+        margin: 0 0 1vh 0;
+    }
+    .--title-info{
+        font-size: 2.7vh;
+        border-bottom: .4vh solid transparent;
+    }
+    .--user-info{
+        font-size: 1.4vh;
+        margin: 1vh 0 0 0
     }
 }

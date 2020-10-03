@@ -4,27 +4,32 @@ import {Link} from 'react-router-dom';
 //Mock up data
 import {posts} from '../../services/mockData';
 
+//Services
+import filterByID from '../../services/filterByID';
+
 //Images
 import img_foward from '../../assets/images/button/button-foward.svg';
 
 function Node(props){
+    const nodeID = filterByID(props.ID,posts);
+
     const setNodeChildren = () => {
-        switch (props.type) {
+        switch (posts[nodeID].type) {
             case 'post':
                 return(
                     <Link 
-                        to={`/blog/post/?id=${posts[props.id].ID}`}
+                        to={`/blog/post/?id=${posts[nodeID].ID}`}
                         className="page__banner-content --flex-end-self"
                     >
                         <p className="page__banner-title">
-                            {posts[props.id].title}
+                            {posts[nodeID].title}
                         </p>
                         <div className="page__banner-info">
                             <p className="page__banner-text">
-                                {posts[props.id].info.type}
+                                {posts[nodeID].info.type}
                             </p>
                             <p className="page__banner-text">
-                                por {posts[props.id].info.onwerShip}
+                                por {posts[nodeID].info.onwerShip}
                             </p>
                         </div>
                     </Link>
@@ -32,43 +37,43 @@ function Node(props){
             case 'podcast':
                 return(
                     <Link 
-                        to={`/podcasts/post/?id=${posts[props.id].ID}`} 
+                        to={`/podcasts/post/?id=${posts[nodeID].ID}`} 
                         className="page__banner-content --flex-end-self"
                     >
                         <div className="page__banner-info">
                             <p className="page__banner-text">
-                                {posts[props.id].info.userNickname} #{posts[props.id].info.userId} 
+                                {posts[nodeID].info.userNickname} #{posts[nodeID].info.userId} 
                             </p>
                         </div>
                         <p className="page__banner-title">
-                            {posts[props.id].title}
+                            {posts[nodeID].title}
                         </p>
                     </Link>
                 );
             case 'course':
                 return(
                     <Link
-                        to={`/curso/post/?id=${posts[props.id].ID}`} 
+                        to={`/curso/post/?id=${posts[nodeID].ID}`} 
                         className="page__banner-content --flex-end-self"
                     >
                         <div className="page__banner-info">
                             <p className="page__banner-text">
-                                {posts[props.id].info.type} - {posts[props.id].info.date.day} {posts[props.id].info.date.month}
+                                {posts[nodeID].info.type} - {posts[nodeID].info.date.day} {posts[nodeID].info.date.month}
                             </p>
                         </div>
                         <p className="page__banner-title">
-                            {posts[props.id].title}
+                            {posts[nodeID].title}
                         </p>
                     </Link>
                 );
             case 'product':
                 return(
                     <Link 
-                        to={`/loja/produto/?id=${posts[props.id].ID}`} 
+                        to={`/loja/produto/?id=${posts[nodeID].ID}`} 
                         className="page__banner-content --flex-end-self"
                     >
                         <p className="page__banner-title">
-                            {posts[props.id].title}
+                            {posts[nodeID].title}
                         </p>
                         <div className="page__banner-info">
                             <p className="page__banner-text">COMPRE AGORA</p>
@@ -87,11 +92,11 @@ function Node(props){
         }
     }
     const nodeChildren = setNodeChildren(); 
-    
+
     return(
         <li 
-            className={`page__node --${props.size}-${props.position} --${props.type} --${props.theme}-text`}
-            style={{backgroundImage: `url(${posts[props.id].bannerURL})`}}
+            className={`page__node --${props.size}-${props.position} --${posts[nodeID].type} --${props.theme}-text`}
+            style={{backgroundImage: `url(${posts[nodeID].bannerURL})`}}
         >
             {nodeChildren}      
         </li>
