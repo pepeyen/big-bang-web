@@ -41,6 +41,7 @@ export const posts = [
     {
         type: 'podcast',
         bannerURL: require('../assets/images/post/bg-post3.jpg'),
+        audioURL: require('../assets/podcasts/podcast-theme.mp3'),
         title: "Nome do episódio do podcast lorem ipsum dolor sit amet consectetur eli...",
         info: {
             userNickname: "Namahcast", 
