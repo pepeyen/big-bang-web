@@ -15,7 +15,6 @@ import NotFound from './views/notFound';
 //Styles
 import './App.scss';
 import './views/_page.scss';
-import './views/_mods.scss';
 
 function App() {
   return (
