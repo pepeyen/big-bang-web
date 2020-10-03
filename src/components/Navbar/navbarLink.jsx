@@ -11,12 +11,11 @@ function NavbarLink(props){
     if(redirectorNormalized === 'inicio'){
         redirectorNormalized = ''
     }
-
     return(
         <li className="navbar__redirector">
             <Link
                 className={currentPage === redirectorNormalized ? '--active' : ''} 
-                to={redirectorNormalized}
+                to={`/${redirectorNormalized}`}
             >
                 {props.redirector.toUpperCase()}
             </Link>
