@@ -232,6 +232,11 @@
         width: 105%;
         height: 15rem;
         margin: -15rem 0 0 0;
+        
+        & .player{
+            align-self: flex-end;
+            margin: auto;
+        }
     }
 }
 @media (min-width: 768px){
@@ -446,6 +451,10 @@
             height: 70vh;
             width: 100%;
             margin: -70vh 0 0 0;
+
+            & .player{
+                margin: 0 auto 10vh auto;
+            }
         }
     }
 }
