@@ -7,7 +7,7 @@ import Navbar from '../../components/Navbar';
 import {posts} from '../../services/mockData';
 import filterByType from '../../services/filterByType';
 
-function Cursos(){
+function Courses(){
     const postsByType = filterByType('course',posts);
 
     return(
@@ -36,4 +36,4 @@ function Cursos(){
     );
 }
 
-export default Cursos;
+export default Courses;

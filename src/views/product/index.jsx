@@ -10,7 +10,7 @@ import {products} from '../../services/mockData';
 import {getCurrentPageID} from '../../services/getCurrentPage';
 import filterByID from '../../services/filterByID';
 
-function Produto(){
+function Product(){
     const productID = filterByID(getCurrentPageID(),products);
     if(productID !== -1){
         return(
@@ -39,4 +39,4 @@ function Produto(){
     }else return <Redirect to="/error/404" />
 }
 
-export default Produto;
+export default Product;

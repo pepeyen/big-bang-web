@@ -11,7 +11,7 @@ import RedirectorBanner from '../../components/Redirector/redirectorBanner';
 //Services
 import {products} from '../../services/mockData';
 
-function Loja(){
+function Store(){
     return(
         <React.Fragment>
             <header>
@@ -56,4 +56,4 @@ function Loja(){
     );
 }
 
-export default Loja;
+export default Store;

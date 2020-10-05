@@ -2,15 +2,15 @@ import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 //Views
-import Inicio from './views/inicio';
+import Home from './views/home';
 import Blog from './views/blog';
-import Loja from './views/loja';
+import Store from './views/store';
 import Podcasts from './views/podcasts';
-import Cursos from './views/cursos';
-import Contato from './views/contato';
+import Courses from './views/courses';
+import Contact from './views/contact';
 import Post from './views/post';
-import Produto from './views/produto';
-import NotFound from './views/notFound';
+import Product from './views/product';
+import NotFound from './views/errors/404';
 import Podcast from './views/podcast';
 
 //Styles
@@ -23,7 +23,7 @@ function App() {
       <Switch>
           <Route 
             exact path="/" 
-            component={Inicio} 
+            component={Home} 
           />
           <Route 
             exact path="/blog" 
@@ -31,7 +31,7 @@ function App() {
           />
           <Route 
             exact path="/store" 
-            component={Loja} 
+            component={Store} 
           />
           <Route 
             exact path="/podcasts" 
@@ -39,11 +39,11 @@ function App() {
           />
           <Route 
             exact path="/courses" 
-            component={Cursos}
+            component={Courses}
           />
           <Route 
             exact path="/contact" 
-            component={Contato} 
+            component={Contact} 
           />
           <Route 
             exact path="/blog/post" 
@@ -51,7 +51,7 @@ function App() {
           />          
           <Route 
             exact path="/store/product" 
-            component={Produto} 
+            component={Product} 
           />
           <Route 
             exact path="/podcasts/podcast" 

@@ -3,7 +3,7 @@ import React from 'react';
 //Component
 import Navbar from '../../components/Navbar';
 
-function NotFound(){
+function Contact(){
     return(
         <React.Fragment>
             <header>
@@ -11,11 +11,11 @@ function NotFound(){
             </header>
             <main>
                 <section className="page">
-                    <p className="page__place-holder">404</p>
+                    <p className="page__place-holder">Contact</p>
                 </section>
             </main>
         </React.Fragment>
     );
 }
 
-export default NotFound;
+export default Contact;

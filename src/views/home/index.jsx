@@ -13,7 +13,7 @@ import Filler from '../../components/Filler';
 import FillerProduct from '../../components/FillerProduct';
 import Post from '../../components/Post';
 
-function Inicio(){
+function Home(){
     return(
         <React.Fragment>
             <header>
@@ -122,4 +122,4 @@ function Inicio(){
     );
 }
 
-export default Inicio;
+export default Home;
