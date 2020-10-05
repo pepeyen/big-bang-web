@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/big-bang-web/static/css/main.7913e0c1.chunk.css",
+    "main.js": "/big-bang-web/static/js/main.90d31850.chunk.js",
+    "main.js.map": "/big-bang-web/static/js/main.90d31850.chunk.js.map",
+    "runtime-main.js": "/big-bang-web/static/js/runtime-main.6ba7aec4.js",
+    "runtime-main.js.map": "/big-bang-web/static/js/runtime-main.6ba7aec4.js.map",
+    "static/js/2.99434aab.chunk.js": "/big-bang-web/static/js/2.99434aab.chunk.js",
+    "static/js/2.99434aab.chunk.js.map": "/big-bang-web/static/js/2.99434aab.chunk.js.map",
+    "index.html": "/big-bang-web/index.html",
+    "precache-manifest.00843fd7d9b86171b9850ac2ba3a3ff4.js": "/big-bang-web/precache-manifest.00843fd7d9b86171b9850ac2ba3a3ff4.js",
+    "service-worker.js": "/big-bang-web/service-worker.js",
+    "static/css/main.7913e0c1.chunk.css.map": "/big-bang-web/static/css/main.7913e0c1.chunk.css.map",
+    "static/js/2.99434aab.chunk.js.LICENSE.txt": "/big-bang-web/static/js/2.99434aab.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/big-bang-web/static/media/ProximaNova-Semibold.fc0c9d86.woff",
+    "static/media/bg-post1.jpg": "/big-bang-web/static/media/bg-post1.2896ed4b.jpg",
+    "static/media/bg-post2.jpg": "/big-bang-web/static/media/bg-post2.4393fc1b.jpg",
+    "static/media/bg-post3.jpg": "/big-bang-web/static/media/bg-post3.12132c39.jpg",
+    "static/media/bg-post4.jpg": "/big-bang-web/static/media/bg-post4.c71c673a.jpg",
+    "static/media/bg-product1.jpg": "/big-bang-web/static/media/bg-product1.bcf56719.jpg",
+    "static/media/button-foward.svg": "/big-bang-web/static/media/button-foward.5326b52a.svg",
+    "static/media/button-play.svg": "/big-bang-web/static/media/button-play.dc5cbf49.svg",
+    "static/media/icon-cart.svg": "/big-bang-web/static/media/icon-cart.6c0f039b.svg",
+    "static/media/icon-logout.svg": "/big-bang-web/static/media/icon-logout.970802d2.svg",
+    "static/media/icon-orders.svg": "/big-bang-web/static/media/icon-orders.df334acb.svg",
+    "static/media/icon-profile.svg": "/big-bang-web/static/media/icon-profile.3ed6519a.svg",
+    "static/media/icon-search.svg": "/big-bang-web/static/media/icon-search.75a92584.svg",
+    "static/media/icon-wishes.svg": "/big-bang-web/static/media/icon-wishes.dc611088.svg",
+    "static/media/logo.svg": "/big-bang-web/static/media/logo.20e860b6.svg",
+    "static/media/podcast-theme.mp3": "/big-bang-web/static/media/podcast-theme.2b5ca432.mp3",
+    "static/media/product1.jpg": "/big-bang-web/static/media/product1.ca1f830f.jpg",
+    "static/media/product2.jpg": "/big-bang-web/static/media/product2.bc0876fb.jpg",
+    "static/media/product3.jpg": "/big-bang-web/static/media/product3.01eb1f83.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6ba7aec4.js",
+    "static/js/2.99434aab.chunk.js",
+    "static/css/main.7913e0c1.chunk.css",
+    "static/js/main.90d31850.chunk.js"
+  ]
+}
