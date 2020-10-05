@@ -1,0 +1,33 @@
+.player{
+    background-color: transparent;
+    align-self: flex-end;
+    margin: auto;
+    border-radius: 50%;
+    border-color: #ffffff;
+    width: 5rem;
+    height: 5rem;
+    outline: none;
+    padding: 0;
+
+    &__background{
+        display: block;
+        margin: auto;
+        width: 2.5rem;
+        height: 3rem;
+    }
+}
+@media (min-width: 801px){
+    .player{
+        width: 15vh;
+        height: 15vh;
+        margin: 0 auto 10vh auto;
+    
+        &:hover{
+            cursor: pointer;
+        }
+        &__background{
+            width: 8vh;
+            height: 10vh;
+        }
+    }
+}
