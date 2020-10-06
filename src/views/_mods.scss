@@ -175,14 +175,17 @@
     font-size: 1rem;
     margin: .5rem 0 0 0;
 }
+.--paused{
+    border: .1rem solid #c4c4c4;
+    transition: border ease-in .1s;
+}
 .--playing{
     -webkit-animation: pulse 2s infinite;
     -moz-animation: pulse 2s infinite;
     -o-animation: pulse 2s infinite;
     animation: pulse 2s infinite;
-    transition: all ease-in-out .1s;
-    border-color: #73A8A0 !important;
-    border-width: .3rem;
+    border: .4rem solid #73A8A0;
+    transition: all ease-in .1s;
 }
 .--fade-up{
     background: linear-gradient(0deg, rgba(0,0,0,0.65) 50%, rgba(255,255,255,0) 100%);
@@ -369,8 +372,11 @@
         font-size: 2vh;
         margin: 1vh 0 0 0;
     }
+    .--paused{
+        border: .3vh solid #c4c4c4;
+    }
     .--playing{
-        border-width: 1vh;
+        border: 1vh solid #73A8A0;
     }
     .--fade-up{
         background: linear-gradient(0deg, rgba(0,0,0,0.65) 20%, rgba(255,255,255,0) 100%);

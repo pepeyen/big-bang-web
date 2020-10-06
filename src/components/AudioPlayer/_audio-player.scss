@@ -1,26 +1,33 @@
 .player{
-    background-color: transparent;
     border-radius: 50%;
     border-color: #ffffff;
-    width: 5rem;
-    height: 5rem;
-    outline: none;
     padding: 0;
+    transition: border-width ease-in .1s;
 
-    &__background{
+    &__button{
+        background-color: transparent;
         display: block;
+        border: none;
+        outline: none;
         margin: auto;
+        padding: .1rem 0 0 .1rem;
+        width: 5rem;
+        height: 5rem;
+    }
+    &__background{
         width: 2.5rem;
         height: 3rem;
     }
 }
 @media (min-width: 801px){
     .player{
-        width: 15vh;
-        height: 15vh;
-    
-        &:hover{
-            cursor: pointer;
+        &__button{
+            width: 15vh;
+            height: 15vh;
+            padding: 0 0 0 .8vh;
+            &:hover{
+                cursor: pointer;
+            }
         }
         &__background{
             width: 8vh;
