@@ -1,6 +1,6 @@
 import React from 'react';
 
-function VolumePlayerSlider(props){
+function AudioPlayerSlider(props){
     return(
         <div className={`player --${props.isAudioPlaying ? 'playing' : 'paused'}`}>
             {props.children}
@@ -8,4 +8,4 @@ function VolumePlayerSlider(props){
     );
 }
 
-export default VolumePlayerSlider;
+export default AudioPlayerSlider;
