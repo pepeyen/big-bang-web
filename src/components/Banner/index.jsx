@@ -1,20 +1,25 @@
 import React from 'react';
 
 //Mock up data
-import {banners} from '../../services/mockData';
+import {API} from '../../services/mockData';
+
+//Services
+import {filterByID} from '../../services/filters';
 
 function Banner(props){
+    const banner = filterByID(props.ID,API);
+
     return(
         <div 
             className="page__banner --thin-borders"
-            style={{backgroundImage: `url(${banners[props.id].bannerURL})`}}
+            style={{backgroundImage: `url(${banner.bannerURL})`}}
         >
             <div className="page__banner-headline --flex-end-self">
                 <p className="page__banner-title --centralized-text --dark-text">
-                    {banners[props.id].title}
+                    {banner.title}
                 </p>
                 <p className="page__banner-text --centralized-text --grey-text">
-                    {banners[props.id].info}
+                    {banner.info}
                 </p>
                 {props.children}
             </div>

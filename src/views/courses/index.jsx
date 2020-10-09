@@ -4,11 +4,11 @@ import React from 'react';
 import Navbar from '../../components/Navbar';
 
 //Services
-import {posts} from '../../services/mockData';
+import {API} from '../../services/mockData';
 import {filterByType} from '../../services/filters';
 
 function Courses(){
-    const postsByType = filterByType('course',posts);
+    const posts = filterByType('course',API);
 
     return(
         <React.Fragment>
@@ -18,14 +18,14 @@ function Courses(){
             <main>
                 <section className="page">
                     <p className="page__place-holder">Courses</p>
-                    {postsByType.map((element,index) => {
+                    {posts.map((element,index) => {
                         return(
                             <React.Fragment key={index}>
-                                <p className="">{posts[element.ID].title}</p>
-                                <p className="">{posts[element.ID].info.type} - {posts[element.ID].info.date.day} {posts[element.ID].info.date.month}</p>
+                                <p className="">{element.title}</p>
+                                <p className="">{element.info.type} - {element.info.date.day} {element.info.date.month}</p>
                                 <img 
                                     className=""
-                                    src={posts[element.ID].bannerURL} alt={posts[element.ID].title} 
+                                    src={element.bannerURL} alt={element.title} 
                                 />
                             </React.Fragment>
                         );

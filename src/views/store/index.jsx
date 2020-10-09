@@ -9,9 +9,12 @@ import RedirectorText from '../../components/Redirector/redirectorText';
 import RedirectorBanner from '../../components/Redirector/redirectorBanner';
 
 //Services
-import {products} from '../../services/mockData';
+import {API} from '../../services/mockData';
+import {filterByType} from '../../services/filters';
 
 function Store(){
+    const products = filterByType('product',API);
+    
     return(
         <React.Fragment>
             <header>
@@ -25,7 +28,7 @@ function Store(){
                             return(
                                 <Redirector 
                                     key={index}
-                                    redirectorType='product'
+                                    redirectorType={element.type}
                                     redirectorID={element.ID}
                                 >
                                     <RedirectorInfo>

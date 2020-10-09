@@ -1,8 +1,5 @@
 import React from 'react';
 
-//Mock up data
-import {products} from '../../services/mockData';
-
 //Component
 import Navbar from '../../components/Navbar';
 import Banner from '../../components/Banner';
@@ -22,7 +19,7 @@ function Home(){
             <main>
                 <section className="page">
                     <Post>
-                        <Banner id={0}>
+                        <Banner ID={552}>
                             <Button 
                                 text="LOREM IPSUM" 
                                 root="banner"
@@ -60,30 +57,8 @@ function Home(){
                             title="recomendam"
                             text="nossos especialistas"
                         >
-                            {
-                                products.map((element,index) => {
-                                    if(index !== 3){
-                                        return(
-                                            <FillerProduct 
-                                                key={index}
-                                                id={index} 
-                                            />
-                                        );
-                                    }else return undefined
-                                })
-                            }
-                            {
-                                products.map((element,index) => {
-                                    if(index !== 3){
-                                        return(
-                                            <FillerProduct 
-                                                key={index}
-                                                id={index} 
-                                            />
-                                        )
-                                    }else return undefined
-                                })
-                            }
+                            <FillerProduct productCount={3} />
+                            <FillerProduct productCount={3} />
                         </Filler>
                     </Post>
                     <Post title="Blog">

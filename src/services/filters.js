@@ -1,22 +1,21 @@
 export const filterByType = (type,iteratable) => {
     let filteredType = [];
-    
-    iteratable.forEach((element,index) => {
+
+    iteratable.forEach(element => {
         if(element.type === type){
-            filteredType.push({ID: index});
+            filteredType.push(element);
         }
     });
-
     return filteredType;
-}
+};
 export const filterByID = (ID,iteratable) => {
     let filteredID = -1;
 
-    iteratable.forEach((element,index) => {
+    iteratable.forEach(element => {
         if(element.ID === parseInt(ID)){
-            filteredID = index;
+            filteredID = element;
         }
     });
 
     return filteredID;
-}
+};
