@@ -4,15 +4,15 @@ import {Redirect} from 'react-router-dom';
 //Components
 import Navbar from '../../components/Navbar';
 
-
 //Services
-import {products} from '../../services/mockData';
+import {API} from '../../services/mockData';
 import {getCurrentPageID} from '../../services/pageInfo';
 import {filterByID} from '../../services/filters';
 
 function Product(){
-    const productID = filterByID(getCurrentPageID(),products);
-    if(productID !== -1){
+    const products = filterByID(getCurrentPageID(),API);
+
+    if(products.length !== 0){
         return(
             <React.Fragment>
                 <header>
@@ -23,13 +23,13 @@ function Product(){
                         <div className="page__product">
                             <img 
                                 className="page__product-image"
-                                src={products[productID].bannerURL} 
-                                alt={products[productID].title} 
+                                src={products.bannerURL} 
+                                alt={products.title} 
                             />
                             <div className="page__product-info">
-                                <p className="page__filler-product-name">{products[productID].title}</p>
-                                <p className="page__filler-product-info">{products[productID].info}</p>
-                                <p className="page__filler-product-price">R$ {products[productID].price.toFixed(2)}</p>
+                                <p className="page__filler-product-name">{products.title}</p>
+                                <p className="page__filler-product-info">{products.info}</p>
+                                <p className="page__filler-product-price">R$ {products.price.toFixed(2)}</p>
                             </div>
                         </div>
                     </section>

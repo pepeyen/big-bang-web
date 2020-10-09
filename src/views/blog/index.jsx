@@ -9,11 +9,11 @@ import RedirectorText from '../../components/Redirector/redirectorText';
 import RedirectorBanner from '../../components/Redirector/redirectorBanner';
 
 //Services
-import {posts} from '../../services/mockData';
+import {API} from '../../services/mockData';
 import {filterByType} from '../../services/filters';
 
 function Blog(){
-    const postsByType = filterByType('post',posts);
+    const posts = filterByType('post',API);
 
     return(
         <React.Fragment>
@@ -24,37 +24,36 @@ function Blog(){
                 <section className="page">
                     <p className="page__place-holder">Blog</p>
                     <Post>
-                        {postsByType.map((element,index) => {
+                        {posts.map((element,index) => {
                             return(
                                 <Redirector 
                                     key={index}
-                                    redirectorType={posts[element.ID].type}
-                                    redirectorID={posts[element.ID].ID}
-                                    
+                                    redirectorType={element.type}
+                                    redirectorID={element.ID}    
                                 >
                                     <RedirectorInfo>
                                         <RedirectorText 
                                             infoType="type"
                                             color="dark"
                                         >
-                                            {posts[element.ID].info.type}
+                                            {element.info.type}
                                         </RedirectorText>
                                         <RedirectorText 
                                             infoType="title"
                                             color="dark"
                                         >
-                                            {posts[element.ID].title}
+                                            {element.title}
                                         </RedirectorText>
                                         <RedirectorText 
                                             infoType="user"
                                             color="grey"
                                         >
-                                            {posts[element.ID].info.onwerShip}
+                                            {element.info.onwerShip}
                                         </RedirectorText>
                                     </RedirectorInfo>
                                     <RedirectorBanner
-                                        url={posts[element.ID].bannerURL}
-                                        alt={posts[element.ID].title} 
+                                        url={element.bannerURL}
+                                        alt={element.title} 
                                     />
                                 </Redirector>
                             );

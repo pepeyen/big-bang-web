@@ -5,14 +5,14 @@ import {Redirect} from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 
 //Services
-import {posts} from '../../services/mockData';
+import {API} from '../../services/mockData';
 import {getCurrentPageID} from '../../services/pageInfo';
 import {filterByID} from '../../services/filters';
 
 function Post(){
-    const postID = filterByID(getCurrentPageID(),posts);
+    const posts = filterByID(getCurrentPageID(),API);
     
-    if(postID !== -1){
+    if(posts.length !== 0){
         return(
             <React.Fragment>
                 <header>
@@ -23,16 +23,16 @@ function Post(){
                         <div className="page__post --central">
                             <img 
                                 className="page__post-banner"
-                                src={posts[postID].bannerURL} 
-                                alt={posts[postID].title} 
+                                src={posts.bannerURL} 
+                                alt={posts.title} 
                             />
-                            <p className="page__post-title">{posts[postID].title}</p>
+                            <p className="page__post-title">{posts.title}</p>
                             <div className="page__post-info">
-                                <span className="page__post-type --grey-text --bottom-thin-borders">{posts[postID].info.type}</span>
-                                <span className="page__post-onwership --grey-text --bottom-thin-borders">por {posts[postID].info.onwerShip}</span>
+                                <span className="page__post-type --grey-text --bottom-thin-borders">{posts.info.type}</span>
+                                <span className="page__post-onwership --grey-text --bottom-thin-borders">por {posts.info.onwerShip}</span>
                             </div>
                             <div className="page__post-article --dark-grey-text">
-                                {posts[postID].article.map((element,index) => {
+                                {posts.article.map((element,index) => {
                                     return(
                                         <p 
                                             className={`page__post-article-${element.type}`}
