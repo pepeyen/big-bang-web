@@ -7,8 +7,8 @@ import AudioPlayer from '../../components/AudioPlayer';
 
 //Services
 import {posts} from '../../services/mockData';
-import {getCurrentPageID} from '../../services/getCurrentPage';
-import filterByID from '../../services/filterByID';
+import {getCurrentPageID} from '../../services/pageInfo';
+import {filterByID} from '../../services/filters';
 
 function Podcast(){
     const podcastID = filterByID(getCurrentPageID(),posts);

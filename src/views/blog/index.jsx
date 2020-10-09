@@ -10,7 +10,7 @@ import RedirectorBanner from '../../components/Redirector/redirectorBanner';
 
 //Services
 import {posts} from '../../services/mockData';
-import filterByType from '../../services/filterByType';
+import {filterByType} from '../../services/filters';
 
 function Blog(){
     const postsByType = filterByType('post',posts);

@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import {posts} from '../../services/mockData';
 
 //Services
-import filterByID from '../../services/filterByID';
+import {filterByID} from '../../services/filters';
 
 //Images
 import img_foward from '../../assets/images/button/button-foward.svg';

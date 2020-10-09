@@ -7,8 +7,8 @@ import Navbar from '../../components/Navbar';
 
 //Services
 import {products} from '../../services/mockData';
-import {getCurrentPageID} from '../../services/getCurrentPage';
-import filterByID from '../../services/filterByID';
+import {getCurrentPageID} from '../../services/pageInfo';
+import {filterByID} from '../../services/filters';
 
 function Product(){
     const productID = filterByID(getCurrentPageID(),products);

@@ -5,7 +5,7 @@ import Navbar from '../../components/Navbar';
 
 //Services
 import {posts} from '../../services/mockData';
-import filterByType from '../../services/filterByType';
+import {filterByType} from '../../services/filters';
 
 function Courses(){
     const postsByType = filterByType('course',posts);

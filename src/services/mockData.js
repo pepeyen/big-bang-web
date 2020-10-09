@@ -1,4 +1,4 @@
-import filterByID from '../services/filterByID';
+import {filterByID} from '../services/filters';
 
 export const banners = [
     {
