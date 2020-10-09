@@ -2,22 +2,36 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 //Mock up data
-import {products} from '../../services/mockData';
+import {API} from '../../services/mockData';
+
+//Services
+import {filterByType} from '../../services/filters';
 
 function FillerProduct(props){
+    const products = filterByType('product',API);
+    
     return(
-        <li className="page__filler-product --centralized-text">
-            <Link to={`/store/product/?id=${products[props.id].ID}`}>
-                <img
-                    className="page__filler-product-image"
-                    src={products[props.id].bannerURL}
-                    alt="Produto"
-                />
-                <span className="page__filler-product-name --dark-text">{products[props.id].title}</span>
-                <p className="page__filler-product-info --grey-text">{products[props.id].info === '' ? '\u00A0' : products[props.id].info}</p>
-                <span className="page__filler-product-price --dark-text">R$ {products[props.id].price.toFixed(2)}</span>
-            </Link>
-        </li>
+        products.map((element,index) => {
+            if(index < props.productCount){
+                return(
+                    <li 
+                        key={index}
+                        className="page__filler-product --centralized-text"
+                    >
+                        <Link to={`/store/product/?id=${element.ID}`}>
+                            <img
+                                className="page__filler-product-image"
+                                src={element.bannerURL}
+                                alt="Produto"
+                            />
+                            <span className="page__filler-product-name --dark-text">{element.title}</span>
+                            <p className="page__filler-product-info --grey-text">{element.info === '' ? '\u00A0' : element.info}</p>
+                            <span className="page__filler-product-price --dark-text">R$ {element.price.toFixed(2)}</span>
+                        </Link>
+                    </li>
+                );
+            }else return undefined;
+        })
     );
 }
 
