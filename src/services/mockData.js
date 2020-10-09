@@ -1,14 +1,13 @@
-import {filterByID} from '../services/filters';
-
-export const banners = [
+export const API = [
     {
+        type: 'banner',
         bannerURL: require('../assets/images/post/bg-post1.jpg'),
         title: "Lorem ipsum dolor sit amet",
-        info: "Lorem ipsum dolor sit amet"
-    }
-];
-export const products = [
+        info: "Lorem ipsum dolor sit amet",
+        ID: 552
+    },
     {
+        type: 'product',
         bannerURL: require('../assets/images/product/product1.jpg'),
         title: 'Livro Acenda a Sua Luz',
         info: 'Carol Rache',
@@ -16,6 +15,7 @@ export const products = [
         ID: 39
     },
     {
+        type: 'product',
         bannerURL: require('../assets/images/product/product2.jpg'),
         title: 'Camiseta Solidária',
         info: 'Tamanho único',
@@ -23,6 +23,7 @@ export const products = [
         ID: 62
     },
     {
+        type: 'product',
         bannerURL: require('../assets/images/product/product3.jpg'),
         title: 'Tapete Viagem Pássaro',
         info: '',
@@ -30,14 +31,13 @@ export const products = [
         ID: 72
     },
     {
+        type: 'product',
         bannerURL: require('../assets/images/product/bg-product1.jpg'), 
         title: "Condicionador Namah",
         info: '300 ml',
         price: 120.00,
         ID: 404
-    }
-];
-export const posts = [
+    },
     {
         type: 'podcast',
         bannerURL: require('../assets/images/post/bg-post3.jpg'),
@@ -48,6 +48,19 @@ export const posts = [
             userId: "122"
         },
         ID: 11
+    },
+    {
+        type: 'course',
+        bannerURL: require('../assets/images/post/bg-post4.jpg'),
+        title: "Imersão Vinyasa Flow",
+        info: {
+            type: "CURSO",
+            date: {
+                day: "04",
+                month: "ABR"
+            }
+        },
+        ID: 12023452
     },
     {
         type: 'post',
@@ -88,24 +101,5 @@ export const posts = [
             }
         ],
         ID: 681
-    },
-    {
-        type: 'product',
-        bannerURL: products[filterByID(404,products)].bannerURL,
-        title: products[filterByID(404,products)].title,
-        ID: 404
-    },
-    {
-        type: 'course',
-        bannerURL: require('../assets/images/post/bg-post4.jpg'),
-        title: "Imersão Vinyasa Flow",
-        info: {
-            type: "CURSO",
-            date: {
-                day: "04",
-                month: "ABR"
-            }
-        },
-        ID: 12023452
     }
 ];
