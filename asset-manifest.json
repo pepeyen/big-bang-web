@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/big-bang-web/static/css/main.2682c8bd.chunk.css",
+    "main.css": "/big-bang-web/static/css/main.5efd3955.chunk.css",
     "main.js": "/big-bang-web/static/js/main.80f92453.chunk.js",
     "main.js.map": "/big-bang-web/static/js/main.80f92453.chunk.js.map",
     "runtime-main.js": "/big-bang-web/static/js/runtime-main.6ba7aec4.js",
@@ -8,9 +8,9 @@
     "static/js/2.5df03130.chunk.js": "/big-bang-web/static/js/2.5df03130.chunk.js",
     "static/js/2.5df03130.chunk.js.map": "/big-bang-web/static/js/2.5df03130.chunk.js.map",
     "index.html": "/big-bang-web/index.html",
-    "precache-manifest.c9c71e78b524b78b3dd8c2bc92b65b71.js": "/big-bang-web/precache-manifest.c9c71e78b524b78b3dd8c2bc92b65b71.js",
+    "precache-manifest.77e2aa93e9c3e4f8107eae8e30428bd0.js": "/big-bang-web/precache-manifest.77e2aa93e9c3e4f8107eae8e30428bd0.js",
     "service-worker.js": "/big-bang-web/service-worker.js",
-    "static/css/main.2682c8bd.chunk.css.map": "/big-bang-web/static/css/main.2682c8bd.chunk.css.map",
+    "static/css/main.5efd3955.chunk.css.map": "/big-bang-web/static/css/main.5efd3955.chunk.css.map",
     "static/js/2.5df03130.chunk.js.LICENSE.txt": "/big-bang-web/static/js/2.5df03130.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/big-bang-web/static/media/ProximaNova-Semibold.fc0c9d86.woff",
     "static/media/bg-post1.jpg": "/big-bang-web/static/media/bg-post1.2896ed4b.jpg",
@@ -35,7 +35,7 @@
   "entrypoints": [
     "static/js/runtime-main.6ba7aec4.js",
     "static/js/2.5df03130.chunk.js",
-    "static/css/main.2682c8bd.chunk.css",
+    "static/css/main.5efd3955.chunk.css",
     "static/js/main.80f92453.chunk.js"
   ]
 }
