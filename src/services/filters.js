@@ -8,14 +8,14 @@ export const filterByType = (type,iteratable) => {
     });
     return filteredType;
 };
-export const filterByID = (ID,iteratable) => {
-    let filteredID = -1;
+export const filterOverall = (ID,type,iteratable) => {
+    let filtered = -1;
 
     iteratable.forEach(element => {
-        if(element.ID === parseInt(ID)){
-            filteredID = element;
+        if(element.ID === parseInt(ID) && element.type === type){
+            filtered = element;
         }
     });
 
-    return filteredID;
+    return filtered;
 };
