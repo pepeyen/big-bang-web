@@ -4,14 +4,14 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 //Views
 import Home from './views/home';
 import Blog from './views/blog';
+import Post from './views/post';
 import Store from './views/store';
+import Product from './views/product';
 import Podcasts from './views/podcasts';
+import Podcast from './views/podcast';
 import Courses from './views/courses';
 import Contact from './views/contact';
-import Post from './views/post';
-import Product from './views/product';
 import NotFound from './views/errors/404';
-import Podcast from './views/podcast';
 
 //Styles
 import './App.scss';
@@ -50,11 +50,11 @@ function App() {
             component={Post} 
           />          
           <Route 
-            exact path="/store/product" 
+            exact path="/store/post" 
             component={Product} 
           />
           <Route 
-            exact path="/podcasts/podcast" 
+            exact path="/podcasts/post" 
             component={Podcast} 
           />
           <Route
