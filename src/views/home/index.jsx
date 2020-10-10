@@ -32,24 +32,28 @@ function Home(){
                                 size="big"
                                 position="left" 
                                 theme="light"
+                                type="post"
                                 ID={681}
                             />
                             <Node 
                                 size="small"
                                 position="top-right"
                                 theme="light"
+                                type="podcast"
                                 ID={11}
                             />
                             <Node 
                                 size="small"
                                 position="bottom-halfed-left"
                                 theme="light"
+                                type="course"
                                 ID={12023452}
                             />
                             <Node 
                                 size="small"
                                 position="bottom-halfed-right"
                                 theme="light"
+                                type="product"
                                 ID={404} 
                             />
                         </Cluster>

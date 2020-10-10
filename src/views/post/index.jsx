@@ -6,13 +6,13 @@ import Navbar from '../../components/Navbar';
 
 //Services
 import {API} from '../../services/mockData';
-import {getCurrentPageID} from '../../services/pageInfo';
-import {filterByID} from '../../services/filters';
+import {getCurrentPageID,getCurrentPageType} from '../../services/pageInfo';
+import {filterOverall} from '../../services/filters';
 
 function Post(){
-    const posts = filterByID(getCurrentPageID(),API);
+    const posts = filterOverall(getCurrentPageID(),'post',API);
     
-    if(posts.length !== 0){
+    if(posts !== -1 && posts === filterOverall(getCurrentPageID(),getCurrentPageType(),API)){
         return(
             <React.Fragment>
                 <header>
