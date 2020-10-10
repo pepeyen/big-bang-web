@@ -5,22 +5,20 @@ import {Link} from 'react-router-dom';
 import {API} from '../../services/mockData';
 
 //Services
-import {filterByID} from '../../services/filters';
+import {filterOverall} from '../../services/filters';
+import {translatePageType} from '../../services/translatePageType';
 
 //Images
 import img_foward from '../../assets/images/button/button-foward.svg';
 
 function Node(props){
-    const node = filterByID(props.ID,API);
+    const node = filterOverall(props.ID,props.type,API);
 
     const setNodeChildren = () => {
         switch (node.type) {
             case 'post':
                 return(
-                    <Link 
-                        to={`/blog/post/?id=${node.ID}`}
-                        className="page__banner-content --flex-end-self"
-                    >
+                    <React.Fragment>
                         <p className="page__banner-title">
                             {node.title}
                         </p>
@@ -32,14 +30,11 @@ function Node(props){
                                 por {node.info.onwerShip}
                             </p>
                         </div>
-                    </Link>
+                    </React.Fragment>
                 );
             case 'podcast':
                 return(
-                    <Link 
-                        to={`/podcasts/podcast/?id=${node.ID}`} 
-                        className="page__banner-content --flex-end-self"
-                    >
+                    <React.Fragment>
                         <div className="page__banner-info">
                             <p className="page__banner-text">
                                 {node.info.userNickname} #{node.info.userId} 
@@ -48,14 +43,11 @@ function Node(props){
                         <p className="page__banner-title">
                             {node.title}
                         </p>
-                    </Link>
+                    </React.Fragment>
                 );
             case 'course':
                 return(
-                    <Link
-                        to={`/course/post/?id=${node.ID}`} 
-                        className="page__banner-content --flex-end-self"
-                    >
+                    <React.Fragment>
                         <div className="page__banner-info">
                             <p className="page__banner-text">
                                 {node.info.type} - {node.info.date.day} {node.info.date.month}
@@ -64,14 +56,11 @@ function Node(props){
                         <p className="page__banner-title">
                             {node.title}
                         </p>
-                    </Link>
+                    </React.Fragment>
                 );
             case 'product':
                 return(
-                    <Link 
-                        to={`/store/product/?id=${node.ID}`} 
-                        className="page__banner-content --flex-end-self"
-                    >
+                    <React.Fragment>
                         <p className="page__banner-title">
                             {node.title}
                         </p>
@@ -83,7 +72,7 @@ function Node(props){
                                 alt="Go to the product page" 
                             />
                         </div>
-                    </Link>
+                    </React.Fragment>
                 );
             default:
                 return(
@@ -98,7 +87,12 @@ function Node(props){
             className={`page__node --${props.size}-${props.position} --${node.type} --${props.theme}-text`}
             style={{backgroundImage: `url(${node.bannerURL})`}}
         >
-            {nodeChildren}      
+            <Link 
+                to={`/${translatePageType(node.type)}/post/?id=${node.ID}&type=${node.type}`}
+                className="page__banner-content --flex-end-self"
+            >
+                {nodeChildren}  
+            </Link>    
         </li>
     );
 }
