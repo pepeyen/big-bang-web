@@ -4,10 +4,10 @@ import React from 'react';
 import {API} from '../../services/mockData';
 
 //Services
-import {filterByID} from '../../services/filters';
+import {filterOverall} from '../../services/filters';
 
 function Banner(props){
-    const banner = filterByID(props.ID,API);
+    const banner = filterOverall(props.ID,'banner',API);
 
     return(
         <div 

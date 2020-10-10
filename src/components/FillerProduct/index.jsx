@@ -18,7 +18,7 @@ function FillerProduct(props){
                         key={index}
                         className="page__filler-product --centralized-text"
                     >
-                        <Link to={`/store/product/?id=${element.ID}`}>
+                        <Link to={`/store/post/?id=${element.ID}&type=${element.type}`}>
                             <img
                                 className="page__filler-product-image"
                                 src={element.bannerURL}
