@@ -10,6 +10,7 @@ import Product from './views/product';
 import Podcasts from './views/podcasts';
 import Podcast from './views/podcast';
 import Courses from './views/courses';
+import Course from './views/course';
 import Contact from './views/contact';
 import NotFound from './views/errors/404';
 
@@ -56,6 +57,10 @@ function App() {
           <Route 
             exact path="/podcasts/post" 
             component={Podcast} 
+          />
+                    <Route 
+            exact path="/courses/post" 
+            component={Course} 
           />
           <Route
             path="/error/404"
