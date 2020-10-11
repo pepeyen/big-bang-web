@@ -13,6 +13,15 @@
 .--centralized-text{
     text-align: center;
 }
+.--central{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.--table{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(auto, 1fr));
+}
 .--root-banner{
     display: none;
 }
@@ -250,6 +259,10 @@
     .--central{
         width: 65%;
         margin:  5vh 0 0 0;
+    }
+    .--table{
+        grid-template-columns: repeat(auto-fill,minmax(20%,1fr));
+        column-gap: 3vh;
     }
     .--root-banner{
         display: block;
