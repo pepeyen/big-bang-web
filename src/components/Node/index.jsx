@@ -23,11 +23,11 @@ function Node(props){
                             {node.title}
                         </p>
                         <div className="page__banner-info">
-                            <p className="page__banner-text">
+                            <p className="page__banner-text --underlined">
                                 {node.info.type}
                             </p>
                             <p className="page__banner-text">
-                                por {node.info.onwerShip}
+                                por <span className="--underlined">{node.info.onwerShip}</span>
                             </p>
                         </div>
                     </React.Fragment>
@@ -83,17 +83,17 @@ function Node(props){
     const nodeChildren = setNodeChildren(); 
 
     return(
-        <li 
+        <Link
             className={`page__node --${props.size}-${props.position} --${node.type} --${props.theme}-text`}
             style={{backgroundImage: `url(${node.bannerURL})`}}
+            to={`/${translatePageType(node.type)}/post/?id=${node.ID}&type=${node.type}`}
         >
-            <Link 
-                to={`/${translatePageType(node.type)}/post/?id=${node.ID}&type=${node.type}`}
+            <div
                 className="page__banner-content --flex-end-self"
             >
                 {nodeChildren}  
-            </Link>    
-        </li>
+            </div>    
+        </Link>
     );
 }
 

@@ -30,13 +30,13 @@
         }
         &-content{
             background: linear-gradient(0deg, rgba(0,0,0,0.65) 60%, rgba(255,255,255,0) 100%);
-            text-decoration: none;
             color: inherit;
         }
         &-title{
             font-family: 'Chloe-Regular';
             font-size: 1rem;
             width: 8rem;
+            text-decoration: none;
         }
         &-text{
             font-family: 'ProximaNova-Regular';
@@ -57,6 +57,7 @@
         background-repeat: no-repeat;
         display: flex;
         flex-direction: row;
+        text-decoration: none;
     }
     &__button{
         font-family: 'ProximaNova-Semibold';
@@ -268,6 +269,18 @@
             margin: 5vh 0 0 0;
             font-size: 3vh;
         }
+        &__node{
+            &:hover{
+                cursor: pointer;
+            }
+            &:hover .page__banner-content{
+                transition: all ease-in-out 100ms;
+                background: linear-gradient(0deg, rgba(0,0,0,0.65) 70%, rgba(255,255,255,0) 100%);
+            }
+            &:hover .page__banner-title{
+                text-decoration: underline;
+            }
+        }
         &__banner{
             height: 20.5vh;
             background-size: 128vh;
@@ -283,14 +296,6 @@
             &-text{
                 font-size: 2vh;
                 margin: 2.3vh 0 0 0;
-            }
-            &-content{
-                &:hover{
-                    transition: all ease-in-out 100ms;
-                    background: linear-gradient(0deg, rgba(0,0,0,0.65) 70%, rgba(255,255,255,0) 100%);
-                    cursor: pointer;
-                    text-decoration: underline;
-                }
             }
         }
         &__button{
