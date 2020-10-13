@@ -199,6 +199,9 @@
 .--fade-up{
     background: linear-gradient(0deg, rgba(0,0,0,0.65) 45%, rgba(255,255,255,0) 100%);
 }
+.--underlined{
+    text-decoration: underline;
+}
 @-webkit-keyframes pulse {
     0% {
         -webkit-box-shadow: 0 0 0 0 rgba(115, 168, 160, 0.4);
