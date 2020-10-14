@@ -50,7 +50,7 @@ function Node(props){
                                 {node.info.type}
                             </p>
                             <span className="page__banner-text">
-                                {node.article[2].text}
+                                {node.article[1].text}
                             </span>
                         </React.Fragment>
                     );

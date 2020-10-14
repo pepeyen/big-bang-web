@@ -1,5 +1,8 @@
 import React from 'react';
 
+//Styles
+import './newsletter.scss';
+
 function NewsLetter(){
     return(
         <div className="newsletter">

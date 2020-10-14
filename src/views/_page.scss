@@ -254,57 +254,7 @@
         }
     }
 }
-.newsletter{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
 
-    &__title{
-        font-family: 'Chloe-Regular';
-        font-size: 2rem;
-        margin: 1rem 0 0 0;
-    }
-    &__description{
-        font-family: 'ProximaNova-Regular';
-        font-size: 1.2rem;
-        margin: 1rem 0 0 0;
-    }
-    &__form{
-        display: flex;
-        flex-direction: row;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-        margin: .6rem 0 0 0;
-        width: 95%;
-
-        &-email{
-            width: 100%;
-            padding: 1rem;
-            margin: 1rem .5rem 0 0;
-
-            &:focus{
-                transition: border-color ease-in-out .2s;
-                border-color: #000000;
-            }
-        }
-        &-button{
-            font-family: 'ProximaNova-Semibold';
-            background-color: transparent;
-            margin: 1rem 0 0 0;
-            width: 35%;
-            height: 3rem;
-        }
-    }
-    &__info{
-        font-family: 'ProximaNova-Regular';
-        width: 90%;
-        font-size: .8rem;
-        margin: 2rem 0 1rem 0;
-    }
-}
 @media (min-width: 768px){
     .page{
         &__banner{
@@ -517,43 +467,6 @@
             height: 70vh;
             width: 100%;
             margin: -70vh 0 0 0;
-        }
-    }
-    .newsletter{
-        &__title{
-            font-size: 5vh;
-            margin: 5vh 0 0 0;
-        }
-        &__description{
-            font-size: 2.2vh;
-            margin: 2vh 0 0 0;
-        }
-        &__form{
-            flex-direction: column;
-            margin: 3vh 0 0 0;
-            width: 70%;
-
-            &-email{
-                width: 100%;
-                padding: 1.5vh;
-                font-size: 2vh;
-            }
-            &-button{
-                margin: 3vh 0 0 0;
-                width: 60%;
-                height: 6vh;
-
-                &:hover{
-                    cursor: pointer;
-                    transition: all ease-in-out .1s;
-                    background-color: #000000;
-                    color: #ffffff;
-                }
-            }
-        }
-        &__info{
-            font-size: 1.5vh;
-            margin: 9vh 0 2vh 0;
         }
     }
 }
