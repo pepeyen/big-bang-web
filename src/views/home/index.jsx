@@ -29,6 +29,7 @@ function Home(){
                     <Post>
                         <Cluster type='two-to-one'>
                             <Node
+                                redirector={true}
                                 size="big"
                                 position="left" 
                                 theme="light"
@@ -36,6 +37,7 @@ function Home(){
                                 ID={681}
                             />
                             <Node 
+                                redirector={true}
                                 size="small"
                                 position="top-right"
                                 theme="light"
@@ -43,6 +45,7 @@ function Home(){
                                 ID={11}
                             />
                             <Node 
+                                redirector={true}
                                 size="small"
                                 position="bottom-halfed-left"
                                 theme="light"
@@ -50,6 +53,7 @@ function Home(){
                                 ID={12023452}
                             />
                             <Node 
+                                redirector={true}
                                 size="small"
                                 position="bottom-halfed-right"
                                 theme="light"
@@ -68,6 +72,7 @@ function Home(){
                     <Post title="Blog">
                         <Cluster type='three-to-one'>
                             <Node
+                                redirector={true}
                                 size="medium"
                                 position="top-left" 
                                 theme="light"
@@ -75,6 +80,7 @@ function Home(){
                                 ID={681}
                             />
                             <Node
+                                redirector={true}
                                 size="medium"
                                 position="top-right" 
                                 theme="light"
@@ -82,6 +88,7 @@ function Home(){
                                 ID={682}
                             />
                             <Node
+                                redirector={true}
                                 size="small"
                                 position="bottom-left" 
                                 theme="medium-grey"
@@ -89,11 +96,19 @@ function Home(){
                                 ID={684}
                             />
                             <Node
+                                redirector={true}
                                 size="small"
                                 position="bottom-middle" 
                                 theme="medium-grey"
                                 type="post"
                                 ID={683}
+                            />
+                            <Node
+                                redirector={false}
+                                size="small"
+                                position="bottom-right" 
+                                theme="dark"
+                                type="newsletter"
                             />
                         </Cluster>
                         <Button

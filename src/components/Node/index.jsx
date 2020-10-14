@@ -4,6 +4,9 @@ import {Link} from 'react-router-dom';
 //Mock up data
 import {API} from '../../services/mockData';
 
+//Components
+import Newsletter from '../../components/Newsletter';
+
 //Services
 import {filterOverall} from '../../services/filters';
 import {translatePageType} from '../../services/translatePageType';
@@ -15,7 +18,7 @@ function Node(props){
     const node = filterOverall(props.ID,props.type,API);
 
     const setNodeChildren = () => {
-        switch (node.type) {
+        switch (props.type) {
             case 'post':
                 if(props.theme === 'light'){
                     return(
@@ -94,6 +97,10 @@ function Node(props){
                         </div>
                     </React.Fragment>
                 );
+            case 'newsletter':
+                return(
+                    <Newsletter />
+                );
             default:
                 return(
                     <p>Error</p>
@@ -102,17 +109,25 @@ function Node(props){
     }
     const nodeChildren = setNodeChildren(); 
 
-    return(
-        <Link
-            className={`page__node --${props.size}-${props.position} --${node.type} --${props.theme}-text`}
-            style={{backgroundImage: props.theme === 'light' ? `url(${node.bannerURL})` : ''}}
-            to={`/${translatePageType(node.type)}/post/?id=${node.ID}&type=${node.type}`}
-        >
-            <div className={props.theme === 'light' ? "page__banner-content --flex-end-self --fade-up" : "page__banner-content --flex-end-self"}>
-                {nodeChildren}  
-            </div>    
-        </Link>
-    );
+    if(props.redirector){
+        return(
+            <Link
+                className={`page__node --${props.size}-${props.position} --${node.type} --${props.theme}-text`}
+                style={{backgroundImage: props.theme === 'light' ? `url(${node.bannerURL})` : ''}}
+                to={`/${translatePageType(node.type)}/post/?id=${node.ID}&type=${node.type}`}
+            >
+                <div className={props.theme === 'light' ? "page__banner-content --flex-end-self --fade-up" : "page__banner-content --flex-end-self"}>
+                    {nodeChildren}  
+                </div>    
+            </Link>
+        );
+    }else{
+        return(
+            <div className={`--${props.size}-${props.position}  --thick-borders --dark-borders --${props.theme}-text`}>
+                {nodeChildren}   
+            </div>
+        );
+    }
 }
 
 export default Node;
