@@ -93,14 +93,13 @@
     }
 }
 .--three-to-one{
-    grid-template-columns: 10rem 10rem;
+    grid-template-columns: 50% 50%;
     grid-template-areas: 
     "medium-top-left medium-top-left"
     "medium-top-right medium-top-right"
     "small-bottom-left small-bottom-middle"
     "small-bottom-right small-bottom-right";
-    gap: 1.5rem 1em;
-
+    gap: 1.5rem .5rem;
     & .--medium-top-left{
         grid-area: medium-top-left;
         background-size: 100% 15rem;
