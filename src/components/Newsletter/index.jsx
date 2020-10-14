@@ -1,7 +1,6 @@
 import React from 'react';
 
 function NewsLetter(){
-    console.log('brun')
     return(
         <div className="newsletter">
             <span className="newsletter__title --dark-text">Namah no seu e-mail</span>
