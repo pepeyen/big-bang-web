@@ -66,6 +66,36 @@ function Home(){
                         </Filler>
                     </Post>
                     <Post title="Blog">
+                        <Cluster type='three-to-one'>
+                            <Node
+                                size="medium"
+                                position="top-left" 
+                                theme="light"
+                                type="post"
+                                ID={681}
+                            />
+                            <Node
+                                size="medium"
+                                position="top-right" 
+                                theme="light"
+                                type="post"
+                                ID={682}
+                            />
+                            <Node
+                                size="small"
+                                position="bottom-left" 
+                                theme="medium-grey"
+                                type="post"
+                                ID={684}
+                            />
+                            <Node
+                                size="small"
+                                position="bottom-middle" 
+                                theme="medium-grey"
+                                type="post"
+                                ID={683}
+                            />
+                        </Cluster>
                         <Button
                             root="post" 
                             target="blog"
