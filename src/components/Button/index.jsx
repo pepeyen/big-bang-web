@@ -17,9 +17,11 @@ function Button(props){
             <Link 
                 className={`page__button --centralized-text --light-text --root-${props.root}`}
                 to={`/${props.target}`}
-            > 
-                <span>{props.text.toUpperCase()}</span>
-                {props.root !== 'post' ? '' : <img className="page__button-foward" src={img_foward} alt="Foward" />}
+            >
+                <p>
+                    <span>{props.text.toUpperCase()}</span>
+                    {props.root !== 'post' ? '' : <img className="page__button-foward" src={img_foward} alt="Foward" />}
+                </p>
             </Link>
         );
     }
