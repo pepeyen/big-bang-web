@@ -39,6 +39,30 @@ export const API = [
         ID: 404
     },
     {
+        type: 'product',
+        bannerURL: require('../assets/images/product/bg-product2.jpg'), 
+        title: "Ovo de pascoa de Paçoca",
+        info: 'Lorem ipsum dolor',
+        price: 65.00,
+        ID: 405
+    },
+    {
+        type: 'product',
+        bannerURL: require('../assets/images/product/bg-product3.jpg'), 
+        title: "Chantighee com Wasabi 300g",
+        info: 'Lorem ipsum dolor',
+        price: 32.00,
+        ID: 406
+    },
+    {
+        type: 'product',
+        bannerURL: require('../assets/images/product/bg-product4.jpg'), 
+        title: "Shampoo Sólido Namah",
+        info: 'Lorem ipsum dolor',
+        price: 49.00,
+        ID: 407
+    },
+    {
         type: 'podcast',
         bannerURL: require('../assets/images/post/bg-post3.jpg'),
         audioURL: require('../assets/podcasts/podcast-theme.mp3'),
@@ -48,6 +72,28 @@ export const API = [
             userId: "122"
         },
         ID: 11
+    },
+    {
+        type: 'podcast',
+        bannerURL: require('../assets/images/card/bg-card2.jpg'),
+        audioURL: require('../assets/podcasts/podcast-theme.mp3'),
+        title: "Nome do episódio do podcast lorem ipsum dolor sit amet consectetur eli...",
+        info: {
+            userNickname: "Namahcast", 
+            userId: "123"
+        },
+        ID: 12223
+    },
+    {
+        type: 'podcast',
+        bannerURL: require('../assets/images/card/bg-card3.jpg'),
+        audioURL: require('../assets/podcasts/podcast-theme.mp3'),
+        title: "Nome do episódio do podcast lorem ipsum dolor sit amet consectetur eli...",
+        info: {
+            userNickname: "Namahcast", 
+            userId: "121"
+        },
+        ID: 13554
     },
     {
         type: 'course',
