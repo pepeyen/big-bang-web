@@ -25,15 +25,15 @@ function Podcast(){
                         <Post>
                             <img 
                                 className="page__post-banner"
-                                src={podcast.bannerURL} 
-                                alt={podcast.title}  
+                                src={podcast.media.bannerURL} 
+                                alt={podcast.info.name}  
                             />
                             <div className="page__podcast --fade-up">
-                                <AudioPlayer audioURL={podcast.audioURL} />
+                                <AudioPlayer audioURL={podcast.media.audioURL} />
                             </div>
-                            <p className="page__post-title --centralized-text">{podcast.title}</p>
+                            <p className="page__post-title --centralized-text">{podcast.info.podcastName}</p>
                             <div className="page__post-info">
-                                    <span className="page__post-onwership --grey-text --bottom-thin-borders">{podcast.info.userNickname} #{podcast.info.userId}</span>
+                                    <span className="page__post-onwership --grey-text --bottom-thin-borders">{podcast.info.onwership.username} #{podcast.info.onwership.userID}</span>
                             </div>
                         </Post>
                     </section>

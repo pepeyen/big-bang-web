@@ -11,8 +11,6 @@ import {filterOverall} from '../../services/filters';
 
 function Course(){
     const course = filterOverall(getCurrentPageID(),'course',API);
-
-    console.log(course);
     
     if(course !== -1 && course === filterOverall(getCurrentPageID(),getCurrentPageType(),API)){
         return(
@@ -25,11 +23,11 @@ function Course(){
                         <div className="page__product">
                             <img 
                                 className=""
-                                src={course.bannerURL} 
-                                alt={course.title}  
+                                src={course.media.bannerURL} 
+                                alt={course.info.title}  
                             />
                             <div className="page__product-info">
-                                <p className="page__filler-product-name">{course.title}</p>
+                                <p className="page__filler-product-name">{course.info.title}</p>
                                 <p className="page__filler-product-info">{course.info.type}</p>
                             </div>
                         </div>

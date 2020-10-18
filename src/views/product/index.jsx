@@ -23,13 +23,13 @@ function Product(){
                         <div className="page__product">
                             <img 
                                 className="page__product-image"
-                                src={product.bannerURL} 
-                                alt={product.title} 
+                                src={product.media.bannerURL} 
+                                alt={product.info.title} 
                             />
                             <div className="page__product-info">
-                                <p className="page__filler-product-name">{product.title}</p>
-                                <p className="page__filler-product-info">{product.info}</p>
-                                <p className="page__filler-product-price">R$ {product.price.toFixed(2)}</p>
+                                <p className="page__filler-product-name">{product.info.title}</p>
+                                <p className="page__filler-product-info">{product.info.description}</p>
+                                <p className="page__filler-product-price">R$ {product.info.price.toFixed(2)}</p>
                             </div>
                         </div>
                     </section>

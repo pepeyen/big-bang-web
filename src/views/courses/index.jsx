@@ -32,21 +32,21 @@ function Courses(){
                                     redirectorID={element.ID}
                                 >
                                     <RedirectorBanner
-                                        url={element.bannerURL} 
-                                        alt={element.title} 
+                                        url={element.media.bannerURL} 
+                                        alt={element.info.title} 
                                     />
                                     <RedirectorInfo>
                                         <RedirectorText
                                             infoType="title"
                                             color="dark"
                                         >
-                                            {element.title}
+                                            {element.info.title}
                                         </RedirectorText>
                                         <RedirectorText
                                             infoType="user"
                                             color="grey"
                                         >
-                                            {element.info.type} - {element.info.date.day} {element.info.date.month}
+                                            {element.info.type} - {element.info.date.startDate.day} {element.info.date.startDate.month}
                                         </RedirectorText>
                                     </RedirectorInfo>
                                 </Redirector>
