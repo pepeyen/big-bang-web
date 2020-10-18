@@ -24,14 +24,14 @@ function Node(props){
                     return(
                         <React.Fragment>
                             <p className="page__banner-title">
-                                {node.title}
+                                {node.info.title}
                             </p>
                             <div className="page__banner-info">
                                 <p className="page__banner-text --underlined">
                                     {node.info.type}
                                 </p>
                                 <p className="page__banner-text">
-                                    por <span className="--underlined">{node.info.onwerShip}</span>
+                                    por <span className="--underlined">{node.info.onwership.username}</span>
                                 </p>
                             </div>
                         </React.Fragment>
@@ -40,11 +40,11 @@ function Node(props){
                     return(
                         <React.Fragment>
                             <img 
-                                src={node.bannerURL}
+                                src={node.media.bannerURL}
                                 alt={node.type}
                             />
                             <p className="page__banner-title">
-                                {node.title}
+                                {node.info.title}
                             </p>
                             <p className="page__banner-text --underlined">
                                 {node.info.type}
@@ -60,11 +60,11 @@ function Node(props){
                     <React.Fragment>
                         <div className="page__banner-info">
                             <p className="page__banner-text">
-                                {node.info.userNickname} #{node.info.userId} 
+                                {node.info.onwership.username} #{node.info.onwership.userID} 
                             </p>
                         </div>
                         <p className="page__banner-title">
-                            {node.title}
+                            {node.info.name}
                         </p>
                     </React.Fragment>
                 );
@@ -73,11 +73,11 @@ function Node(props){
                     <React.Fragment>
                         <div className="page__banner-info">
                             <p className="page__banner-text">
-                                {node.info.type} - {node.info.date.day} {node.info.date.month}
+                                {node.info.type} - {node.info.date.startDate.day} {node.info.date.startDate.month}
                             </p>
                         </div>
                         <p className="page__banner-title">
-                            {node.title}
+                            {node.info.title}
                         </p>
                     </React.Fragment>
                 );
@@ -85,7 +85,7 @@ function Node(props){
                 return(
                     <React.Fragment>
                         <p className="page__banner-title">
-                            {node.title}
+                            {node.info.title}
                         </p>
                         <div className="page__banner-info">
                             <p className="page__banner-text">COMPRE AGORA</p>
@@ -113,7 +113,7 @@ function Node(props){
         return(
             <Link
                 className={`page__node --${props.size}-${props.position} --${node.type} --${props.theme}-text`}
-                style={{backgroundImage: props.theme === 'light' ? `url(${node.bannerURL})` : ''}}
+                style={{backgroundImage: props.theme === 'light' ? `url(${node.media.bannerURL})` : ''}}
                 to={`/${translatePageType(node.type)}/post/?id=${node.ID}&type=${node.type}`}
             >
                 <div className={props.theme === 'light' ? "page__banner-content --flex-end-self --fade-up" : "page__banner-content --flex-end-self"}>

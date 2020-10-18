@@ -21,12 +21,12 @@ function FillerProduct(props){
                         <Link to={`/store/post/?id=${element.ID}&type=${element.type}`}>
                             <img
                                 className="page__filler-product-image"
-                                src={element.bannerURL}
+                                src={element.media.bannerURL}
                                 alt="Produto"
                             />
-                            <span className="page__filler-product-name --dark-text">{element.title}</span>
-                            <p className="page__filler-product-info --grey-text">{element.info === '' ? '\u00A0' : element.info}</p>
-                            <span className="page__filler-product-price --dark-text">R$ {element.price.toFixed(2)}</span>
+                            <span className="page__filler-product-name --dark-text">{element.info.title}</span>
+                            <p className="page__filler-product-info --grey-text">{element.info.description === '' ? '\u00A0' : element.info.description}</p>
+                            <span className="page__filler-product-price --dark-text">R$ {element.info.price.toFixed(2)}</span>
                         </Link>
                     </li>
                 );
