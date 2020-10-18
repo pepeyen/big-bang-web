@@ -36,18 +36,18 @@ function Podcasts(){
                                             infoType="title"
                                             color="dark"
                                         >
-                                            {element.title}
+                                            {element.info.name}
                                         </RedirectorText>
                                         <RedirectorText
                                             infoType="user"
                                             color="grey"
                                         >
-                                            {element.info.userNickname} #{element.info.userId}
+                                            {element.info.onwership.username} #{element.info.onwership.userID}
                                         </RedirectorText>  
                                     </RedirectorInfo>
                                     <RedirectorBanner
-                                        url={element.bannerURL}
-                                        alt={element.title}
+                                        url={element.media.bannerURL}
+                                        alt={element.info.name}
                                         type='podcast'
                                     />
                                 </Redirector >

@@ -36,18 +36,18 @@ function Store(){
                                             infoType="title"
                                             color="dark"
                                         >
-                                            {element.title}
+                                            {element.info.title}
                                         </RedirectorText>
                                         <RedirectorText
                                             infoType="price"
                                             color="grey"
                                         >
-                                            R$ {element.price.toFixed(2)}
+                                            R$ {element.info.price.toFixed(2)}
                                         </RedirectorText>
                                     </RedirectorInfo>
                                     <RedirectorBanner 
-                                        url={element.bannerURL}
-                                        alt={element.title}
+                                        url={element.media.bannerURL}
+                                        alt={element.info.title}
                                     />
                                 </Redirector>
                             );

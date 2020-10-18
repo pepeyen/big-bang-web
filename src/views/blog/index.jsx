@@ -42,18 +42,18 @@ function Blog(){
                                             infoType="title"
                                             color="dark"
                                         >
-                                            {element.title}
+                                            {element.info.title}
                                         </RedirectorText>
                                         <RedirectorText 
                                             infoType="user"
                                             color="grey"
                                         >
-                                            {element.info.onwerShip}
+                                            {element.info.onwership.username}
                                         </RedirectorText>
                                     </RedirectorInfo>
                                     <RedirectorBanner
-                                        url={element.bannerURL}
-                                        alt={element.title} 
+                                        url={element.media.bannerURL}
+                                        alt={element.info.title} 
                                     />
                                 </Redirector>
                             );

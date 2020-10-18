@@ -23,13 +23,13 @@ function Post(){
                         <div className="page__post --central">
                             <img 
                                 className="page__post-banner"
-                                src={posts.bannerURL} 
-                                alt={posts.title} 
+                                src={posts.media.bannerURL} 
+                                alt={posts.info.title} 
                             />
-                            <p className="page__post-title">{posts.title}</p>
+                            <p className="page__post-title">{posts.info.title}</p>
                             <div className="page__post-info">
                                 <span className="page__post-type --grey-text --bottom-thin-borders">{posts.info.type}</span>
-                                <span className="page__post-onwership --grey-text --bottom-thin-borders">por {posts.info.onwerShip}</span>
+                                <span className="page__post-onwership --grey-text --bottom-thin-borders">por {posts.info.onwership.username}</span>
                             </div>
                             <div className="page__post-article --dark-grey-text">
                                 {posts.article.map((element,index) => {
