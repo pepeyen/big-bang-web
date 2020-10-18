@@ -514,7 +514,7 @@
     }
     .--fade-up{
         &:hover{
-            background: linear-gradient(0deg, rgba(0,0,0,0.65) 70%, rgba(255,255,255,0) 100%);
+            background: linear-gradient(0deg, rgba(0,0,0,0.70) 60%, rgba(255,255,255,0) 100%);
         }
     }
     @-webkit-keyframes pulse {
