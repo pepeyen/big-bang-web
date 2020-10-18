@@ -12,14 +12,14 @@ function Banner(props){
     return(
         <div 
             className="page__banner --thin-borders"
-            style={{backgroundImage: `url(${banner.bannerURL})`}}
+            style={{backgroundImage: `url(${banner.media.bannerURL})`}}
         >
             <div className="page__banner-headline --flex-end-self">
                 <p className="page__banner-title --centralized-text --dark-text">
-                    {banner.title}
+                    {banner.info.title}
                 </p>
                 <p className="page__banner-text --centralized-text --grey-text">
-                    {banner.info}
+                    {banner.info.description}
                 </p>
                 {props.children}
             </div>
