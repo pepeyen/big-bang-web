@@ -9,6 +9,10 @@ import Node from '../../components/Node';
 import Filler from '../../components/Filler';
 import FillerProduct from '../../components/FillerProduct';
 import Post from '../../components/Post';
+import Carousel from '../../components/Carousel';
+import CarouselItem from '../../components/Carousel/CarouselItem';
+import TableListing from '../../components/TableListing';
+import ProductCard from '../../components/ProductCard';
 
 function Home(){
     return(
@@ -117,6 +121,23 @@ function Home(){
                         />
                     </Post>
                     <Post title="Namah Shop">
+                        <Carousel>
+                            <CarouselItem>
+                                <TableListing listingType="four">
+                                    <ProductCard productID={405}/>
+                                    <ProductCard productID={406}/>
+                                    <ProductCard productID={407}/>
+                                    <ProductCard productID={404}/>
+                                </TableListing>
+                            </CarouselItem>
+                            <CarouselItem>
+                                <TableListing listingType="four">
+                                    <ProductCard productID={39}/>
+                                    <ProductCard productID={62}/>
+                                    <ProductCard productID={72}/>
+                                </TableListing>
+                            </CarouselItem>
+                        </Carousel>
                         <Button
                             root="post" 
                             target="store"
