@@ -1,18 +1,20 @@
 {
   "files": {
-    "main.css": "/big-bang-web/static/css/main.bb9fd42c.chunk.css",
-    "main.js": "/big-bang-web/static/js/main.7d917190.chunk.js",
-    "main.js.map": "/big-bang-web/static/js/main.7d917190.chunk.js.map",
+    "main.css": "/big-bang-web/static/css/main.1bd9c5b0.chunk.css",
+    "main.js": "/big-bang-web/static/js/main.83c7a6c1.chunk.js",
+    "main.js.map": "/big-bang-web/static/js/main.83c7a6c1.chunk.js.map",
     "runtime-main.js": "/big-bang-web/static/js/runtime-main.6ba7aec4.js",
     "runtime-main.js.map": "/big-bang-web/static/js/runtime-main.6ba7aec4.js.map",
-    "static/js/2.f822e7a5.chunk.js": "/big-bang-web/static/js/2.f822e7a5.chunk.js",
-    "static/js/2.f822e7a5.chunk.js.map": "/big-bang-web/static/js/2.f822e7a5.chunk.js.map",
+    "static/js/2.1bdbdb25.chunk.js": "/big-bang-web/static/js/2.1bdbdb25.chunk.js",
+    "static/js/2.1bdbdb25.chunk.js.map": "/big-bang-web/static/js/2.1bdbdb25.chunk.js.map",
     "index.html": "/big-bang-web/index.html",
-    "precache-manifest.3ba3a4987cae37a849506389f8542a08.js": "/big-bang-web/precache-manifest.3ba3a4987cae37a849506389f8542a08.js",
+    "precache-manifest.55ff7089c6f0be2117bb89f2a0fb3470.js": "/big-bang-web/precache-manifest.55ff7089c6f0be2117bb89f2a0fb3470.js",
     "service-worker.js": "/big-bang-web/service-worker.js",
-    "static/css/main.bb9fd42c.chunk.css.map": "/big-bang-web/static/css/main.bb9fd42c.chunk.css.map",
-    "static/js/2.f822e7a5.chunk.js.LICENSE.txt": "/big-bang-web/static/js/2.f822e7a5.chunk.js.LICENSE.txt",
-    "static/media/index.scss": "/big-bang-web/static/media/ProximaNova-Semibold.fc0c9d86.woff",
+    "static/css/main.1bd9c5b0.chunk.css.map": "/big-bang-web/static/css/main.1bd9c5b0.chunk.css.map",
+    "static/js/2.1bdbdb25.chunk.js.LICENSE.txt": "/big-bang-web/static/js/2.1bdbdb25.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/big-bang-web/static/media/ProximaNova-Thin.7bb3b456.svg",
+    "static/media/bg-card2.jpg": "/big-bang-web/static/media/bg-card2.226ca18b.jpg",
+    "static/media/bg-card3.jpg": "/big-bang-web/static/media/bg-card3.39355bcb.jpg",
     "static/media/bg-post1.jpg": "/big-bang-web/static/media/bg-post1.2896ed4b.jpg",
     "static/media/bg-post2.jpg": "/big-bang-web/static/media/bg-post2.4393fc1b.jpg",
     "static/media/bg-post3.jpg": "/big-bang-web/static/media/bg-post3.12132c39.jpg",
@@ -20,6 +22,9 @@
     "static/media/bg-post5.jpg": "/big-bang-web/static/media/bg-post5.0a7de0a8.jpg",
     "static/media/bg-post6.jpg": "/big-bang-web/static/media/bg-post6.e7097322.jpg",
     "static/media/bg-product1.jpg": "/big-bang-web/static/media/bg-product1.bcf56719.jpg",
+    "static/media/bg-product2.jpg": "/big-bang-web/static/media/bg-product2.236c6bb4.jpg",
+    "static/media/bg-product3.jpg": "/big-bang-web/static/media/bg-product3.3d947b18.jpg",
+    "static/media/bg-product4.jpg": "/big-bang-web/static/media/bg-product4.06f0a0c2.jpg",
     "static/media/button-foward.svg": "/big-bang-web/static/media/button-foward.5326b52a.svg",
     "static/media/button-play.svg": "/big-bang-web/static/media/button-play.dc5cbf49.svg",
     "static/media/icon-cart.svg": "/big-bang-web/static/media/icon-cart.6c0f039b.svg",
@@ -36,8 +41,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.6ba7aec4.js",
-    "static/js/2.f822e7a5.chunk.js",
-    "static/css/main.bb9fd42c.chunk.css",
-    "static/js/main.7d917190.chunk.js"
+    "static/js/2.1bdbdb25.chunk.js",
+    "static/css/main.1bd9c5b0.chunk.css",
+    "static/js/main.83c7a6c1.chunk.js"
   ]
 }

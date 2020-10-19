@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "58c3470d05a692408904c4d7a24592b2",
+    "revision": "bc3fe98c62d3036a0808cb2b9718e12d",
     "url": "/big-bang-web/index.html"
   },
   {
-    "revision": "f94be2c142e5f0f4c09a",
-    "url": "/big-bang-web/static/css/main.bb9fd42c.chunk.css"
+    "revision": "7920e8b1700684e3cb82",
+    "url": "/big-bang-web/static/css/main.1bd9c5b0.chunk.css"
   },
   {
-    "revision": "0a59aa901167db596b99",
-    "url": "/big-bang-web/static/js/2.f822e7a5.chunk.js"
+    "revision": "4ee8bcf441e36ca3b1e7",
+    "url": "/big-bang-web/static/js/2.1bdbdb25.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/big-bang-web/static/js/2.f822e7a5.chunk.js.LICENSE.txt"
+    "url": "/big-bang-web/static/js/2.1bdbdb25.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f94be2c142e5f0f4c09a",
-    "url": "/big-bang-web/static/js/main.7d917190.chunk.js"
+    "revision": "7920e8b1700684e3cb82",
+    "url": "/big-bang-web/static/js/main.83c7a6c1.chunk.js"
   },
   {
     "revision": "8255e6fc33e2f18e4107",
@@ -104,6 +104,30 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/big-bang-web/static/media/ProximaNova-Semibold.fc0c9d86.woff"
   },
   {
+    "revision": "10aa429114b0ff879f138e3a174fd9eb",
+    "url": "/big-bang-web/static/media/ProximaNova-Thin.10aa4291.woff"
+  },
+  {
+    "revision": "221a41a17d66a91f3f73804ed8398c66",
+    "url": "/big-bang-web/static/media/ProximaNova-Thin.221a41a1.ttf"
+  },
+  {
+    "revision": "2aab54cc3d4d611bc4b30c824cbc491b",
+    "url": "/big-bang-web/static/media/ProximaNova-Thin.2aab54cc.eot"
+  },
+  {
+    "revision": "7bb3b456134071905355dc6895d99987",
+    "url": "/big-bang-web/static/media/ProximaNova-Thin.7bb3b456.svg"
+  },
+  {
+    "revision": "226ca18bf0edb752b7af4ef3d40308bd",
+    "url": "/big-bang-web/static/media/bg-card2.226ca18b.jpg"
+  },
+  {
+    "revision": "39355bcbe79eb1a5b9389a8e80355d46",
+    "url": "/big-bang-web/static/media/bg-card3.39355bcb.jpg"
+  },
+  {
     "revision": "2896ed4b0bed3f86f7bc55539cb074c0",
     "url": "/big-bang-web/static/media/bg-post1.2896ed4b.jpg"
   },
@@ -130,6 +154,18 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "bcf56719f2fe80bb78babb5074a5d33e",
     "url": "/big-bang-web/static/media/bg-product1.bcf56719.jpg"
+  },
+  {
+    "revision": "236c6bb4af01cb9d36a06590c9e61efa",
+    "url": "/big-bang-web/static/media/bg-product2.236c6bb4.jpg"
+  },
+  {
+    "revision": "3d947b1833e2eef06169043cef3ba0ac",
+    "url": "/big-bang-web/static/media/bg-product3.3d947b18.jpg"
+  },
+  {
+    "revision": "06f0a0c23d9b4ec89a80c7e4b3b2f552",
+    "url": "/big-bang-web/static/media/bg-product4.06f0a0c2.jpg"
   },
   {
     "revision": "5326b52a51b898e5a83681e23ff80751",
