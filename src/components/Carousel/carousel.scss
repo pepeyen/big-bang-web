@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
 
     &__view{
         display: flex;
@@ -16,17 +17,16 @@
         flex-direction: column;
         justify-content: center;
         text-align: center;
-        margin: 0 1.25rem 0 1.25rem;
-        height: 20rem;
-        width: 15rem;
+        width: 100%;
     }
-    &__feedback{
+    &__radio-list{
         display: flex;
         flex-direction: row;
         justify-content: center;
         margin: 1.5rem 0 0 0;
-        gap: 0 .25rem;
-
+        gap: 0 .8rem;
+        overflow: auto;
+        
         & .--disabled-radio{
             opacity: 0.3;
         }
@@ -35,45 +35,58 @@
         background-color: #73A8A0;
         border: none;
         border-radius: 50%;
-        width: .75rem;
-        height: .85rem;
-
+        padding: .35rem;
+    }
+    &__feedback{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        font-family: 'ProximaNova-Regular';
+        background-color: #73A8A0;
+        width: 100%;
+        height: 30rem;
+        font-size: 2rem;
     }
 }
 @media (min-width: 801px){
     .carousel{
+        width: 110%;
+
         &__controller{
             display: block;
             background-color: transparent;
             border: none;
             padding: 0;
+            margin: 0 0 10vh 0;
             
             &:hover{
                 cursor: pointer; 
             }
             & svg{
-                width: 3vh;
-                height: 3vh;
+                width: 4vh;
+                height: 4vh;
             }
         }
         &__item{
             margin: 0 2.5vh 0 2.5vh;
-            height: 30vh;
-            width: 60vh;
         }
-        &__feedback{
-            margin: 3vh 0 0 0;
-            gap: 0 .5vh;
-    
+        &__radio-list{
+            margin: 5vh 0 0 0;
+            gap: 0 1vh;
         }
         &__radio-button{
-            width: 1.5vh;
-            height: 1.7vh;
+            padding: .6vh .55vh;
     
             &:hover{
                 cursor: pointer;
                 opacity: 0.8;
             }
+        }
+        &__feedback{
+            margin: 0 2.5vh 0 2.5vh;
+            height: 40vh;
+            font-size: 6vh;
         }
     }
 }
