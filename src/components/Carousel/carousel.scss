@@ -1,0 +1,79 @@
+.carousel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__view{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    &__controller{
+        display: none;
+    }
+    &__item{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin: 0 1.25rem 0 1.25rem;
+        height: 20rem;
+        width: 15rem;
+    }
+    &__feedback{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 1.5rem 0 0 0;
+        gap: 0 .25rem;
+
+        & .--disabled-radio{
+            opacity: 0.3;
+        }
+    }
+    &__radio-button{
+        background-color: #73A8A0;
+        border: none;
+        border-radius: 50%;
+        width: .75rem;
+        height: .85rem;
+
+    }
+}
+@media (min-width: 801px){
+    .carousel{
+        &__controller{
+            display: block;
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            
+            &:hover{
+                cursor: pointer; 
+            }
+            & svg{
+                width: 3vh;
+                height: 3vh;
+            }
+        }
+        &__item{
+            margin: 0 2.5vh 0 2.5vh;
+            height: 30vh;
+            width: 60vh;
+        }
+        &__feedback{
+            margin: 3vh 0 0 0;
+            gap: 0 .5vh;
+    
+        }
+        &__radio-button{
+            width: 1.5vh;
+            height: 1.7vh;
+    
+            &:hover{
+                cursor: pointer;
+                opacity: 0.8;
+            }
+        }
+    }
+}
