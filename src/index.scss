@@ -15,6 +15,14 @@
          url('./assets/fonts/Adamina/Regular/Adamina-Regular.svg#svgAdamina-Regular') format('svg'); /* Legacy iOS */
 }
 @font-face {
+    font-family: 'ProximaNova-Thin';
+    src: url('./assets/fonts/ProximaNova/Thin/ProximaNova-Thin.eot'); /* IE9 Compat Modes */
+    src: url('./assets/fonts/ProximaNova/Thin/ProximaNova-Thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./assets/fonts/ProximaNova/Thin/ProximaNova-Thin.woff') format('woff'), /* Modern Browsers */
+         url('./assets/fonts/ProximaNova/Thin/ProximaNova-Thin.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('./assets/fonts/ProximaNova/Thin/ProximaNova-Thin.svg#svgProximaNova-Thin') format('svg'); /* Legacy iOS */
+}
+@font-face {
     font-family: 'ProximaNova-Regular';
     src: url('./assets/fonts/ProximaNova/Regular/ProximaNova-Regular.eot'); /* IE9 Compat Modes */
     src: url('./assets/fonts/ProximaNova/Regular/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
