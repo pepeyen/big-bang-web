@@ -7,7 +7,7 @@ function CarouselRadioList(props){
     const buttonList = new Array(props.buttonCount).fill();
 
     return(
-        <div className="carousel__feedback">
+        <ul className="carousel__radio-list">
             {buttonList.map((element,index) => {
                 return(
                     <CarouselRadioButton
@@ -18,7 +18,7 @@ function CarouselRadioList(props){
                     />
                 );
             })}
-        </div>
+        </ul>
     );
 }
 

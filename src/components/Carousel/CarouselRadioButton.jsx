@@ -2,7 +2,7 @@ import React from 'react';
 
 function CarouselRadioButton(props){
     return(
-        <button 
+        <li
             className={`carousel__radio-button --${props.active ? "active" : "disabled"}-radio`}
             value={props.value}
             onClick={props.onClick}
