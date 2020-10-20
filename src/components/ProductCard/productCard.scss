@@ -1,14 +1,22 @@
 .product-card{
     &__banner{
+        display: flex;
+        flex-direction: column;
         background-position: center;
         background-repeat: no-repeat;
-        background-size: 100%;
+        background-size: 100% 15rem;
         height: 15rem;
+        & .like-button{
+           align-self: flex-end;
+           margin: .5em .5rem 0 0;
+        }
     }
     &__title{
         font-family: 'ProximaNova-SemiBold';
         font-size: .8rem;
         margin: .5rem 0 .5rem 0;
+        height: 16px;
+        overflow: hidden;
     }
     &__description{
         font-family: 'ProximaNova-Regular';
@@ -23,7 +31,11 @@
 @media (min-width: 801px){
     .product-card{
         &__banner{
+            background-size: 100% 40vh;
             height: 40vh;
+            & .like-button{
+                margin: 1vh 1vh 0 0;
+            }
         }
         &__title{
             font-size: 2vh;

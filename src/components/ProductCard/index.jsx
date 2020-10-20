@@ -1,5 +1,8 @@
 import React from 'react';
 
+//Components
+import LikeButton from '../LikeButton';
+
 //Styles
 import './productCard.scss';
 
@@ -16,6 +19,7 @@ function ProductCard(props){
                 className="product-card__banner"
                 style={{backgroundImage: `url(${product.media.bannerURL})`}}
             >
+                <LikeButton toBeLiked={product.ID} />
             </div>
             <p className="product-card__title --dark-text">{product.info.title}</p>
             <p className="product-card__description --grey-text">{product.info.description === '' ? '\u00A0' : product.info.description}</p>
