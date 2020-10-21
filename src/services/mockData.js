@@ -78,8 +78,8 @@ export const API = [
             bannerURL: require('../assets/images/product/bg-product3.jpg')
         }, 
         info: {
-            title: "Chantighee com Wasabi 300g",
-            description: "Lorem ipsum dolor",
+            title: "Chantighee com Wasabi",
+            description: "300g",
             price: 32.00
         },
         ID: 406
