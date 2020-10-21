@@ -21,6 +21,12 @@
         &:hover{
             cursor: pointer;
         }
+        &:active path{
+            fill: #ff0000;
+        }
+        &:hover path:nth-child(1){
+            fill: #ff0000;
+        }
         & svg{
             width: 2.3vh;
             height: 2.2vh;
