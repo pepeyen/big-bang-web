@@ -1,25 +1,36 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
+import {useDispatch} from 'react-redux';
+import {useSelector} from 'react-redux';
 
 //Styles
 import './__like-button.scss';
 
-function LikeButton(props){
-    let likedItems = (JSON.parse(sessionStorage.getItem("likedItems")) === null ? [] : JSON.parse(sessionStorage.getItem("likedItems")));
-    const [isLiked,setIsLiked] = useState(likedItems.includes(props.toBeLiked));
+//Actions
+import {likeAItem,deslikeAItem} from '../../actions';
 
+//Services
+import {findInArray} from '../../services/findInArray';
+
+function LikeButton(props){
+    const dispatch = useDispatch();
+    const likedItems = useSelector(state => state.likedItems);
+    const [isLiked,setIsLiked] = useState(false);
+
+    useEffect(() => {
+        setIsLiked(findInArray(likedItems,props.toBeLiked));
+        window.sessionStorage.setItem("likedItems", JSON.stringify(likedItems));
+    },[likedItems,props.toBeLiked]);
+    
     const likeHandler = () => {
-        if(likedItems.includes(props.toBeLiked) === false){
-            likedItems.push(props.toBeLiked);
+        if(findInArray(likedItems,props.toBeLiked) === false){
+            dispatch(likeAItem(props.toBeLiked));
         }else{
-            likedItems = likedItems.filter(value => { return value !== props.toBeLiked;});
+            dispatch(deslikeAItem(props.toBeLiked));
         }
-        setIsLiked(likedItems.includes(props.toBeLiked));
+        setIsLiked(findInArray(likedItems,props.toBeLiked));
         window.sessionStorage.setItem("likedItems", JSON.stringify(likedItems));
     };
-    /**
-     * Major bug is causing major visual desync at different pages buttons
-     * Too bad!
-     */
+
     return(
         <div 
             className="like-button"
