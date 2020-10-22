@@ -1,0 +1,39 @@
+.footer{
+    background-color: #000000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 30rem;
+
+    &__content{
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        width: 90%;
+    }
+    & svg{
+        display: inline-block;
+        width: 10rem;
+    }
+    &__divisor{
+        border-bottom: .1rem solid #ffffff;
+        width: 100%;
+    }
+}
+@media (min-width: 801px){
+    .footer{
+        min-height: 25vh;
+        &__content{
+            grid-template-columns: repeat(3, 1fr);
+        }
+        &__divisor{
+            width: auto;
+            border-bottom: none;
+        }
+        & svg{
+            width: 20vh;
+        }
+    }
+}
