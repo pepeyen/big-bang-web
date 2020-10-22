@@ -1,7 +1,7 @@
 import React from 'react';
 
 //Styles
-import './newsletter.scss';
+import './_newsletter.scss';
 
 const NewsLetter = () => {
     return(

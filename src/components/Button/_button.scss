@@ -1,4 +1,4 @@
-.like-button{
+.button_like{
     display: flex;
     border-radius: 50%;
     background-color: #FFFFFF;
@@ -13,7 +13,7 @@
     }
 }
 @media (min-width: 801px){
-    .like-button{
+    .button_like{
         width: 4vh;
         height: 4vh;
 

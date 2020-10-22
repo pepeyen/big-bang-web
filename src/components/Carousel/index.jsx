@@ -5,7 +5,7 @@ import CarouselController from './CarouselController';
 import CarouselRadioList from './CarouselRadioList';
 
 //Styles
-import './carousel.scss';
+import './_carousel.scss';
 
 const Carousel = (props) => {
     const [currentPage,setCurrentPage] = useState(0);

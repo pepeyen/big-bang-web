@@ -12,7 +12,7 @@ import Post from '../../components/Post';
 import Carousel from '../../components/Carousel';
 import CarouselItem from '../../components/Carousel/CarouselItem';
 import TableListing from '../../components/TableListing';
-import ProductCard from '../../components/ProductCard';
+import ProductCard from '../../components/Card/ProductCard';
 
 const Home = () => {
     return(

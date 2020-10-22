@@ -3,7 +3,7 @@ import {useDispatch} from 'react-redux';
 import {useSelector} from 'react-redux';
 
 //Styles
-import './__like-button.scss';
+import './_button.scss';
 
 //Actions
 import {likeAItem,deslikeAItem} from '../../actions';
@@ -33,7 +33,7 @@ const LikeButton = (props) => {
 
     return(
         <div 
-            className="like-button"
+            className="button_like"
             onClick={likeHandler}
         >
             <svg 
