@@ -1,8 +1,5 @@
 import React from 'react';
 
-//Styles
-import './_navbar.scss';
-
 //Assets
 import img_logo from '../../assets/images/navbar/logo.svg';
 import img_search from  '../../assets/images/navbar/icon-search.svg';

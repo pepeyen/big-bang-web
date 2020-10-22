@@ -3,7 +3,7 @@ import React from 'react';
 //Component
 import Navbar from '../../components/Navbar';
 import Banner from '../../components/Banner';
-import Button from '../../components/Button';
+import Button from '../../components/Buttons';
 import Cluster from '../../components/Cluster';
 import Node from '../../components/Node';
 import Filler from '../../components/Filler';
@@ -12,7 +12,7 @@ import Post from '../../components/Post';
 import Carousel from '../../components/Carousel';
 import CarouselItem from '../../components/Carousel/CarouselItem';
 import TableListing from '../../components/TableListing';
-import ProductCard from '../../components/Card/ProductCard';
+import ProductCard from '../../components/Cards/ProductCard';
 
 const Home = () => {
     return(

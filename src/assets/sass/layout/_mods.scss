@@ -79,22 +79,22 @@
 
     & .--big-left{
         grid-area: big-left;
-        background-size: 100% 16rem;
-        height: 16rem;
+        background-size: 100% 15rem;
+        height: 15rem;
     }
     & .--small-top-right{
         grid-area: top-small-right;
-        background-size: 100% 16rem;
-        height: 16rem;
+        background-size: 100% 15rem;
+        height: 15rem;
     }
     & .--small-bottom-halfed-left{
         grid-area: bottom-small-left;
-        background-size: 100% 16rem;
+        background-size: 100% 15rem;
         height: 15rem;
     }
     & .--small-bottom-halfed-right{
         grid-area: bottom-small-right;
-        background-size: 100% 16rem;
+        background-size: 100% 15rem;
         height: 15rem;
     }
 }
