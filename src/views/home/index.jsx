@@ -14,7 +14,7 @@ import CarouselItem from '../../components/Carousel/CarouselItem';
 import TableListing from '../../components/TableListing';
 import ProductCard from '../../components/ProductCard';
 
-function Home(){
+const Home = () => {
     return(
         <React.Fragment>
             <header>

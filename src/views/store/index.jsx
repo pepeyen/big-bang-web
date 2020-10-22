@@ -12,7 +12,7 @@ import RedirectorBanner from '../../components/Redirector/redirectorBanner';
 import {API} from '../../services/mockData';
 import {filterByType} from '../../services/filters';
 
-function Store(){
+const Store = () => {
     const products = filterByType('product',API);
     
     return(

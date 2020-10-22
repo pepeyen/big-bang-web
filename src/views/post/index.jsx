@@ -9,7 +9,7 @@ import {API} from '../../services/mockData';
 import {getCurrentPageID,getCurrentPageType} from '../../services/pageInfo';
 import {filterOverall} from '../../services/filters';
 
-function Post(){
+const Post = () => {
     const posts = filterOverall(getCurrentPageID(),'post',API);
     
     if(posts !== -1 && posts === filterOverall(getCurrentPageID(),getCurrentPageType(),API)){

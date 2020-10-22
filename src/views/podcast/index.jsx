@@ -11,7 +11,7 @@ import {API} from '../../services/mockData';
 import {getCurrentPageID,getCurrentPageType} from '../../services/pageInfo';
 import {filterOverall} from '../../services/filters';
 
-function Podcast(){
+const Podcast = () => {
     const podcast = filterOverall(getCurrentPageID(),'podcast',API);
 
     if(podcast !== -1 && podcast === filterOverall(getCurrentPageID(),getCurrentPageType(),API)){
