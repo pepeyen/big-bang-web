@@ -26,7 +26,9 @@
 
         &-email{
             width: 100%;
-            padding: 1rem;
+            padding: 0 0 0 .75rem;
+            height: 3rem;
+            align-items: center;
             margin: 1rem .5rem 0 0;
 
             &:focus{
@@ -39,7 +41,9 @@
             background-color: transparent;
             margin: 1rem 0 0 0;
             width: 35%;
+            padding: 0;
             height: 3rem;
+            text-align: center;
         }
     }
     &__info{
@@ -66,7 +70,8 @@
 
             &-email{
                 width: 100%;
-                padding: 1.5vh;
+                height: 6vh;
+                padding: 0 0 0 1.5vh;
                 font-size: 2vh;
             }
             &-button{
