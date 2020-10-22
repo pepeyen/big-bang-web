@@ -1,10 +1,7 @@
 import React from 'react';
 
 //Components
-import LikeButton from '../Button/LikeButton';
-
-//Styles
-import './_card.scss';
+import LikeButton from '../Buttons/LikeButton';
 
 //Services
 import {API} from '../../services/mockData';

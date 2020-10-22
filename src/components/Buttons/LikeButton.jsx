@@ -2,9 +2,6 @@ import React, {useState,useEffect} from 'react';
 import {useDispatch} from 'react-redux';
 import {useSelector} from 'react-redux';
 
-//Styles
-import './_button.scss';
-
 //Actions
 import {likeAItem,deslikeAItem} from '../../actions';
 

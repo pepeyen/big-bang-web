@@ -14,10 +14,6 @@ import Course from './views/course';
 import Contact from './views/contact';
 import NotFound from './views/errors/404';
 
-//Styles
-import './App.scss';
-import './views/_page.scss';
-
 const App = () => {
   return (
     <Switch>

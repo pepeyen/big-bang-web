@@ -10,8 +10,7 @@ import allReducers from './reducers/index';
 import App from './App';
 
 //Styles
-import './index.scss';
-import './reset.css';
+import './assets/sass/main.scss';
 
 const myStore = createStore(allReducers);
 

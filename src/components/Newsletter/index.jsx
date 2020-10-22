@@ -1,8 +1,5 @@
 import React from 'react';
 
-//Styles
-import './_newsletter.scss';
-
 const NewsLetter = () => {
     return(
         <div className="newsletter">
