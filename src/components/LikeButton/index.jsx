@@ -17,17 +17,17 @@ function LikeButton(props){
     const [isLiked,setIsLiked] = useState(false);
 
     useEffect(() => {
-        setIsLiked(findInArray(likedItems,props.toBeLiked));
+        setIsLiked(findInArray(likedItems[props.itemType + 's'] ? likedItems[props.itemType + 's'].likedItemsList : [],props.toBeLiked));
         window.sessionStorage.setItem("likedItems", JSON.stringify(likedItems));
-    },[likedItems,props.toBeLiked]);
+    },[likedItems,props.toBeLiked,props.itemType]);
     
     const likeHandler = () => {
-        if(findInArray(likedItems,props.toBeLiked) === false){
+        if(findInArray(likedItems[props.itemType + 's'] ? likedItems[props.itemType + 's'].likedItemsList : [],props.toBeLiked) === false){
             dispatch(likeAItem(props.toBeLiked,props.itemType));
         }else{
-            dispatch(deslikeAItem(props.toBeLiked,props.itemType));
+            dispatch(deslikeAItem(props.toBeLiked,props.itemType));   
         }
-        setIsLiked(findInArray(likedItems,props.toBeLiked));
+        setIsLiked(findInArray(likedItems[props.itemType + 's'] ? likedItems[props.itemType + 's'].likedItemsList : [],props.toBeLiked));
         window.sessionStorage.setItem("likedItems", JSON.stringify(likedItems));
     };
 
