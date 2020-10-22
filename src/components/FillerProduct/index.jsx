@@ -7,7 +7,7 @@ import {API} from '../../services/mockData';
 //Services
 import {filterByType} from '../../services/filters';
 
-function FillerProduct(props){
+const FillerProduct = (props) => {
     const products = filterByType('product',API);
     
     return(
@@ -18,7 +18,7 @@ function FillerProduct(props){
                         key={index}
                         className="page__filler-product --centralized-text"
                     >
-                        <Link to={`/store/post/?id=${element.ID}&type=${element.type}`}>
+                        <Link to={`/store/post?id=${element.ID}&type=${element.type}`}>
                             <img
                                 className="page__filler-product-image"
                                 src={element.media.bannerURL}

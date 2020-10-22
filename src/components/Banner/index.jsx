@@ -6,7 +6,7 @@ import {API} from '../../services/mockData';
 //Services
 import {filterOverall} from '../../services/filters';
 
-function Banner(props){
+const Banner = (props) => {
     const banner = filterOverall(props.ID,'banner',API);
 
     return(

@@ -11,7 +11,7 @@ import {likeAItem,deslikeAItem} from '../../actions';
 //Services
 import {findInArray} from '../../services/findInArray';
 
-function LikeButton(props){
+const LikeButton = (props) => {
     const dispatch = useDispatch();
     const likedItems = useSelector(state => state.likedItems);
     const [isLiked,setIsLiked] = useState(false);

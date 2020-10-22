@@ -1,6 +1,6 @@
 import React from 'react';
 
-function RedirectorInfo(props){
+const RedirectorInfo = (props) => {
     return(
         <div className="page__redirector-info">
             {props.children}

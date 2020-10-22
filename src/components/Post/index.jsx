@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Post(props){
+const Post = (props) => {
     let listingType = props.listing === 'table' ? props.listing : 'central';
 
     return(

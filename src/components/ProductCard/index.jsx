@@ -10,7 +10,7 @@ import './productCard.scss';
 import {API} from '../../services/mockData';
 import {filterOverall} from '../../services/filters';
 
-function ProductCard(props){
+const ProductCard = (props) => {
     const product = filterOverall(props.productID,'product',API);
 
     return(

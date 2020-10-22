@@ -1,6 +1,6 @@
 import React from 'react';
 
-function CarouselItem(props){
+const CarouselItem = (props) => {
     return(
         <div className="carousel__item">
             {props.children}
