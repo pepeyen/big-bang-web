@@ -19,7 +19,10 @@ function ProductCard(props){
                 className="product-card__banner"
                 style={{backgroundImage: `url(${product.media.bannerURL})`}}
             >
-                <LikeButton toBeLiked={product.ID} />
+                <LikeButton 
+                    toBeLiked={product.ID}
+                    itemType="product"
+                />
             </div>
             <p className="product-card__title --dark-text">{product.info.title}</p>
             <p className="product-card__description --grey-text">{product.info.description === '' ? '\u00A0' : product.info.description}</p>

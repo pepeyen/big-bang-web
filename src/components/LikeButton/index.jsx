@@ -23,9 +23,9 @@ function LikeButton(props){
     
     const likeHandler = () => {
         if(findInArray(likedItems,props.toBeLiked) === false){
-            dispatch(likeAItem(props.toBeLiked));
+            dispatch(likeAItem(props.toBeLiked,props.itemType));
         }else{
-            dispatch(deslikeAItem(props.toBeLiked));
+            dispatch(deslikeAItem(props.toBeLiked,props.itemType));
         }
         setIsLiked(findInArray(likedItems,props.toBeLiked));
         window.sessionStorage.setItem("likedItems", JSON.stringify(likedItems));

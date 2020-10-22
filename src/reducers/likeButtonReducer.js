@@ -4,14 +4,14 @@ const likeButtonReducer = (state = JSON.parse(window.sessionStorage.getItem("lik
     switch(action.type){
         case 'LIKE_A_ITEM':
             let likedList = state;
-
-            if(findInArray(state,action.item) === false){
-                likedList.push(action.item);
+            
+            if(findInArray(state,action.item.itemID) === false){
+                likedList.push(action.item.itemID);
             }
             return state = likedList;
 
         case 'DESLIKE_A_ITEM':
-            return state = filterInArray(state,action.item);
+            return state = filterInArray(state,action.item.itemID);
         
         default:
             return state;

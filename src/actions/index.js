@@ -1,13 +1,19 @@
-export const likeAItem = (item) => {
+export const likeAItem = (itemID,itemType) => {
     return {
         type: 'LIKE_A_ITEM',
-        item
+        item: {
+            itemID,
+            itemType
+        }
     };
 };
 
-export const deslikeAItem = (item) => {
+export const deslikeAItem = (itemID,itemType) => {
     return {
         type: 'DESLIKE_A_ITEM',
-        item
+        item: {
+            itemID,
+            itemType
+        }
     };
 };
