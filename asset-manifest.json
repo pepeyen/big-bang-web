@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/big-bang-web/static/css/main.57be3d71.chunk.css",
-    "main.js": "/big-bang-web/static/js/main.33011aba.chunk.js",
-    "main.js.map": "/big-bang-web/static/js/main.33011aba.chunk.js.map",
+    "main.css": "/big-bang-web/static/css/main.2d9de6a7.chunk.css",
+    "main.js": "/big-bang-web/static/js/main.fc9958ec.chunk.js",
+    "main.js.map": "/big-bang-web/static/js/main.fc9958ec.chunk.js.map",
     "runtime-main.js": "/big-bang-web/static/js/runtime-main.6ba7aec4.js",
     "runtime-main.js.map": "/big-bang-web/static/js/runtime-main.6ba7aec4.js.map",
-    "static/js/2.d19e1a0f.chunk.js": "/big-bang-web/static/js/2.d19e1a0f.chunk.js",
-    "static/js/2.d19e1a0f.chunk.js.map": "/big-bang-web/static/js/2.d19e1a0f.chunk.js.map",
+    "static/js/2.09e0e05e.chunk.js": "/big-bang-web/static/js/2.09e0e05e.chunk.js",
+    "static/js/2.09e0e05e.chunk.js.map": "/big-bang-web/static/js/2.09e0e05e.chunk.js.map",
     "index.html": "/big-bang-web/index.html",
-    "precache-manifest.9a013b2bcfddaf14484fd26df62a0a05.js": "/big-bang-web/precache-manifest.9a013b2bcfddaf14484fd26df62a0a05.js",
+    "precache-manifest.020b1a4e22648d71cf9904b70e793120.js": "/big-bang-web/precache-manifest.020b1a4e22648d71cf9904b70e793120.js",
     "service-worker.js": "/big-bang-web/service-worker.js",
-    "static/css/main.57be3d71.chunk.css.map": "/big-bang-web/static/css/main.57be3d71.chunk.css.map",
-    "static/js/2.d19e1a0f.chunk.js.LICENSE.txt": "/big-bang-web/static/js/2.d19e1a0f.chunk.js.LICENSE.txt",
-    "static/media/index.scss": "/big-bang-web/static/media/ProximaNova-Thin.7bb3b456.svg",
+    "static/css/main.2d9de6a7.chunk.css.map": "/big-bang-web/static/css/main.2d9de6a7.chunk.css.map",
+    "static/js/2.09e0e05e.chunk.js.LICENSE.txt": "/big-bang-web/static/js/2.09e0e05e.chunk.js.LICENSE.txt",
+    "static/media/main.scss": "/big-bang-web/static/media/ProximaNova-Thin.7bb3b456.svg",
     "static/media/bg-card2.jpg": "/big-bang-web/static/media/bg-card2.226ca18b.jpg",
     "static/media/bg-card3.jpg": "/big-bang-web/static/media/bg-card3.39355bcb.jpg",
     "static/media/bg-post1.jpg": "/big-bang-web/static/media/bg-post1.2896ed4b.jpg",
@@ -41,8 +41,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.6ba7aec4.js",
-    "static/js/2.d19e1a0f.chunk.js",
-    "static/css/main.57be3d71.chunk.css",
-    "static/js/main.33011aba.chunk.js"
+    "static/js/2.09e0e05e.chunk.js",
+    "static/css/main.2d9de6a7.chunk.css",
+    "static/js/main.fc9958ec.chunk.js"
   ]
 }
