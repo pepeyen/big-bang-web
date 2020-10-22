@@ -99,7 +99,6 @@
     }
 }
 .--three-to-one{
-    grid-template-columns: 50% 50%;
     grid-template-areas: 
     "medium-top-left medium-top-left"
     "medium-top-right medium-top-right"
@@ -398,7 +397,7 @@
         }
     }
     .--three-to-one{
-        grid-template-columns: auto auto auto;
+        grid-template-columns: 33% 33% 33%;
         grid-template-areas: 
         "medium-top-left none medium-top-right"
         "small-bottom-left small-bottom-middle small-bottom-right";
