@@ -12,7 +12,7 @@ import RedirectorText from '../../components/Redirector/redirectorText';
 import {API} from '../../services/mockData';
 import {filterByType} from '../../services/filters';
 
-function Courses(){
+const Courses = () => {
     const posts = filterByType('course',API);
 
     return(

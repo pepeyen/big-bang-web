@@ -7,7 +7,7 @@ import CarouselRadioList from './CarouselRadioList';
 //Styles
 import './carousel.scss';
 
-function Carousel(props){
+const Carousel = (props) => {
     const [currentPage,setCurrentPage] = useState(0);
     //When there's only one children props.children return the children not an array with that children.
     const [currentView,setCurrentView] = useState(props.children === undefined ? <div className="carousel__feedback --grey-text">Please insert a Item</div> : props.children.length === undefined ? props.children : props.children[0]);

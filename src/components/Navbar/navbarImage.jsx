@@ -1,6 +1,6 @@
 import React from 'react';
 
-function NavbarImage(props){
+const NavbarImage = (props) => {
     return(
         <li className="navbar__redirector">
             {props.children}

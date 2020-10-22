@@ -1,6 +1,6 @@
 import React from 'react';
 
-function AudioPlayerSlider(props){
+const AudioPlayerSlider = (props) => {
     return(
         <div className={`player --${props.isAudioPlaying ? 'playing' : 'paused'}`}>
             {props.children}

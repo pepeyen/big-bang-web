@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function NavbarBrand(props){
+const NavbarBrand = (props) => {
     return(
         <Link to="/#">
             <img 

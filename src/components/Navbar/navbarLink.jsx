@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import {getCurrentPageURI,getCurrentPageType} from '../../services/pageInfo';
 import {translatePageType} from '../../services/translatePageType';
 
-function NavbarLink(props){
+const NavbarLink = (props) => {
     let currentPage = getCurrentPageURI();
     let redirectorNormalized = props.redirector.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     

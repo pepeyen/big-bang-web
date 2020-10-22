@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Cluster(props){
+const Cluster = (props) => {
     return(
         <ul className={`page__cluster --${props.type}`}>
             {props.children}

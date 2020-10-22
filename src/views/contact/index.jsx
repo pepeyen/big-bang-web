@@ -3,7 +3,7 @@ import React from 'react';
 //Component
 import Navbar from '../../components/Navbar';
 
-function Contact(){
+const Contact = () => {
     return(
         <React.Fragment>
             <header>

@@ -3,7 +3,7 @@ import React from 'react';
 //Component
 import CarouselRadioButton from './CarouselRadioButton';
 
-function CarouselRadioList(props){
+const CarouselRadioList = (props) => {
     const buttonList = new Array(props.buttonCount).fill();
 
     return(

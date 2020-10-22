@@ -12,7 +12,7 @@ import RedirectorBanner from '../../components/Redirector/redirectorBanner';
 import {API} from '../../services/mockData';
 import {filterByType} from '../../services/filters';
 
-function Podcasts(){
+const Podcasts = () => {
     const posts = filterByType('podcast',API);
 
     return(

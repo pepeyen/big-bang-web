@@ -6,7 +6,7 @@ import VolumePlayerSlider from './VolumePlayerSlider';
 //Styles
 import './_audio-player.scss';
 
-function AudioPlayer(props){
+const AudioPlayer = (props) => {
     const [audio] = useState(new Audio(props.audioURL));
     const [isAudioPlaying, setIsAudioPlaying] = useState(false);
     const [isButtonBright, setIsButtonBright] = useState(false);

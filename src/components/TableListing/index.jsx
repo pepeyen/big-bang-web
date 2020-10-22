@@ -1,6 +1,6 @@
 import React from 'react';
 
-function TableListing(props){
+const TableListing = (props) => {
     return(
         <div className={`--table-${props.listingType}`}>
             {props.children}

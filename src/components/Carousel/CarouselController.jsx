@@ -1,6 +1,6 @@
 import React from 'react';
 
-function CarouselController(props){
+const CarouselController = (props) => {
     const setControllerBackground = () => {
         switch (props.controllerType){
             case "back":

@@ -14,7 +14,7 @@ import {translatePageType} from '../../services/translatePageType';
 //Images
 import img_foward from '../../assets/images/button/button-foward.svg';
 
-function Node(props){
+const Node = (props) => {
     const node = filterOverall(props.ID,props.type,API);
 
     const setNodeChildren = () => {
@@ -114,7 +114,7 @@ function Node(props){
             <Link
                 className={`page__node --${props.size}-${props.position} --${node.type} --${props.theme}-text`}
                 style={{backgroundImage: props.theme === 'light' ? `url(${node.media.bannerURL})` : ''}}
-                to={`/${translatePageType(node.type)}/post/?id=${node.ID}&type=${node.type}`}
+                to={`/${translatePageType(node.type)}/post?id=${node.ID}&type=${node.type}`}
             >
                 <div className={props.theme === 'light' ? "page__banner-content --flex-end-self --fade-up" : "page__banner-content --flex-end-self"}>
                     {nodeChildren}  

@@ -2,7 +2,7 @@ import React from 'react';
 
 import img_playButton from '../../assets/images/button/button-play.svg';
 
-function RedirectorBanner(props){
+const RedirectorBanner = (props) => {
     if(props.type === 'podcast'){
         return(
             <div 

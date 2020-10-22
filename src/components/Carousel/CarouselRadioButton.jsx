@@ -1,6 +1,6 @@
 import React from 'react';
 
-function CarouselRadioButton(props){
+const CarouselRadioButton = (props) => {
     return(
         <li
             className={`carousel__radio-button --${props.active ? "active" : "disabled"}-radio`}

@@ -17,7 +17,7 @@ import NavbarLink from './navbarLink';
 import NavbarBrand from './navbarBrand';
 import NavbarImage from './navbarImage';
 
-function Navbar(){
+const Navbar = () => {
     return(
         <nav className="navbar">
             <div className="navbar__buttons --space-between">

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Filler(props){
+const Filler = (props) => {
     return(
         <div className="page__filler --top-thin-borders --bottom-thin-borders">
             <div className="page__filler-info">
