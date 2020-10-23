@@ -67,7 +67,9 @@ const App = () => {
         />
         <Redirect to="/error/404" />
       </Switch>
-      <Footer />
+      <footer>
+        <Footer />
+      </footer>
     </React.Fragment>
   );
 }
