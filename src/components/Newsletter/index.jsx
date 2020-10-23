@@ -1,18 +1,19 @@
 import React from 'react';
 
-const NewsLetter = () => {
+const NewsLetter = (props) => {
+
     return(
-        <div className="newsletter">
-            <span className="newsletter__title --dark-text">Namah no seu e-mail</span>
-            <span className="newsletter__description --grey-text">Assine nossa newsletter</span>
-            <form className="newsletter__form">
+        <div className={`newsletter --${props.dark ? 'dark' : 'light'}-theme`} >
+            <span className={`newsletter__title --${props.dark ? 'light' : 'dark'}-text`}>Namah no seu e-mail</span>
+            <span className={`newsletter__description --${props.dark ? 'light' : 'dark'}-text`}>Assine nossa newsletter</span>
+            <form className={"newsletter__form"}>
                 <input 
                     className="newsletter__form-email --thin-borders"
                     type="email"
-                    placeholder="Seu e-mail"
+                    placeholder="Seu endereço de e-mail"
                 />
                 <input 
-                    className="newsletter__form-button --dark-text --medium-borders --grey-borders"
+                    className={`newsletter__form-button --${props.dark ? 'light' : 'dark'}-text --medium-borders --grey-borders`}
                     type="button"
                     value="ASSINAR"
                 />
