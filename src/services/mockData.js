@@ -1,4 +1,7 @@
-import {timeConverter, calcDateDiff} from '../services/timeHandles';
+import {
+    timeConverter,
+    calcDateDiff
+} from '../services';
 
 export const API = [
     {
