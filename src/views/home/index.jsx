@@ -6,13 +6,17 @@ import Banner from '../../components/Banner';
 import Button from '../../components/Buttons';
 import Cluster from '../../components/Cluster';
 import Node from '../../components/Node';
-import Filler from '../../components/Filler';
-import FillerProduct from '../../components/FillerProduct';
 import Post from '../../components/Post';
-import Carousel from '../../components/Carousel';
-import CarouselItem from '../../components/Carousel/CarouselItem';
 import TableListing from '../../components/TableListing';
-import ProductCard from '../../components/Cards/ProductCard';
+import {ProductCard} from '../../components/Cards';
+import {
+    Filler,
+    FillerProduct
+} from '../../components/Filler';
+import {
+    Carousel,
+    CarouselItem
+} from '../../components/Carousel';
 
 const Home = () => {
     return(

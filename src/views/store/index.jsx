@@ -3,10 +3,12 @@ import React from 'react';
 //Component
 import Navbar from '../../components/Navbar';
 import Post from '../../components/Post';
-import Redirector from '../../components/Redirector';
-import RedirectorInfo from '../../components/Redirector/redirectorInfo';
-import RedirectorText from '../../components/Redirector/redirectorText';
-import RedirectorBanner from '../../components/Redirector/redirectorBanner';
+import {
+    Redirector,
+    RedirectorInfo,
+    RedirectorText,
+    RedirectorBanner
+} from '../../components/Redirector';
 
 //Services
 import {API} from '../../services/mockData';
