@@ -30,7 +30,7 @@ const LikeButton = (props) => {
 
     return(
         <div 
-            className="button_like"
+            className="button__like"
             onClick={likeHandler}
         >
             <svg 
