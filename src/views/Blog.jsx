@@ -1,18 +1,18 @@
 import React from 'react';
 
 //Component
-import Navbar from '../../components/Navbar';
-import Post from '../../components/Post';
 import {
+    Navbar,
+    Post,
     Redirector,
     RedirectorInfo,
     RedirectorText,
     RedirectorBanner
-} from '../../components/Redirector';
+} from '../components';
 
 //Services
-import {API} from '../../services/mockData';
-import {filterByType} from '../../services/filters';
+import {API} from '../services/mockData';
+import {filterByType} from '../services';
 
 const Blog = () => {
     const posts = filterByType('post',API);

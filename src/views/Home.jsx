@@ -1,22 +1,20 @@
 import React from 'react';
 
 //Component
-import Navbar from '../../components/Navbar';
-import Banner from '../../components/Banner';
-import Button from '../../components/Buttons';
-import Cluster from '../../components/Cluster';
-import Node from '../../components/Node';
-import Post from '../../components/Post';
-import TableListing from '../../components/TableListing';
-import {ProductCard} from '../../components/Cards';
 import {
+    Navbar,
+    Banner,
+    RedirectorButton,
+    Cluster,
+    Node,
+    Post,
+    TableListing,
+    ProductCard,
     Filler,
-    FillerProduct
-} from '../../components/Filler';
-import {
+    FillerProduct,
     Carousel,
     CarouselItem
-} from '../../components/Carousel';
+} from '../components';
 
 const Home = () => {
     return(
@@ -28,7 +26,7 @@ const Home = () => {
                 <section className="page">
                     <Post>
                         <Banner ID={552}>
-                            <Button 
+                            <RedirectorButton
                                 text="LOREM IPSUM" 
                                 root="banner"
                             />
@@ -118,7 +116,7 @@ const Home = () => {
                                 type="newsletter"
                             />
                         </Cluster>
-                        <Button
+                        <RedirectorButton
                             root="post" 
                             target="blog"
                             text="Veja todos os posts"
@@ -142,21 +140,21 @@ const Home = () => {
                                 </TableListing>
                             </CarouselItem>
                         </Carousel>
-                        <Button
+                        <RedirectorButton
                             root="post" 
                             target="store"
                             text="Veja todos os produtos"
                         />
                     </Post>
                     <Post title="Courses">                
-                        <Button
+                        <RedirectorButton
                             root="post" 
                             target="courses"
                             text="Veja todos os cursos"
                         />
                     </Post>
                     <Post title="Podcasts">               
-                        <Button
+                        <RedirectorButton
                             root="post" 
                             target="podcasts"
                             text="Veja todos os podcasts"

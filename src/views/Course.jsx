@@ -2,12 +2,15 @@ import React from 'react';
 import {Redirect} from 'react-router-dom';
 
 //Component
-import Navbar from '../../components/Navbar';
+import {Navbar} from '../components';
 
 //Services
-import {API} from '../../services/mockData';
-import {getCurrentPageID,getCurrentPageType} from '../../services/pageInfo';
-import {filterOverall} from '../../services/filters';
+import {API} from '../services/mockData';
+import {
+    getCurrentPageID,
+    getCurrentPageType,
+    filterOverall
+} from '../services';
 
 const Course = () => {
     const course = filterOverall(getCurrentPageID(),'course',API);

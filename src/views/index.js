@@ -1,0 +1,11 @@
+export {default as Blog} from './Blog';
+export {default as Contact} from './Contact';
+export {default as Course} from './Course';
+export {default as Courses} from './Courses';
+export {default as Home} from './Home';
+export {default as NotFound} from './Error404';
+export {default as Podcast} from './Podcast';
+export {default as Podcasts} from './Podcasts';
+export {default as Post} from './Post';
+export {default as Product} from './Product';
+export {default as Store} from './Store';

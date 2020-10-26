@@ -1,21 +1,21 @@
 import React from 'react';
 
 //Component
-import Navbar from '../../components/Navbar';
-import Post from '../../components/Post';
 import {
+    Navbar,
+    Post,
     Redirector,
     RedirectorInfo,
     RedirectorText,
     RedirectorBanner
-} from '../../components/Redirector';
+} from '../components';
 
 //Services
-import {API} from '../../services/mockData';
-import {filterByType} from '../../services/filters';
+import {API} from '../services/mockData';
+import {filterByType} from '../services';
 
-const Podcasts = () => {
-    const posts = filterByType('podcast',API);
+const Courses = () => {
+    const posts = filterByType('course',API);
 
     return(
         <React.Fragment>
@@ -24,8 +24,8 @@ const Podcasts = () => {
             </header>
             <main>
                 <section className="page">
-                    <p className="page__place-holder">Podcasts</p>
-                    <Post>
+                    <p className="page__place-holder">Courses</p>
+                    <Post listing="table">
                         {posts.map((element,index) => {
                             return(
                                 <Redirector 
@@ -33,26 +33,25 @@ const Podcasts = () => {
                                     redirectorType={element.type}
                                     redirectorID={element.ID}
                                 >
+                                    <RedirectorBanner
+                                        url={element.media.bannerURL} 
+                                        alt={element.info.title} 
+                                    />
                                     <RedirectorInfo>
                                         <RedirectorText
                                             infoType="title"
                                             color="dark"
                                         >
-                                            {element.info.name}
+                                            {element.info.title}
                                         </RedirectorText>
                                         <RedirectorText
                                             infoType="user"
                                             color="grey"
                                         >
-                                            {element.info.onwership.username} #{element.info.onwership.userID}
-                                        </RedirectorText>  
+                                            {element.info.type} - {element.info.date.startDate.day} {element.info.date.startDate.month}
+                                        </RedirectorText>
                                     </RedirectorInfo>
-                                    <RedirectorBanner
-                                        url={element.media.bannerURL}
-                                        alt={element.info.name}
-                                        type='podcast'
-                                    />
-                                </Redirector >
+                                </Redirector>
                             );
                         })}
                     </Post>
@@ -62,4 +61,4 @@ const Podcasts = () => {
     );
 }
 
-export default Podcasts;
+export default Courses;

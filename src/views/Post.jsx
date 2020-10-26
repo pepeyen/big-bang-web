@@ -2,12 +2,15 @@ import React from 'react';
 import {Redirect} from 'react-router-dom';
 
 //Components
-import Navbar from '../../components/Navbar';
+import {Navbar} from '../components';
 
 //Services
-import {API} from '../../services/mockData';
-import {getCurrentPageID,getCurrentPageType} from '../../services/pageInfo';
-import {filterOverall} from '../../services/filters';
+import {API} from '../services/mockData';
+import {
+    getCurrentPageID,
+    getCurrentPageType,
+    filterOverall
+} from '../services';
 
 const Post = () => {
     const posts = filterOverall(getCurrentPageID(),'post',API);
