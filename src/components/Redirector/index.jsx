@@ -1,18 +1,4 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-
-//Services
-import {getCurrentPageURI} from '../../services/pageInfo';
-
-const Redirector = (props) => {
-    return(
-        <Link 
-            className={`page__redirector page__type-${props.redirectorType} --bottom-thin-borders`}
-            to={`/${getCurrentPageURI()}/post?id=${props.redirectorID}&type=${props.redirectorType}`}
-        >
-            {props.children}
-        </Link>
-    );
-}
-
-export default Redirector;
+export {default as Redirector} from './Redirector';
+export {default as RedirectorBanner} from './RedirectorBanner';
+export {default as RedirectorInfo} from './RedirectorInfo';
+export {default as RedirectorText} from './RedirectorText'
