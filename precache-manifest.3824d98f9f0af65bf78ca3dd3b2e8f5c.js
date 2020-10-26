@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ef834366b005d16a5e9f117d35bf1133",
+    "revision": "d1017b7471d24cb9d45ce4e45de4fe10",
     "url": "/big-bang-web/index.html"
   },
   {
-    "revision": "b5a5a927dbaf38f623ec",
-    "url": "/big-bang-web/static/css/main.38668868.chunk.css"
+    "revision": "bb6cb8c5648b8889f67f",
+    "url": "/big-bang-web/static/css/main.512a9536.chunk.css"
   },
   {
-    "revision": "3d8afa107417544359f8",
-    "url": "/big-bang-web/static/js/2.09e0e05e.chunk.js"
+    "revision": "2981cd561baf2127ebad",
+    "url": "/big-bang-web/static/js/2.df0b3243.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/big-bang-web/static/js/2.09e0e05e.chunk.js.LICENSE.txt"
+    "url": "/big-bang-web/static/js/2.df0b3243.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b5a5a927dbaf38f623ec",
-    "url": "/big-bang-web/static/js/main.33f89549.chunk.js"
+    "revision": "bb6cb8c5648b8889f67f",
+    "url": "/big-bang-web/static/js/main.6652b46b.chunk.js"
   },
   {
     "revision": "8255e6fc33e2f18e4107",
