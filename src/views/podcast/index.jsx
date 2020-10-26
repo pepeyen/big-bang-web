@@ -4,14 +4,17 @@ import {Redirect} from 'react-router-dom';
 //Component
 import Navbar from '../../components/Navbar';
 import Post from '../../components/Post';
-import AudioPlayer from '../../components/AudioPlayer';
+import {
+    AudioPlayer,
+    AudioPlayerButton
+} from '../../components/AudioPlayer';
 
 //Services
 import {API} from '../../services/mockData';
 import {getCurrentPageID,getCurrentPageType} from '../../services/pageInfo';
 import {filterOverall} from '../../services/filters';
 
-const Podcast = () => {
+export const Podcast = () => {
     const podcast = filterOverall(getCurrentPageID(),'podcast',API);
 
     if(podcast !== -1 && podcast === filterOverall(getCurrentPageID(),getCurrentPageType(),API)){
@@ -29,7 +32,9 @@ const Podcast = () => {
                                 alt={podcast.info.name}  
                             />
                             <div className="page__podcast --fade-up">
-                                <AudioPlayer audioURL={podcast.media.audioURL} />
+                                <AudioPlayer>
+                                    <AudioPlayerButton audioURL={podcast.media.audioURL} />
+                                </AudioPlayer>      
                             </div>
                             <p className="page__post-title --centralized-text">{podcast.info.podcastName}</p>
                             <div className="page__post-info">

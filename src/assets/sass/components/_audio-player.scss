@@ -1,10 +1,10 @@
 .player{
-    border-radius: 50%;
-    border-color: #ffffff;
     padding: 0;
-    transition: border-width ease-in .1s;
 
     &__button{
+        border-radius: 50%;
+        border-color: #ffffff;
+        transition: border-width ease-in .1s;
         background-color: transparent;
         display: block;
         border: none;
@@ -22,8 +22,8 @@
 @media (min-width: 801px){
     .player{
         &__button{
-            width: 15vh;
-            height: 15vh;
+            width: 17vh;
+            height: 17vh;
             padding: 0 0 0 .8vh;
             &:hover{
                 cursor: pointer;
