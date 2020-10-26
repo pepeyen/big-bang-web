@@ -1,4 +1,4 @@
-import {findInArray,filterInArray} from '../services/findInArray';
+import {findInArray,filterInArray} from '../services';
 
 const likeButtonReducer = (state = JSON.parse(window.sessionStorage.getItem("likedItems")) === null ? {} : 
                             JSON.parse(window.sessionStorage.getItem("likedItems")), action) => { 
