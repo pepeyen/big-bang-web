@@ -1,7 +1,7 @@
 import React from 'react';
 
 //Components
-import Newsletter from '../Newsletter';
+import Newsletter from './Newsletter';
 
 const Footer = () => {
     return(
@@ -164,7 +164,7 @@ const Footer = () => {
                                 <span>Site seguro</span>
                             </div>
                             <span>Dúvidas Frequentes | Políticas da Loja</span>
-                            <spa>Site por BIG BANG SHOP</spa>
+                            <span>Site por BIG BANG SHOP</span>
                         </div>
                     </div>
                 </div>

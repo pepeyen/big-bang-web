@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 //Services
-import {getCurrentPageURI} from '../../services/pageInfo';
+import {getCurrentPageURI} from '../services';
 
 const Redirector = (props) => {
     return(

@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react';
 
-const AudioPlayer = (props) => {
+const AudioButtonPlayer = (props) => {
     const [audio] = useState(new Audio(props.audioURL));
     const [isAudioPlaying, setIsAudioPlaying] = useState(false);
     const [isButtonBright, setIsButtonBright] = useState(false);
@@ -62,4 +62,4 @@ const AudioPlayer = (props) => {
     );
 }
 
-export default AudioPlayer;
+export default AudioButtonPlayer;

@@ -2,17 +2,19 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 //Mock up data
-import {API} from '../../services/mockData';
+import {API} from '../services/mockData';
 
 //Components
-import Newsletter from '../../components/Newsletter';
+import Newsletter from '../components/Newsletter';
 
 //Services
-import {filterOverall} from '../../services/filters';
-import {translatePageType} from '../../services/translatePageType';
+import {
+    filterOverall,
+    translatePageType
+} from '../services';
 
 //Images
-import img_foward from '../../assets/images/button/button-foward.svg';
+import img_foward from '../assets/images/button/button-foward.svg';
 
 const Node = (props) => {
     const node = filterOverall(props.ID,props.type,API);

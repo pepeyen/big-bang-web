@@ -3,10 +3,10 @@ import {useDispatch} from 'react-redux';
 import {useSelector} from 'react-redux';
 
 //Actions
-import {likeAItem,deslikeAItem} from '../../actions';
+import {likeAItem,deslikeAItem} from '../actions';
 
 //Services
-import {findInArray} from '../../services/findInArray';
+import {findInArray} from '../services';
 
 const LikeButton = (props) => {
     const dispatch = useDispatch();

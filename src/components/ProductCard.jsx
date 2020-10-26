@@ -1,11 +1,11 @@
 import React from 'react';
 
 //Components
-import LikeButton from '../Buttons/LikeButton';
+import LikeButton from './LikeButton';
 
 //Services
-import {API} from '../../services/mockData';
-import {filterOverall} from '../../services/filters';
+import {API} from '../services/mockData';
+import {filterOverall} from '../services';
 
 const ProductCard = (props) => {
     const product = filterOverall(props.productID,'product',API);

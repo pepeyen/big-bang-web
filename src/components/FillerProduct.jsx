@@ -2,10 +2,10 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 //Mock up data
-import {API} from '../../services/mockData';
+import {API} from '../services/mockData';
 
 //Services
-import {filterByType} from '../../services/filters';
+import {filterByType} from '../services';
 
 const FillerProduct = (props) => {
     const products = filterByType('product',API);

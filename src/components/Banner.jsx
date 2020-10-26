@@ -1,10 +1,10 @@
 import React from 'react';
 
 //Mock up data
-import {API} from '../../services/mockData';
+import {API} from '../services/mockData';
 
 //Services
-import {filterOverall} from '../../services/filters';
+import {filterOverall} from '../services';
 
 const Banner = (props) => {
     const banner = filterOverall(props.ID,'banner',API);

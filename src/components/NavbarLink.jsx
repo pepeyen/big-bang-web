@@ -2,8 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 //Services
-import {getCurrentPageURI,getCurrentPageType} from '../../services/pageInfo';
-import {translatePageType} from '../../services/translatePageType';
+import {
+    getCurrentPageURI,
+    getCurrentPageType,
+    translatePageType
+} from '../services';
 
 const NavbarLink = (props) => {
     let currentPage = getCurrentPageURI();

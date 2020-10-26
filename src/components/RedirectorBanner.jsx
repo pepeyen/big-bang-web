@@ -1,6 +1,6 @@
 import React from 'react';
 
-import img_playButton from '../../assets/images/button/button-play.svg';
+import img_playButton from '../assets/images/button/button-play.svg';
 
 const RedirectorBanner = (props) => {
     if(props.type === 'podcast'){

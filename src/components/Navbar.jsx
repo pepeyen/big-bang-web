@@ -1,18 +1,18 @@
 import React from 'react';
 
 //Assets
-import img_logo from '../../assets/images/navbar/logo.svg';
-import img_search from  '../../assets/images/navbar/icon-search.svg';
-import img_profile from  '../../assets/images/navbar/icon-profile.svg';
-import img_orders from  '../../assets/images/navbar/icon-orders.svg';
-import img_wishes from  '../../assets/images/navbar/icon-wishes.svg';
-import img_cart from  '../../assets/images/navbar/icon-cart.svg';
-import img_logout from  '../../assets/images/navbar/icon-logout.svg';
+import img_logo from '../assets/images/navbar/logo.svg';
+import img_search from  '../assets/images/navbar/icon-search.svg';
+import img_profile from  '../assets/images/navbar/icon-profile.svg';
+import img_orders from  '../assets/images/navbar/icon-orders.svg';
+import img_wishes from  '../assets/images/navbar/icon-wishes.svg';
+import img_cart from  '../assets/images/navbar/icon-cart.svg';
+import img_logout from  '../assets/images/navbar/icon-logout.svg';
 
 //Components
-import NavbarLink from './navbarLink';
-import NavbarBrand from './navbarBrand';
-import NavbarImage from './navbarImage';
+import NavbarLink from './NavbarLink';
+import NavbarBrand from './NavbarBrand';
+import NavbarImage from './NavbarImage';
 
 const Navbar = () => {
     return(

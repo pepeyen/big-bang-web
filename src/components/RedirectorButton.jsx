@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 //Images
-import img_foward from '../../assets/images/button/button-foward.svg';
+import img_foward from '../assets/images/button/button-foward.svg';
 
 const Button = (props) => {
     if(props.target === undefined){
