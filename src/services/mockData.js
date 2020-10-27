@@ -160,20 +160,46 @@ export const API = [
             title: "Imersão Vinyasa Flow",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius possimus qui commodi architecto in ipsum voluptates sint. Rerum ducimus nihil, explicabo facere quisquam animi enim placeat temporibus rem, eaque nostrum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, eveniet cum itaque dolorem neque dolor esse, modi expedita deleniti eaque fugit voluptate temporibus aliquam nostrum reprehenderit reiciendis dolore officiis nesciunt?",
             date: {
-                startDate: timeConverter({
-                    day: 4,
-                    month: 4,
-                    year: 2020
-                }),
-                endDate: timeConverter({
-                    day: 5,
-                    month: 4,
-                    year: 2020
-                }),
-                dateDifference: calcDateDiff(timeConverter({day: 4, month: 4, year: 2020}), timeConverter({day: 6,month: 4,year: 2020}))
+                startDate: timeConverter({day: 4, month: 4, year: 2020}),
+                endDate: timeConverter({day: 5, month: 4, year: 2020}),
+                dateDifference: calcDateDiff(timeConverter({day: 4, month: 4, year: 2020}), timeConverter({day: 5,month: 4,year: 2020}))
             }
         },
         ID: 12023452
+    },
+    {
+        type: 'course',
+        media: {
+            bannerURL: require('../assets/images/post/bg-post4.jpg')
+        },
+        info: {
+            type: "CURSO",
+            title: "Imersão Vinyasa Flow",
+            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius possimus qui commodi architecto in ipsum voluptates sint. Rerum ducimus nihil, explicabo facere quisquam animi enim placeat temporibus rem, eaque nostrum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, eveniet cum itaque dolorem neque dolor esse, modi expedita deleniti eaque fugit voluptate temporibus aliquam nostrum reprehenderit reiciendis dolore officiis nesciunt?",
+            date: {
+                startDate: timeConverter({day: 4, month: 4, year: 2020}),
+                endDate: timeConverter({day: 5, month: 4, year: 2020}),
+                dateDifference: calcDateDiff(timeConverter({day: 4, month: 4, year: 2020}), timeConverter({day: 5, month: 4, year: 2020}))
+            }
+        },
+        ID: 12023453
+    },
+    {
+        type: 'course',
+        media: {
+            bannerURL: require('../assets/images/post/bg-post4.jpg')
+        },
+        info: {
+            type: "CURSO",
+            title: "Imersão Vinyasa Flow",
+            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius possimus qui commodi architecto in ipsum voluptates sint. Rerum ducimus nihil, explicabo facere quisquam animi enim placeat temporibus rem, eaque nostrum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, eveniet cum itaque dolorem neque dolor esse, modi expedita deleniti eaque fugit voluptate temporibus aliquam nostrum reprehenderit reiciendis dolore officiis nesciunt?",
+            date: {
+                startDate: timeConverter({day: 4, month: 4, year: 2020}),
+                endDate: timeConverter({day: 5, month: 4, year: 2020}),
+                dateDifference: calcDateDiff(timeConverter({day: 4, month: 4, year: 2020}), timeConverter({day: 5,month: 4,year: 2020}))
+            }
+        },
+        ID: 1202315
     },
     {
         type: 'post',
