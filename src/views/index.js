@@ -9,3 +9,5 @@ export {default as Podcasts} from './Podcasts';
 export {default as Post} from './Post';
 export {default as Product} from './Product';
 export {default as Store} from './Store';
+export {default as Profile} from './Profile';
+export {default as Login} from './Login';

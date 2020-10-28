@@ -16,6 +16,8 @@ import {
     Courses,
     Course,
     Contact,
+    Profile,
+    Login,
     NotFound
 } from './views';
 
@@ -62,6 +64,14 @@ const App = () => {
                 <Route 
                     exact path="/courses/post"
                     component={Course}
+                />
+                <Route 
+                    exact path="/user"
+                    component={Profile}
+                />
+                <Route 
+                    exact path="/login"
+                    component={Login}
                 />
                 <Route
                     path="/error/404"

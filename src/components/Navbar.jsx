@@ -19,44 +19,68 @@ const Navbar = () => {
         <nav className="navbar">
             <div className="navbar__buttons --space-between">
                 <ul className="navbar__redirectors --links --space-between">
-                    <NavbarLink redirector='home' />
-                    <NavbarLink redirector='blog' />
-                    <NavbarLink redirector='store' />
-                    <NavbarLink redirector='podcasts' />
-                    <NavbarLink redirector='courses' />
-                    <NavbarLink redirector='contact' />
+                    <NavbarLink redirector='home'>
+                        HOME
+                    </NavbarLink>
+                    <NavbarLink redirector='blog'>
+                        BLOG
+                    </NavbarLink>
+                    <NavbarLink redirector='store'>
+                        STORE
+                    </NavbarLink>
+                    <NavbarLink redirector='podcasts'>
+                        PODCASTS
+                    </NavbarLink>
+                    <NavbarLink redirector='courses'>
+                        COURSES
+                    </NavbarLink>
+                    <NavbarLink redirector='contact'>
+                        CONTACT
+                    </NavbarLink>
                 </ul>
                 <NavbarBrand 
                     logoURL={img_logo}
                     logAlt='logo'
                 />
                 <ul className="navbar__redirectors --space-between --reverse">
-                    <NavbarImage 
-                        imageURL={img_search}
-                        imageAlt='Search'
-                    />
-                    <NavbarImage 
-                        imageURL={img_profile}
-                        imageAlt='Profile'
-                    />
-                    <NavbarImage 
-                        imageURL={img_orders}
-                        imageAlt='Orders'
-                    />
-                    <NavbarImage 
-                        imageURL={img_wishes}
-                        imageAlt='Wishlist'
-                    />
-                    <NavbarImage 
-                        imageURL={img_cart}
-                        imageAlt='Cart'
-                    >
-                        <div className="navbar__cart-index">99</div>
-                    </NavbarImage>
-                    <NavbarImage 
-                        imageURL={img_logout}
-                        imageAlt='Log out'
-                    />
+                    <NavbarLink redirector="search">
+                        <NavbarImage 
+                            imageURL={img_search}
+                            imageAlt='Search'
+                        />
+                    </NavbarLink>
+                    <NavbarLink redirector="user">
+                        <NavbarImage 
+                            imageURL={img_profile}
+                            imageAlt='Profile'
+                        />
+                    </NavbarLink>
+                    <NavbarLink redirector="orders">
+                        <NavbarImage 
+                            imageURL={img_orders}
+                            imageAlt='Orders'
+                        />
+                    </NavbarLink>
+                    <NavbarLink redirector="wishlist">
+                        <NavbarImage 
+                            imageURL={img_wishes}
+                            imageAlt='Wishlist'
+                        />
+                    </NavbarLink>
+                    <NavbarLink redirector="cart">
+                        <NavbarImage 
+                            imageURL={img_cart}
+                            imageAlt='Cart'
+                        >
+                            <div className="navbar__cart-index">99</div>
+                        </NavbarImage>
+                    </NavbarLink>
+                    <NavbarLink redirector="logout">
+                        <NavbarImage 
+                            imageURL={img_logout}
+                            imageAlt='Log out'
+                        />
+                    </NavbarLink>
                 </ul>
             </div>
         </nav>
