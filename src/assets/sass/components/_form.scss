@@ -1,0 +1,91 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem 0;
+    width: 100%;
+    height: 42rem;
+
+
+    &__title{
+        font-family: 'ProximaNova-Bold';
+        font-size: 2.5rem;
+        margin: 0 0 3rem 0;
+    }
+    &__input-group:focus-within label{
+        color: #4c706b;
+    }
+    &__label{
+        font-family: 'ProximaNova-Regular';
+        font-size: 1.5rem;
+    }
+    &__input-group{
+        width: 100%;
+    }
+    &__input{
+        font-family: 'ProximaNova-Regular';
+        text-align: center;
+        font-size: 1rem;
+        border: .1rem solid black;
+        height: 3rem;
+        padding: 0;
+        width: 100%;
+        margin: .5rem 0 .5rem 0;
+        &:focus{
+            box-shadow: none;
+            outline: none;
+            border-color: #73A8A0;
+        }
+    }
+    &__submit{
+        font-family: 'ProximaNova-SemiBold';
+        font-size: 1rem;
+        padding: 0;
+        background-color: transparent;
+        border: .1rem solid black;
+        height: 3rem;
+        width: 95%;
+    }
+    &__feedback{
+        margin: 2vh 0 0 0;
+        height: 2vh;
+        font-family: 'ProximaNova-SemiBold';
+        color: #a11521;
+        text-decoration: underline;
+    }
+}
+@media (min-width: 801px){
+    .form{
+        gap: 1vh 0;
+        height: 66.2vh;
+        width: 60vh;
+
+        &__title{
+            font-size: 5vh;
+            margin: 0 0 10vh 0;
+        }
+        &__label{
+            font-size: 3vh;
+        }
+        &__input{
+            border: .1vh solid black;
+            font-size: 2vh;
+            height: 5vh;
+            margin: 2vh 0 1vh 0;
+        }
+        &__submit{
+            border: .1vh solid black;
+            height: 5vh;
+            &:hover{
+                cursor: pointer;
+                background-color: black;
+                color: white;
+                transition: all .2s ease-in-out;
+            }
+        }
+        &__feedback{
+
+        }
+    }
+}
