@@ -11,7 +11,7 @@ import {
 const NavbarLink = (props) => {
     let currentPage = getCurrentPageURI();
     let redirectorNormalized = props.redirector.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    
+
     if(translatePageType(getCurrentPageType())=== redirectorNormalized){
         currentPage = translatePageType(getCurrentPageType());
     }else{
@@ -25,7 +25,7 @@ const NavbarLink = (props) => {
                 className={currentPage === redirectorNormalized ? '--active' : ''} 
                 to={`/${redirectorNormalized}`}
             >
-                {props.redirector.toUpperCase()}
+                {props.children}
             </Link>
         </li>
     );
