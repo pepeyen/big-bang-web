@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Redirect} from 'react-router-dom';
+import {useDispatch} from 'react-redux';
 
 //Components
 import {
@@ -9,10 +10,15 @@ import {
     FormSubmit
 } from '../components';
 
-const Login = () => {
-    const [inputResponse,setInputResponse] = useState('');
+//Actions
+import {storeAccessToken} from '../actions';
 
-    if(window.sessionStorage.getItem('isLoggedIn')){
+const Login = () => {
+    const dispatch = useDispatch();
+    const [inputResponse,setInputResponse] = useState('');
+    const [isLoggedIn,setIsLoggedIn] = useState(false);
+
+    if(window.sessionStorage.getItem('isLoggedIn') || isLoggedIn){
         return(
             <Redirect to="/user"/>
         );
@@ -22,7 +28,6 @@ const Login = () => {
             const form = e.target;
             const data = new FormData(form);
     
-            //Fetch
             const myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
     
@@ -40,25 +45,26 @@ const Login = () => {
                 return response.json();
             })
             .then(data => {
-
-                setInputResponse(data.description ? data.description : '');
-                /*
-                if(data.success === true){
-                    
+                if(!data.success){
+                    setInputResponse(data.description);
+                }else{
+                    dispatch(storeAccessToken(data.access_token));
+                    setIsLoggedIn(true);
+                    window.sessionStorage.setItem('isLoggedIn', true);
                 }
-                */
             })
         };
+
         return(
             <main>
                 <section className="page">
                     <Post>
-                        <p>Login Page</p>
                         <Form
                             formAction="http://localhost:8080/api/login"
                             formMethod="POST"
                             formHandler={submitForm}
                         >
+                            <span className="form__title">Login Page</span>
                             <FormInput
                                 inputType='email'
                                 inputLabel='E-mail'
@@ -70,8 +76,8 @@ const Login = () => {
                                 inputPlaceholder='Insira sua senha'
                             />
                             <FormSubmit submitText='Login' />
+                            <span className="form__feedback">{inputResponse}</span>
                         </Form>
-                        <p>{inputResponse}</p>
                     </Post>
                 </section>
             </main>
