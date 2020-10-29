@@ -5,7 +5,7 @@ import {Redirect} from 'react-router-dom';
 import {Navbar} from '../components';
 
 const Profile = () => {
-    if(sessionStorage.getItem('isLoggedIn')){
+    if(window.sessionStorage.getItem('isLoggedIn')){
         return(
             <React.Fragment>
                 <header>

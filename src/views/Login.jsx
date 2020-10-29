@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Redirect} from 'react-router-dom';
 
 //Components
@@ -10,11 +10,45 @@ import {
 } from '../components';
 
 const Login = () => {
-    if(sessionStorage.getItem('isLoggedIn')){
+    const [inputResponse,setInputResponse] = useState('');
+
+    if(window.sessionStorage.getItem('isLoggedIn')){
         return(
             <Redirect to="/user"/>
         );
     }else{
+        const submitForm = (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const data = new FormData(form);
+    
+            //Fetch
+            const myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+    
+            const myBody = {
+                email: data.get('emailInput'),
+                password: data.get('passwordInput')
+            };
+    
+            fetch(form.action, {
+                headers: myHeaders,
+                method: form.method,
+                body: JSON.stringify(myBody)
+            })
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+
+                setInputResponse(data.description ? data.description : '');
+                /*
+                if(data.success === true){
+                    
+                }
+                */
+            })
+        };
         return(
             <main>
                 <section className="page">
@@ -23,6 +57,7 @@ const Login = () => {
                         <Form
                             formAction="http://localhost:8080/api/login"
                             formMethod="POST"
+                            formHandler={submitForm}
                         >
                             <FormInput
                                 inputType='email'
@@ -36,6 +71,7 @@ const Login = () => {
                             />
                             <FormSubmit submitText='Login' />
                         </Form>
+                        <p>{inputResponse}</p>
                     </Post>
                 </section>
             </main>
