@@ -17,16 +17,3 @@ export const deslikeAItem = (itemID,itemType) => {
         }
     };
 };
-
-export const storeAccessToken = (accessToken) => {
-    return {
-        type: 'STORE_ACCESS_TOKEN',
-        accessToken
-    };
-};
-
-export const removeAccessToken = (accessToken) => {
-    return {
-        type: 'REMOVE_ACCESS_TOKEN'
-    };
-};

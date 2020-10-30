@@ -1,10 +1,8 @@
 import likeButtonReducer from './likeButtonReducer';
-import storeAccessToken from './storeAccessToken';
 import {combineReducers} from 'redux';
 
 const allReducers = combineReducers({
-    likedItems: likeButtonReducer,
-    accessToken: storeAccessToken 
+    likedItems: likeButtonReducer
 });
 
 export default allReducers;
