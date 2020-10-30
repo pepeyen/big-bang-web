@@ -17,6 +17,7 @@ const Login = () => {
     const dispatch = useDispatch();
     const [inputResponse,setInputResponse] = useState('');
     const [isLoggedIn,setIsLoggedIn] = useState(false);
+    const [isAnimating,setIsAnimating] = useState(false);
 
     if(window.sessionStorage.getItem('isLoggedIn') || isLoggedIn){
         return(
@@ -46,6 +47,7 @@ const Login = () => {
             })
             .then(data => {
                 if(!data.success){
+                    setIsAnimating(true);
                     setInputResponse(data.description);
                 }else{
                     dispatch(storeAccessToken(data.access_token));
@@ -55,6 +57,13 @@ const Login = () => {
             })
         };
 
+        const focusForm = () => {
+            if(isAnimating && inputResponse !== ''){
+                setIsAnimating(false);
+                setInputResponse('');
+            }
+        };
+
         return(
             <main>
                 <section className="page">
@@ -62,7 +71,8 @@ const Login = () => {
                         <Form
                             formAction="http://localhost:8080/api/login"
                             formMethod="POST"
-                            formHandler={submitForm}
+                            formSubmitHandler={submitForm}
+                            formFocusHandler={focusForm}
                         >
                             <span className="form__title">Login Page</span>
                             <FormInput
@@ -76,7 +86,7 @@ const Login = () => {
                                 inputPlaceholder='Insira sua senha'
                             />
                             <FormSubmit submitText='Login' />
-                            <span className="form__feedback">{inputResponse}</span>
+                            <span className={`form__feedback ${isAnimating ? '--shaking-text' : ''}`}>{inputResponse}</span>
                         </Form>
                     </Post>
                 </section>

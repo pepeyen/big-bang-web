@@ -6,7 +6,8 @@ const Form = (props) => {
             className="form"
             action={props.formAction}
             method={props.formMethod}
-            onSubmit={props.formHandler}
+            onSubmit={props.formSubmitHandler}
+            onFocus={props.formFocusHandler}
         >
             {props.children}
         </form>

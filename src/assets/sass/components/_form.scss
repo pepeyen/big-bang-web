@@ -14,7 +14,8 @@
         margin: 0 0 3rem 0;
     }
     &__input-group:focus-within label{
-        color: #4c706b;
+        transition: color ease-in-out .2s;
+        color: #73A8A0;
     }
     &__label{
         font-family: 'ProximaNova-Regular';
@@ -35,7 +36,8 @@
         &:focus{
             box-shadow: none;
             outline: none;
-            border-color: #73A8A0;
+            transition: border-color ease-in-out .2s;
+            border-color: #829491;
         }
     }
     &__submit{
@@ -83,9 +85,6 @@
                 color: white;
                 transition: all .2s ease-in-out;
             }
-        }
-        &__feedback{
-
         }
     }
 }
