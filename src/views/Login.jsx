@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {Redirect} from 'react-router-dom';
-import {useDispatch} from 'react-redux';
 
 //Components
 import {
@@ -10,19 +9,13 @@ import {
     FormSubmit
 } from '../components';
 
-//Actions
-import {storeAccessToken} from '../actions';
-
 const Login = () => {
-    const dispatch = useDispatch();
     const [inputResponse,setInputResponse] = useState('');
     const [isLoggedIn,setIsLoggedIn] = useState(false);
     const [isAnimating,setIsAnimating] = useState(false);
 
     if(window.sessionStorage.getItem('isLoggedIn') || isLoggedIn){
-        return(
-            <Redirect to="/user"/>
-        );
+        return <Redirect to="/user"/>
     }else{
         const submitForm = (e) => {
             e.preventDefault();
@@ -50,9 +43,8 @@ const Login = () => {
                     setIsAnimating(true);
                     setInputResponse(data.description);
                 }else{
-                    dispatch(storeAccessToken(data.access_token));
-                    setIsLoggedIn(true);
                     window.sessionStorage.setItem('isLoggedIn', true);
+                    setIsLoggedIn(true);
                 }
             })
         };
