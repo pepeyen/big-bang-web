@@ -26,7 +26,7 @@ const Login = () => {
             myHeaders.append("Content-Type", "application/json");
     
             const myBody = {
-                email: data.get('emailInput'),
+                email: data.get('textInput'),
                 password: data.get('passwordInput')
             };
     
@@ -46,6 +46,10 @@ const Login = () => {
                     window.sessionStorage.setItem('isLoggedIn', true);
                     setIsLoggedIn(true);
                 }
+            })
+            .catch(() => {
+                setIsAnimating(true);
+                setInputResponse('Server error, please try again');
             })
         };
 
@@ -68,14 +72,14 @@ const Login = () => {
                         >
                             <span className="form__title">Login Page</span>
                             <FormInput
-                                inputType='email'
+                                inputType='text'
                                 inputLabel='E-mail'
-                                inputPlaceholder='Insira seu e-mail'
+                                inputPlaceholder='E-mail'
                             />
                             <FormInput
                                 inputType='password'
                                 inputLabel='Senha'
-                                inputPlaceholder='Insira sua senha'
+                                inputPlaceholder='Senha'
                             />
                             <FormSubmit submitText='Login' />
                             <span className={`form__feedback ${isAnimating ? '--shaking-text' : ''}`}>{inputResponse}</span>
