@@ -49,7 +49,7 @@ const Navbar = () => {
                             imageAlt='Search'
                         />
                     </NavbarLink>
-                    <NavbarLink redirector="user">
+                    <NavbarLink redirector={`user?userId=${window.sessionStorage.getItem('loggedUserId')}`}>
                         <NavbarImage 
                             imageURL={img_profile}
                             imageAlt='Profile'

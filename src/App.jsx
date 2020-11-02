@@ -73,6 +73,10 @@ const App = () => {
                     exact path="/login"
                     component={Login}
                 />
+                <Route 
+                    exact path="/logout"
+                    component={() => {window.sessionStorage.clear(); return <Redirect to='/' />;}}
+                />
                 <Route
                     path="/error/404"
                     component={NotFound}

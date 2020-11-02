@@ -21,8 +21,8 @@
         -o-transition: all ease-in-out .1s;
         transition: all ease-in-out .1s;
         pointer-events: none;
-        color: black;
-        opacity: 0.3;
+        color: #3b3b3b;
+        opacity: 0.4;
         font-size: 1rem;
         left: 6.5%;
     }
@@ -87,7 +87,6 @@
         height: 2vh;
         font-family: 'ProximaNova-SemiBold';
         color: #a11521;
-        text-decoration: underline;
     }
 }
 @media (min-width: 801px){
