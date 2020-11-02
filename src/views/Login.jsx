@@ -61,13 +61,13 @@ const Login = () => {
                 setInputResponse('');
             }
         };
-
+        
         return(
             <main>
                 <section className="page">
                     <Post>
                         <Form
-                            formAction="http://localhost:8080/api/login"
+                            formAction={`${process.env.REACT_APP_BACK_END_HOST}/api/login`}
                             formMethod="POST"
                             formSubmitHandler={submitForm}
                             formFocusHandler={focusForm}

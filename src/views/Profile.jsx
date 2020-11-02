@@ -14,7 +14,7 @@ const Profile = () => {
     const [responseData,setResponseData] = useState('');
 
     useEffect(() => {
-        fetch(`http://localhost:8080/api/client/${getCurrentUserID()}`, {
+        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/client/${getCurrentUserID()}`, {
             method: 'GET',
             credentials: 'include'
         })
