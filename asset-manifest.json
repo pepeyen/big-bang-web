@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/big-bang-web/static/css/main.6e9f9510.chunk.css",
-    "main.js": "/big-bang-web/static/js/main.9fa00846.chunk.js",
-    "main.js.map": "/big-bang-web/static/js/main.9fa00846.chunk.js.map",
+    "main.css": "/big-bang-web/static/css/main.1abb2c77.chunk.css",
+    "main.js": "/big-bang-web/static/js/main.a7ab333f.chunk.js",
+    "main.js.map": "/big-bang-web/static/js/main.a7ab333f.chunk.js.map",
     "runtime-main.js": "/big-bang-web/static/js/runtime-main.6ba7aec4.js",
     "runtime-main.js.map": "/big-bang-web/static/js/runtime-main.6ba7aec4.js.map",
     "static/js/2.a905b7e7.chunk.js": "/big-bang-web/static/js/2.a905b7e7.chunk.js",
     "static/js/2.a905b7e7.chunk.js.map": "/big-bang-web/static/js/2.a905b7e7.chunk.js.map",
     "index.html": "/big-bang-web/index.html",
-    "precache-manifest.cced7c1082c2076749ccaf2aa412779a.js": "/big-bang-web/precache-manifest.cced7c1082c2076749ccaf2aa412779a.js",
+    "precache-manifest.be2932dfbdb5924936f9c18e03b9f5d8.js": "/big-bang-web/precache-manifest.be2932dfbdb5924936f9c18e03b9f5d8.js",
     "service-worker.js": "/big-bang-web/service-worker.js",
-    "static/css/main.6e9f9510.chunk.css.map": "/big-bang-web/static/css/main.6e9f9510.chunk.css.map",
+    "static/css/main.1abb2c77.chunk.css.map": "/big-bang-web/static/css/main.1abb2c77.chunk.css.map",
     "static/js/2.a905b7e7.chunk.js.LICENSE.txt": "/big-bang-web/static/js/2.a905b7e7.chunk.js.LICENSE.txt",
     "static/media/main.scss": "/big-bang-web/static/media/ProximaNova-Thin.7bb3b456.svg",
     "static/media/bg-card2.jpg": "/big-bang-web/static/media/bg-card2.226ca18b.jpg",
@@ -42,7 +42,7 @@
   "entrypoints": [
     "static/js/runtime-main.6ba7aec4.js",
     "static/js/2.a905b7e7.chunk.js",
-    "static/css/main.6e9f9510.chunk.css",
-    "static/js/main.9fa00846.chunk.js"
+    "static/css/main.1abb2c77.chunk.css",
+    "static/js/main.a7ab333f.chunk.js"
   ]
 }
