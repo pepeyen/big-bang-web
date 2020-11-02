@@ -15,7 +15,7 @@ const Login = () => {
     const [isAnimating,setIsAnimating] = useState(false);
 
     if(window.sessionStorage.getItem('isLoggedIn') || isLoggedIn){
-        return <Redirect to="/user"/>
+        return <Redirect to={`/user?userId=${window.sessionStorage.getItem('loggedUserId')}`}/>
     }else{
         const submitForm = (e) => {
             e.preventDefault();
@@ -33,6 +33,7 @@ const Login = () => {
             fetch(form.action, {
                 headers: myHeaders,
                 method: form.method,
+                credentials: 'include',
                 body: JSON.stringify(myBody)
             })
             .then(response => {
@@ -44,6 +45,7 @@ const Login = () => {
                     setInputResponse(data.description);
                 }else{
                     window.sessionStorage.setItem('isLoggedIn', true);
+                    window.sessionStorage.setItem('loggedUserId', data.loggedUserId);
                     setIsLoggedIn(true);
                 }
             })
