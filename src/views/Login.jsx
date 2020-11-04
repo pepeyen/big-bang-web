@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Redirect} from 'react-router-dom';
+import Validator from 'validator';
 
 //Components
 import {
@@ -19,12 +20,20 @@ const Login = () => {
     }else{
         const submitForm = (e) => {
             e.preventDefault();
+
             const form = e.target;
             const data = new FormData(form);
-    
+
+            if(!Validator.isEmail(data.get('textInput'))){
+                setIsAnimating(true);
+                setInputResponse('Please insert a valid e-mail and try again');
+
+                return;
+            }
+
             const myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
-    
+
             const myBody = {
                 email: data.get('textInput'),
                 password: data.get('passwordInput')
