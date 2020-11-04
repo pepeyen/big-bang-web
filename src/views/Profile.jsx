@@ -11,13 +11,13 @@ import {
 } from '../components';
 
 //Services
-import {getCurrentPageID} from '../services';
+import {getCurrentPageUser} from '../services';
 
 const Profile = () => {
     const [responseData,setResponseData] = useState('');
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/client/${getCurrentPageID()}`, { 
+        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/user/${getCurrentPageUser()}`, { 
             method: 'GET',
             credentials: 'include'
         })
