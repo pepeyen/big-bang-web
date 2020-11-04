@@ -16,7 +16,7 @@ const Login = () => {
     const [isAnimating,setIsAnimating] = useState(false);
 
     if(window.sessionStorage.getItem('isLoggedIn') || isLoggedIn){
-        return <Redirect to={`/user?userId=${window.sessionStorage.getItem('loggedUserId')}`}/>
+        return <Redirect to={`/user?id=${window.sessionStorage.getItem('loggedUserId')}`}/>
     }else{
         const submitForm = (e) => {
             e.preventDefault();

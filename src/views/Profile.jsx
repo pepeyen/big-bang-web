@@ -11,31 +11,33 @@ import {
 } from '../components';
 
 //Services
-import {getCurrentUserID} from '../services';
+import {getCurrentPageID} from '../services';
 
 const Profile = () => {
     const [responseData,setResponseData] = useState('');
 
     useEffect(() => {
-        if(window.sessionStorage.getItem('loggedUserId') !== null){
-            fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/client/${getCurrentUserID()}`, {
-                method: 'GET',
-                credentials: 'include'
-            })
-            .then(response => {
-                return response.json();
-            })
-            .then(data => {
-                if(!data.success){
-                    setResponseData(data.description);
-                }else{
-                    setResponseData(data.user_info.userName);
-                }
-            })
-        }
+        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/client/${getCurrentPageID()}`, { 
+            method: 'GET',
+            credentials: 'include'
+        })
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            if(!data.success){
+                setResponseData(404);
+            }else{
+                setResponseData(data.user_info.userName);
+            }
+        })
     },[]);
 
-    if(window.sessionStorage.getItem('isLoggedIn')){
+    if(responseData === 404){
+        return (
+            <Redirect to="/error/404" />
+        );
+    }else{
         return(
             <React.Fragment>
                 <header>
@@ -56,10 +58,6 @@ const Profile = () => {
                     </section>
                 </main>
             </React.Fragment>
-        );
-    }else{
-        return(
-            <Redirect to="/login" />
         );
     }
 }
