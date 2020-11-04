@@ -9,10 +9,11 @@ import {
 } from '../services';
 
 const NavbarLink = (props) => {
+    const regex = new RegExp(/[^?]*/);
     let currentPage = getCurrentPageURI();
     let redirectorNormalized = props.redirector.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
-    if(translatePageType(getCurrentPageType())=== redirectorNormalized){
+    if(translatePageType(getCurrentPageType()) === redirectorNormalized){
         currentPage = translatePageType(getCurrentPageType());
     }else{
         if(redirectorNormalized === 'home'){
@@ -22,7 +23,7 @@ const NavbarLink = (props) => {
     return(
         <li className="navbar__redirector">
             <Link
-                className={currentPage === redirectorNormalized ? '--active' : ''} 
+                className={regex.exec(currentPage).toString() === regex.exec(redirectorNormalized).toString() ? '--active' : ''} 
                 to={`/${redirectorNormalized}`}
             >
                 {props.children}
