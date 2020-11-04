@@ -66,7 +66,7 @@ const App = () => {
                     component={Course}
                 />
                 <Route 
-                    exact path="/user"
+                    path="/user"
                     component={Profile}
                 />
                 <Route 
