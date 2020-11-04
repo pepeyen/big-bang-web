@@ -49,8 +49,8 @@ const Navbar = () => {
                             imageAlt='Search'
                         />
                     </NavbarLink>
-                    <NavbarLink redirector={`${window.sessionStorage.getItem('loggedUserId') === null ? 
-                    'login' : `user?id=${window.sessionStorage.getItem('loggedUserId')}`}`}>
+                    <NavbarLink redirector={`${window.sessionStorage.getItem('loggedUser') === null ? 
+                    'login' : `user/${window.sessionStorage.getItem('loggedUser')}`}`}>
                         <NavbarImage 
                             imageURL={img_profile}
                             imageAlt='Profile'
