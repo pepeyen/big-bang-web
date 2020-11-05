@@ -17,7 +17,7 @@ const Profile = () => {
     const [responseData,setResponseData] = useState('');
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/user/${getCurrentPageUser()}`, { 
+        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/users/${getCurrentPageUser()}`, { 
             method: 'GET',
             credentials: 'include'
         })
