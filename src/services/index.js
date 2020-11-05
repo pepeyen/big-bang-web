@@ -65,11 +65,10 @@ export const getCurrentPageType = () => {
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' ')); 
 };
 
-export const getCurrentUserID = () => {
-    let regex = new RegExp('[\\?&]userId=([^&#]*)');
-    let results = regex.exec(window.location.hash);
-    
-    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' ')); 
+export const getCurrentPageUser = () => {
+    const splitted = window.location.hash.split('/');
+
+    return splitted[2];
 };
 
 const MONTHS = ['JAN', 'FEV', 'MAR', 'ABR', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'];

@@ -16,7 +16,7 @@ const Login = () => {
     const [isAnimating,setIsAnimating] = useState(false);
 
     if(window.sessionStorage.getItem('isLoggedIn') || isLoggedIn){
-        return <Redirect to={`/user?userId=${window.sessionStorage.getItem('loggedUserId')}`}/>
+        return <Redirect to={`/user/${window.sessionStorage.getItem('loggedUser')}`}/>
     }else{
         const submitForm = (e) => {
             e.preventDefault();
@@ -54,7 +54,7 @@ const Login = () => {
                     setInputResponse(data.description);
                 }else{
                     window.sessionStorage.setItem('isLoggedIn', true);
-                    window.sessionStorage.setItem('loggedUserId', data.loggedUserId);
+                    window.sessionStorage.setItem('loggedUser', data.loggedUser);
                     setIsLoggedIn(true);
                 }
             })
@@ -76,7 +76,7 @@ const Login = () => {
                 <section className="page">
                     <Post>
                         <Form
-                            formAction={`${process.env.REACT_APP_BACK_END_HOST}/api/login`}
+                            formAction={`${process.env.REACT_APP_BACK_END_HOST}/api/auth`}
                             formMethod="POST"
                             formSubmitHandler={submitForm}
                             formFocusHandler={focusForm}
