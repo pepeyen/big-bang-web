@@ -13,39 +13,37 @@ import {API} from '../services/mockData';
 import {
     getCurrentPageID,
     getCurrentPageType,
-    filterOverall
+    filterOverall,
+    fetchFromBlob
 } from '../services';
 
 const Post = () => {
     const posts = filterOverall(getCurrentPageID(),'post',API);
+    const [postHeaders, setPostHeaders] = useState({});
     const [postMarkdown, setPostMarkdown] = useState('');
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_BACK_END_HOST}/blob/markdown/posts/id-${posts.ID}.md`, {
+        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/posts/${posts.ID}`, {
             method: 'GET'
         })
         .then(response => {
-            if(response.status !== 200){
-                return {blobLink: -1};
-            }else{
-                return response.json();
-            }
+            return response.json();
         })
-        .then( data => {
-            return data.blobLink;
-        })
-        .then(postURL => {
-            if(postURL === -1){
+        .then(data => {
+            if(data.length === 0){
                 setPostMarkdown('# Post not found');
             }else{
-                fetch(postURL, {
-                    method: 'GET'
-                })
+                setPostHeaders({
+                    postTitle: data.posts.post_title,
+                    postTheme: data.posts.post_theme.toUpperCase(),
+                    postAuthor: data.posts.post_author
+                });
+                fetchFromBlob(data.posts.post_id, 'markdown', 'posts', 'id', 'md')
                 .then(response => {
                     return response.text();
                 })
                 .then(data => {
-                    setPostMarkdown(data);
+                    setPostMarkdown(data)
                 })
             }
         })
@@ -66,10 +64,10 @@ const Post = () => {
                                 src={posts.media.bannerURL} 
                                 alt={posts.info.title} 
                             />
-                            <p className="page__post-title">{posts.info.title}</p>
+                            <p className="page__post-title">{postHeaders.postTitle}</p>
                             <div className="page__post-info">
-                                <span className="page__post-type --grey-text --bottom-thin-borders">{posts.info.type}</span>
-                                <span className="page__post-onwership --grey-text --bottom-thin-borders">por {posts.info.onwership.username}</span>
+                                <span className="page__post-type --grey-text --bottom-thin-borders">{postHeaders.postTheme}</span>
+                                <span className="page__post-onwership --grey-text --bottom-thin-borders">por {postHeaders.postAuthor}</span>
                             </div>
                             <div className="page__post-article --dark-grey-text">
                                 <ReactMarkdown source={postMarkdown}/>
