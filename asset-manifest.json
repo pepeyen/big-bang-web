@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/big-bang-web/static/css/main.24c3091b.chunk.css",
-    "main.js": "/big-bang-web/static/js/main.92232d16.chunk.js",
-    "main.js.map": "/big-bang-web/static/js/main.92232d16.chunk.js.map",
+    "main.js": "/big-bang-web/static/js/main.989bee55.chunk.js",
+    "main.js.map": "/big-bang-web/static/js/main.989bee55.chunk.js.map",
     "runtime-main.js": "/big-bang-web/static/js/runtime-main.6ba7aec4.js",
     "runtime-main.js.map": "/big-bang-web/static/js/runtime-main.6ba7aec4.js.map",
     "static/js/2.4763e9f2.chunk.js": "/big-bang-web/static/js/2.4763e9f2.chunk.js",
     "static/js/2.4763e9f2.chunk.js.map": "/big-bang-web/static/js/2.4763e9f2.chunk.js.map",
     "index.html": "/big-bang-web/index.html",
-    "precache-manifest.bfc5d9aa43b8b5844be7b6028e1cea34.js": "/big-bang-web/precache-manifest.bfc5d9aa43b8b5844be7b6028e1cea34.js",
+    "precache-manifest.6915af099e4f48f78fba21723e17c452.js": "/big-bang-web/precache-manifest.6915af099e4f48f78fba21723e17c452.js",
     "service-worker.js": "/big-bang-web/service-worker.js",
     "static/css/main.24c3091b.chunk.css.map": "/big-bang-web/static/css/main.24c3091b.chunk.css.map",
     "static/js/2.4763e9f2.chunk.js.LICENSE.txt": "/big-bang-web/static/js/2.4763e9f2.chunk.js.LICENSE.txt",
@@ -43,6 +43,6 @@
     "static/js/runtime-main.6ba7aec4.js",
     "static/js/2.4763e9f2.chunk.js",
     "static/css/main.24c3091b.chunk.css",
-    "static/js/main.92232d16.chunk.js"
+    "static/js/main.989bee55.chunk.js"
   ]
 }
