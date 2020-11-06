@@ -28,7 +28,7 @@ const Profile = () => {
             if(!data.success){
                 setResponseData(404);
             }else{
-                setResponseData(data.user_info.userName);
+                setResponseData(data.users.user_name);
             }
         })
     },[]);

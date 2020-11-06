@@ -1,5 +1,9 @@
-import React from 'react';
+import React, {
+    useState,
+    useEffect
+} from 'react';
 import {Redirect} from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
 
 //Components
 import {Navbar} from '../components';
@@ -9,12 +13,43 @@ import {API} from '../services/mockData';
 import {
     getCurrentPageID,
     getCurrentPageType,
-    filterOverall
+    filterOverall,
+    fetchFromBlob
 } from '../services';
 
 const Post = () => {
     const posts = filterOverall(getCurrentPageID(),'post',API);
-    
+    const [postHeaders, setPostHeaders] = useState({});
+    const [postMarkdown, setPostMarkdown] = useState('');
+
+    useEffect(() => {
+        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/posts/${posts.ID}`, {
+            method: 'GET'
+        })
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            if(data.length === 0){
+                setPostMarkdown('# Post not found');
+            }else{
+                setPostHeaders({
+                    postTitle: data.posts.post_title,
+                    postTheme: data.posts.post_theme.toUpperCase(),
+                    postAuthor: data.posts.post_author
+                });
+                fetchFromBlob(data.posts.post_id, 'markdown', 'posts', 'id', 'md')
+                .then(response => {
+                    return response.text();
+                })
+                .then(data => {
+                    setPostMarkdown(data)
+                })
+            }
+        })
+    },[posts.ID]);
+
+
     if(posts !== -1 && posts === filterOverall(getCurrentPageID(),getCurrentPageType(),API)){
         return(
             <React.Fragment>
@@ -29,22 +64,13 @@ const Post = () => {
                                 src={posts.media.bannerURL} 
                                 alt={posts.info.title} 
                             />
-                            <p className="page__post-title">{posts.info.title}</p>
+                            <p className="page__post-title">{postHeaders.postTitle}</p>
                             <div className="page__post-info">
-                                <span className="page__post-type --grey-text --bottom-thin-borders">{posts.info.type}</span>
-                                <span className="page__post-onwership --grey-text --bottom-thin-borders">por {posts.info.onwership.username}</span>
+                                <span className="page__post-type --grey-text --bottom-thin-borders">{postHeaders.postTheme}</span>
+                                <span className="page__post-onwership --grey-text --bottom-thin-borders">por {postHeaders.postAuthor}</span>
                             </div>
                             <div className="page__post-article --dark-grey-text">
-                                {posts.article.map((element,index) => {
-                                    return(
-                                        <p 
-                                            className={`page__post-article-${element.type}`}
-                                            key={index}
-                                        >
-                                            {element.text}
-                                        </p>
-                                    );
-                                })}
+                                <ReactMarkdown source={postMarkdown}/>
                             </div>
                         </div>
                     </section>
