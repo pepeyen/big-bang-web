@@ -113,3 +113,17 @@ export const translatePageType = (pageType) => {
             return null;
     }
 };
+
+export const fetchFromBlob = (id,container,subContainer,filePrefix,fileExtension) => {
+    return new Promise((resolve, reject) =>{  
+        fetch(`${process.env.REACT_APP_BLOB_HOST}/${container}/${subContainer}/${filePrefix}-${id}.${fileExtension}`, {
+            method: 'GET'
+        })
+        .then(response => {
+            resolve(response);
+        })
+        .catch(error => {
+            reject(error);
+        })
+    });
+};
