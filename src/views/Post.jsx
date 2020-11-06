@@ -1,5 +1,9 @@
-import React from 'react';
+import React, {
+    useState,
+    useEffect
+} from 'react';
 import {Redirect} from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
 
 //Components
 import {Navbar} from '../components';
@@ -14,7 +18,40 @@ import {
 
 const Post = () => {
     const posts = filterOverall(getCurrentPageID(),'post',API);
-    
+    const [postMarkdown, setPostMarkdown] = useState('');
+
+    useEffect(() => {
+        fetch(`${process.env.REACT_APP_BACK_END_HOST}/blob/markdown/posts/id-${posts.ID}.md`, {
+            method: 'GET'
+        })
+        .then(response => {
+            if(response.status !== 200){
+                return {blobLink: -1};
+            }else{
+                return response.json();
+            }
+        })
+        .then( data => {
+            return data.blobLink;
+        })
+        .then(postURL => {
+            if(postURL === -1){
+                setPostMarkdown('# Post not found');
+            }else{
+                fetch(postURL, {
+                    method: 'GET'
+                })
+                .then(response => {
+                    return response.text();
+                })
+                .then(data => {
+                    setPostMarkdown(data);
+                })
+            }
+        })
+    },[posts.ID]);
+
+
     if(posts !== -1 && posts === filterOverall(getCurrentPageID(),getCurrentPageType(),API)){
         return(
             <React.Fragment>
@@ -35,16 +72,7 @@ const Post = () => {
                                 <span className="page__post-onwership --grey-text --bottom-thin-borders">por {posts.info.onwership.username}</span>
                             </div>
                             <div className="page__post-article --dark-grey-text">
-                                {posts.article.map((element,index) => {
-                                    return(
-                                        <p 
-                                            className={`page__post-article-${element.type}`}
-                                            key={index}
-                                        >
-                                            {element.text}
-                                        </p>
-                                    );
-                                })}
+                                <ReactMarkdown source={postMarkdown}/>
                             </div>
                         </div>
                     </section>

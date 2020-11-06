@@ -152,12 +152,11 @@
 
             & p{
                 margin: 0 0 1rem 0 ;
-            }
-            &-text{
                 font-family: 'Adamina-Regular';
                 font-size: 1rem;
             }
-            &-title{
+            & h2{
+                margin: 0 0 .5rem 0;
                 font-family: 'ProximaNova-Bold';
                 font-size: 1.7rem;
             }
@@ -368,11 +367,10 @@
 
                 & p{
                     margin: 0 0 2vh 0;
-                }
-                &-text{
                     font-size: 2vh;
                 }
-                &-title{
+                & h2{
+                    margin: 0 0 3vh 0;
                     font-size: 3vh;
                 }
             } 
