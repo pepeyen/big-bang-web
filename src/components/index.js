@@ -22,3 +22,4 @@ export {default as TableListing} from './TableListing';
 export {default as Form} from './Form';
 export {default as FormInput} from './FormInput';
 export {default as FormSubmit} from './FormSubmit';
+export {default as Loader} from './Loader';
