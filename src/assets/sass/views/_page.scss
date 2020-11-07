@@ -145,6 +145,11 @@
         }
         &-onwership{
             margin: 0 0 0 auto;
+            & a{
+                color: #666666;
+                opacity: 0.8;
+                text-decoration: none;
+            }
         }
         &-article{
             text-align:justify;
@@ -353,6 +358,9 @@
             }
         }
         &__post{
+            &-info{
+                font-size: 2vh;
+            }
             &-title{
                 font-size: 5vh;
                 margin: -3vh 0 5vh 0; 
@@ -371,7 +379,7 @@
                 }
                 & h2{
                     margin: 0 0 3vh 0;
-                    font-size: 3vh;
+                    font-size: 4vh;
                 }
             } 
         }
