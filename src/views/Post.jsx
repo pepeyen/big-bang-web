@@ -2,6 +2,7 @@ import React, {
     useState,
     useEffect
 } from 'react';
+import {Link} from 'react-router-dom';
 import {Redirect} from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 
@@ -9,29 +10,26 @@ import ReactMarkdown from 'react-markdown';
 import {Navbar} from '../components';
 
 //Services
-import {API} from '../services/mockData';
 import {
     getCurrentPageID,
-    getCurrentPageType,
-    filterOverall,
     fetchFromBlob
 } from '../services';
 
 const Post = () => {
-    const posts = filterOverall(getCurrentPageID(),'post',API);
     const [postHeaders, setPostHeaders] = useState({});
     const [postMarkdown, setPostMarkdown] = useState('');
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/posts/${posts.ID}`, {
+        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/posts/${getCurrentPageID()}`, {
             method: 'GET'
         })
         .then(response => {
             return response.json();
         })
         .then(data => {
-            if(data.length === 0){
-                setPostMarkdown('# Post not found');
+            if(data.sucess === false){
+                setPostMarkdown(404);
             }else{
                 setPostHeaders({
                     postTitle: data.posts.post_title,
@@ -43,31 +41,31 @@ const Post = () => {
                     return response.text();
                 })
                 .then(data => {
-                    setPostMarkdown(data)
+                    setIsLoading(false);
+                    setPostMarkdown(data);
                 })
             }
-        })
-    },[posts.ID]);
+        });
+    },[]);
 
-
-    if(posts !== -1 && posts === filterOverall(getCurrentPageID(),getCurrentPageType(),API)){
+    if(postMarkdown !== 404){
         return(
             <React.Fragment>
                 <header>
                     <Navbar />
                 </header>
                 <main>
-                    <section className="page">
+                    <section className={isLoading ? "page --loading" : "page"}>
                         <div className="page__post --central">
                             <img 
                                 className="page__post-banner"
-                                src={posts.media.bannerURL} 
-                                alt={posts.info.title} 
+                                src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/post/bg-${getCurrentPageID()}.jpg`}
+                                alt={postHeaders.postTitle}
                             />
-                            <p className="page__post-title">{postHeaders.postTitle}</p>
+                            <div className="page__post-title">{postHeaders.postTitle}</div>
                             <div className="page__post-info">
                                 <span className="page__post-type --grey-text --bottom-thin-borders">{postHeaders.postTheme}</span>
-                                <span className="page__post-onwership --grey-text --bottom-thin-borders">por {postHeaders.postAuthor}</span>
+                                <span className="page__post-onwership --grey-text --bottom-thin-borders">por <Link to={`/user/${postHeaders.postAuthor}`}>{postHeaders.postAuthor}</Link></span>
                             </div>
                             <div className="page__post-article --dark-grey-text">
                                 <ReactMarkdown source={postMarkdown}/>
