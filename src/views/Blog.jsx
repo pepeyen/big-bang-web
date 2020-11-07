@@ -1,4 +1,7 @@
-import React from 'react';
+import React, {
+    useState,
+    useEffect
+} from 'react';
 
 //Component
 import {
@@ -7,16 +10,27 @@ import {
     Redirector,
     RedirectorInfo,
     RedirectorText,
-    RedirectorBanner
+    RedirectorBanner,
+    Loader
 } from '../components';
 
-//Services
-import {API} from '../services/mockData';
-import {filterByType} from '../services';
-
 const Blog = () => {
-    const posts = filterByType('post',API);
+    const [posts, setPosts] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
+    useEffect(() => {
+        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/posts`, {
+            method: 'GET'
+        })
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            setIsLoading(false);
+            setPosts(data.posts);
+        });
+    },[]);
+    
     return(
         <React.Fragment>
             <header>
@@ -25,37 +39,38 @@ const Blog = () => {
             <main>
                 <section className="page">
                     <p className="page__place-holder">Blog</p>
+                    <Loader isLoading={isLoading} />
                     <Post>
                         {posts.map((element,index) => {
                             return(
                                 <Redirector 
                                     key={index}
-                                    redirectorType={element.type}
-                                    redirectorID={element.ID}    
+                                    redirectorType='post'
+                                    redirectorID={element.post_id}    
                                 >
                                     <RedirectorInfo>
                                         <RedirectorText 
                                             infoType="type"
                                             color="dark"
                                         >
-                                            {element.info.type}
+                                            {element.post_theme}
                                         </RedirectorText>
                                         <RedirectorText 
                                             infoType="title"
                                             color="dark"
                                         >
-                                            {element.info.title}
+                                            {element.post_title}
                                         </RedirectorText>
                                         <RedirectorText 
                                             infoType="user"
                                             color="grey"
                                         >
-                                            {element.info.onwership.username}
+                                            {element.post_author}
                                         </RedirectorText>
                                     </RedirectorInfo>
                                     <RedirectorBanner
-                                        url={element.media.bannerURL}
-                                        alt={element.info.title} 
+                                        url={`${process.env.REACT_APP_BLOB_HOST}/jpeg/post/bg-${element.post_id}.jpg`}
+                                        alt={element.post_title}
                                     />
                                 </Redirector>
                             );
