@@ -29,7 +29,7 @@ const Post = () => {
         })
         .then(data => {
             if(data.sucess === false){
-                setPostMarkdown(404);
+                setPostMarkdown(-1);
             }else{
                 setPostHeaders({
                     postTitle: data.posts.post_title,
@@ -48,7 +48,7 @@ const Post = () => {
         });
     },[]);
 
-    if(postMarkdown !== 404){
+    if(postMarkdown !== -1 && getCurrentPageID() !== null){
         return(
             <React.Fragment>
                 <header>
