@@ -1,4 +1,8 @@
-import React from 'react';
+import React, {
+    useState,
+    useEffect
+}
+from 'react';
 
 //Component
 import {
@@ -7,15 +11,27 @@ import {
     Redirector,
     RedirectorInfo,
     RedirectorText,
-    RedirectorBanner
+    RedirectorBanner,
+    Loader
 } from '../components';
 
-//Services
-import {API} from '../services/mockData';
-import {filterByType} from '../services';
 
 const Podcasts = () => {
-    const posts = filterByType('podcast',API);
+    const [podcasts,setPodcasts] = useState([]);
+    const [isLoading,setIsLoading] = useState(true);
+
+    useEffect(() => {
+        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/podcasts`, {
+            method: 'GET'
+        })
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            setIsLoading(false);
+            setPodcasts(data.podcasts);
+        })
+    },[]);
 
     return(
         <React.Fragment>
@@ -25,31 +41,32 @@ const Podcasts = () => {
             <main>
                 <section className="page">
                     <p className="page__place-holder">Podcasts</p>
+                    <Loader isLoading={isLoading} />
                     <Post>
-                        {posts.map((element,index) => {
+                        {podcasts.map((element,index) => {
                             return(
                                 <Redirector 
                                     key={index}
-                                    redirectorType={element.type}
-                                    redirectorID={element.ID}
+                                    redirectorType='podcast'
+                                    redirectorID={element.podcast_id}
                                 >
                                     <RedirectorInfo>
                                         <RedirectorText
                                             infoType="title"
                                             color="dark"
                                         >
-                                            {element.info.name}
+                                            {element.podcast_title}
                                         </RedirectorText>
                                         <RedirectorText
                                             infoType="user"
                                             color="grey"
                                         >
-                                            {element.info.onwership.username} #{element.info.onwership.userID}
+                                            {element.podcast_author} #{element.podcast_id}
                                         </RedirectorText>  
                                     </RedirectorInfo>
                                     <RedirectorBanner
-                                        url={element.media.bannerURL}
-                                        alt={element.info.name}
+                                        url={`${process.env.REACT_APP_BLOB_HOST}/jpeg/podcast/bg-${element.podcast_id}.jpg`}
+                                        alt={element.podcast_title}
                                         type='podcast'
                                     />
                                 </Redirector >
