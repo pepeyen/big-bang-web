@@ -13,11 +13,11 @@ import {
 //Services
 import {getCurrentPageUser} from '../services';
 
-const Profile = () => {
+const Profile = (props) => {
     const [responseData,setResponseData] = useState('');
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/users/${getCurrentPageUser()}`, { 
+        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/users/${getCurrentPageUser(props.location.pathname)}`, { 
             method: 'GET',
             credentials: 'include'
         })
@@ -31,7 +31,7 @@ const Profile = () => {
                 setResponseData(data.users.user_name);
             }
         })
-    },[]);
+    },[props.location.pathname]);
 
     if(responseData === 404){
         return (
