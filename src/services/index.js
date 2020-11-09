@@ -51,22 +51,22 @@ export const getCurrentPageURI = () => {
     return currentPageURI;
 };
 
-export const getCurrentPageID = () => {
+export const getCurrentPageID = (URIPathname) => {
     let regex = new RegExp('[\\?&]id=([^&#]*)');
-    let results = regex.exec(window.location.hash);
+    let results = regex.exec(URIPathname);
     
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 };
 
-export const getCurrentPageType = () => {
+export const getCurrentPageType = (URIPathname) => {
     let regex = new RegExp('[\\?&]type=([^&#]*)');
-    let results = regex.exec(window.location.hash);
+    let results = regex.exec(URIPathname);
     
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' ')); 
 };
 
-export const getCurrentPageUser = () => {
-    const splitted = window.location.hash.split('/');
+export const getCurrentPageUser = (URIPathname) => {
+    const splitted = URIPathname.split('/');
 
     return splitted[2];
 };
@@ -77,24 +77,35 @@ const translateMonth = (month) => {
     let translatedMonth = -1;
 
     MONTHS.forEach((element,index) => {
-        if(element === month){
-            translatedMonth =  index + 1;
+        if(index === month){
+            translatedMonth = element;
         }
     });
 
-    return ("0" + translatedMonth).slice(-2);
+    return  translatedMonth;
 };
 
-export const timeConverter = (date) => {
+export const timeConverter = (dateString) => {
+    const date = new Date(dateString);
+
+    return {
+        day: ("0" + date.getDate()).slice(-2), 
+        month: translateMonth(date.getMonth()), 
+        year: date.getYear()
+    };
+};
+
+export const timeConverterOLD = (date) => {
     return {
         day: ("0" + date.day).slice(-2), 
         month: MONTHS[date.month - 1], 
         year: date.year
     };
 };
+
 export const calcDateDiff = (startDate,endDate) => {
-    const firstDate = new Date(`${startDate.year}-${translateMonth(startDate.month)}-${startDate.day}`);
-    const lastDate = new Date(`${endDate.year}-${translateMonth(endDate.month)}-${endDate.day}`);
+    const firstDate = new Date(startDate);
+    const lastDate = new Date(endDate);
 
     return Math.round(Math.abs(firstDate - lastDate) / (8.64 * (10**7))) + 1;
 };

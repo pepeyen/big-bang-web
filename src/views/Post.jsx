@@ -15,13 +15,16 @@ import {
     fetchFromBlob
 } from '../services';
 
-const Post = () => {
+const Post = (props) => {
     const [postHeaders, setPostHeaders] = useState({});
     const [postMarkdown, setPostMarkdown] = useState('');
     const [isLoading, setIsLoading] = useState(true);
+    const currentPageId = getCurrentPageID(props.location.search);
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/posts/${getCurrentPageID()}`, {
+        setIsLoading(true);
+        
+        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/posts/${currentPageId}`, {
             method: 'GET'
         })
         .then(response => {
@@ -46,9 +49,9 @@ const Post = () => {
                 })
             }
         });
-    },[]);
+    },[currentPageId]);
 
-    if(postMarkdown !== -1 && getCurrentPageID() !== null){
+    if(postMarkdown !== -1 && currentPageId !== null){
         return(
             <React.Fragment>
                 <header>
@@ -59,7 +62,7 @@ const Post = () => {
                         <div className="page__post --central">
                             <img 
                                 className="page__post-banner"
-                                src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/post/bg-${getCurrentPageID()}.jpg`}
+                                src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/post/bg-${currentPageId}.jpg`}
                                 alt={postHeaders.postTitle}
                             />
                             <div className="page__post-title">{postHeaders.postTitle}</div>

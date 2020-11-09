@@ -10,12 +10,15 @@ import {Navbar} from '../components';
 //Services
 import {getCurrentPageID} from '../services';
 
-const Product = () => {
+const Product = (props) => {
     const [product,setProduct] = useState('');
     const [isLoading,setIsLoading] = useState(true);
+    const currentPageId = getCurrentPageID(props.location.search);
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/products/${getCurrentPageID()}`, {
+        setIsLoading(true);
+        
+        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/products/${currentPageId}`, {
             method: 'GET'
         })
         .then(response => {
@@ -29,9 +32,9 @@ const Product = () => {
                 setProduct(data.products);
             }
         })
-    },[]);
+    },[currentPageId]);
 
-    if(product !== -1 && getCurrentPageID() !== null){
+    if(product !== -1 && currentPageId !== null){
         return(
             <React.Fragment>
                 <header>
@@ -42,7 +45,7 @@ const Product = () => {
                         <div className="page__product">
                             <img 
                                 className="page__product-image"
-                                src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/product/bg-${getCurrentPageID()}.jpg`} 
+                                src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/product/bg-${currentPageId}.jpg`} 
                                 alt={product.product_name ? product.product_name : 'Loading'} 
                             />
                             <div className="page__product-info">

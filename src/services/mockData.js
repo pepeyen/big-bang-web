@@ -1,5 +1,5 @@
 import {
-    timeConverter,
+    timeConverterOLD as timeConverter,
     calcDateDiff
 } from '../services';
 
