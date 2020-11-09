@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8efc30d3db6c6de63d0a297960b9e7e5",
+    "revision": "eaac7f9e242939763f329371f2794fb1",
     "url": "/big-bang-web/index.html"
   },
   {
-    "revision": "2862c68fc85ad19d33ce",
-    "url": "/big-bang-web/static/css/main.8b15728c.chunk.css"
+    "revision": "e3754e93636b7484d1be",
+    "url": "/big-bang-web/static/css/main.e12e7dcc.chunk.css"
   },
   {
     "revision": "c14a5fab5c216446a52f",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/big-bang-web/static/js/2.a381fe9c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2862c68fc85ad19d33ce",
-    "url": "/big-bang-web/static/js/main.489da0a5.chunk.js"
+    "revision": "e3754e93636b7484d1be",
+    "url": "/big-bang-web/static/js/main.52b29100.chunk.js"
   },
   {
     "revision": "8255e6fc33e2f18e4107",
@@ -28,16 +28,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/big-bang-web/static/media/Adamina-Regular.1cf9c732.eot"
   },
   {
-    "revision": "22412c159a1505166c764d7ce5470db4",
-    "url": "/big-bang-web/static/media/Adamina-Regular.22412c15.svg"
-  },
-  {
     "revision": "32e31ea6c8f38bce55b5c377cb66d84d",
     "url": "/big-bang-web/static/media/Adamina-Regular.32e31ea6.woff"
   },
   {
+    "revision": "702b0d7edc9f00c49d11c6c9753fc5d6",
+    "url": "/big-bang-web/static/media/Adamina-Regular.702b0d7e.svg"
+  },
+  {
     "revision": "ce0435ddfd9fc5efcac92ad41ce93be8",
     "url": "/big-bang-web/static/media/Adamina-Regular.ce0435dd.ttf"
+  },
+  {
+    "revision": "1b04f6bf96852188b6de37ba12b01ab1",
+    "url": "/big-bang-web/static/media/Chloe-Regular.1b04f6bf.svg"
   },
   {
     "revision": "328d3e21183998a1cdda3372123f6d70",
@@ -48,12 +52,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/big-bang-web/static/media/Chloe-Regular.3f75a25d.eot"
   },
   {
-    "revision": "e415a370eb011124bcdadea9aa909366",
-    "url": "/big-bang-web/static/media/Chloe-Regular.e415a370.svg"
-  },
-  {
     "revision": "e505f205cc5a645580b2dbf27c1e3874",
     "url": "/big-bang-web/static/media/Chloe-Regular.e505f205.ttf"
+  },
+  {
+    "revision": "0229f54a4e5cfdbd3cfdacbe86e99e0c",
+    "url": "/big-bang-web/static/media/ProximaNova-Bold.0229f54a.svg"
   },
   {
     "revision": "21bae7f72b17ee2d81162136a1c9cdf4",
@@ -64,12 +68,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/big-bang-web/static/media/ProximaNova-Bold.3b70f0d9.woff"
   },
   {
-    "revision": "51c2176cebdb171218c2313b05d3c293",
-    "url": "/big-bang-web/static/media/ProximaNova-Bold.51c2176c.svg"
-  },
-  {
     "revision": "caa7d8653555e3c3d30a5c860acea36d",
     "url": "/big-bang-web/static/media/ProximaNova-Bold.caa7d865.eot"
+  },
+  {
+    "revision": "6d279ef230b5de952fbbb952ddfd98aa",
+    "url": "/big-bang-web/static/media/ProximaNova-Regular.6d279ef2.svg"
   },
   {
     "revision": "7e564d19e8fbcf7170540582fc5a1c9f",
@@ -80,10 +84,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/big-bang-web/static/media/ProximaNova-Regular.e439d2f5.woff"
   },
   {
-    "revision": "e7da75abdb461aa46fd9b18a6c250b97",
-    "url": "/big-bang-web/static/media/ProximaNova-Regular.e7da75ab.svg"
-  },
-  {
     "revision": "f3d966fb4879b9448d0828e6b16a1025",
     "url": "/big-bang-web/static/media/ProximaNova-Regular.f3d966fb.eot"
   },
@@ -92,8 +92,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/big-bang-web/static/media/ProximaNova-Semibold.53b53a1a.eot"
   },
   {
-    "revision": "7c5351d9a743666b8777530d9c51311c",
-    "url": "/big-bang-web/static/media/ProximaNova-Semibold.7c5351d9.svg"
+    "revision": "7c17940a9a40805f233609a2f0c78080",
+    "url": "/big-bang-web/static/media/ProximaNova-Semibold.7c17940a.svg"
   },
   {
     "revision": "f83281a7796841966c252267f3b90827",
@@ -168,40 +168,40 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/big-bang-web/static/media/bg-product4.06f0a0c2.jpg"
   },
   {
-    "revision": "d3f156d1c839f7d826db88663a714f0c",
-    "url": "/big-bang-web/static/media/button-foward.d3f156d1.svg"
+    "revision": "5326b52a51b898e5a83681e23ff80751",
+    "url": "/big-bang-web/static/media/button-foward.5326b52a.svg"
   },
   {
-    "revision": "527e33084e0321d0d4e9a5a8bebdad2b",
-    "url": "/big-bang-web/static/media/button-play.527e3308.svg"
+    "revision": "dc5cbf4985b60f7c39e482ae9bd02a98",
+    "url": "/big-bang-web/static/media/button-play.dc5cbf49.svg"
   },
   {
-    "revision": "6197415eeb8564bf3e861277242223cf",
-    "url": "/big-bang-web/static/media/icon-cart.6197415e.svg"
+    "revision": "6c0f039bfbfbd4c60640c63634e920a0",
+    "url": "/big-bang-web/static/media/icon-cart.6c0f039b.svg"
   },
   {
-    "revision": "d24e5edf622cc9c17ab3d1390d0d7f26",
-    "url": "/big-bang-web/static/media/icon-logout.d24e5edf.svg"
+    "revision": "970802d2e4b7c3994d40399b8dd38f8a",
+    "url": "/big-bang-web/static/media/icon-logout.970802d2.svg"
   },
   {
-    "revision": "5d900a7d1d14e1e58d381e2b285fce90",
-    "url": "/big-bang-web/static/media/icon-orders.5d900a7d.svg"
+    "revision": "df334acbd098e74596e1e7e006d5f09a",
+    "url": "/big-bang-web/static/media/icon-orders.df334acb.svg"
   },
   {
-    "revision": "cf45173c15baf8c4dc39c947c3447ac2",
-    "url": "/big-bang-web/static/media/icon-profile.cf45173c.svg"
+    "revision": "3ed6519adca6d40b3ebab7be8bf94a39",
+    "url": "/big-bang-web/static/media/icon-profile.3ed6519a.svg"
   },
   {
-    "revision": "d018a7332e54f0b91752d365d4e2ca21",
-    "url": "/big-bang-web/static/media/icon-search.d018a733.svg"
+    "revision": "75a92584741765c6b7364d7d2d6879b6",
+    "url": "/big-bang-web/static/media/icon-search.75a92584.svg"
   },
   {
-    "revision": "87d2a60147213aaf2bfb2b3721a9aadb",
-    "url": "/big-bang-web/static/media/icon-wishes.87d2a601.svg"
+    "revision": "dc611088154603d2ff1f49f6d41b09e9",
+    "url": "/big-bang-web/static/media/icon-wishes.dc611088.svg"
   },
   {
-    "revision": "d6263333a3257e3eeba8d387935f8a59",
-    "url": "/big-bang-web/static/media/logo.d6263333.svg"
+    "revision": "20e860b6855a66bace3b49e265b5f58a",
+    "url": "/big-bang-web/static/media/logo.20e860b6.svg"
   },
   {
     "revision": "2b5ca432c9be346226f8a1dbfbf20008",
