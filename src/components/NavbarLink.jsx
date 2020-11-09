@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 //Services
 import {
@@ -9,17 +9,18 @@ import {
 } from '../services';
 
 const NavbarLink = (props) => {
-    const regex = new RegExp(/[^?]*/);
+    const regex = new RegExp(/[^/]*/);
     let currentPage = getCurrentPageURI();
     let redirectorNormalized = props.redirector.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
-    if(translatePageType(getCurrentPageType()) === redirectorNormalized){
-        currentPage = translatePageType(getCurrentPageType());
+    if(translatePageType(getCurrentPageType(window.location.hash)) === redirectorNormalized){
+        currentPage = translatePageType(getCurrentPageType(window.location.hash));
     }else{
         if(redirectorNormalized === 'home'){
             redirectorNormalized = ''
         }
     }
+
     return(
         <li className="navbar__redirector">
             <Link
