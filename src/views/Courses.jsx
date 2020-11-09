@@ -1,4 +1,7 @@
-import React from 'react';
+import React, {
+    useState,
+    useEffect
+} from 'react';
 
 //Component
 import {
@@ -7,15 +10,29 @@ import {
     Redirector,
     RedirectorInfo,
     RedirectorText,
-    RedirectorBanner
+    RedirectorBanner,
+    Loader
 } from '../components';
 
 //Services
-import {API} from '../services/mockData';
-import {filterByType} from '../services';
+import {timeConverter} from '../services';
 
 const Courses = () => {
-    const posts = filterByType('course',API);
+    const [courses,setCourses] = useState([]);
+    const [isLoading,setIsLoading] = useState(true);
+
+    useEffect(() => {
+        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/courses`, {
+            method: 'GET'
+        })
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            setIsLoading(false);
+            setCourses(data.courses);
+        })
+    },[]);
 
     return(
         <React.Fragment>
@@ -25,30 +42,31 @@ const Courses = () => {
             <main>
                 <section className="page">
                     <p className="page__place-holder">Courses</p>
+                    <Loader isLoading={isLoading} />
                     <Post listing="table">
-                        {posts.map((element,index) => {
+                        {courses.map((element,index) => {
                             return(
                                 <Redirector 
                                     key={index}
-                                    redirectorType={element.type}
-                                    redirectorID={element.ID}
+                                    redirectorType='course'
+                                    redirectorID={element.course_id}
                                 >
                                     <RedirectorBanner
-                                        url={element.media.bannerURL} 
-                                        alt={element.info.title} 
+                                        url={`${process.env.REACT_APP_BLOB_HOST}/jpeg/course/bg-${element.course_id}.jpg`} 
+                                        alt={element.course_title} 
                                     />
                                     <RedirectorInfo>
                                         <RedirectorText
                                             infoType="title"
                                             color="dark"
                                         >
-                                            {element.info.title}
+                                            {element.course_title}
                                         </RedirectorText>
                                         <RedirectorText
                                             infoType="user"
                                             color="grey"
                                         >
-                                            {element.info.type} - {element.info.date.startDate.day} {element.info.date.startDate.month}
+                                            CURSO - {timeConverter(element.course_date.course_start_date).day} {timeConverter(element.course_date.course_start_date).month} 
                                         </RedirectorText>
                                     </RedirectorInfo>
                                 </Redirector>
