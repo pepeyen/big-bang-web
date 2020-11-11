@@ -72,32 +72,30 @@ const Login = () => {
         };
         
         return(
-            <main>
-                <section className="page">
-                    <Post>
-                        <Form
-                            formAction={`${process.env.REACT_APP_BACK_END_HOST}/api/auth`}
-                            formMethod="POST"
-                            formSubmitHandler={submitForm}
-                            formFocusHandler={focusForm}
-                        >
-                            <span className="form__title">Login Page</span>
-                            <FormInput
-                                inputType='text'
-                                inputLabel='E-mail'
-                                inputPlaceholder='E-mail'
-                            />
-                            <FormInput
-                                inputType='password'
-                                inputLabel='Senha'
-                                inputPlaceholder='Senha'
-                            />
-                            <FormSubmit submitText='Login' />
-                            <span className={`form__feedback ${isAnimating ? '--shaking-text' : ''}`}>{inputResponse}</span>
-                        </Form>
-                    </Post>
-                </section>
-            </main>
+            <section className="page">
+                <Post>
+                    <Form
+                        formAction={`${process.env.REACT_APP_BACK_END_HOST}/api/auth`}
+                        formMethod="POST"
+                        formSubmitHandler={submitForm}
+                        formFocusHandler={focusForm}
+                    >
+                        <span className="form__title">Login Page</span>
+                        <FormInput
+                            inputType='text'
+                            inputLabel='E-mail'
+                            inputPlaceholder='E-mail'
+                        />
+                        <FormInput
+                            inputType='password'
+                            inputLabel='Senha'
+                            inputPlaceholder='Senha'
+                        />
+                        <FormSubmit submitText='Login' />
+                        <span className={`form__feedback ${isAnimating ? '--shaking-text' : ''}`}>{inputResponse}</span>
+                    </Form>
+                </Post>
+            </section>
         );
     }
 }

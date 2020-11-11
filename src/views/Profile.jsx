@@ -5,10 +5,7 @@ import React, {
 import {Redirect} from 'react-router-dom';
 
 //Components
-import {
-    Navbar,
-    Post
-} from '../components';
+import {Post} from '../components';
 
 //Services
 import {getCurrentPageUser} from '../services';
@@ -39,25 +36,18 @@ const Profile = (props) => {
         );
     }else{
         return(
-            <React.Fragment>
-                <header>
-                    <Navbar />
-                </header>
-                <main>
-                    <section className="page">
-                        <Post>
-                            <div className="profile">
-                                <div className="profile__picture">
-                                    <span>{responseData[0]}</span>
-                                </div>
-                                <div className="profile__name">
-                                    <div className="--hoverable">{responseData}</div>
-                                </div>
-                            </div>
-                        </Post>
-                    </section>
-                </main>
-            </React.Fragment>
+            <section className="page">
+                <Post>
+                    <div className="profile">
+                        <div className="profile__picture">
+                            <span>{responseData[0]}</span>
+                        </div>
+                        <div className="profile__name">
+                            <div className="--hoverable">{responseData}</div>
+                        </div>
+                    </div>
+                </Post>
+            </section>
         );
     }
 }

@@ -6,8 +6,6 @@ import {Link} from 'react-router-dom';
 import {Redirect} from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 
-//Components
-import {Navbar} from '../components';
 
 //Services
 import {
@@ -53,30 +51,23 @@ const Post = (props) => {
 
     if(postMarkdown !== -1 && currentPageId !== null){
         return(
-            <React.Fragment>
-                <header>
-                    <Navbar />
-                </header>
-                <main>
-                    <section className={isLoading ? "page --loading" : "page"}>
-                        <div className="page__post --central">
-                            <img 
-                                className="page__post-banner"
-                                src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/post/bg-${currentPageId}.jpg`}
-                                alt={postHeaders.postTitle}
-                            />
-                            <div className="page__post-title">{postHeaders.postTitle}</div>
-                            <div className="page__post-info">
-                                <span className="page__post-type --grey-text --bottom-thin-borders">{postHeaders.postTheme}</span>
-                                <span className="page__post-onwership --grey-text --bottom-thin-borders">por <Link to={`/user/${postHeaders.postAuthor}`}>{postHeaders.postAuthor}</Link></span>
-                            </div>
-                            <div className="page__post-article --dark-grey-text">
-                                <ReactMarkdown source={postMarkdown}/>
-                            </div>
-                        </div>
-                    </section>
-                </main>
-            </React.Fragment>
+            <section className={isLoading ? "page --loading" : "page"}>
+                <div className="page__post --central">
+                    <img 
+                        className="page__post-banner"
+                        src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/post/bg-${currentPageId}.jpg`}
+                        alt={postHeaders.postTitle}
+                    />
+                    <div className="page__post-title">{postHeaders.postTitle}</div>
+                    <div className="page__post-info">
+                        <span className="page__post-type --grey-text --bottom-thin-borders">{postHeaders.postTheme}</span>
+                        <span className="page__post-onwership --grey-text --bottom-thin-borders">por <Link to={`/user/${postHeaders.postAuthor}`}>{postHeaders.postAuthor}</Link></span>
+                    </div>
+                    <div className="page__post-article --dark-grey-text">
+                        <ReactMarkdown source={postMarkdown}/>
+                    </div>
+                </div>
+            </section>
         );
     }else return <Redirect to="/error/404" />
 }

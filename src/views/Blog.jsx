@@ -5,7 +5,6 @@ import React, {
 
 //Component
 import {
-    Navbar,
     Post,
     Redirector,
     RedirectorInfo,
@@ -32,53 +31,46 @@ const Blog = () => {
     },[]);
     
     return(
-        <React.Fragment>
-            <header>
-                <Navbar />
-            </header>
-            <main>
-                <section className="page">
-                    <p className="page__place-holder">Blog</p>
-                    <Loader isLoading={isLoading} />
-                    <Post>
-                        {posts.map((element,index) => {
-                            return(
-                                <Redirector 
-                                    key={index}
-                                    redirectorType='post'
-                                    redirectorID={element.post_id}    
+        <section className="page">
+            <p className="page__place-holder">Blog</p>
+            <Loader isLoading={isLoading} />
+            <Post>
+                {posts.map((element,index) => {
+                    return(
+                        <Redirector 
+                            key={index}
+                            redirectorType='post'
+                            redirectorID={element.post_id}    
+                        >
+                            <RedirectorInfo>
+                                <RedirectorText 
+                                    infoType="type"
+                                    color="dark"
                                 >
-                                    <RedirectorInfo>
-                                        <RedirectorText 
-                                            infoType="type"
-                                            color="dark"
-                                        >
-                                            {element.post_theme}
-                                        </RedirectorText>
-                                        <RedirectorText 
-                                            infoType="title"
-                                            color="dark"
-                                        >
-                                            {element.post_title}
-                                        </RedirectorText>
-                                        <RedirectorText 
-                                            infoType="user"
-                                            color="grey"
-                                        >
-                                            {element.post_author}
-                                        </RedirectorText>
-                                    </RedirectorInfo>
-                                    <RedirectorBanner
-                                        url={`${process.env.REACT_APP_BLOB_HOST}/jpeg/post/bg-${element.post_id}.jpg`}
-                                        alt={element.post_title}
-                                    />
-                                </Redirector>
-                            );
-                        })}
-                    </Post>                    
-                </section>
-            </main>
-        </React.Fragment>
+                                    {element.post_theme}
+                                </RedirectorText>
+                                <RedirectorText 
+                                    infoType="title"
+                                    color="dark"
+                                >
+                                    {element.post_title}
+                                </RedirectorText>
+                                <RedirectorText 
+                                    infoType="user"
+                                    color="grey"
+                                >
+                                    {element.post_author}
+                                </RedirectorText>
+                            </RedirectorInfo>
+                            <RedirectorBanner
+                                url={`${process.env.REACT_APP_BLOB_HOST}/jpeg/post/bg-${element.post_id}.jpg`}
+                                alt={element.post_title}
+                            />
+                        </Redirector>
+                    );
+                })}
+            </Post>                    
+        </section>
     );
 }
 
