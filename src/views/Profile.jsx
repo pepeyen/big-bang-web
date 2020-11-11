@@ -6,7 +6,7 @@ import {Redirect} from 'react-router-dom';
 
 //Components
 import {
-    Navbar,
+    Page,
     Post
 } from '../components';
 
@@ -15,6 +15,7 @@ import {getCurrentPageUser} from '../services';
 
 const Profile = (props) => {
     const [responseData,setResponseData] = useState('');
+    const [isLoading,setIsloading] = useState(true);
 
     useEffect(() => {
         fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/users/${getCurrentPageUser(props.location.pathname)}`, { 
@@ -28,6 +29,7 @@ const Profile = (props) => {
             if(!data.success){
                 setResponseData(404);
             }else{
+                setIsloading(false);
                 setResponseData(data.users.user_name);
             }
         })
@@ -39,25 +41,18 @@ const Profile = (props) => {
         );
     }else{
         return(
-            <React.Fragment>
-                <header>
-                    <Navbar />
-                </header>
-                <main>
-                    <section className="page">
-                        <Post>
-                            <div className="profile">
-                                <div className="profile__picture">
-                                    <span>{responseData[0]}</span>
-                                </div>
-                                <div className="profile__name">
-                                    <div className="--hoverable">{responseData}</div>
-                                </div>
-                            </div>
-                        </Post>
-                    </section>
-                </main>
-            </React.Fragment>
+            <Page isLoading={isLoading}>
+                <Post>
+                    <div className="profile">
+                        <div className="profile__picture">
+                            <span>{responseData[0]}</span>
+                        </div>
+                        <div className="profile__name">
+                            <div className="--hoverable">{responseData}</div>
+                        </div>
+                    </div>
+                </Post>
+            </Page>
         );
     }
 }

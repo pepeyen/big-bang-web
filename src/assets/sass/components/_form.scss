@@ -29,10 +29,10 @@
     &__input-group{
         width: 100%;
         &:nth-child(2) label{
-            top: 21.2rem;
+            top: 26rem;
         }
         &:nth-child(3) label{
-            top: 26.3rem;
+            top: 31rem;
         }
     }
     &__input:focus + &__label,
@@ -106,10 +106,10 @@
         }
         &__input-group{
             &:nth-child(2) label{
-                top: 27.8vh;
+                top: 36.9vh;
             }
             &:nth-child(3) label{
-                top: 40.2vh;
+                top: 49.2vh;
             }
         }
         &__input:focus + &__label,

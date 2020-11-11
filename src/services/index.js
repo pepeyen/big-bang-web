@@ -45,9 +45,15 @@ export const filterInArray = (toBeChecked,toBeFiltered) => {
     return filteredArray;
 };
 
+export const getCurrentPageURIManual = (URIHash) => {
+    const currentPageURI = URIHash.split('/');
+
+    return currentPageURI[1] === "user" ? currentPageURI[1] : currentPageURI[currentPageURI.length - 1];
+};
+
 export const getCurrentPageURI = () => {
     const currentPageURI = window.location.hash.substr(2);
-    
+
     return currentPageURI;
 };
 
@@ -62,7 +68,7 @@ export const getCurrentPageType = (URIPathname) => {
     let regex = new RegExp('[\\?&]type=([^&#]*)');
     let results = regex.exec(URIPathname);
     
-    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' ')); 
+    return results === null ? URIPathname : decodeURIComponent(results[1].replace(/\+/g, ' ')); 
 };
 
 export const getCurrentPageUser = (URIPathname) => {
@@ -121,7 +127,7 @@ export const translatePageType = (pageType) => {
         case 'product':
             return 'store';
         default:
-            return null;
+            return pageType;
     }
 };
 

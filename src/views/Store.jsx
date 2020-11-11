@@ -5,13 +5,12 @@ import React, {
 
 //Component
 import {
-    Navbar,
+    Page,
     Post,
     Redirector,
     RedirectorInfo,
     RedirectorText,
     RedirectorBanner,
-    Loader
 } from '../components';
 
 const Store = () => {
@@ -34,47 +33,41 @@ const Store = () => {
     },[]);
 
     return(
-        <React.Fragment>
-            <header>
-                <Navbar />
-            </header>
-            <main>
-                <section className="page">
-                    <p className="page__place-holder">Store</p>
-                    <Loader isLoading={isLoading} />
-                    <Post>
-                        {products.map((element,index) => {
-                            return(
-                                <Redirector 
-                                    key={index}
-                                    redirectorType='product'
-                                    redirectorID={element.product_id}
+        <Page
+            isLoading={isLoading}
+            pageTitle="Store"
+        spinner>
+            <Post>
+                {products.map((element,index) => {
+                    return(
+                        <Redirector 
+                            key={index}
+                            redirectorType='product'
+                            redirectorID={element.product_id}
+                        >
+                            <RedirectorInfo>
+                                <RedirectorText
+                                    infoType="title"
+                                    color="dark"
                                 >
-                                    <RedirectorInfo>
-                                        <RedirectorText
-                                            infoType="title"
-                                            color="dark"
-                                        >
-                                            {element.product_name}
-                                        </RedirectorText>
-                                        <RedirectorText
-                                            infoType="price"
-                                            color="grey"
-                                        >
-                                            R$ {element.product_price.toFixed(2)}
-                                        </RedirectorText>
-                                    </RedirectorInfo>
-                                    <RedirectorBanner 
-                                        url={`${process.env.REACT_APP_BLOB_HOST}/jpeg/product/bg-${element.product_id}.jpg`}
-                                        alt={element.product_name}
-                                    />
-                                </Redirector>
-                            );
-                        })}
-                    </Post>
-                </section>
-            </main>
-        </React.Fragment>
+                                    {element.product_name}
+                                </RedirectorText>
+                                <RedirectorText
+                                    infoType="price"
+                                    color="grey"
+                                >
+                                    R$ {element.product_price.toFixed(2)}
+                                </RedirectorText>
+                            </RedirectorInfo>
+                            <RedirectorBanner 
+                                url={`${process.env.REACT_APP_BLOB_HOST}/jpeg/product/bg-${element.product_id}.jpg`}
+                                alt={element.product_name}
+                            />
+                        </Redirector>
+                    );
+                })}
+            </Post>
+        </Page>
     );
 }
 

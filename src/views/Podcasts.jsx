@@ -6,13 +6,12 @@ from 'react';
 
 //Component
 import {
-    Navbar,
+    Page,
     Post,
     Redirector,
     RedirectorInfo,
     RedirectorText,
-    RedirectorBanner,
-    Loader
+    RedirectorBanner
 } from '../components';
 
 
@@ -34,48 +33,42 @@ const Podcasts = () => {
     },[]);
 
     return(
-        <React.Fragment>
-            <header>
-                <Navbar />
-            </header>
-            <main>
-                <section className="page">
-                    <p className="page__place-holder">Podcasts</p>
-                    <Loader isLoading={isLoading} />
-                    <Post>
-                        {podcasts.map((element,index) => {
-                            return(
-                                <Redirector 
-                                    key={index}
-                                    redirectorType='podcast'
-                                    redirectorID={element.podcast_id}
+        <Page
+            isLoading={isLoading}
+            pageTitle="Podcasts"
+        spinner>
+            <Post>
+                {podcasts.map((element,index) => {
+                    return(
+                        <Redirector 
+                            key={index}
+                            redirectorType='podcast'
+                            redirectorID={element.podcast_id}
+                        >
+                            <RedirectorInfo>
+                                <RedirectorText
+                                    infoType="title"
+                                    color="dark"
                                 >
-                                    <RedirectorInfo>
-                                        <RedirectorText
-                                            infoType="title"
-                                            color="dark"
-                                        >
-                                            {element.podcast_title}
-                                        </RedirectorText>
-                                        <RedirectorText
-                                            infoType="user"
-                                            color="grey"
-                                        >
-                                            {element.podcast_author} #{element.podcast_id}
-                                        </RedirectorText>  
-                                    </RedirectorInfo>
-                                    <RedirectorBanner
-                                        url={`${process.env.REACT_APP_BLOB_HOST}/jpeg/podcast/bg-${element.podcast_id}.jpg`}
-                                        alt={element.podcast_title}
-                                        type='podcast'
-                                    />
-                                </Redirector >
-                            );
-                        })}
-                    </Post>
-                </section>
-            </main>
-        </React.Fragment>
+                                    {element.podcast_title}
+                                </RedirectorText>
+                                <RedirectorText
+                                    infoType="user"
+                                    color="grey"
+                                >
+                                    {element.podcast_author} #{element.podcast_id}
+                                </RedirectorText>  
+                            </RedirectorInfo>
+                            <RedirectorBanner
+                                url={`${process.env.REACT_APP_BLOB_HOST}/jpeg/podcast/bg-${element.podcast_id}.jpg`}
+                                alt={element.podcast_title}
+                                type='podcast'
+                            />
+                        </Redirector >
+                    );
+                })}
+            </Post>
+        </Page>
     );
 }
 
