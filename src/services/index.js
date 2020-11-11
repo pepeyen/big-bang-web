@@ -47,7 +47,7 @@ export const filterInArray = (toBeChecked,toBeFiltered) => {
 
 export const getCurrentPageURIManual = (URIHash) => {
     const currentPageURI = URIHash.split('/');
-    console.log(currentPageURI[1] === "user" ? currentPageURI[1] : currentPageURI[currentPageURI.length - 1])
+
     return currentPageURI[1] === "user" ? currentPageURI[1] : currentPageURI[currentPageURI.length - 1];
 };
 
