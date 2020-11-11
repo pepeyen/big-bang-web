@@ -5,12 +5,12 @@ import React, {
 
 //Component
 import {
+    Page,
     Post,
     Redirector,
     RedirectorInfo,
     RedirectorText,
     RedirectorBanner,
-    Loader
 } from '../components';
 
 const Store = () => {
@@ -33,9 +33,10 @@ const Store = () => {
     },[]);
 
     return(
-        <section className="page">
-            <p className="page__place-holder">Store</p>
-            <Loader isLoading={isLoading} />
+        <Page
+            isLoading={isLoading}
+            pageTitle="Store"
+        spinner>
             <Post>
                 {products.map((element,index) => {
                     return(
@@ -66,7 +67,7 @@ const Store = () => {
                     );
                 })}
             </Post>
-        </section>
+        </Page>
     );
 }
 

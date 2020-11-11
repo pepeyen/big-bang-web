@@ -2,6 +2,7 @@ import React from 'react';
 
 //Component
 import {
+    Page,
     Banner,
     RedirectorButton,
     Cluster,
@@ -17,7 +18,7 @@ import {
 
 const Home = () => {
     return(
-        <section className="page">
+        <Page>
             <Post>
                 <Banner ID={552}>
                     <RedirectorButton
@@ -156,7 +157,7 @@ const Home = () => {
             </Post>
             <Post title="@namah.concept">
             </Post>
-        </section>
+        </Page>
     );
 }
 

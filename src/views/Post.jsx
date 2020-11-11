@@ -6,6 +6,8 @@ import {Link} from 'react-router-dom';
 import {Redirect} from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 
+//Components
+import {Page} from '../components';
 
 //Services
 import {
@@ -51,7 +53,7 @@ const Post = (props) => {
 
     if(postMarkdown !== -1 && currentPageId !== null){
         return(
-            <section className={isLoading ? "page --loading" : "page"}>
+            <Page isLoading={isLoading}>
                 <div className="page__post --central">
                     <img 
                         className="page__post-banner"
@@ -67,7 +69,7 @@ const Post = (props) => {
                         <ReactMarkdown source={postMarkdown}/>
                     </div>
                 </div>
-            </section>
+            </Page>
         );
     }else return <Redirect to="/error/404" />
 }

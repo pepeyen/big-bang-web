@@ -5,13 +5,17 @@ import React, {
 import {Redirect} from 'react-router-dom';
 
 //Components
-import {Post} from '../components';
+import {
+    Page,
+    Post
+} from '../components';
 
 //Services
 import {getCurrentPageUser} from '../services';
 
 const Profile = (props) => {
     const [responseData,setResponseData] = useState('');
+    const [isLoading,setIsloading] = useState(true);
 
     useEffect(() => {
         fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/users/${getCurrentPageUser(props.location.pathname)}`, { 
@@ -25,6 +29,7 @@ const Profile = (props) => {
             if(!data.success){
                 setResponseData(404);
             }else{
+                setIsloading(false);
                 setResponseData(data.users.user_name);
             }
         })
@@ -36,7 +41,7 @@ const Profile = (props) => {
         );
     }else{
         return(
-            <section className="page">
+            <Page isLoading={isLoading}>
                 <Post>
                     <div className="profile">
                         <div className="profile__picture">
@@ -47,7 +52,7 @@ const Profile = (props) => {
                         </div>
                     </div>
                 </Post>
-            </section>
+            </Page>
         );
     }
 }

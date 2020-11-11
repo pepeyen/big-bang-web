@@ -5,12 +5,12 @@ import React, {
 
 //Component
 import {
+    Page,
     Post,
     Redirector,
     RedirectorInfo,
     RedirectorText,
-    RedirectorBanner,
-    Loader
+    RedirectorBanner
 } from '../components';
 
 //Services
@@ -34,9 +34,10 @@ const Courses = () => {
     },[]);
 
     return(
-        <section className="page">
-            <p className="page__place-holder">Courses</p>
-            <Loader isLoading={isLoading} />
+        <Page
+            isLoading={isLoading}
+            pageTitle="Courses"
+        spinner>
             <Post listing="table">
                 {courses.map((element,index) => {
                     return(
@@ -67,7 +68,7 @@ const Courses = () => {
                     );
                 })}
            </Post>
-        </section>
+        </Page>
     );
 }
 

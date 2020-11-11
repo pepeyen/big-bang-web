@@ -4,6 +4,9 @@ import React, {
 } from 'react';
 import {Redirect} from 'react-router-dom';
 
+//Components
+import {Page} from '../components';
+
 //Services
 import {getCurrentPageID} from '../services';
 
@@ -33,7 +36,7 @@ const Product = (props) => {
 
     if(product !== -1 && currentPageId !== null){
         return(
-            <section className={isLoading ? "page --loading" : "page"}>
+            <Page isLoading={isLoading}>
                 <div className="page__product">
                     <img 
                         className="page__product-image"
@@ -46,7 +49,7 @@ const Product = (props) => {
                         <p className="page__filler-product-price">R$ {product.product_price ? product.product_price.toFixed(2) : 0}</p>
                     </div>
                 </div>
-            </section>
+            </Page>
         );
     }else return <Redirect to="/error/404" />
 }

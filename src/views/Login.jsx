@@ -4,6 +4,7 @@ import Validator from 'validator';
 
 //Components
 import {
+    Page,
     Post,
     Form,
     FormInput,
@@ -72,7 +73,7 @@ const Login = () => {
         };
         
         return(
-            <section className="page">
+            <Page>
                 <Post>
                     <Form
                         formAction={`${process.env.REACT_APP_BACK_END_HOST}/api/auth`}
@@ -95,7 +96,7 @@ const Login = () => {
                         <span className={`form__feedback ${isAnimating ? '--shaking-text' : ''}`}>{inputResponse}</span>
                     </Form>
                 </Post>
-            </section>
+            </Page>
         );
     }
 }

@@ -6,12 +6,12 @@ from 'react';
 
 //Component
 import {
+    Page,
     Post,
     Redirector,
     RedirectorInfo,
     RedirectorText,
-    RedirectorBanner,
-    Loader
+    RedirectorBanner
 } from '../components';
 
 
@@ -33,9 +33,10 @@ const Podcasts = () => {
     },[]);
 
     return(
-        <section className="page">
-            <p className="page__place-holder">Podcasts</p>
-            <Loader isLoading={isLoading} />
+        <Page
+            isLoading={isLoading}
+            pageTitle="Podcasts"
+        spinner>
             <Post>
                 {podcasts.map((element,index) => {
                     return(
@@ -67,7 +68,7 @@ const Podcasts = () => {
                     );
                 })}
             </Post>
-        </section>
+        </Page>
     );
 }
 

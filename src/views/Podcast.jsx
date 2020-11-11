@@ -9,6 +9,7 @@ import {
 
 //Component
 import {
+    Page,
     Post,
     AudioPlayer,
     AudioPlayerButton
@@ -43,7 +44,7 @@ export const Podcast = (props) => {
 
     if(podcast !== -1 && currentPageId !== null){
         return(
-            <section className={isLoading ? "page --loading" : "page"}>
+            <Page isLoading={isLoading}>
                 <Post>
                     <img 
                         className="page__post-banner"
@@ -63,7 +64,7 @@ export const Podcast = (props) => {
                             </Link>
                     </div>
                 </Post>
-            </section>
+            </Page>
         );
     }else return <Redirect to="/error/404" />
 }
