@@ -15,12 +15,14 @@ const Login = () => {
     const [inputResponse,setInputResponse] = useState('');
     const [isLoggedIn,setIsLoggedIn] = useState(false);
     const [isAnimating,setIsAnimating] = useState(false);
+    const [isLoading,setIsLoading] = useState(false);
 
     if(window.sessionStorage.getItem('isLoggedIn') || isLoggedIn){
         return <Redirect to={`/user/${window.sessionStorage.getItem('loggedUser')}`}/>
     }else{
         const submitForm = (e) => {
             e.preventDefault();
+            setIsLoading(true);
 
             const form = e.target;
             const data = new FormData(form);
@@ -50,6 +52,8 @@ const Login = () => {
                 return response.json();
             })
             .then(data => {
+                setIsLoading(false);
+
                 if(!data.success){
                     setIsAnimating(true);
                     setInputResponse(data.description);
@@ -92,7 +96,10 @@ const Login = () => {
                             inputLabel='Senha'
                             inputPlaceholder='Senha'
                         />
-                        <FormSubmit submitText='Login' />
+                        <FormSubmit
+                            isDisabled={isAnimating}
+                            submitText='Login'
+                        />
                         <span className={`form__feedback ${isAnimating ? '--shaking-text' : ''}`}>{inputResponse}</span>
                     </Form>
                 </Post>

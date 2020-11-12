@@ -5,6 +5,7 @@ const FormSubmit = (props) =>{
         <button
             className="form__submit"
             type='submit'
+            disabled={props.isDisabled}
         >
             {props.submitText}
         </button>

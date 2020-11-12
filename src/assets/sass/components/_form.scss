@@ -81,6 +81,14 @@
             background-color: black;
             color: white;
         }
+        &[disabled=disabled], &:disabled{
+            border-color:#808080;
+            background-color: #808080;
+            color: white;
+            &:hover{
+                cursor: default;
+            }
+        }
     }
     &__feedback{
         margin: 0;
@@ -89,6 +97,7 @@
         color: #a11521;
     }
 }
+
 @media (min-width: 801px){
     .form{
         gap: 4vh 0;
