@@ -24,8 +24,6 @@ export const Podcast = (props) => {
     const currentPageId = getCurrentPageID(props.location.search);
 
     useEffect(() => {
-        setIsLoading(true);
-        
         fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/podcasts/${currentPageId}`, {
             method: 'GET'
         })
@@ -36,8 +34,8 @@ export const Podcast = (props) => {
             if(data.success !== true){
                 setPodcast(-1);
             }else{
-                setIsLoading(false);
                 setPodcast(data.podcasts);
+                setIsLoading(false);
             }
         })
     },[currentPageId]);

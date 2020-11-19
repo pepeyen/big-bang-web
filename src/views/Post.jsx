@@ -22,8 +22,6 @@ const Post = (props) => {
     const currentPageId = getCurrentPageID(props.location.search);
 
     useEffect(() => {
-        setIsLoading(true);
-        
         fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/posts/${currentPageId}`, {
             method: 'GET'
         })
@@ -44,8 +42,8 @@ const Post = (props) => {
                     return response.text();
                 })
                 .then(data => {
-                    setIsLoading(false);
                     setPostMarkdown(data);
+                    setIsLoading(false);
                 })
             }
         });

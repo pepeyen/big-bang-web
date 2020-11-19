@@ -28,8 +28,8 @@ const Courses = () => {
             return response.json();
         })
         .then(data => {
-            setIsLoading(false);
             setCourses(data.courses);
+            setIsLoading(false);
         })
     },[]);
 
