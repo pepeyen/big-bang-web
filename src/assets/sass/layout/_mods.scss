@@ -31,6 +31,9 @@
     row-gap: 2rem;
     column-gap: 1rem;
 }
+.--table-three-desktop > a:not(:first-child){
+    display: none;
+}
 .--root-banner{
     display: none;
 }
@@ -424,6 +427,15 @@
         grid-template-columns: repeat(auto-fill,minmax(20%,1fr));
         column-gap: 3vh;
         row-gap: 0;
+    }
+    .--table-three-desktop{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0 2vh;
+    }
+    .--table-three-desktop > a:not(:first-child){
+        display: block;
     }
     .--root-banner{
         display: block;

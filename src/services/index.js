@@ -97,15 +97,7 @@ export const timeConverter = (dateString) => {
     return {
         day: ("0" + date.getDate()).slice(-2), 
         month: translateMonth(date.getMonth()), 
-        year: date.getYear()
-    };
-};
-
-export const timeConverterOLD = (date) => {
-    return {
-        day: ("0" + date.day).slice(-2), 
-        month: MONTHS[date.month - 1], 
-        year: date.year
+        year: date.getFullYear()
     };
 };
 
