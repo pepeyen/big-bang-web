@@ -25,8 +25,8 @@ const Blog = () => {
             return response.json();
         })
         .then(data => {
-            setIsLoading(false);
             setPosts(data.posts);
+            setIsLoading(false);
         });
     },[]);
     

@@ -16,8 +16,6 @@ const Product = (props) => {
     const currentPageId = getCurrentPageID(props.location.search);
 
     useEffect(() => {
-        setIsLoading(true);
-        
         fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/products/${currentPageId}`, {
             method: 'GET'
         })
@@ -28,8 +26,8 @@ const Product = (props) => {
             if(data.success === false){
                 setProduct(-1);
             }else{
-                setIsLoading(false);
                 setProduct(data.products);
+                setIsLoading(false);
             }
         })
     },[currentPageId]);

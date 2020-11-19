@@ -27,8 +27,8 @@ const Podcasts = () => {
             return response.json();
         })
         .then(data => {
-            setIsLoading(false);
             setPodcasts(data.podcasts);
+            setIsLoading(false);
         })
     },[]);
 

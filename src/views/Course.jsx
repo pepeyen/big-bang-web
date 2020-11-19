@@ -19,8 +19,6 @@ const Course = (props) => {
     const currentPageId = getCurrentPageID(props.location.search);
 
     useEffect(() => {
-        setIsLoading(true);
-
         fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/courses/${currentPageId}`, {
             method: 'GET'
         })
@@ -31,8 +29,8 @@ const Course = (props) => {
             if(data.sucess === false){
                 setCourse(-1);
             }else{
-                setIsLoading(false);
                 setCourse(data.courses);
+                setIsLoading(false);
             }
         })
     },[currentPageId]);

@@ -29,8 +29,8 @@ const Profile = (props) => {
             if(!data.success){
                 setResponseData(404);
             }else{
-                setIsloading(false);
                 setResponseData(data.users.user_name);
+                setIsloading(false);
             }
         })
     },[props.location.pathname]);

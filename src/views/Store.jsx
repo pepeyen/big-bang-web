@@ -26,8 +26,8 @@ const Store = () => {
         })
         .then(data => {
             if(data.success === true){
-                setIsLoading(false);
                 setProducts(data.products);
+                setIsLoading(false);
             }
         })
     },[]);
