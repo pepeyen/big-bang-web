@@ -32,8 +32,10 @@ const Node = (props) => {
                 return response.json();
             })
             .then(data => {
-                setNode(data[`${props.type}s`]);
-                setIsLoading(false);
+                if(data.success === true){
+                    setNode(data[`${props.type}s`]);
+                    setIsLoading(false);
+                }
             })
         }
     },[props.type,props.ID]);
@@ -133,7 +135,7 @@ const Node = (props) => {
                     );
                 default:
                     return(
-                        <p>Error</p>
+                        <p>Type not found</p>
                     );
             }
         }
@@ -154,7 +156,7 @@ const Node = (props) => {
         );
     }else{
         return(
-            <div className={`--${props.size}-${props.position}  --thick-borders --dark-borders --${props.theme}-text`}>
+            <div className={`--${props.size}-${props.position} --thick-borders --dark-borders --${props.theme}-text`}>
                 {nodeChildren}   
             </div>
         );

@@ -19,8 +19,10 @@ const FillerProduct = (props) => {
             return result.json();
         })
         .then(data => {
-            setIsLoading(false);
-            setProducts(data.products);
+            if(data.success === true){
+                setProducts(data.products);
+                setIsLoading(false);
+            }
         })
     },[props.productCount]);
 

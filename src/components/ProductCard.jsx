@@ -22,8 +22,10 @@ const ProductCard = (props) => {
             return response.json();
         })
         .then(data => {
-            setProduct(data.products);
-            setIsLoading(false);
+            if(data.success === true){
+                setProduct(data.products);
+                setIsLoading(false);
+            }
         })
     },[props.productID]);
 
