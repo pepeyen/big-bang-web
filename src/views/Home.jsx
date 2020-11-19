@@ -13,7 +13,8 @@ import {
     Filler,
     FillerProduct,
     Carousel,
-    CarouselItem
+    CarouselItem,
+    CardList
 } from '../components';
 
 const Home = () => {
@@ -141,14 +142,26 @@ const Home = () => {
                     text="Veja todos os produtos"
                 />
             </Post>
-            <Post title="Courses">                
+            <Post title="Courses">
+                <TableListing listingType="three-desktop">
+                    <CardList
+                        cardListingType="course"
+                        cardMaxListing={3}
+                    />
+                </TableListing>
                 <RedirectorButton
                     root="post" 
                     target="courses"
                     text="Veja todos os cursos"
                 />
             </Post>
-            <Post title="Podcasts">               
+            <Post title="Podcasts">
+                <TableListing listingType="three-desktop">
+                    <CardList
+                        cardListingType="podcast"
+                        cardMaxListing={3}
+                    />
+                </TableListing>           
                 <RedirectorButton
                     root="post" 
                     target="podcasts"
