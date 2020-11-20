@@ -9,18 +9,15 @@ import {
     LikeButton
 } from './index';
 
+//Services
+import {fetchFromBackEnd} from '../services';
 
 const ProductCard = (props) => {
     const [product,setProduct] = useState([]);
     const [isLoading,setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/products/${props.productID}`, {
-            method: 'GET'
-        })
-        .then(response => {
-            return response.json();
-        })
+        fetchFromBackEnd('products', props.productID, {method: 'GET'})
         .then(data => {
             if(data.success === true){
                 setProduct(data.products);

@@ -6,18 +6,15 @@ import React, {
 //Components
 import {Loader} from './index';
 
+//Services
+import {fetchFromBackEnd} from '../services';
 
 const Banner = (props) => {
     const [banner,setBanner] = useState([]);
     const [isLoading,setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/banners/${props.ID}`, {
-            method: 'GET'
-        })
-        .then(response => {
-            return response.json();
-        })
+        fetchFromBackEnd('banners', props.ID, {method: 'GET'})
         .then(data => {
             setBanner(data.banners);
             setIsLoading(false);

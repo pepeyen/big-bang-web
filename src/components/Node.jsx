@@ -13,7 +13,8 @@ import {
 //Services
 import {
     translatePageType,
-    timeConverter
+    timeConverter,
+    fetchFromBackEnd
 } from '../services';
 
 //Images
@@ -25,12 +26,7 @@ const Node = (props) => {
 
     useEffect(() => {
         if(props.type !== 'newsletter') {
-            fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/${props.type}s/${props.ID}`, {
-                method: 'GET'
-            })
-            .then(response => {
-                return response.json();
-            })
+            fetchFromBackEnd(`${props.type}s`, props.ID, {method: 'GET'})
             .then(data => {
                 if(data.success === true){
                     setNode(data[`${props.type}s`]);

@@ -7,17 +7,15 @@ import {Link} from 'react-router-dom';
 //Components
 import {Loader} from './index';
 
+//Services
+import {fetchFromBackEnd} from '../services';
+
 const FillerProduct = (props) => {
     const [products,setProducts] = useState([]);
     const [isLoading,setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/products/offset/${props.productCount}`, {
-            method: 'GET'
-        })
-        .then(result => {
-            return result.json();
-        })
+        fetchFromBackEnd('products', `offset/${props.productCount}`, {method: 'GET'})
         .then(data => {
             if(data.success === true){
                 setProducts(data.products);
