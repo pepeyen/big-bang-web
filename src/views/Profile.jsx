@@ -11,19 +11,19 @@ import {
 } from '../components';
 
 //Services
-import {getCurrentPageUser} from '../services';
+import {
+    getCurrentPageUser,
+    fetchFromBackEnd
+} from '../services';
 
 const Profile = (props) => {
     const [responseData,setResponseData] = useState('');
     const [isLoading,setIsloading] = useState(true);
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/users/${getCurrentPageUser(props.location.pathname)}`, { 
-            method: 'GET',
+        fetchFromBackEnd('users', getCurrentPageUser(props.location.pathname), {
+            method: 'GET', 
             credentials: 'include'
-        })
-        .then(response => {
-            return response.json();
         })
         .then(data => {
             if(!data.success){

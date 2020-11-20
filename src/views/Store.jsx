@@ -13,17 +13,15 @@ import {
     RedirectorBanner,
 } from '../components';
 
+//Services
+import {fetchFromBackEnd} from '../services';
+
 const Store = () => {
     const [products,setProducts] = useState([]);
     const [isLoading,setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/products`, {
-            method: 'GET'
-        })
-        .then(response => {
-            return response.json();
-        })
+        fetchFromBackEnd('products', '', {method: 'GET'})
         .then(data => {
             if(data.success === true){
                 setProducts(data.products);

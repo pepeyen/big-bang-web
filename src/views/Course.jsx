@@ -10,7 +10,8 @@ import {Page} from '../components';
 //Services
 import {
     getCurrentPageID,
-    calcDateDiff
+    calcDateDiff,
+    fetchFromBackEnd
 } from '../services';
 
 const Course = (props) => {
@@ -19,12 +20,7 @@ const Course = (props) => {
     const currentPageId = getCurrentPageID(props.location.search);
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/courses/${currentPageId}`, {
-            method: 'GET'
-        })
-        .then(response => {
-            return response.json();
-        })
+        fetchFromBackEnd('courses', currentPageId, {method: 'GET'})
         .then(data => {
             if(data.sucess === false){
                 setCourse(-1);

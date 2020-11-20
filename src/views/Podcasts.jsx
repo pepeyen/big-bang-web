@@ -14,18 +14,15 @@ import {
     RedirectorBanner
 } from '../components';
 
+//Services
+import {fetchFromBackEnd} from '../services';
 
 const Podcasts = () => {
     const [podcasts,setPodcasts] = useState([]);
     const [isLoading,setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/podcasts`, {
-            method: 'GET'
-        })
-        .then(response => {
-            return response.json();
-        })
+        fetchFromBackEnd('podcasts', '', {method: 'GET'})
         .then(data => {
             setPodcasts(data.podcasts);
             setIsLoading(false);
