@@ -14,19 +14,17 @@ import {
 } from '../components';
 
 //Services
-import {timeConverter} from '../services';
+import {
+    timeConverter,
+    fetchFromBackEnd
+} from '../services';
 
 const Courses = () => {
     const [courses,setCourses] = useState([]);
     const [isLoading,setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/courses`, {
-            method: 'GET'
-        })
-        .then(response => {
-            return response.json();
-        })
+        fetchFromBackEnd('courses', '', {method: 'GET'})
         .then(data => {
             setCourses(data.courses);
             setIsLoading(false);

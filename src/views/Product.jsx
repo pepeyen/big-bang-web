@@ -8,7 +8,10 @@ import {Redirect} from 'react-router-dom';
 import {Page} from '../components';
 
 //Services
-import {getCurrentPageID} from '../services';
+import {
+    getCurrentPageID,
+    fetchFromBackEnd
+} from '../services';
 
 const Product = (props) => {
     const [product,setProduct] = useState('');
@@ -16,12 +19,7 @@ const Product = (props) => {
     const currentPageId = getCurrentPageID(props.location.search);
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/products/${currentPageId}`, {
-            method: 'GET'
-        })
-        .then(response => {
-            return response.json();
-        })
+        fetchFromBackEnd('products', currentPageId, {method: 'GET'})
         .then(data => {
             if(data.success === false){
                 setProduct(-1);

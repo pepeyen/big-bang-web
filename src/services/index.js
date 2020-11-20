@@ -136,3 +136,15 @@ export const fetchFromBlob = (id,container,subContainer,filePrefix,fileExtension
         })
     });
 };
+
+export const fetchFromBackEnd = (fetchinEndPoint,fetchingParam,fetchingOptions) => {
+    return new Promise((resolve, reject) => {
+        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/${fetchinEndPoint}/${fetchingParam}`, fetchingOptions)
+        .then(response => {
+            resolve(response.json());
+        })
+        .catch(error => {
+            reject(error);
+        })
+    });
+};

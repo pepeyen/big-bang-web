@@ -13,17 +13,15 @@ import {
     RedirectorBanner
 } from '../components';
 
+//Services
+import {fetchFromBackEnd} from '../services';
+
 const Blog = () => {
     const [posts, setPosts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/posts`, {
-            method: 'GET'
-        })
-        .then(response => {
-            return response.json();
-        })
+        fetchFromBackEnd('posts', '', {method: 'GET'})
         .then(data => {
             setPosts(data.posts);
             setIsLoading(false);

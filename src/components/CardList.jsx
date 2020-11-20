@@ -10,17 +10,15 @@ import {
     Loader
 } from './index';
 
+//Services
+import {fetchFromBackEnd} from '../services';
+
 const CardList = (props) => {
     const [cardList,setCardList] = useState([]);
     const [isLoading,setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/${props.cardListingType}s/offset/${props.cardMaxListing}`, {
-            method: 'GET'
-        })
-        .then(response => {
-            return response.json();
-        })
+        fetchFromBackEnd(`${props.cardListingType}s`, `offset/${props.cardMaxListing}`, {method: 'GET'})
         .then(data => {
             if(data.success){
                 setCardList(data[`${props.cardListingType}s`]);

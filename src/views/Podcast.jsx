@@ -16,7 +16,10 @@ import {
 } from '../components';
 
 //Services
-import {getCurrentPageID} from '../services';
+import {
+    getCurrentPageID,
+    fetchFromBackEnd
+} from '../services';
 
 export const Podcast = (props) => {
     const [podcast,setPodcast] = useState('');
@@ -24,12 +27,7 @@ export const Podcast = (props) => {
     const currentPageId = getCurrentPageID(props.location.search);
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/podcasts/${currentPageId}`, {
-            method: 'GET'
-        })
-        .then(response => {
-            return response.json();
-        })
+        fetchFromBackEnd('podcasts', currentPageId, {method: 'GET'})
         .then(data => {
             if(data.success !== true){
                 setPodcast(-1);

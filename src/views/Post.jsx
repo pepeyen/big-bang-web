@@ -12,7 +12,8 @@ import {Page} from '../components';
 //Services
 import {
     getCurrentPageID,
-    fetchFromBlob
+    fetchFromBlob,
+    fetchFromBackEnd
 } from '../services';
 
 const Post = (props) => {
@@ -22,12 +23,7 @@ const Post = (props) => {
     const currentPageId = getCurrentPageID(props.location.search);
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/posts/${currentPageId}`, {
-            method: 'GET'
-        })
-        .then(response => {
-            return response.json();
-        })
+        fetchFromBackEnd('posts', currentPageId, {method: 'GET'})
         .then(data => {
             if(data.sucess === false){
                 setPostMarkdown(-1);
