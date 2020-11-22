@@ -7,7 +7,8 @@ import {Redirect} from 'react-router-dom';
 //Components
 import {
     Page,
-    Post
+    Post,
+    ProfilePosts
 } from '../components';
 
 //Services
@@ -51,6 +52,18 @@ const Profile = (props) => {
                             <div className="--hoverable">{responseData}</div>
                         </div>
                     </div>
+                    <ProfilePosts
+                        postType="post"
+                        postAuthor={getCurrentPageUser(props.location.pathname)}
+                    />
+                    <ProfilePosts
+                        postType="podcast"
+                        postAuthor={getCurrentPageUser(props.location.pathname)}
+                    />
+                    <ProfilePosts
+                        postType="course"
+                        postAuthor={getCurrentPageUser(props.location.pathname)}
+                    />
                 </Post>
             </Page>
         );
