@@ -20,6 +20,7 @@ export {default as Node} from './Node';
 export {default as Page} from './Page';
 export {default as Post} from './Post';
 export {default as ProductCard} from './ProductCard';
+export {default as ProfilePosts} from './ProfilePosts';
 export {default as Redirector} from './Redirector';
 export {default as RedirectorBanner} from './RedirectorBanner';
 export {default as RedirectorButton} from './RedirectorButton';
