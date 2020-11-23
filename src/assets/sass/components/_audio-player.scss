@@ -24,15 +24,16 @@
     }
     &-controller{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        justify-content: center;
         color: white;
         padding: 0 .6rem 0 .6rem;
-        margin: 0 0 .3rem 0;
+        margin: 0 0 .6rem 0;
+        gap: .3rem 0;
         
         &__bar{
-            align-self: flex-end;
             background-color: rgb(218, 218, 218);
-            width: 60%;
+            width: 100%;
             height: .4rem;
             margin: 0 0 .2rem 0;
 
@@ -47,27 +48,31 @@
             }
         }
         & span{
-            align-self: flex-end;
+            align-self: center;
             font-family: 'ProximaNova-Semibold';
             font-size: .8rem;
             width: 5rem;
+            margin: 0 0 0 auto;
             text-align: end;
+        }
+        &__status{
+            display: flex;
+            flex-direction: row;
+            padding: 0 .6rem 0 .6rem;
         }
         &__volume{
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
-            margin: 0 auto 0 auto;
-            gap: .7rem 0;
+            gap: 0 .7rem;
 
             & svg{
                 width: 1.2rem;
             }
             &-bar{
                 background-color: #dadada;
-                transform: rotate(-180deg);
-                width: .4rem;
-                height: 3rem;
+                width: 4rem;
+                height: .4rem;
 
                 &-status{
                     -webkit-transition: height ease-in-out .05s;
@@ -75,7 +80,7 @@
                     -ms-transition: height ease-in-out .05s;
                     -o-transition: height ease-in-out .05s;
                     transition: height ease-in-out .05s;
-                    width: 100%;
+                    height: 100%;
                     background-color: #73A8A0;
                 }
             }
@@ -100,12 +105,12 @@
         }
         &-controller{
             padding: 0 1vh 0 1vh;
-            margin: 0 0 .5vh 0;
+            margin: 0 0 1vh 0;
+            gap: .6vh 0;
             
             &__bar{
-                height: .7vh;
+                height: .8vh;
                 margin: 0 0 .3vh 0;
-                width: 85%;
 
                 &:hover{
                     cursor: pointer;
@@ -115,8 +120,11 @@
                 font-size: 1.7vh;
                 width: 11vh;
             }
+            &__status{
+                padding: 0 1vh 0 1vh;
+            }
             &__volume{
-                gap: 1.3vh 0;
+                gap: 0 1vh;
     
                 &:hover{
                     cursor: pointer;
@@ -129,8 +137,8 @@
                     }
                 }
                 &-bar{
-                    width: .8vh;
-                    height: 6vh;
+                    width: 8vh;
+                    height: .8vh;
                 }
             }
         }
