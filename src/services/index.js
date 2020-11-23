@@ -148,3 +148,27 @@ export const fetchFromBackEnd = (fetchinEndPoint,fetchingParam,fetchingOptions) 
         })
     });
 };
+
+export const secondsToMinutes = (valueInSeconds) => {
+    const minutes = Math.floor(valueInSeconds / 60);
+    const seconds = Math.floor(valueInSeconds - (minutes * 60));
+
+    return (minutes < 10 ? `0${minutes}` : minutes) + ":" + (seconds < 10 ? `0${seconds}`: seconds);
+};
+
+export const getMouseClickPosition = (event, axys, componentId) => {
+    const component = document.getElementById(componentId);
+    let clickedPosition, componentFullSize;
+
+    if(axys === 'x'){
+        clickedPosition = event.pageX - component.offsetLeft;
+        componentFullSize = component.offsetWidth;
+    }else{
+        if(axys === 'y'){
+            clickedPosition = event.pageY - component.offsetTop;
+            componentFullSize = component.offsetHeight;
+        }
+    }
+
+    return  clickedPosition / componentFullSize;  
+};

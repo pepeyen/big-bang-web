@@ -1,3 +1,5 @@
+export {default as AudioController} from './AudioController';
+export {default as AudioVolumeController} from './AudioVolumeController';
 export {default as AudioPlayer} from './AudioPlayer';
 export {default as AudioPlayerButton} from './AudioPlayerButton';
 export {default as Banner} from './Banner';

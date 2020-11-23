@@ -1,15 +1,19 @@
 .player{
+    display: flex;
+    flex-direction: column;
     padding: 0;
+    height: 100%;
+    width: 100%;
 
     &__button{
+        align-self: center;
         border-radius: 50%;
         border-color: #ffffff;
         transition: border-width ease-in .1s;
         background-color: transparent;
-        display: block;
         border: none;
         outline: none;
-        margin: auto;
+        margin: 5rem 0 auto 0;
         padding: .1rem 0 0 .1rem;
         width: 5rem;
         height: 5rem;
@@ -18,6 +22,70 @@
         width: 2.5rem;
         height: 3rem;
     }
+    &-controller{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: white;
+        padding: 0 .6rem 0 .6rem;
+        margin: 0 0 .6rem 0;
+        gap: .3rem 0;
+        
+        &__bar{
+            background-color: rgb(218, 218, 218);
+            width: 100%;
+            height: .4rem;
+            margin: 0 0 .2rem 0;
+
+            &-status{
+                -webkit-transition: width ease-in-out .2s;
+                -moz-transition: width ease-in-out .2s;
+                -ms-transition: width ease-in-out .2s;
+                -o-transition: width ease-in-out .2s;
+                transition: width ease-in-out .2s;
+                height: 100%;
+                background-color: #73A8A0;
+            }
+        }
+        & span{
+            align-self: center;
+            font-family: 'ProximaNova-Semibold';
+            font-size: .8rem;
+            width: 5rem;
+            margin: 0 0 0 auto;
+            text-align: end;
+        }
+        &__status{
+            display: flex;
+            flex-direction: row;
+            padding: 0 .6rem 0 .6rem;
+        }
+        &__volume{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0 .7rem;
+
+            & svg{
+                width: 1.2rem;
+            }
+            &-bar{
+                background-color: #dadada;
+                width: 4rem;
+                height: .4rem;
+
+                &-status{
+                    -webkit-transition: height ease-in-out .05s;
+                    -moz-transition: height ease-in-out .05s;
+                    -ms-transition: height ease-in-out .05s;
+                    -o-transition: height ease-in-out .05s;
+                    transition: height ease-in-out .05s;
+                    height: 100%;
+                    background-color: #73A8A0;
+                }
+            }
+        }
+    }
 }
 @media (min-width: 801px){
     .player{
@@ -25,6 +93,8 @@
             width: 17vh;
             height: 17vh;
             padding: 0 0 0 .8vh;
+            margin-top: 25vh;
+
             &:hover{
                 cursor: pointer;
             }
@@ -32,6 +102,45 @@
         &__background{
             width: 8vh;
             height: 10vh;
+        }
+        &-controller{
+            padding: 0 1vh 0 1vh;
+            margin: 0 0 1vh 0;
+            gap: .6vh 0;
+            
+            &__bar{
+                height: .8vh;
+                margin: 0 0 .3vh 0;
+
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            & span{
+                font-size: 1.7vh;
+                width: 11vh;
+            }
+            &__status{
+                padding: 0 1vh 0 1vh;
+            }
+            &__volume{
+                gap: 0 1vh;
+    
+                &:hover{
+                    cursor: pointer;
+                }
+                & svg{
+                    width: 2.3vh;
+    
+                    &:hover path{
+                        fill:  #73A8A0;
+                    }
+                }
+                &-bar{
+                    width: 8vh;
+                    height: .8vh;
+                }
+            }
         }
     }
 }
