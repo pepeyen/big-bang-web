@@ -1,42 +1,21 @@
-import React, { useState,useEffect } from 'react';
+import React, {useState} from 'react';
 
 const AudioButtonPlayer = (props) => {
-    const [audio] = useState(new Audio(props.audioURL));
-    const [isAudioPlaying, setIsAudioPlaying] = useState(false);
     const [isButtonBright, setIsButtonBright] = useState(false);
-
-    useEffect(() => {
-        audio.addEventListener('ended', () => {
-            setIsAudioPlaying(false);
-            setIsButtonBright(false);
-        });
-        return () => {
-            audio.removeEventListener('ended', () => {
-                setIsAudioPlaying(false);
-                setIsButtonBright(false);
-            });
-        };
-    }, [audio]);
-
-    useEffect(() => {
-        isAudioPlaying ? audio.play() : audio.pause();
-    }, [isAudioPlaying, audio])
-
-    const playerHandler = () => {
-        setIsAudioPlaying(!isAudioPlaying);
-    }
+    
     const setButtonHoverState = () => {
         if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
             setIsButtonBright(!isButtonBright);
         }
-    }
+    };
+
     return(
         <button
-            className={`player__button --${isAudioPlaying ? 'playing' : 'paused'}`}
+            className={`player__button --${props.isAudioPlaying ? 'playing' : 'paused'}`}
             type="button"
             onMouseEnter={setButtonHoverState}
             onMouseLeave={setButtonHoverState}
-            onClick={playerHandler}
+            onClick={props.playerHandler}
         >
             <svg 
                 className="player__background"
@@ -44,7 +23,7 @@ const AudioButtonPlayer = (props) => {
                 xmlns="http://www.w3.org/2000/svg"
             >
             {
-                isAudioPlaying ?
+                props.isAudioPlaying ?
                     <React.Fragment>
                         <path 
                             d="M91.125 0H25.875C19.872 0 15 6.72 15 15V285C15 293.28 19.872 300 25.875 300H91.125C97.128 300 102 293.28 102 285V15C102 6.72 97.128 0 91.125 0Z" 
