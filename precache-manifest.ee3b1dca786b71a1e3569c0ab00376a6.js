@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7539e792487f2a9b774c9bbaa02cbe2b",
+    "revision": "3ddd985c6fde03dce7199acc3b395e08",
     "url": "/namah-front-end/index.html"
   },
   {
-    "revision": "870490aeb1ff633d6375",
-    "url": "/namah-front-end/static/css/main.dbcff431.chunk.css"
+    "revision": "e67dc2a30c3411e9e41c",
+    "url": "/namah-front-end/static/css/main.78bde1ab.chunk.css"
   },
   {
     "revision": "e9615fc020a0a75cdc74",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/namah-front-end/static/js/2.9afe9568.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "870490aeb1ff633d6375",
-    "url": "/namah-front-end/static/js/main.f6696a6c.chunk.js"
+    "revision": "e67dc2a30c3411e9e41c",
+    "url": "/namah-front-end/static/js/main.7999c2dd.chunk.js"
   },
   {
     "revision": "659664d09015d6a0258c",
@@ -28,16 +28,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/namah-front-end/static/media/Adamina-Regular.1cf9c732.eot"
   },
   {
-    "revision": "22412c159a1505166c764d7ce5470db4",
-    "url": "/namah-front-end/static/media/Adamina-Regular.22412c15.svg"
-  },
-  {
     "revision": "32e31ea6c8f38bce55b5c377cb66d84d",
     "url": "/namah-front-end/static/media/Adamina-Regular.32e31ea6.woff"
   },
   {
+    "revision": "702b0d7edc9f00c49d11c6c9753fc5d6",
+    "url": "/namah-front-end/static/media/Adamina-Regular.702b0d7e.svg"
+  },
+  {
     "revision": "ce0435ddfd9fc5efcac92ad41ce93be8",
     "url": "/namah-front-end/static/media/Adamina-Regular.ce0435dd.ttf"
+  },
+  {
+    "revision": "1b04f6bf96852188b6de37ba12b01ab1",
+    "url": "/namah-front-end/static/media/Chloe-Regular.1b04f6bf.svg"
   },
   {
     "revision": "328d3e21183998a1cdda3372123f6d70",
@@ -48,12 +52,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/namah-front-end/static/media/Chloe-Regular.3f75a25d.eot"
   },
   {
-    "revision": "e415a370eb011124bcdadea9aa909366",
-    "url": "/namah-front-end/static/media/Chloe-Regular.e415a370.svg"
-  },
-  {
     "revision": "e505f205cc5a645580b2dbf27c1e3874",
     "url": "/namah-front-end/static/media/Chloe-Regular.e505f205.ttf"
+  },
+  {
+    "revision": "0229f54a4e5cfdbd3cfdacbe86e99e0c",
+    "url": "/namah-front-end/static/media/ProximaNova-Bold.0229f54a.svg"
   },
   {
     "revision": "21bae7f72b17ee2d81162136a1c9cdf4",
@@ -64,12 +68,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/namah-front-end/static/media/ProximaNova-Bold.3b70f0d9.woff"
   },
   {
-    "revision": "51c2176cebdb171218c2313b05d3c293",
-    "url": "/namah-front-end/static/media/ProximaNova-Bold.51c2176c.svg"
-  },
-  {
     "revision": "caa7d8653555e3c3d30a5c860acea36d",
     "url": "/namah-front-end/static/media/ProximaNova-Bold.caa7d865.eot"
+  },
+  {
+    "revision": "6d279ef230b5de952fbbb952ddfd98aa",
+    "url": "/namah-front-end/static/media/ProximaNova-Regular.6d279ef2.svg"
   },
   {
     "revision": "7e564d19e8fbcf7170540582fc5a1c9f",
@@ -80,10 +84,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/namah-front-end/static/media/ProximaNova-Regular.e439d2f5.woff"
   },
   {
-    "revision": "e7da75abdb461aa46fd9b18a6c250b97",
-    "url": "/namah-front-end/static/media/ProximaNova-Regular.e7da75ab.svg"
-  },
-  {
     "revision": "f3d966fb4879b9448d0828e6b16a1025",
     "url": "/namah-front-end/static/media/ProximaNova-Regular.f3d966fb.eot"
   },
@@ -92,8 +92,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/namah-front-end/static/media/ProximaNova-Semibold.53b53a1a.eot"
   },
   {
-    "revision": "7c5351d9a743666b8777530d9c51311c",
-    "url": "/namah-front-end/static/media/ProximaNova-Semibold.7c5351d9.svg"
+    "revision": "7c17940a9a40805f233609a2f0c78080",
+    "url": "/namah-front-end/static/media/ProximaNova-Semibold.7c17940a.svg"
   },
   {
     "revision": "f83281a7796841966c252267f3b90827",
@@ -120,39 +120,39 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/namah-front-end/static/media/ProximaNova-Thin.7bb3b456.svg"
   },
   {
-    "revision": "d3f156d1c839f7d826db88663a714f0c",
-    "url": "/namah-front-end/static/media/button-foward.d3f156d1.svg"
+    "revision": "5326b52a51b898e5a83681e23ff80751",
+    "url": "/namah-front-end/static/media/button-foward.5326b52a.svg"
   },
   {
-    "revision": "527e33084e0321d0d4e9a5a8bebdad2b",
-    "url": "/namah-front-end/static/media/button-play.527e3308.svg"
+    "revision": "dc5cbf4985b60f7c39e482ae9bd02a98",
+    "url": "/namah-front-end/static/media/button-play.dc5cbf49.svg"
   },
   {
-    "revision": "6197415eeb8564bf3e861277242223cf",
-    "url": "/namah-front-end/static/media/icon-cart.6197415e.svg"
+    "revision": "6c0f039bfbfbd4c60640c63634e920a0",
+    "url": "/namah-front-end/static/media/icon-cart.6c0f039b.svg"
   },
   {
-    "revision": "d24e5edf622cc9c17ab3d1390d0d7f26",
-    "url": "/namah-front-end/static/media/icon-logout.d24e5edf.svg"
+    "revision": "970802d2e4b7c3994d40399b8dd38f8a",
+    "url": "/namah-front-end/static/media/icon-logout.970802d2.svg"
   },
   {
-    "revision": "5d900a7d1d14e1e58d381e2b285fce90",
-    "url": "/namah-front-end/static/media/icon-orders.5d900a7d.svg"
+    "revision": "df334acbd098e74596e1e7e006d5f09a",
+    "url": "/namah-front-end/static/media/icon-orders.df334acb.svg"
   },
   {
-    "revision": "cf45173c15baf8c4dc39c947c3447ac2",
-    "url": "/namah-front-end/static/media/icon-profile.cf45173c.svg"
+    "revision": "3ed6519adca6d40b3ebab7be8bf94a39",
+    "url": "/namah-front-end/static/media/icon-profile.3ed6519a.svg"
   },
   {
-    "revision": "d018a7332e54f0b91752d365d4e2ca21",
-    "url": "/namah-front-end/static/media/icon-search.d018a733.svg"
+    "revision": "75a92584741765c6b7364d7d2d6879b6",
+    "url": "/namah-front-end/static/media/icon-search.75a92584.svg"
   },
   {
-    "revision": "87d2a60147213aaf2bfb2b3721a9aadb",
-    "url": "/namah-front-end/static/media/icon-wishes.87d2a601.svg"
+    "revision": "dc611088154603d2ff1f49f6d41b09e9",
+    "url": "/namah-front-end/static/media/icon-wishes.dc611088.svg"
   },
   {
-    "revision": "d6263333a3257e3eeba8d387935f8a59",
-    "url": "/namah-front-end/static/media/logo.d6263333.svg"
+    "revision": "20e860b6855a66bace3b49e265b5f58a",
+    "url": "/namah-front-end/static/media/logo.20e860b6.svg"
   }
 ]);

@@ -1,32 +1,32 @@
 {
   "files": {
-    "main.css": "/namah-front-end/static/css/main.dbcff431.chunk.css",
-    "main.js": "/namah-front-end/static/js/main.f6696a6c.chunk.js",
-    "main.js.map": "/namah-front-end/static/js/main.f6696a6c.chunk.js.map",
+    "main.css": "/namah-front-end/static/css/main.78bde1ab.chunk.css",
+    "main.js": "/namah-front-end/static/js/main.7999c2dd.chunk.js",
+    "main.js.map": "/namah-front-end/static/js/main.7999c2dd.chunk.js.map",
     "runtime-main.js": "/namah-front-end/static/js/runtime-main.9f78425b.js",
     "runtime-main.js.map": "/namah-front-end/static/js/runtime-main.9f78425b.js.map",
     "static/js/2.9afe9568.chunk.js": "/namah-front-end/static/js/2.9afe9568.chunk.js",
     "static/js/2.9afe9568.chunk.js.map": "/namah-front-end/static/js/2.9afe9568.chunk.js.map",
     "index.html": "/namah-front-end/index.html",
-    "precache-manifest.e92b81b87b4a14d51322778dcc2090fc.js": "/namah-front-end/precache-manifest.e92b81b87b4a14d51322778dcc2090fc.js",
+    "precache-manifest.ee3b1dca786b71a1e3569c0ab00376a6.js": "/namah-front-end/precache-manifest.ee3b1dca786b71a1e3569c0ab00376a6.js",
     "service-worker.js": "/namah-front-end/service-worker.js",
-    "static/css/main.dbcff431.chunk.css.map": "/namah-front-end/static/css/main.dbcff431.chunk.css.map",
+    "static/css/main.78bde1ab.chunk.css.map": "/namah-front-end/static/css/main.78bde1ab.chunk.css.map",
     "static/js/2.9afe9568.chunk.js.LICENSE.txt": "/namah-front-end/static/js/2.9afe9568.chunk.js.LICENSE.txt",
     "static/media/main.scss": "/namah-front-end/static/media/ProximaNova-Thin.7bb3b456.svg",
-    "static/media/button-foward.svg": "/namah-front-end/static/media/button-foward.d3f156d1.svg",
-    "static/media/button-play.svg": "/namah-front-end/static/media/button-play.527e3308.svg",
-    "static/media/icon-cart.svg": "/namah-front-end/static/media/icon-cart.6197415e.svg",
-    "static/media/icon-logout.svg": "/namah-front-end/static/media/icon-logout.d24e5edf.svg",
-    "static/media/icon-orders.svg": "/namah-front-end/static/media/icon-orders.5d900a7d.svg",
-    "static/media/icon-profile.svg": "/namah-front-end/static/media/icon-profile.cf45173c.svg",
-    "static/media/icon-search.svg": "/namah-front-end/static/media/icon-search.d018a733.svg",
-    "static/media/icon-wishes.svg": "/namah-front-end/static/media/icon-wishes.87d2a601.svg",
-    "static/media/logo.svg": "/namah-front-end/static/media/logo.d6263333.svg"
+    "static/media/button-foward.svg": "/namah-front-end/static/media/button-foward.5326b52a.svg",
+    "static/media/button-play.svg": "/namah-front-end/static/media/button-play.dc5cbf49.svg",
+    "static/media/icon-cart.svg": "/namah-front-end/static/media/icon-cart.6c0f039b.svg",
+    "static/media/icon-logout.svg": "/namah-front-end/static/media/icon-logout.970802d2.svg",
+    "static/media/icon-orders.svg": "/namah-front-end/static/media/icon-orders.df334acb.svg",
+    "static/media/icon-profile.svg": "/namah-front-end/static/media/icon-profile.3ed6519a.svg",
+    "static/media/icon-search.svg": "/namah-front-end/static/media/icon-search.75a92584.svg",
+    "static/media/icon-wishes.svg": "/namah-front-end/static/media/icon-wishes.dc611088.svg",
+    "static/media/logo.svg": "/namah-front-end/static/media/logo.20e860b6.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.9f78425b.js",
     "static/js/2.9afe9568.chunk.js",
-    "static/css/main.dbcff431.chunk.css",
-    "static/js/main.f6696a6c.chunk.js"
+    "static/css/main.78bde1ab.chunk.css",
+    "static/js/main.7999c2dd.chunk.js"
   ]
 }
