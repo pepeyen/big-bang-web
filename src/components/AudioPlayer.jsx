@@ -3,11 +3,15 @@ import React, {
     useEffect
 } from 'react';
 
+//Components
 import {
     AudioPlayerButton,
     AudioController,
     AudioVolumeController
 } from './index';
+
+//Services
+import {getMouseClickPosition} from '../services';
 
 const AudioPlayer = (props) => {
     const [audio] = useState(new Audio(props.audioURL));
@@ -16,8 +20,34 @@ const AudioPlayer = (props) => {
     const [audioCurrentTime,setAudioCurrentTime] = useState(0);
     const [audioCurrentVolume,setAudioCurrentVolume] = useState(0.6);
 
+    audio.ontimeupdate = () => {
+        setAudioCurrentTime(audio.currentTime);
+    };
+
+    window.addEventListener("load", () => {
+        audio.volume = 0.6;
+    });
+
+    const playerHandler = () => {
+        setIsAudioPlaying(!isAudioPlaying);
+    };
+
+    const controllerHandler = (event) => {
+        const clickedValue = getMouseClickPosition(event, 'x', 'progress-bar');  
+
+        audio.currentTime = clickedValue * audioDuration;
+        setAudioCurrentTime(clickedValue * audioDuration);
+    };
+    
+    const volumeHandler = (event) => {
+        const clickedValue = getMouseClickPosition(event, 'x', 'volume-bar');
+
+        audio.volume = clickedValue;
+        setAudioCurrentVolume(clickedValue);
+    };
+
     useEffect(() => {
-        audio.volume = 1 - audioCurrentVolume;
+        isAudioPlaying ? audio.play() : audio.pause();
 
         audio.addEventListener('ended', () => {
             setIsAudioPlaying(false);
@@ -27,40 +57,12 @@ const AudioPlayer = (props) => {
             setAudioDuration(audio.duration);
         });
 
-        isAudioPlaying ? audio.play() : audio.pause();
-
         return () => {
             audio.removeEventListener('ended', () => {
                 setIsAudioPlaying(false);
             });
         };
     }, [audio,isAudioPlaying,audioCurrentVolume]);
-
-    audio.ontimeupdate = () => {
-        setAudioCurrentTime(audio.currentTime);
-    };
-
-    const playerHandler = () => {
-        setIsAudioPlaying(!isAudioPlaying);
-    };
-
-    const controllerHandler = (e) => {
-        const progressBar = document.getElementById('progress-bar');
-        const x = e.pageX - progressBar.offsetLeft;
-        const clickedValue = x / progressBar.offsetWidth;
-
-        audio.currentTime = clickedValue * audioDuration;
-        setAudioCurrentTime(clickedValue * audioDuration);
-    };
-    
-    const volumeHandler = (e) => {
-        const progressBar = document.getElementById('volume-bar');
-        const y = e.pageY - progressBar.offsetTop;
-        const clickedValue = y / progressBar.offsetHeight;
-
-        audio.volume = clickedValue;
-        setAudioCurrentVolume(clickedValue)
-    };
 
     return(
         <div className="player">
