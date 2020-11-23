@@ -16,8 +16,10 @@ const AudioController = (props) => {
                     style={{width: `${(props.audioCurrentTime/props.audioFullDuration) * 100}%`}}
                 />
             </div>
-            {props.children}
-            <span>{secondsToMinutes(props.audioCurrentTime)} / {secondsToMinutes(props.audioFullDuration)}</span>
+            <div className="player-controller__status">
+                {props.children}
+                <span>{secondsToMinutes(props.audioCurrentTime)} / {secondsToMinutes(props.audioFullDuration)}</span>
+            </div>
         </div>
     );
 };
