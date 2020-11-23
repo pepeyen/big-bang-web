@@ -11,8 +11,7 @@ import {
 import {
     Page,
     Post,
-    AudioPlayer,
-    AudioPlayerButton
+    AudioPlayer
 } from '../components';
 
 //Services
@@ -48,9 +47,7 @@ export const Podcast = (props) => {
                         alt={podcast.podcast_title ? podcast.podcast_title : 'Loading'}  
                     />
                     <div className="page__podcast --fade-up">
-                        <AudioPlayer>
-                            <AudioPlayerButton audioURL={`${process.env.REACT_APP_BLOB_HOST}/mp3/podcasts/media-${currentPageId}.mp3`} />
-                        </AudioPlayer>      
+                        <AudioPlayer audioURL={`${process.env.REACT_APP_BLOB_HOST}/mp3/podcasts/media-${currentPageId}.mp3`} />   
                     </div>
                     <p className="page__post-title --centralized-text">{podcast.podcast_title ? podcast.podcast_title : 'Loading'}</p>
                     <div className="page__post-info">
