@@ -9,7 +9,10 @@ import {useDispatch} from 'react-redux';
 import {insertToCart} from '../actions';
 
 //Components
-import {Page} from '../components';
+import {
+    Page,
+    Post
+} from '../components';
 
 //Services
 import {
@@ -42,25 +45,26 @@ const Product = (props) => {
     if(product !== -1 && currentPageId !== null){
         return(
             <Page isLoading={isLoading}>
-                <div className="page__product">
-                    <img 
-                        className="page__product-image"
-                        src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/product/bg-${currentPageId}.jpg`} 
-                        alt={product.product_name ? product.product_name : 'Loading'} 
-                    />
-                    <div className="page__product-info">
-                        <span className="page__filler-product-name">{product.product_name ? product.product_name : 'Loading'}</span>
-                        <span className="page__filler-product-info">{product.product_description ? product.product_description : 'Loading'}</span>
-                        <span className="page__filler-product-price">R$ {product.product_price ? product.product_price.toFixed(2) : 0}</span>
-
-                        <button
-                            className="page__product-button"
-                            onClick={insertProductToCart}
-                        >
+                <Post>
+                    <div className="page__product">
+                        <img 
+                            className="page__product-image"
+                            src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/product/bg-${currentPageId}.jpg`} 
+                            alt={product.product_name ? product.product_name : 'Loading'} 
+                        />
+                        <div className="page__product-info">
+                            <span className="page__product-name">{product.product_name ? product.product_name : '\u00A0'}</span>
+                            <span className="page__product-description --grey-text">{product.product_description ? product.product_description : '\u00A0'}</span>
+                            <span className="page__product-price">R$ {product.product_price ? product.product_price.toFixed(2) : 0}</span>
+                            <button
+                                className="page__product-button"
+                                onClick={insertProductToCart}
+                            >
                                 Add to the cart
-                        </button>
+                            </button>
+                        </div>
                     </div>
-                </div>
+                </Post>
             </Page>
         );
     }else return <Redirect to="/error/404" />
