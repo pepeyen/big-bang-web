@@ -46,7 +46,7 @@ export const Podcast = (props) => {
                         src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/podcast/bg-${currentPageId}.jpg`} 
                         alt={podcast.podcast_title ? podcast.podcast_title : 'Loading'}  
                     />
-                    <div className="page__podcast --fade-up">
+                    <div className="page__podcast">
                         <AudioPlayer audioURL={`${process.env.REACT_APP_BLOB_HOST}/mp3/podcasts/media-${currentPageId}.mp3`} />   
                     </div>
                     <p className="page__post-title --centralized-text">{podcast.podcast_title ? podcast.podcast_title : 'Loading'}</p>
