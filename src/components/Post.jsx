@@ -1,11 +1,11 @@
 import React from 'react';
 
 const Post = (props) => {
-    let listingType = props.listing === 'table' ? props.listing : 'central';
+    let listingType = props.listing === 'table' ? props.listing : null;
 
     return(
-        <article className={props.title !== undefined ? `page__post --central --top-thin-borders --spaced-top --${listingType}` : `page__post --central --${listingType}`}>
-            {props.title !== undefined ? <span className="page__post-title --dark-text">{props.title}</span> : ''}
+        <article className={`page__post --central ${props.title !== undefined ? '--top-thin-borders --spaced-top' : ''} ${listingType !== null ? `--${listingType}` : ''}`}>
+            {props.title !== undefined ? <span className="page__post-title --dark-text --negative-top">{props.title}</span> : ''}
             {props.children}
         </article>
     );
