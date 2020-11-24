@@ -2,6 +2,7 @@ import React, {
     useState,
     useEffect
 } from 'react';
+import {Link} from 'react-router-dom';
 
 //Components
 import {
@@ -42,9 +43,14 @@ const ProductCard = (props) => {
                         itemType="product"
                     />
                 </div>
-                <p className="card__product-title --dark-text">{product.product_name}</p>
-                <p className="card__product-description --grey-text">{product.product_description === '' ? '\u00A0' : product.product_descriptio}</p>
-                <span className="card__product-price --medium-grey-text">R$ {product.product_price.toFixed(2)}</span>
+                <Link
+                    to={`/store/post?id=${product.product_id}&type=product`}
+                    className="card__product-info"
+                >
+                    <span className="card__product-title --dark-text">{product.product_name}</span>
+                    <span className="card__product-description --grey-text">{product.product_description === '' ? '\u00A0' : product.product_description}</span>
+                    <span className="card__product-price --medium-grey-text">R$ {product.product_price.toFixed(2)}</span>
+                </Link>
             </div>
         );
     }
