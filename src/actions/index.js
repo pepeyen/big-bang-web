@@ -17,3 +17,17 @@ export const deslikeAItem = (itemID,itemType) => {
         }
     };
 };
+
+export const insertToCart = (productID) => {
+    return {
+        type: 'INSERT_TO_CART',
+        product: {productID}
+    };
+};
+
+export const removeFromCart = (productID) => {
+    return {
+        type: 'REMOVE_FROM_CART',
+        product: {productID}
+    };
+}

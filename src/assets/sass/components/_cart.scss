@@ -1,0 +1,25 @@
+.cart{
+    &__status{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%; 
+        background-color: #73A8A0;
+        color: white;
+        width: 1.2rem;
+        height: 1.2rem;
+        font-size: .6rem;
+        margin: -1.15rem auto 0 auto;
+    }
+}
+@media (min-width: 801px){
+    .cart{
+        &__status{
+            width: 2vh;
+            height: 2vh;
+            font-size: 1vh;
+            margin: -1.8vh 0 0 0;
+        }
+    }
+}

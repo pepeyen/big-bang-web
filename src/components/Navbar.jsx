@@ -14,6 +14,7 @@ import img_cart from  '../assets/images/navbar/icon-cart.svg';
 import img_logout from  '../assets/images/navbar/icon-logout.svg';
 
 //Components
+import {CartStatus} from './index';
 import NavbarLink from './NavbarLink';
 import NavbarBrand from './NavbarBrand';
 import NavbarImage from './NavbarImage';
@@ -137,7 +138,7 @@ const Navbar = (props) => {
                             imageURL={img_cart}
                             imageAlt='Cart'
                         >
-                            <div className="navbar__cart-index">99</div>
+                            <CartStatus />
                         </NavbarImage>
                     </NavbarLink>
                     <NavbarLink 
