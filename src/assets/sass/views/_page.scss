@@ -171,24 +171,33 @@
         display: flex;
         flex-direction: row;
         margin: 3rem 0 0 0;
-
+        width: 100%;
+        height: 25rem;
+        
+        &-image{
+            align-self: flex-start;
+            margin: auto 0 auto 0;
+        }
         &-info{
+            margin: 0 auto 0 auto;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             text-align: center;
-            align-self: flex-end;
             font-family: 'ProximaNova-Regular';
-            margin: 0 0 0 2rem;
             gap: 1rem 0;
         }
         &-button{
             background-color: transparent;
             outline: none;
-            border: .1rem solid black;
             font-family: 'ProximaNova-SemiBold';
             color: black;
+            border: .1rem solid black;
             width: 100%;
-            height: 2rem;
+            height: 3rem;
+        }
+        &-price{
+            color: #73A8A0;
         }
     }
     &__redirector{
@@ -397,13 +406,12 @@
         }
         &__product{
             margin: 6vh 0 0 0;
+            height: 60vh;
 
-            &-info{
-                margin: 0 0 0 4vh;
-            }
             &-button{
+                margin: 8.5vh 0 0 0;
                 border: .1vh solid black;
-                height:4vh;
+                height: 7vh;
                 -webkit-transition: background-color ease-in-out .1s;
                 -moz-transition: background-color ease-in-out .1s;
                 -ms-transition: background-color ease-in-out .1s;
@@ -419,6 +427,7 @@
         }
         &__redirector{
             margin: 0 0 4vh 0;
+
             &:hover{
                 box-shadow: 1.5vh 1.5vh 2.5vh #d9d9d9, 
                             -1.5vh -1.5vh 3.5vh #ffff;
