@@ -8,9 +8,8 @@
     &__button{
         align-self: center;
         border-radius: 50%;
-        border-color: #ffffff;
         transition: border-width ease-in .1s;
-        background-color: transparent;
+        background-color: rgba(0,0,0,0.75);
         border: none;
         outline: none;
         margin: 5rem 0 auto 0;
@@ -27,8 +26,8 @@
         flex-direction: column;
         justify-content: center;
         color: white;
-        background: linear-gradient(0deg, rgba(0,0,0,0.65) 30%, rgba(255,255,255,0) 100%);
-        padding: .6rem;
+        background: linear-gradient(0deg, rgba(0,0,0,0.7) 45%, rgba(0,0,0,0.45) 70%, rgba(255,255,255,0) 100%);
+        padding: 1.5rem .6rem .6rem .6rem;
         gap: .3rem 0;
         
         &__bar{
@@ -104,7 +103,7 @@
             height: 10vh;
         }
         &-controller{
-            padding: 1vh;
+            padding: 3vh 1vh 1vh 1vh;
             gap: .6vh 0;
             
             &__bar{
