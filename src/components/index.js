@@ -8,6 +8,7 @@ export {default as CardList} from './CardList';
 export {default as Carousel} from './Carousel';
 export {default as CarouselItem} from './CarouselItem';
 export {default as Cluster} from './Cluster';
+export {default as CartStatus} from './CartStatus';
 export {default as Filler} from './Filler';
 export {default as FillerProduct} from './FillerProduct';
 export {default as Form} from './Form';
