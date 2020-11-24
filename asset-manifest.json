@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/namah-front-end/static/css/main.78bde1ab.chunk.css",
-    "main.js": "/namah-front-end/static/js/main.7999c2dd.chunk.js",
-    "main.js.map": "/namah-front-end/static/js/main.7999c2dd.chunk.js.map",
+    "main.css": "/namah-front-end/static/css/main.3ea288d9.chunk.css",
+    "main.js": "/namah-front-end/static/js/main.6d206c08.chunk.js",
+    "main.js.map": "/namah-front-end/static/js/main.6d206c08.chunk.js.map",
     "runtime-main.js": "/namah-front-end/static/js/runtime-main.9f78425b.js",
     "runtime-main.js.map": "/namah-front-end/static/js/runtime-main.9f78425b.js.map",
-    "static/js/2.9afe9568.chunk.js": "/namah-front-end/static/js/2.9afe9568.chunk.js",
-    "static/js/2.9afe9568.chunk.js.map": "/namah-front-end/static/js/2.9afe9568.chunk.js.map",
+    "static/js/2.145891be.chunk.js": "/namah-front-end/static/js/2.145891be.chunk.js",
+    "static/js/2.145891be.chunk.js.map": "/namah-front-end/static/js/2.145891be.chunk.js.map",
     "index.html": "/namah-front-end/index.html",
-    "precache-manifest.ee3b1dca786b71a1e3569c0ab00376a6.js": "/namah-front-end/precache-manifest.ee3b1dca786b71a1e3569c0ab00376a6.js",
+    "precache-manifest.573a77341633fde7acf453b5f3208061.js": "/namah-front-end/precache-manifest.573a77341633fde7acf453b5f3208061.js",
     "service-worker.js": "/namah-front-end/service-worker.js",
-    "static/css/main.78bde1ab.chunk.css.map": "/namah-front-end/static/css/main.78bde1ab.chunk.css.map",
-    "static/js/2.9afe9568.chunk.js.LICENSE.txt": "/namah-front-end/static/js/2.9afe9568.chunk.js.LICENSE.txt",
+    "static/css/main.3ea288d9.chunk.css.map": "/namah-front-end/static/css/main.3ea288d9.chunk.css.map",
+    "static/js/2.145891be.chunk.js.LICENSE.txt": "/namah-front-end/static/js/2.145891be.chunk.js.LICENSE.txt",
     "static/media/main.scss": "/namah-front-end/static/media/ProximaNova-Thin.7bb3b456.svg",
     "static/media/button-foward.svg": "/namah-front-end/static/media/button-foward.5326b52a.svg",
     "static/media/button-play.svg": "/namah-front-end/static/media/button-play.dc5cbf49.svg",
@@ -25,8 +25,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.9f78425b.js",
-    "static/js/2.9afe9568.chunk.js",
-    "static/css/main.78bde1ab.chunk.css",
-    "static/js/main.7999c2dd.chunk.js"
+    "static/js/2.145891be.chunk.js",
+    "static/css/main.3ea288d9.chunk.css",
+    "static/js/main.6d206c08.chunk.js"
   ]
 }
