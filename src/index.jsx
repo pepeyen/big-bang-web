@@ -7,20 +7,22 @@ import { Provider } from 'react-redux';
 import allReducers from './reducers/index';
 
 //Components
+import {ScrollToTop} from './components';
 import App from './App';
 
 //Styles
 import './assets/sass/main.scss';
 
-const myStore = createStore(allReducers,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const myStore = createStore(allReducers);
 
 ReactDOM.render(
-  <Provider store={myStore}>
-    <HashRouter>
-      <App />
-    </HashRouter>
-  </Provider>,
-  document.getElementById('root')
+	<Provider store={myStore}>
+		<HashRouter>
+			<ScrollToTop />
+			<App />
+		</HashRouter>
+	</Provider>,
+	document.getElementById('root')
 );
 
 serviceWorker.unregister();
