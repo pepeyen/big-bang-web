@@ -5,6 +5,7 @@
     justify-content: center;
     background-color: #000000;
     width: 100%;
+    margin: 3.5rem 0 0 0;
 
     &__content{
         display: grid;
@@ -162,6 +163,8 @@
 @media (min-width: 801px){
     .footer{
         min-height: 25vh;
+        margin: 10vh 0 0 0;
+
         & div:nth-child(5){
             grid-area: extra;
         }

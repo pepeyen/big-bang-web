@@ -37,6 +37,12 @@
 .--table-three-desktop > a:not(:first-child){
     display: none;
 }
+.--table-six-desktop{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 1rem;
+}
 .--root-banner{
     display: none;
 }
@@ -440,6 +446,10 @@
     .--table-three-desktop > a:not(:first-child){
         display: inline-block;
     }
+    .--table-six-desktop{
+        grid-template-columns: repeat(6, auto);
+        gap: 2.5vh;
+    }
     .--root-banner{
         display: block;
         padding: 1.5vh 5vh 1.2vh 5vh;
@@ -453,6 +463,10 @@
         & p{
             margin: 0 4.5vh 0 4.5vh;
         }
+    }
+    .--flex-row{
+        display: flex;
+        flex-direction: row;
     }
     .--top-thin-borders{
         border-top: .1vh solid #c4c4c4;
