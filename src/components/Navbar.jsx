@@ -44,14 +44,32 @@ const Navbar = (props) => {
             while(redirectorViewsElement.childNodes.length > 0){
                 hamburguerItemsElement.appendChild(redirectorViewsElement.childNodes[0]);
             };
+
+            const redirectorMiscElement = document.getElementById('redirectors-misc');
+
+            const hamburguerMenuMiscListElement = document.getElementsByClassName('hamburguer-menu__misc-items').className ?? document.createElement("ul");
+
+            if(hamburguerItemsElement.className !== 'hamburguer-menu__misc-items'){
+                hamburguerMenuMiscListElement.classList.add('hamburguer-menu__misc-items');
+            }
+
+            while(redirectorMiscElement.childNodes.length > 4){
+                for(let i = 0; i < redirectorMiscElement.childNodes.length; i++){
+                    if(redirectorMiscElement.childNodes[i].id !== 'login-redirector' && redirectorMiscElement.childNodes[i].id !== 'wishlist-redirector' && redirectorMiscElement.childNodes[i].id !== 'cart-redirector' && redirectorMiscElement.childNodes[i].id !== ''){
+                        hamburguerMenuMiscListElement.appendChild(redirectorMiscElement.childNodes[i]);
+                    }
+                }
+            }
+            
+            if(hamburguerItemsElement.lastChild.className !== 'hamburguer-menu__misc-items'){
+                hamburguerItemsElement.appendChild(hamburguerMenuMiscListElement);
+            }
         };
     },[setActiveNavLink,props.location]);
 
     const navbarLinkUpdate = (navLinkRedirect) => {
         setActiveNavLink(navLinkRedirect);
     };
-
-    console.log(document.getElementById('hamburguer-menu-items'))
 
     return(
         <nav className="navbar">

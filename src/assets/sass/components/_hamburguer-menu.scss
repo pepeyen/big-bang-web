@@ -33,6 +33,19 @@
             }
         }
     }
+    &__misc-items{
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        padding: .2rem 1rem .2rem 1rem;
+        justify-content: space-between;
+        margin: 0 auto 0 auto;
+
+        & img{
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
 }
 @media (min-width: 801px){
     .hamburguer-menu{
