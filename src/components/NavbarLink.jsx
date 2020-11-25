@@ -3,7 +3,8 @@ import {Link} from 'react-router-dom';
 
 const NavbarLink = (props) => {
     return(
-        <li 
+        <li
+            id={`${props.redirector}-redirector`}
             className="navbar__redirector"
             onClick={() => {props.clickHandle(props.redirector)}}
         >
