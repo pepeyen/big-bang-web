@@ -5,7 +5,10 @@ import React, {
 import {Redirect} from 'react-router-dom';
 
 //Components
-import {Page} from '../components';
+import {
+    Page,
+    Post
+} from '../components';
 
 //Services
 import {
@@ -33,21 +36,43 @@ const Course = (props) => {
 
     if(course !== -1 && currentPageId !== -1){
         return(
-            <main>
-                <Page isLoading={isLoading}>
-                    <div className="page__product">
+            <Page isLoading={isLoading}>
+                <Post full>
+                    <div className="page__course-banner">
                         <img 
-                            className=""
+                            className="page__course-image"
                             src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/course/bg-${currentPageId}.jpg`} 
-                            alt={course.course_title ? course.course_title : 'Loading'}  
+                            alt={course.course_title ? course.course_title : ''}  
                         />
-                        <div className="page__product-info">
-                            <p className="page__filler-product-name">{course.course_title ? course.course_title : 'Loading'}</p>
-                            <p className="page__filler-product-info">CURSO {course.course_date ? calcDateDiff(course.course_date.course_start_date,course.course_date.course_end_date) + ' Days' : 'Loading'}</p>
-                        </div>
+                        <span className="page__course-info">
+                            <h3 className="page__course-title">{course.course_title ? course.course_title : ''}</h3>
+                            <p className="page__course-type">CURSO</p>
+                            <p className="page__course-duration">
+                                <svg
+                                    viewBox="0 0 512 512"
+                                    fill="none" 
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M256 0C114.844 0 0 114.844 0 256C0 397.156 114.844 512 256 512C397.156 512 512 397.156 512 256C512 114.844 397.156 0 256 0ZM256 480C132.484 480 32.0001 379.516 32.0001 256C32.0001 132.484 132.484 32.0001 256 32.0001C379.516 32.0001 480 132.484 480 256C480 379.516 379.516 480 256 480V480Z"
+                                        fill="#73A8A0"
+                                    />
+                                    <path
+                                        d="M272 96H240V262.625L340.687 363.312L363.312 340.687L272 249.375V96Z"
+                                        fill="#73A8A0"
+                                    />
+                                </svg>
+                                {course.course_date ? calcDateDiff(course.course_date.course_start_date,course.course_date.course_end_date) + ' Days' : ''}
+                            </p>
+                        </span>
                     </div>
-                </Page>
-            </main>
+                    <div className="page__course-content">
+                        <p className="page__course-description">
+                            <span>{course.course_description ? course.course_description : ''}</span>
+                        </p>
+                    </div>
+                </Post>
+            </Page>
         );
     }else return <Redirect to="/error/404" />
 }

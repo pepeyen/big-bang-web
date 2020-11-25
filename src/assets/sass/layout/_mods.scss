@@ -21,6 +21,12 @@
     flex-direction: column;
     align-items: center;
 }
+.--full{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
 .--table{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(auto, 1fr));
