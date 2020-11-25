@@ -35,6 +35,12 @@ const Navbar = (props) => {
     useEffect(() => {
         setActiveNavLink(translatePageType(getCurrentPageType(getCurrentPageURIManual(props.location.pathname + props.location.search))));
 
+        if(!window.sessionStorage.getItem('isLoggedIn')){
+            document.getElementById('logout-redirector').style.display = 'none';
+        }else{
+            document.getElementById('logout-redirector').style.display = 'initial';
+        }
+
         if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
             const hamburguerItemsElement = document.getElementById('hamburguer-menu-items');
             const redirectorViewsElement = document.getElementById('redirectors-views');
