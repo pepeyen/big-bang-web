@@ -16,6 +16,7 @@ export {default as Form} from './Form';
 export {default as FormInput} from './FormInput';
 export {default as FormSubmit} from './FormSubmit';
 export {default as Footer} from './Footer';
+export {default as HamburguerMenu} from './HamburguerMenu';
 export {default as LikeButton} from './LikeButton';
 export {default as Loader} from './Loader';
 export {default as Navbar} from './Navbar';
