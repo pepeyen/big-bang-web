@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 
 const NavbarBrand = (props) => {
     return(
-        <Link to="/#">
+        <Link 
+            to="/#"
+            className="navbar__logo"
+        >
             <img 
-                className="navbar__logo"
                 src={props.logoURL}
                 alt={props.logoAlt}
             />

@@ -14,7 +14,10 @@ import img_cart from  '../assets/images/navbar/icon-cart.svg';
 import img_logout from  '../assets/images/navbar/icon-logout.svg';
 
 //Components
-import {CartStatus} from './index';
+import {
+    CartStatus,
+    HamburguerMenu
+} from './index';
 import NavbarLink from './NavbarLink';
 import NavbarBrand from './NavbarBrand';
 import NavbarImage from './NavbarImage';
@@ -31,16 +34,32 @@ const Navbar = (props) => {
 
     useEffect(() => {
         setActiveNavLink(translatePageType(getCurrentPageType(getCurrentPageURIManual(props.location.pathname + props.location.search))));
+
+        if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+            const hamburguerItemsElement = document.getElementById('hamburguer-menu-items');
+            const redirectorViewsElement = document.getElementById('redirectors-views');
+
+            document.getElementById('redirectors-views').style.display = 'none';
+
+            while(redirectorViewsElement.childNodes.length > 0){
+                hamburguerItemsElement.appendChild(redirectorViewsElement.childNodes[0]);
+            };
+        };
     },[setActiveNavLink,props.location]);
 
     const navbarLinkUpdate = (navLinkRedirect) => {
         setActiveNavLink(navLinkRedirect);
     };
 
+    console.log(document.getElementById('hamburguer-menu-items'))
+
     return(
         <nav className="navbar">
-            <div className="navbar__buttons --space-between">
-                <ul className="navbar__redirectors --links --space-between">
+            <div className="navbar__buttons">
+                <ul
+                    id="redirectors-views"
+                    className="navbar__redirectors"
+                >
                     <NavbarLink
                         redirector='home'
                         clickHandle={navbarLinkUpdate}
@@ -88,7 +107,10 @@ const Navbar = (props) => {
                     logoURL={img_logo}
                     logAlt='logo'
                 />
-                <ul className="navbar__redirectors --space-between --reverse">
+                <ul
+                    id="redirectors-misc"
+                    className="navbar__redirectors --reverse"
+                >
                     <NavbarLink 
                         redirector="search"
                         clickHandle={navbarLinkUpdate}
@@ -151,6 +173,7 @@ const Navbar = (props) => {
                             imageAlt='Log out'
                         />
                     </NavbarLink>
+                    <HamburguerMenu />
                 </ul>
             </div>
         </nav>
