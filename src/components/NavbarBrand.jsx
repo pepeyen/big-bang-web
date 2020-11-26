@@ -7,11 +7,8 @@ const NavbarBrand = (props) => {
             to="/#"
             className="navbar__logo"
         >
-            <img 
-                src={props.logoURL}
-                alt={props.logoAlt}
-            />
-        </Link>
+            {props.children}
+        </Link> 
     );
 }
 

@@ -29,17 +29,20 @@
     }
     &__logo{
         margin: 0 auto 0 0;
-        width: 5.5rem;
-        height: 100%;
+
+        & svg{
+            width: 5rem !important;
+            height: 2.5rem !important;
+        }
     }
-    &__image{
+    & svg{
         width: 1.3rem;
-        height: 1.3rem;
+        height: 1.4rem;
     }
 }
 @media (min-width: 801px){
     .navbar{
-        padding: 0 0 2vh 0;
+        padding: 0 0 1.5vh 0;
         border-bottom: .2vh solid #C4C4C4;
 
         &__redirectors{
@@ -50,30 +53,48 @@
             font-size: 1.5vh;
         }
         &__buttons{
-            margin: 2.5vh 0 0 0;
+            margin: 2vh 0 0 0;
             padding: 0 10vh;
         }
         &__redirector{
+            -webkit-transition: fill ease-in-out .2s;
+            -moz-transition: fill ease-in-out .2s;
+            -ms-transition: fill ease-in-out .2s;
+            -o-transition: fill ease-in-out .2s;
+            transition: fill ease-in-out .2s;
+            
             & a{
                 padding: 0 0 .6vh 0;
                 border-bottom: solid .4vh transparent;
-
-                &:hover{
-                    opacity: 0.6;
-                }
             }
         } 
         &__logo{
-            width: 10vh;
             margin: 0 auto 0 auto;
 
-            &:hover{
-                opacity: 0.6;
+            & svg{
+                width: 14vh !important;
+                height: 6.5vh !important;
+            }
+            &:hover path{
+                fill: #73A8A0;
             }
         }
-        &__image{
-            width: 2vh;
-            height: 2vh;
+        & svg{
+            width: 2.6vh;
+            height: 2.7vh;
+        }
+    }
+    #redirectors-views{
+        & li:hover{
+            opacity: 0.6;
+        }
+    }
+    #redirectors-misc{
+        & li:hover path{
+            fill: #73A8A0;
+        }
+        & li:nth-child(4):hover path{
+            fill: red;
         }
     }
 }
