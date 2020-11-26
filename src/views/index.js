@@ -1,4 +1,5 @@
 export {default as Blog} from './Blog';
+export {default as Cart} from './Cart';
 export {default as Contact} from './Contact';
 export {default as Course} from './Course';
 export {default as Courses} from './Courses';

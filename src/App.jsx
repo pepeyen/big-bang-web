@@ -13,6 +13,7 @@ import {
 
 //Views
 import {
+    Cart,
     Home,
     Blog,
     Post,
@@ -87,6 +88,10 @@ const App = () => {
                     <Route 
                         exact path="/login"
                         component={Login}
+                    />
+                    <Route
+                        exact path="/cart"
+                        component={Cart}
                     />
                     <Route 
                         exact path="/logout"
