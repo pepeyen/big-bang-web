@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2695fae3a445361a10ef36cfb9f987e1",
+    "revision": "d36ddda5671492048575ddd4e304976c",
     "url": "/namah-front-end/index.html"
   },
   {
-    "revision": "96f237f321e306e3ef91",
-    "url": "/namah-front-end/static/css/main.415e9b67.chunk.css"
+    "revision": "1bc4eb344ba063a2a175",
+    "url": "/namah-front-end/static/css/main.044a112f.chunk.css"
   },
   {
     "revision": "99f95d0bfc888a486428",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/namah-front-end/static/js/2.55b8b0a3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "96f237f321e306e3ef91",
-    "url": "/namah-front-end/static/js/main.b2e27a4e.chunk.js"
+    "revision": "1bc4eb344ba063a2a175",
+    "url": "/namah-front-end/static/js/main.67d0c2fd.chunk.js"
   },
   {
     "revision": "659664d09015d6a0258c",
