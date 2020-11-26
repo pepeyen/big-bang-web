@@ -49,6 +49,25 @@
         }
     }
 }
+.--is-active{
+    & button:first-child svg{
+        & path{
+            -webkit-transition: transform ease-in-out .2s;
+            -moz-transition: transform ease-in-out .2s;
+            -ms-transition: transform ease-in-out .2s;
+            -o-transition: transform ease-in-out .2s;
+            transition: transform ease-in-out .2s;
+        }
+        & path:nth-child(1){
+            -webkit-transform: translateX(10rem);
+            transform: translateX(10rem);
+        }
+        & path:nth-child(2){
+            -webkit-transform: translateX(5rem);
+            transform: translateX(5rem);
+        }
+    }
+}
 @media (min-width: 801px){
     .hamburguer-menu{
         display: none;
