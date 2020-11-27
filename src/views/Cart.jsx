@@ -24,7 +24,7 @@ const Cart = () => {
         return(
             <Page pageTitle="Cart">
                 <Post>
-                   <span className="cart__feedback">Your cart is empty</span>
+                   <span className="page__feedback">Your cart is empty</span>
                 </Post>
             </Page>
         );
