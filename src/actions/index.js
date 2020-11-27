@@ -18,16 +18,17 @@ export const deslikeAItem = (itemID,itemType) => {
     };
 };
 
-export const insertToCart = (productID) => {
+export const insertToCart = (product) => {
     return {
         type: 'INSERT_TO_CART',
-        product: {productID}
+        product
     };
 };
 
-export const removeFromCart = (productID) => {
+export const removeFromCart = (product, removalType) => {
     return {
         type: 'REMOVE_FROM_CART',
-        product: {productID}
+        removalType: removalType ?? 'remove-one',
+        product
     };
 }

@@ -39,7 +39,7 @@ const Product = (props) => {
     },[currentPageId]);
 
     const insertProductToCart = () => {
-        dispatch(insertToCart(currentPageId));
+        dispatch(insertToCart(product));
     };
 
     if(product !== -1 && currentPageId !== null){

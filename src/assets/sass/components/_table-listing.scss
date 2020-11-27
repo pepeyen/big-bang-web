@@ -1,0 +1,92 @@
+.products-listing{
+    width: 100%;
+    border-collapse: separate;
+
+    &__headers{
+        font-family: 'ProximaNova-Thin';
+        font-size: 1.3rem;
+
+        & th:first-child{
+            text-align: left;
+            padding-left: .8rem;
+        }
+        & th{
+            padding: 1rem 0 .6rem 0;
+            border-bottom: .1rem solid #73A8A0;
+        }
+    }
+    &__items{
+        color: rgb(108, 108, 108);
+
+        & td:first-child div{
+            font-family: 'ProximaNova-Bold';
+            justify-content: flex-start;
+            padding-left: .8rem;
+        }
+        & td{
+            height: 8rem;
+            padding: .3rem 0 .3rem 0;
+
+            & div{
+                font-family: 'ProximaNova-Regular';
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                & button{
+                    background-color: transparent;
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 801px){
+    .products-listing{
+        &__headers{
+            font-size: 3vh;
+
+            & th:first-child{
+                padding-left: 1.5vh;
+            }
+            & th{
+                padding: 2vh 0 1vh 0;
+                border-bottom: .1vh solid #73A8A0;
+            }
+        }
+        &__items{
+            font-size: 2vh;
+
+            & td:first-child{
+                padding-left: 1.5vh;
+            }
+            & td{
+                height: 15vh;
+                padding: .6vh 0 .6vh 0;
+
+                & div{
+                    & span{
+                        text-align: center;
+                        padding: 0 1vh 0 1vh;
+                    }
+                    & button{
+                        height: 3vh;
+                        border: .1vh solid gray;
+                        -webkit-transition: background-color ease-in-out .2s;
+                        -moz-transition: background-color ease-in-out .2s;
+                        -ms-transition: background-color ease-in-out .2s;
+                        -o-transition: background-color ease-in-out .2s;
+                        transition: background-color ease-in-out .2s;
+
+                        &:hover{
+                            cursor: pointer;
+                            color: white;
+                            background-color: black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
