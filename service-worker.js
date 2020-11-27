@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/namah-front-end/precache-manifest.43834ac74e70d10dcb472961c8223ac4.js"
+  "/namah-front-end/precache-manifest.a6ca4c4ce862e228be45131755ef0979.js"
 );
 
 self.addEventListener('message', (event) => {
