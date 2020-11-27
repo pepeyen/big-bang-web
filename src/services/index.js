@@ -172,3 +172,11 @@ export const getMouseClickPosition = (event, axys, componentId) => {
 
     return  clickedPosition / componentFullSize;  
 };
+
+export const deleteFromObject = (targetProperty, targetObject) => {
+    const resultObject = {...targetObject};
+
+    delete resultObject[targetProperty];
+
+    return resultObject;
+};
