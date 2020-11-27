@@ -4,7 +4,7 @@
 
     &__headers{
         font-family: 'ProximaNova-Thin';
-        font-size: 1.3rem;
+        font-size: 1rem;
 
         & th:first-child{
             text-align: left;
@@ -24,8 +24,9 @@
             padding-left: .8rem;
         }
         & td{
-            height: 8rem;
+            height: 7rem;
             padding: .3rem 0 .3rem 0;
+            font-size: .75rem;
 
             & div{
                 font-family: 'ProximaNova-Regular';
@@ -34,9 +35,14 @@
                 align-items: center;
                 justify-content: center;
 
+                & span{
+                    padding: 0 .6rem 0 .6rem;
+                }
                 & button{
                     background-color: transparent;
                     outline: none;
+                    height: 1.5rem;
+                    border: .1rem solid black;
                 }
             }
         }
@@ -58,7 +64,7 @@
         &__items{
             font-size: 2vh;
 
-            & td:first-child{
+            & td:first-child div{
                 padding-left: 1.5vh;
             }
             & td{
@@ -72,7 +78,7 @@
                     }
                     & button{
                         height: 3vh;
-                        border: .1vh solid gray;
+                        border: .1vh solid black;
                         -webkit-transition: background-color ease-in-out .2s;
                         -moz-transition: background-color ease-in-out .2s;
                         -ms-transition: background-color ease-in-out .2s;
