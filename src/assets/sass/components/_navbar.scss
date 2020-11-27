@@ -40,6 +40,9 @@
         height: 1.4rem;
     }
 }
+#wishlist-redirector .--active path{
+    fill: red;
+}
 @media (min-width: 801px){
     .navbar{
         padding: 0 0 1.5vh 0;

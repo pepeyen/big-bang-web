@@ -43,6 +43,12 @@
 .--table-three-desktop > a:not(:first-child){
     display: none;
 }
+.--table-four-desktop{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    gap: 1rem;
+}
 .--table-six-desktop{
     width: 100%;
     display: grid;
@@ -451,6 +457,10 @@
     }
     .--table-three-desktop > a:not(:first-child){
         display: inline-block;
+    }
+    .--table-four-desktop{
+        grid-template-columns: repeat(4, 25%);
+        gap: 4vh 2.5vh;
     }
     .--table-six-desktop{
         grid-template-columns: repeat(6, auto);
