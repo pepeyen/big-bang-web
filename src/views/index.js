@@ -12,3 +12,4 @@ export {default as Product} from './Product';
 export {default as Store} from './Store';
 export {default as Profile} from './Profile';
 export {default as Login} from './Login';
+export {default as Wishlist} from './Wishlist';

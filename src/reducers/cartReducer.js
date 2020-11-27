@@ -27,8 +27,6 @@ const cartReducer = (state = JSON.parse(window.sessionStorage.getItem("cartItems
             return state = nextState;
 
         case 'REMOVE_FROM_CART':
-            nextState = {};
-
             if(action.removalType === 'remove-one' && state[action.product.product_id].productCartCount >= 2){
                 nextState = {
                     ...state,

@@ -26,7 +26,8 @@ import {
     Contact,
     Profile,
     Login,
-    NotFound
+    NotFound,
+    Wishlist
 } from './views';
 
 const App = () => {
@@ -96,6 +97,10 @@ const App = () => {
                     <Route 
                         exact path="/logout"
                         component={() => {window.sessionStorage.clear(); return <Redirect to='/' />;}}
+                    />
+                    <Route
+                        exact path="/wishlist"
+                        component={Wishlist}
                     />
                     <Route
                         path="/error/404"
