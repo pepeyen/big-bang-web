@@ -1,5 +1,7 @@
 import {findInArray,filterInArray} from '../services';
 
+let nextState = {};
+
 const likeButtonReducer = (state = JSON.parse(window.sessionStorage.getItem("likedItems")) === null ? {} : 
                             JSON.parse(window.sessionStorage.getItem("likedItems")), action) => { 
     switch(action.type){
@@ -9,23 +11,29 @@ const likeButtonReducer = (state = JSON.parse(window.sessionStorage.getItem("lik
             if(findInArray(likedList,action.item.itemID) === false){
                 likedList.push(action.item.itemID);
             }
-            return state = {
+            nextState = {
                 ...state,
                 [action.item.itemType + 's']: {
                     likedItemsList: likedList,
                     likedItemsType: action.item.itemType
                 }
             };
+
+            window.sessionStorage.setItem("likedItems", JSON.stringify(nextState));
+            return state = nextState;
         }
 
         case 'DESLIKE_A_ITEM':
-            return state = {
+            nextState = {
                 ...state,
                 [action.item.itemType + 's']: {
                     likedItemsList: filterInArray(state[action.item.itemType + 's'] ? state[action.item.itemType + 's'].likedItemsList : [],action.item.itemID),
                     likedItemsType: action.item.itemType
                 }
             };
+            
+            window.sessionStorage.setItem("likedItems", JSON.stringify(nextState));
+            return state = nextState;
  
         default:
             return state;
