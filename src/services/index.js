@@ -180,3 +180,8 @@ export const deleteFromObject = (targetProperty, targetObject) => {
 
     return resultObject;
 };
+
+export const disableElement = (targetElementID) => {
+    document.getElementById(targetElementID).style.pointerEvents = 'none';
+    document.getElementById(targetElementID).style.opacity = 0.4;
+};
