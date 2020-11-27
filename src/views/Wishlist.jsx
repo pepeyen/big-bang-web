@@ -12,7 +12,7 @@ import {
 const WishList = () => {
     const likedItems = useSelector(state => state.likedItems);
 
-    if(likedItems.products.likedItemsList.length === 0){
+    if(likedItems.products === undefined || likedItems.products.likedItemsList.length === 0 ){
         return(
             <Page pageTitle="Wishlist">
                 <Post>
