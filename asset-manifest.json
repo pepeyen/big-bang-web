@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/namah-front-end/static/css/main.8623e8e8.chunk.css",
-    "main.js": "/namah-front-end/static/js/main.18926e8e.chunk.js",
-    "main.js.map": "/namah-front-end/static/js/main.18926e8e.chunk.js.map",
+    "main.css": "/namah-front-end/static/css/main.760093b4.chunk.css",
+    "main.js": "/namah-front-end/static/js/main.7f7f10c2.chunk.js",
+    "main.js.map": "/namah-front-end/static/js/main.7f7f10c2.chunk.js.map",
     "runtime-main.js": "/namah-front-end/static/js/runtime-main.9f78425b.js",
     "runtime-main.js.map": "/namah-front-end/static/js/runtime-main.9f78425b.js.map",
     "static/js/2.1ef8e35c.chunk.js": "/namah-front-end/static/js/2.1ef8e35c.chunk.js",
     "static/js/2.1ef8e35c.chunk.js.map": "/namah-front-end/static/js/2.1ef8e35c.chunk.js.map",
     "index.html": "/namah-front-end/index.html",
-    "precache-manifest.b6d2f5479b8f071ed1f7c5f667f8978a.js": "/namah-front-end/precache-manifest.b6d2f5479b8f071ed1f7c5f667f8978a.js",
+    "precache-manifest.b89c8bc44a780eebb79b1c1a7d424818.js": "/namah-front-end/precache-manifest.b89c8bc44a780eebb79b1c1a7d424818.js",
     "service-worker.js": "/namah-front-end/service-worker.js",
-    "static/css/main.8623e8e8.chunk.css.map": "/namah-front-end/static/css/main.8623e8e8.chunk.css.map",
+    "static/css/main.760093b4.chunk.css.map": "/namah-front-end/static/css/main.760093b4.chunk.css.map",
     "static/js/2.1ef8e35c.chunk.js.LICENSE.txt": "/namah-front-end/static/js/2.1ef8e35c.chunk.js.LICENSE.txt",
     "static/media/main.scss": "/namah-front-end/static/media/ProximaNova-Thin.7bb3b456.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.9f78425b.js",
     "static/js/2.1ef8e35c.chunk.js",
-    "static/css/main.8623e8e8.chunk.css",
-    "static/js/main.18926e8e.chunk.js"
+    "static/css/main.760093b4.chunk.css",
+    "static/js/main.7f7f10c2.chunk.js"
   ]
 }
