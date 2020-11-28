@@ -14,9 +14,9 @@ const Banner = (props) => {
     const [isLoading,setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetchFromBackEnd('banners', props.ID, {method: 'GET'})
+        fetchFromBackEnd('banners', `id=${props.ID}`, {method: 'GET'})
         .then(data => {
-            setBanner(data.banners);
+            setBanner(data.banners[0]);
             setIsLoading(false);
         })
     },[props.ID]);
