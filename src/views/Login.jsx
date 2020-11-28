@@ -76,7 +76,7 @@ const Login = () => {
             <Page>
                 <Post>
                     <Form
-                        formAction={`${process.env.REACT_APP_BACK_END_HOST}/api/auth`}
+                        formAction={`${process.env.REACT_APP_BACK_END_HOST}/api/v1/auth`}
                         formMethod="POST"
                         formSubmitHandler={submitForm}
                         formFocusHandler={focusForm}

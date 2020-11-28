@@ -26,12 +26,12 @@ export const Podcast = (props) => {
     const currentPageId = getCurrentPageID(props.location.search);
 
     useEffect(() => {
-        fetchFromBackEnd('podcasts', currentPageId, {method: 'GET'})
+        fetchFromBackEnd('podcasts', `id=${currentPageId}`, {method: 'GET'})
         .then(data => {
             if(data.success !== true){
                 setPodcast(-1);
             }else{
-                setPodcast(data.podcasts);
+                setPodcast(data.podcasts[0]);
                 setIsLoading(false);
             }
         })

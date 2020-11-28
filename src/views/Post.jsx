@@ -23,17 +23,17 @@ const Post = (props) => {
     const currentPageId = getCurrentPageID(props.location.search);
 
     useEffect(() => {
-        fetchFromBackEnd('posts', currentPageId, {method: 'GET'})
+        fetchFromBackEnd('posts', `id=${currentPageId}`, {method: 'GET'})
         .then(data => {
             if(data.sucess === false){
                 setPostMarkdown(-1);
             }else{
                 setPostHeaders({
-                    postTitle: data.posts.post_title,
-                    postTheme: data.posts.post_theme.toUpperCase(),
-                    postAuthor: data.posts.post_author
+                    postTitle: data.posts[0].post_title,
+                    postTheme: data.posts[0].post_theme.toUpperCase(),
+                    postAuthor: data.posts[0].post_author
                 });
-                fetchFromBlob(data.posts.post_id, 'markdown', 'posts', 'id', 'md')
+                fetchFromBlob(data.posts[0].post_id, 'markdown', 'posts', 'id', 'md')
                 .then(response => {
                     return response.text();
                 })
