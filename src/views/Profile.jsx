@@ -22,7 +22,7 @@ const Profile = (props) => {
     const [isLoading,setIsloading] = useState(true);
 
     useEffect(() => {
-        fetchFromBackEnd('users', getCurrentPageUser(props.location.pathname), {
+        fetchFromBackEnd('users', `name=${getCurrentPageUser(props.location.pathname)}`, {
             method: 'GET', 
             credentials: 'include'
         })
@@ -30,7 +30,7 @@ const Profile = (props) => {
             if(!data.success){
                 setResponseData(404);
             }else{
-                setResponseData(data.users.user_name);
+                setResponseData(data.users[0].user_name);
                 setIsloading(false);
             }
         })

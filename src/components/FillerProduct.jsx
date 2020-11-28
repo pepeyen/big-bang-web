@@ -15,7 +15,7 @@ const FillerProduct = (props) => {
     const [isLoading,setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetchFromBackEnd('products', `offset/${props.productCount}`, {method: 'GET'})
+        fetchFromBackEnd('products', `limit=${props.productCount}`, {method: 'GET'})
         .then(data => {
             if(data.success === true){
                 setProducts(data.products);

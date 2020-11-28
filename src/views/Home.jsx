@@ -28,7 +28,7 @@ const Home = () => {
     const [conceptList, setConceptList] = useState([]);
 
     useEffect(() => {
-        fetchFromBackEnd('concepts', 'offset/6', {method: 'GET'})
+        fetchFromBackEnd('concepts', 'limit=6', {method: 'GET'})
         .then(data => {
             if(data.success){
                 setConceptList(data.concepts);

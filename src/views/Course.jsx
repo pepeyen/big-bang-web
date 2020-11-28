@@ -23,12 +23,12 @@ const Course = (props) => {
     const currentPageId = getCurrentPageID(props.location.search);
 
     useEffect(() => {
-        fetchFromBackEnd('courses', currentPageId, {method: 'GET'})
+        fetchFromBackEnd('courses', `id=${currentPageId}`, {method: 'GET'})
         .then(data => {
             if(data.sucess === false){
                 setCourse(-1);
             }else{
-                setCourse(data.courses);
+                setCourse(data.courses[0]);
                 setIsLoading(false);
             }
         })

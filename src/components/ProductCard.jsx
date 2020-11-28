@@ -18,10 +18,10 @@ const ProductCard = (props) => {
     const [isLoading,setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetchFromBackEnd('products', props.productID, {method: 'GET'})
+        fetchFromBackEnd('products', `id=${props.productID}`, {method: 'GET'})
         .then(data => {
             if(data.success === true){
-                setProduct(data.products);
+                setProduct(data.products[0]);
                 setIsLoading(false);
             }
         })

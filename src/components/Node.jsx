@@ -23,10 +23,10 @@ const Node = (props) => {
 
     useEffect(() => {
         if(props.type !== 'newsletter') {
-            fetchFromBackEnd(`${props.type}s`, props.ID, {method: 'GET'})
+            fetchFromBackEnd(`${props.type}s`, `id=${props.ID}`, {method: 'GET'})
             .then(data => {
                 if(data.success === true){
-                    setNode(data[`${props.type}s`]);
+                    setNode(data[`${props.type}s`][0]);
                     setIsLoading(false);
                 }
             })
@@ -147,7 +147,7 @@ const Node = (props) => {
         return(
             <Link
                 className={`page__node --${props.size}-${props.position} --${props.type} --${props.theme}-text`}
-                style={{backgroundImage: props.theme === 'light' ? `url(${process.env.REACT_APP_BLOB_HOST}/jpeg/${props.type}/bg-${node[`${props.type}_id`]}.jpg)` : ''}}
+                style={isLoading ? null : {backgroundImage: props.theme === 'light' ? `url(${process.env.REACT_APP_BLOB_HOST}/jpeg/${props.type}/bg-${props.ID}.jpg)` : ''}}
                 to={`/${translatePageType(props.type)}/post?id=${node[`${props.type}_id`]}&type=${props.type}`}
             >
                 <div className={props.theme === 'light' ? `page__banner-content --flex-end-self ${isLoading === true ? '' : '--fade-up'}` : "page__banner-content --flex-end-self"}>

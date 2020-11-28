@@ -20,9 +20,9 @@ const ProfilePosts = (props) => {
 
         if(!isHeaderActive){
             setPosts([]);
-            
+
             if(isFirstRender || props.postAuthor !== window.location.hash.split('/')[3]){
-                fetchFromBackEnd(`${props.postType}s`, `author/${props.postAuthor}`,{method: 'GET'})
+                fetchFromBackEnd(`${props.postType}s`, `author=${props.postAuthor}`,{method: 'GET'})
                 .then(data => {
                     if(data.success !== true){
                         setPosts([data]);

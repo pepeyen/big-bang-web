@@ -18,7 +18,7 @@ const CardList = (props) => {
     const [isLoading,setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetchFromBackEnd(`${props.cardListingType}s`, `offset/${props.cardMaxListing}`, {method: 'GET'})
+        fetchFromBackEnd(`${props.cardListingType}s`, `limit=${props.cardMaxListing}`, {method: 'GET'})
         .then(data => {
             if(data.success){
                 setCardList(data[`${props.cardListingType}s`]);

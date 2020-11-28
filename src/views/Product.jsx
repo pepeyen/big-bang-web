@@ -27,12 +27,12 @@ const Product = (props) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        fetchFromBackEnd('products', currentPageId, {method: 'GET'})
+        fetchFromBackEnd('products', `id=${currentPageId}`, {method: 'GET'})
         .then(data => {
             if(data.success === false){
                 setProduct(-1);
             }else{
-                setProduct(data.products);
+                setProduct(data.products[0]);
                 setIsLoading(false);
             }
         })
