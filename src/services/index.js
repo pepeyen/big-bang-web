@@ -123,9 +123,9 @@ export const translatePageType = (pageType) => {
     }
 };
 
-export const fetchFromBlob = (id,container,subContainer,filePrefix,fileExtension) => {
+export const fetchFromBlob = (fileName,container,subContainer,filePrefix,fileExtension) => {
     return new Promise((resolve, reject) =>{  
-        fetch(`${process.env.REACT_APP_BLOB_HOST}/${container}/${subContainer}/${filePrefix}-${id}.${fileExtension}`, {
+        fetch(`${process.env.REACT_APP_BLOB_HOST}/${container}/${subContainer}/${filePrefix}-${fileName}.${fileExtension}`, {
             method: 'GET'
         })
         .then(response => {
@@ -137,9 +137,11 @@ export const fetchFromBlob = (id,container,subContainer,filePrefix,fileExtension
     });
 };
 
-export const fetchFromBackEnd = (fetchinEndPoint,fetchingParam,fetchingOptions) => {
+export const fetchFromBackEnd = (fetchingEndPoint,fetchingParam,fetchingOptions,fetchingBranch) => {
+    fetchingBranch = fetchingBranch ?? 'v1';
+
     return new Promise((resolve, reject) => {
-        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/${fetchinEndPoint}/${fetchingParam}`, fetchingOptions)
+        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/${fetchingBranch}/${fetchingEndPoint}?${fetchingParam}`, fetchingOptions)
         .then(response => {
             resolve(response.json());
         })
