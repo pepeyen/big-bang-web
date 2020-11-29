@@ -9,7 +9,9 @@ const Form = (props) => {
             onSubmit={props.formSubmitHandler}
             onFocus={props.formFocusHandler}
         >
+            <span className="form__title">{props.formTitle}</span>
             {props.children}
+            <span className={`form__feedback ${props.animationState ? '--shaking-text' : ''}`}>{props.feedbackText}</span>
         </form>
     );
 };

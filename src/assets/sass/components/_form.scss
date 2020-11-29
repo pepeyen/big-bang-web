@@ -5,10 +5,11 @@
     align-items: center;
     gap: 1rem 0;
     width: 100%;
-    height: 46rem;
+    padding: 10rem 0 10rem 0;
 
     &__title{
         font-family: 'ProximaNova-Bold';
+        text-align: center;
         font-size: 2.5rem;
         margin: 0 0 3rem 0;
     }
@@ -29,10 +30,10 @@
     &__input-group{
         width: 100%;
         &:nth-child(2) label{
-            top: 26rem;
+            top: 24.3rem;
         }
         &:nth-child(3) label{
-            top: 31rem;
+            top: 29rem;
         }
     }
     &__input:focus + &__label,
@@ -101,7 +102,7 @@
 @media (min-width: 801px){
     .form{
         gap: 4vh 0;
-        height: 65.3vh;
+        padding: 4vh 0 4vh;
         width: 50%;
 
         &__title{
