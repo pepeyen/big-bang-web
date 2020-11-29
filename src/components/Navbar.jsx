@@ -1,6 +1,7 @@
 import React, {
     useEffect,
-    useState
+    useState,
+    useLayoutEffect
 } from 'react';
 import {withRouter} from 'react-router-dom';
 
@@ -16,60 +17,119 @@ import NavbarBrand from './NavbarBrand';
 import {
     getCurrentPageURIManual,
     getCurrentPageType,
-    translatePageType
+    translatePageType,
+    moveInArray
 } from '../services';
 
 const Navbar = (props) => {
     const [activeNavLink,setActiveNavLink] = useState();
+    const [size, setSize] = useState([0, 0]);
+    const [isNavbarConverted, setIsNavbarConverted] = useState(false);
+    const [, updateState] = React.useState();
+    const forceUpdate = React.useCallback(() => updateState({}), []);
+
+    useLayoutEffect(() => {
+        const updateSize = () => {
+            setSize([window.innerWidth, window.innerHeight]);
+        }
+            window.addEventListener('resize', updateSize);
+            updateSize();
+            return () => window.removeEventListener('resize', updateSize);
+    }, []);
 
     useEffect(() => {
         setActiveNavLink(translatePageType(getCurrentPageType(getCurrentPageURIManual(props.location.pathname + props.location.search))));
 
-        if(!window.sessionStorage.getItem('isLoggedIn')){
-            document.getElementById('logout-redirector').style.display = 'none';
+        if(document.getElementById('hamburguer-menu') === null){
+            forceUpdate();
         }else{
-            document.getElementById('logout-redirector').style.display = 'initial';
-        }
+            document.getElementById('hamburguer-menu').classList.remove('--is-active');
+            document.getElementById('hamburguer-menu-items').style.display = 'none';
 
-        document.getElementById('hamburguer-menu-items').style.display = 'none';
-        document.getElementById('hamburguer-menu').classList.remove('--is-active');
+            document.getElementById('logout-redirector').style.display = !window.sessionStorage.getItem('isLoggedIn') ? 'none' : 'initial';
 
-        if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-            const hamburguerItemsElement = document.getElementById('hamburguer-menu-items');
-            const redirectorViewsElement = document.getElementById('redirectors-views');
-
-            document.getElementById('redirectors-views').style.display = 'none';
-
-            while(redirectorViewsElement.childNodes.length > 0){
-                hamburguerItemsElement.appendChild(redirectorViewsElement.childNodes[0]);
-            };
-
-            const redirectorMiscElement = document.getElementById('redirectors-misc');
-
-            const hamburguerMenuMiscListElement = document.getElementsByClassName('hamburguer-menu__misc-items').className ?? document.createElement("ul");
-
-            if(hamburguerItemsElement.className !== 'hamburguer-menu__misc-items'){
-                hamburguerMenuMiscListElement.classList.add('hamburguer-menu__misc-items');
-            }
-
-            while(redirectorMiscElement.childNodes.length > 4){
-                for(let i = 0; i < redirectorMiscElement.childNodes.length; i++){
-                    if(redirectorMiscElement.childNodes[i].id !== 'login-redirector' && redirectorMiscElement.childNodes[i].id !== 'wishlist-redirector' && redirectorMiscElement.childNodes[i].id !== 'cart-redirector' && redirectorMiscElement.childNodes[i].id !== ''){
-                        hamburguerMenuMiscListElement.appendChild(redirectorMiscElement.childNodes[i]);
-                    }
+            if(size[0] > 0 && size[0] <= 801){
+                if(!isNavbarConverted){    
+                    convertNavbarToMobile();
+                }
+            }else{ 
+                if(isNavbarConverted){
+                    convertNavbarToDesktop();
                 }
             }
-            
-            if(hamburguerItemsElement.lastChild.className !== 'hamburguer-menu__misc-items'){
-                hamburguerItemsElement.appendChild(hamburguerMenuMiscListElement);
-            }
+        }
+    },[setActiveNavLink,props.location,size,isNavbarConverted,forceUpdate]);
+
+    const convertNavbarToMobile = () => {
+        const redirectorViewsElement = document.getElementById('redirectors-views');
+        const hamburguerItemsElement = document.getElementById('hamburguer-menu-items');
+
+        while(redirectorViewsElement.childNodes.length > 0){
+            hamburguerItemsElement.appendChild(redirectorViewsElement.childNodes[0]);
         };
-    },[setActiveNavLink,props.location]);
+
+        const redirectorMiscElement = document.getElementById('redirectors-misc');
+        const hamburguerMenuMiscListElement = document.getElementById('hamburguer-menu-misc-items') ?? (() => {
+            const newElement = document.createElement("ul");
+
+            newElement.setAttribute('id', 'hamburguer-menu-misc-items');
+            newElement.classList.add('hamburguer-menu__misc-items');
+
+            return newElement;
+        })();
+    
+
+        while(redirectorMiscElement.childNodes.length > 4){
+            for(let i = 0; i < redirectorMiscElement.childNodes.length; i++){
+                if(redirectorMiscElement.childNodes[i].id !== 'login-redirector' && redirectorMiscElement.childNodes[i].id !== 'wishlist-redirector'
+                && redirectorMiscElement.childNodes[i].id !== 'cart-redirector' && redirectorMiscElement.childNodes[i].id !== 'hamburguer-menu'){
+                    hamburguerMenuMiscListElement.appendChild(redirectorMiscElement.childNodes[i]);
+                }
+            }
+        }
+        
+        if(hamburguerItemsElement.lastChild.id !== 'hamburguer-menu-misc-items'){
+            hamburguerItemsElement.appendChild(hamburguerMenuMiscListElement);
+        }
+
+        setIsNavbarConverted(true);        
+    };
+
+    const convertNavbarToDesktop = () => {
+        const hamburguerItemsElement = document.getElementById('hamburguer-menu-items');
+        const hamburguerMenuMiscListElement = document.getElementById('hamburguer-menu-misc-items');
+        const redirectorViewsElement = document.getElementById('redirectors-views');
+        const redirectorMiscElement = document.getElementById('redirectors-misc');
+        
+        let redirectorMiscElementChildren = [];
+
+        while(hamburguerMenuMiscListElement.childNodes.length > 0){
+            redirectorMiscElement.appendChild(hamburguerMenuMiscListElement.childNodes[0]);
+        }
+
+        for(let i = 0; i < redirectorMiscElement.childNodes.length; i++){
+            redirectorMiscElementChildren.push(redirectorMiscElement.childNodes[i]);
+        }
+
+        moveInArray(redirectorMiscElementChildren, redirectorMiscElementChildren.indexOf(redirectorMiscElementChildren.find(element => element.id === 'search-redirector')), 0)
+        moveInArray(redirectorMiscElementChildren, redirectorMiscElementChildren.indexOf(redirectorMiscElementChildren.find(element => element.id === 'orders-redirector')), 2)
+        moveInArray(redirectorMiscElementChildren, redirectorMiscElementChildren.indexOf(redirectorMiscElementChildren.find(element => element.id === 'hamburguer-menu')), redirectorMiscElement.childNodes.length - 1)
+
+        redirectorMiscElementChildren.forEach(element => {
+            redirectorMiscElement.appendChild(element); 
+        });
+
+        while(hamburguerItemsElement.childNodes.length > 0){
+            redirectorViewsElement.appendChild(hamburguerItemsElement.childNodes[0]);  
+        };
+
+        setIsNavbarConverted(false);
+    };
 
     const navbarLinkUpdate = (navLinkRedirect) => {
         setActiveNavLink(navLinkRedirect);
     };
-
+    
     return(
         <nav className="navbar">
             <div className="navbar__buttons">
