@@ -25,7 +25,7 @@ const Login = () => {
             const form = e.target;
             const data = new FormData(form);
 
-            if(!Validator.isEmail(data.get('textInput'))){
+            if(!Validator.isEmail(data.get('e-mailInput'))){
                 setIsAnimating(true);
                 setInputResponse('Please insert a valid e-mail and try again');
 
@@ -36,7 +36,7 @@ const Login = () => {
             myHeaders.append("Content-Type", "application/json");
 
             const myBody = {
-                email: data.get('textInput'),
+                email: data.get('e-mailInput'),
                 password: data.get('passwordInput')
             };
     
@@ -80,23 +80,22 @@ const Login = () => {
                         formMethod="POST"
                         formSubmitHandler={submitForm}
                         formFocusHandler={focusForm}
+                        formTitle='Login Page'
+                        animationState={isAnimating}
+                        feedbackText={inputResponse}
                     >
-                        <span className="form__title">Login Page</span>
                         <FormInput
                             inputType='text'
                             inputLabel='E-mail'
-                            inputPlaceholder='E-mail'
                         />
                         <FormInput
                             inputType='password'
-                            inputLabel='Senha'
-                            inputPlaceholder='Senha'
+                            inputLabel='Password'
                         />
                         <FormSubmit
                             isDisabled={isAnimating}
                             submitText='Login'
                         />
-                        <span className={`form__feedback ${isAnimating ? '--shaking-text' : ''}`}>{inputResponse}</span>
                     </Form>
                 </Post>
             </Page>
