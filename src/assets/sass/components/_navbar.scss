@@ -40,6 +40,9 @@
         height: 1.4rem;
     }
 }
+#redirectors-views{
+    display: none;
+}
 #wishlist-redirector .--active path{
     fill: red;
 }
@@ -88,6 +91,8 @@
         }
     }
     #redirectors-views{
+        display: flex;
+        
         & li:hover{
             opacity: 0.6;
         }
