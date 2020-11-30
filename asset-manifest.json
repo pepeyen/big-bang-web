@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/namah-front-end/static/css/main.d2cf8661.chunk.css",
-    "main.js": "/namah-front-end/static/js/main.24ed7de0.chunk.js",
-    "main.js.map": "/namah-front-end/static/js/main.24ed7de0.chunk.js.map",
+    "main.js": "/namah-front-end/static/js/main.f9dbaee3.chunk.js",
+    "main.js.map": "/namah-front-end/static/js/main.f9dbaee3.chunk.js.map",
     "runtime-main.js": "/namah-front-end/static/js/runtime-main.9f78425b.js",
     "runtime-main.js.map": "/namah-front-end/static/js/runtime-main.9f78425b.js.map",
     "static/js/2.1ef8e35c.chunk.js": "/namah-front-end/static/js/2.1ef8e35c.chunk.js",
     "static/js/2.1ef8e35c.chunk.js.map": "/namah-front-end/static/js/2.1ef8e35c.chunk.js.map",
     "index.html": "/namah-front-end/index.html",
-    "precache-manifest.2aeb63feede422059c63a9b4e306a89b.js": "/namah-front-end/precache-manifest.2aeb63feede422059c63a9b4e306a89b.js",
+    "precache-manifest.2e01c2e0c1e6f8bd163c670ae29df6a7.js": "/namah-front-end/precache-manifest.2e01c2e0c1e6f8bd163c670ae29df6a7.js",
     "service-worker.js": "/namah-front-end/service-worker.js",
     "static/css/main.d2cf8661.chunk.css.map": "/namah-front-end/static/css/main.d2cf8661.chunk.css.map",
     "static/js/2.1ef8e35c.chunk.js.LICENSE.txt": "/namah-front-end/static/js/2.1ef8e35c.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.9f78425b.js",
     "static/js/2.1ef8e35c.chunk.js",
     "static/css/main.d2cf8661.chunk.css",
-    "static/js/main.24ed7de0.chunk.js"
+    "static/js/main.f9dbaee3.chunk.js"
   ]
 }
