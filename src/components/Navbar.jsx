@@ -103,25 +103,30 @@ const Navbar = (props) => {
         
         let redirectorMiscElementChildren = [];
 
-        while(hamburguerMenuMiscListElement.childNodes.length > 0){
-            redirectorMiscElement.appendChild(hamburguerMenuMiscListElement.childNodes[0]);
-        }
-
-        for(let i = 0; i < redirectorMiscElement.childNodes.length; i++){
-            redirectorMiscElementChildren.push(redirectorMiscElement.childNodes[i]);
-        }
-
-        moveInArray(redirectorMiscElementChildren, redirectorMiscElementChildren.indexOf(redirectorMiscElementChildren.find(element => element.id === 'search-redirector')), 0)
-        moveInArray(redirectorMiscElementChildren, redirectorMiscElementChildren.indexOf(redirectorMiscElementChildren.find(element => element.id === 'orders-redirector')), 2)
-        moveInArray(redirectorMiscElementChildren, redirectorMiscElementChildren.indexOf(redirectorMiscElementChildren.find(element => element.id === 'hamburguer-menu')), redirectorMiscElement.childNodes.length - 1)
-
-        redirectorMiscElementChildren.forEach(element => {
-            redirectorMiscElement.appendChild(element); 
-        });
-
+        //Re-inserting elements to the redirector-view
         while(hamburguerItemsElement.childNodes.length > 0){
             redirectorViewsElement.appendChild(hamburguerItemsElement.childNodes[0]);  
         };
+        //Re-inserting elements to the redirector-view-misc
+        while(hamburguerMenuMiscListElement.childNodes.length > 0){
+            redirectorMiscElement.appendChild(hamburguerMenuMiscListElement.childNodes[0]);
+        }
+        //Copying redirector-view-misc elements
+        for(let i = 0; i < redirectorMiscElement.childNodes.length; i++){
+            redirectorMiscElementChildren.push(redirectorMiscElement.childNodes[i]);
+        }
+        /**
+         * Sorting redirectorMiscElementChildren elements to the initial design
+         * When re-inserting the hamburguer-misc menu items buttons get unordered,
+         * compared to the original design.
+         */
+        moveInArray(redirectorMiscElementChildren, redirectorMiscElementChildren.indexOf(redirectorMiscElementChildren.find(element => element.id === 'search-redirector')), 0)
+        moveInArray(redirectorMiscElementChildren, redirectorMiscElementChildren.indexOf(redirectorMiscElementChildren.find(element => element.id === 'orders-redirector')), 2)
+        moveInArray(redirectorMiscElementChildren, redirectorMiscElementChildren.indexOf(redirectorMiscElementChildren.find(element => element.id === 'hamburguer-menu')), redirectorMiscElement.childNodes.length - 1)
+        //Replacing redirector-view-misc elements with the sorted ones
+        redirectorMiscElementChildren.forEach(element => {
+            redirectorMiscElement.appendChild(element); 
+        });
 
         setIsNavbarConverted(false);
     };
