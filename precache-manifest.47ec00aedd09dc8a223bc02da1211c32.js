@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0686bccf80e346f56f568dcbe5d2bbf7",
+    "revision": "a28b7ebd10391b4179ca911052391276",
     "url": "/namah-front-end/index.html"
   },
   {
-    "revision": "4536e834efb4b6711725",
-    "url": "/namah-front-end/static/css/main.d2cf8661.chunk.css"
+    "revision": "e854669aa472f8c9bbdc",
+    "url": "/namah-front-end/static/css/main.642fbb19.chunk.css"
   },
   {
     "revision": "3a2b8f237edb2d8d708d",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/namah-front-end/static/js/2.1ef8e35c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4536e834efb4b6711725",
-    "url": "/namah-front-end/static/js/main.799740f2.chunk.js"
+    "revision": "e854669aa472f8c9bbdc",
+    "url": "/namah-front-end/static/js/main.9714fc39.chunk.js"
   },
   {
     "revision": "659664d09015d6a0258c",
@@ -28,20 +28,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/namah-front-end/static/media/Adamina-Regular.1cf9c732.eot"
   },
   {
+    "revision": "22412c159a1505166c764d7ce5470db4",
+    "url": "/namah-front-end/static/media/Adamina-Regular.22412c15.svg"
+  },
+  {
     "revision": "32e31ea6c8f38bce55b5c377cb66d84d",
     "url": "/namah-front-end/static/media/Adamina-Regular.32e31ea6.woff"
   },
   {
-    "revision": "702b0d7edc9f00c49d11c6c9753fc5d6",
-    "url": "/namah-front-end/static/media/Adamina-Regular.702b0d7e.svg"
-  },
-  {
     "revision": "ce0435ddfd9fc5efcac92ad41ce93be8",
     "url": "/namah-front-end/static/media/Adamina-Regular.ce0435dd.ttf"
-  },
-  {
-    "revision": "1b04f6bf96852188b6de37ba12b01ab1",
-    "url": "/namah-front-end/static/media/Chloe-Regular.1b04f6bf.svg"
   },
   {
     "revision": "328d3e21183998a1cdda3372123f6d70",
@@ -52,12 +48,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/namah-front-end/static/media/Chloe-Regular.3f75a25d.eot"
   },
   {
-    "revision": "e505f205cc5a645580b2dbf27c1e3874",
-    "url": "/namah-front-end/static/media/Chloe-Regular.e505f205.ttf"
+    "revision": "e415a370eb011124bcdadea9aa909366",
+    "url": "/namah-front-end/static/media/Chloe-Regular.e415a370.svg"
   },
   {
-    "revision": "0229f54a4e5cfdbd3cfdacbe86e99e0c",
-    "url": "/namah-front-end/static/media/ProximaNova-Bold.0229f54a.svg"
+    "revision": "e505f205cc5a645580b2dbf27c1e3874",
+    "url": "/namah-front-end/static/media/Chloe-Regular.e505f205.ttf"
   },
   {
     "revision": "21bae7f72b17ee2d81162136a1c9cdf4",
@@ -68,12 +64,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/namah-front-end/static/media/ProximaNova-Bold.3b70f0d9.woff"
   },
   {
-    "revision": "caa7d8653555e3c3d30a5c860acea36d",
-    "url": "/namah-front-end/static/media/ProximaNova-Bold.caa7d865.eot"
+    "revision": "51c2176cebdb171218c2313b05d3c293",
+    "url": "/namah-front-end/static/media/ProximaNova-Bold.51c2176c.svg"
   },
   {
-    "revision": "6d279ef230b5de952fbbb952ddfd98aa",
-    "url": "/namah-front-end/static/media/ProximaNova-Regular.6d279ef2.svg"
+    "revision": "caa7d8653555e3c3d30a5c860acea36d",
+    "url": "/namah-front-end/static/media/ProximaNova-Bold.caa7d865.eot"
   },
   {
     "revision": "7e564d19e8fbcf7170540582fc5a1c9f",
@@ -84,6 +80,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/namah-front-end/static/media/ProximaNova-Regular.e439d2f5.woff"
   },
   {
+    "revision": "e7da75abdb461aa46fd9b18a6c250b97",
+    "url": "/namah-front-end/static/media/ProximaNova-Regular.e7da75ab.svg"
+  },
+  {
     "revision": "f3d966fb4879b9448d0828e6b16a1025",
     "url": "/namah-front-end/static/media/ProximaNova-Regular.f3d966fb.eot"
   },
@@ -92,8 +92,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/namah-front-end/static/media/ProximaNova-Semibold.53b53a1a.eot"
   },
   {
-    "revision": "7c17940a9a40805f233609a2f0c78080",
-    "url": "/namah-front-end/static/media/ProximaNova-Semibold.7c17940a.svg"
+    "revision": "7c5351d9a743666b8777530d9c51311c",
+    "url": "/namah-front-end/static/media/ProximaNova-Semibold.7c5351d9.svg"
   },
   {
     "revision": "f83281a7796841966c252267f3b90827",
