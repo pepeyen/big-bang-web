@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/namah-front-end/static/css/main.642fbb19.chunk.css",
-    "main.js": "/namah-front-end/static/js/main.9714fc39.chunk.js",
-    "main.js.map": "/namah-front-end/static/js/main.9714fc39.chunk.js.map",
-    "runtime-main.js": "/namah-front-end/static/js/runtime-main.9f78425b.js",
-    "runtime-main.js.map": "/namah-front-end/static/js/runtime-main.9f78425b.js.map",
-    "static/js/2.1ef8e35c.chunk.js": "/namah-front-end/static/js/2.1ef8e35c.chunk.js",
-    "static/js/2.1ef8e35c.chunk.js.map": "/namah-front-end/static/js/2.1ef8e35c.chunk.js.map",
-    "index.html": "/namah-front-end/index.html",
-    "precache-manifest.47ec00aedd09dc8a223bc02da1211c32.js": "/namah-front-end/precache-manifest.47ec00aedd09dc8a223bc02da1211c32.js",
-    "service-worker.js": "/namah-front-end/service-worker.js",
-    "static/css/main.642fbb19.chunk.css.map": "/namah-front-end/static/css/main.642fbb19.chunk.css.map",
-    "static/js/2.1ef8e35c.chunk.js.LICENSE.txt": "/namah-front-end/static/js/2.1ef8e35c.chunk.js.LICENSE.txt",
-    "static/media/main.scss": "/namah-front-end/static/media/ProximaNova-Thin.7bb3b456.svg"
+    "main.css": "/namah/static/css/main.dcdafe72.chunk.css",
+    "main.js": "/namah/static/js/main.fd0c5621.chunk.js",
+    "main.js.map": "/namah/static/js/main.fd0c5621.chunk.js.map",
+    "runtime-main.js": "/namah/static/js/runtime-main.aa108ed1.js",
+    "runtime-main.js.map": "/namah/static/js/runtime-main.aa108ed1.js.map",
+    "static/js/2.475b3c73.chunk.js": "/namah/static/js/2.475b3c73.chunk.js",
+    "static/js/2.475b3c73.chunk.js.map": "/namah/static/js/2.475b3c73.chunk.js.map",
+    "index.html": "/namah/index.html",
+    "precache-manifest.7e31e63d936ef230854b5b64920ca68d.js": "/namah/precache-manifest.7e31e63d936ef230854b5b64920ca68d.js",
+    "service-worker.js": "/namah/service-worker.js",
+    "static/css/main.dcdafe72.chunk.css.map": "/namah/static/css/main.dcdafe72.chunk.css.map",
+    "static/js/2.475b3c73.chunk.js.LICENSE.txt": "/namah/static/js/2.475b3c73.chunk.js.LICENSE.txt",
+    "static/media/main.scss": "/namah/static/media/ProximaNova-Thin.7bb3b456.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.9f78425b.js",
-    "static/js/2.1ef8e35c.chunk.js",
-    "static/css/main.642fbb19.chunk.css",
-    "static/js/main.9714fc39.chunk.js"
+    "static/js/runtime-main.aa108ed1.js",
+    "static/js/2.475b3c73.chunk.js",
+    "static/css/main.dcdafe72.chunk.css",
+    "static/js/main.fd0c5621.chunk.js"
   ]
 }
