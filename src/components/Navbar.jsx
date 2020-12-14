@@ -221,7 +221,7 @@ const Navbar = (props) => {
                         redirector="search"
                         clickHandle={navbarLinkUpdate}
                         isActive={activeNavLink === "search"}
-                    disabled>
+                    >
                         <svg
                             viewBox="0 0 24 24"
                             fill="none"

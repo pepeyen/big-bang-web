@@ -18,6 +18,7 @@ import {
     Blog,
     Post,
     Store,
+    Search,
     Product,
     Podcasts,
     Podcast,
@@ -81,6 +82,10 @@ const App = () => {
                     <Route 
                         exact path="/courses/post"
                         component={Course}
+                    />
+                    <Route
+                        exact path="/search"
+                        component={Search}
                     />
                     <Route 
                         path="/user"
