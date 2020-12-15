@@ -26,6 +26,12 @@
             padding: 0 0 .2rem 0;
             border-bottom: solid .2rem transparent;
         }
+        & button{
+            border: none;
+            background-color: transparent;
+            padding: 0 0 .2rem 0;
+            border-bottom: solid .2rem transparent;
+        }
     }
     &__logo{
         margin: 0 auto 0 0;
@@ -72,6 +78,15 @@
             & a{
                 padding: 0 0 .6vh 0;
                 border-bottom: solid .4vh transparent;
+            }
+            & button {
+                margin: 1vh 0 0 0;
+                padding: 0 0 .6vh 0;
+                border-bottom: solid .4vh transparent;
+
+                &:hover{
+                    cursor: pointer;
+                }
             }
         } 
         &__logo{
