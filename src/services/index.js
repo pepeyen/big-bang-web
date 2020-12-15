@@ -201,3 +201,91 @@ export const moveInArray = function (arr, from, to){
 
 	arr.splice(to, 0, item[0]);
 };
+
+export const renderSearchModal = (canvasId) => {
+    if(!document.getElementById('modal-search')){
+        const targetCanvas = document.getElementById(canvasId);
+
+        const modal = document.createElement('div');
+        const modalHeaders = document.createElement('div');
+        const modalSubmitButton = document.createElement('button');
+        const modalInput = document.createElement('input');
+        const modalExitButton = document.createElement('button');
+        const modalResults = document.createElement('div');
+
+        modal.id = 'modal-search';
+        modal.classList.add('modal');
+        modal.classList.add('--search');
+        modalHeaders.classList.add('modal__headers');
+        modalSubmitButton.classList.add('modal__button');
+        modalInput.classList.add('modal__input');
+        modalExitButton.classList.add('modal__button');
+        modalResults.classList.add('modal__results');
+
+        const fetchSearch = () => {
+            fetchFromBackEnd('search', `search_query=${modalInput.value}`, {method: 'GET'})
+            .then(data => {
+                const modalResultsContent = document.createElement('div');
+
+                while(modalResultsContent.childNodes.length > 0){
+                    modalResultsContent.removeChild(modalResultsContent.childNodes[0]);
+                }
+
+                if(data.sucess === false){
+                    const modalResultsFeedback = document.createElement('span');
+                    
+                    modalResultsFeedback.classList.add('modal__results-feedback');
+                    modalResultsFeedback.textContent(data.description);
+
+                    modalResults.appendChild(modalResultsFeedback);
+                }else{
+                    const resultTypeList = Object.keys(data.searchResult);
+                    
+                    resultTypeList.forEach(resultType => {
+                        const resultTypeDivisor = document.createElement('div');
+                        const resultTypeDivisorButton = document.createElement('button');
+                        const resultTypeDivisorButtonTitle = document.createElement('span');
+                        const resultTypeDivisorButtonCount = document.createElement('span');
+
+                        resultTypeDivisor.classList.add('result__divisor');
+                        resultTypeDivisorButton.classList.add('result__divisor-header');
+                        resultTypeDivisorButtonTitle.textContent = resultType.charAt(0).toUpperCase() + resultType.slice(1).toLowerCase();
+                        resultTypeDivisorButtonCount.textContent = data.searchResult[resultType].length;
+
+                        resultTypeDivisorButton.appendChild(resultTypeDivisorButtonTitle);
+                        resultTypeDivisorButton.appendChild(resultTypeDivisorButtonCount);
+                        resultTypeDivisor.appendChild(resultTypeDivisorButton);
+                        modalResults.appendChild(resultTypeDivisor);
+                    });
+                }
+            })
+        };
+
+        modalSubmitButton.onclick = (() => {
+            fetchSearch();
+        });
+
+        modalInput.onkeypress = ((event) => {
+            if(event.key === 'Enter'){
+                fetchSearch();
+            }
+        });
+
+        modalExitButton.onclick = (() => {
+            targetCanvas.removeChild(modal)
+        });
+
+        const modalPendingHeaderList = [modalSubmitButton, modalInput, modalExitButton];
+
+        modalPendingHeaderList.forEach(pendingHeader => {
+            modalHeaders.appendChild(pendingHeader);
+        });
+
+        const modalPendingChildList = [modalHeaders, modalResults];
+
+        modalPendingChildList.forEach(pendingChild => {
+            modal.appendChild(pendingChild);
+        });
+        targetCanvas.appendChild(modal);
+    }
+};
