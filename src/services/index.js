@@ -202,6 +202,18 @@ export const moveInArray = function (arr, from, to){
 	arr.splice(to, 0, item[0]);
 };
 
+const insertSVGPaths = (targetSVG, pathList) => {
+    for(const currentPath of pathList){
+        const pathElement = document.createElementNS('http://www.w3.org/2000/svg','path');
+
+        for(const [key, value] of Object.entries(currentPath)){
+            pathElement.setAttribute(key, value);
+        }
+
+        targetSVG.appendChild(pathElement);
+    }
+}
+
 export const renderSearchModal = (canvasId) => {
     if(!document.getElementById('modal-search')){
         const targetCanvas = document.getElementById(canvasId);
@@ -212,6 +224,8 @@ export const renderSearchModal = (canvasId) => {
         const modalInput = document.createElement('input');
         const modalExitButton = document.createElement('button');
         const modalResults = document.createElement('div');
+        const submitButtonImage = document.createElementNS('http://www.w3.org/2000/svg','svg');
+        const exitButtonImage = document.createElementNS('http://www.w3.org/2000/svg','svg');
 
         modal.id = 'modal-search';
         modal.classList.add('modal');
@@ -225,17 +239,15 @@ export const renderSearchModal = (canvasId) => {
         const fetchSearch = () => {
             fetchFromBackEnd('search', `search_query=${modalInput.value}`, {method: 'GET'})
             .then(data => {
-                const modalResultsContent = document.createElement('div');
-
-                while(modalResultsContent.childNodes.length > 0){
-                    modalResultsContent.removeChild(modalResultsContent.childNodes[0]);
+                while(modalResults.childNodes.length > 0){
+                    modalResults.removeChild(modalResults.childNodes[0]);
                 }
 
-                if(data.sucess === false){
+                if(data.success === false){
                     const modalResultsFeedback = document.createElement('span');
                     
                     modalResultsFeedback.classList.add('modal__results-feedback');
-                    modalResultsFeedback.textContent(data.description);
+                    modalResultsFeedback.textContent = data.description;
 
                     modalResults.appendChild(modalResultsFeedback);
                 }else{
@@ -247,19 +259,74 @@ export const renderSearchModal = (canvasId) => {
                         const resultTypeDivisorButtonTitle = document.createElement('span');
                         const resultTypeDivisorButtonCount = document.createElement('span');
 
-                        resultTypeDivisor.classList.add('result__divisor');
-                        resultTypeDivisorButton.classList.add('result__divisor-header');
+                        resultTypeDivisor.classList.add('modal__divisor');
+                        resultTypeDivisorButton.classList.add('modal__divisor-header');
                         resultTypeDivisorButtonTitle.textContent = resultType.charAt(0).toUpperCase() + resultType.slice(1).toLowerCase();
                         resultTypeDivisorButtonCount.textContent = data.searchResult[resultType].length;
 
                         resultTypeDivisorButton.appendChild(resultTypeDivisorButtonTitle);
                         resultTypeDivisorButton.appendChild(resultTypeDivisorButtonCount);
                         resultTypeDivisor.appendChild(resultTypeDivisorButton);
+
+                        resultTypeDivisor.onclick = (() => {
+                            if(resultTypeDivisor.childNodes.length === 1){
+                                for(const currentResult of data.searchResult[resultType]){
+                                    const divisorHeadline = document.createElement('p');
+                                    divisorHeadline.classList.add('modal__divisor-headline');
+
+                                    for(const [key, value] of Object.entries(currentResult)){
+                                        const currentKeyType = key.split('_')[key.split('_').length - 1];
+
+                                        if(currentKeyType === 'name' || currentKeyType === 'title'){
+                                            const divisorHeadlineText = document.createElement('span');
+
+                                            divisorHeadlineText.textContent = value;
+
+                                            divisorHeadline.appendChild(divisorHeadlineText);
+                                        }
+    
+                                        resultTypeDivisor.appendChild(divisorHeadline);
+                                    }
+                                }
+                            }else{
+                                while(resultTypeDivisor.childNodes.length > 1){
+                                    if(resultTypeDivisor.childNodes[1].tag !== 'button'){
+                                        resultTypeDivisor.removeChild(resultTypeDivisor.childNodes[1]);
+                                    }
+                                }
+                            }
+                        });
+
                         modalResults.appendChild(resultTypeDivisor);
                     });
                 }
             })
         };
+
+        exitButtonImage.setAttribute('viewBox', '0 0 512.001 512.001');
+        exitButtonImage.setAttribute('fill', 'none');
+        submitButtonImage.setAttribute('viewBox', '0 0 24 24');
+        submitButtonImage.setAttribute('fill', 'none');
+
+        const exitButtonSVGPaths = [
+            {
+                d: "M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717 L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859 c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287 l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285 L284.286,256.002z",
+                fill: '#666666'
+            }
+        ];
+
+        const submitButtonSVGPaths = [
+            {
+                d: 'M23.8594 22.5938C23.9531 22.6875 24 22.8281 24 22.9688C24 23.1562 23.9531 23.2969 23.8594 23.3906L23.3906 23.8125C23.25 23.9531 23.1094 24 22.9688 24C22.7812 24 22.6875 23.9531 22.5938 23.8125L16.5469 17.7656C16.4062 17.6719 16.3594 17.5781 16.3594 17.3906V16.9219C15.4688 17.7656 14.4375 18.375 13.3125 18.8438C12.1875 19.3125 10.9688 19.5 9.75 19.5C7.96875 19.5 6.32812 19.0781 4.82812 18.1875C3.32812 17.3438 2.15625 16.1719 1.3125 14.6719C0.421875 13.1719 0 11.5312 0 9.75C0 7.96875 0.421875 6.375 1.3125 4.875C2.15625 3.375 3.32812 2.20312 4.82812 1.3125C6.32812 0.46875 7.96875 0 9.75 0C11.5312 0 13.125 0.46875 14.625 1.3125C16.125 2.20312 17.2969 3.375 18.1875 4.875C19.0312 6.375 19.5 7.96875 19.5 9.75C19.5 11.0156 19.2656 12.2344 18.7969 13.3594C18.3281 14.4844 17.7188 15.5156 16.9219 16.3594H17.3906C17.5312 16.3594 17.6719 16.4531 17.8125 16.5469L23.8594 22.5938ZM9.75 18C11.25 18 12.6094 17.6719 13.875 16.9219C15.1406 16.1719 16.125 15.1875 16.875 13.9219C17.625 12.6562 18 11.25 18 9.75C18 8.25 17.625 6.89062 16.875 5.625C16.125 4.35938 15.1406 3.375 13.875 2.625C12.6094 1.875 11.25 1.5 9.75 1.5C8.25 1.5 6.84375 1.875 5.57812 2.625C4.3125 3.375 3.32812 4.35938 2.57812 5.625C1.82812 6.89062 1.5 8.25 1.5 9.75C1.5 11.25 1.82812 12.6562 2.57812 13.9219C3.32812 15.1875 4.3125 16.1719 5.57812 16.9219C6.84375 17.6719 8.25 18 9.75 18Z',
+                fill: '#666666' 
+            }
+        ];
+
+        insertSVGPaths(exitButtonImage , exitButtonSVGPaths);
+        insertSVGPaths(submitButtonImage ,submitButtonSVGPaths);
+
+        modalExitButton.appendChild(exitButtonImage);
+        modalSubmitButton.appendChild(submitButtonImage);
 
         modalSubmitButton.onclick = (() => {
             fetchSearch();
@@ -275,7 +342,7 @@ export const renderSearchModal = (canvasId) => {
             targetCanvas.removeChild(modal)
         });
 
-        const modalPendingHeaderList = [modalSubmitButton, modalInput, modalExitButton];
+        const modalPendingHeaderList = [modalExitButton, modalInput, modalSubmitButton];
 
         modalPendingHeaderList.forEach(pendingHeader => {
             modalHeaders.appendChild(pendingHeader);
