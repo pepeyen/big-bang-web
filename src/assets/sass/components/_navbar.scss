@@ -27,10 +27,12 @@
             border-bottom: solid .2rem transparent;
         }
         & button{
-            border: none;
-            background-color: transparent;
+            color: #666666;
+            text-decoration: none;
             padding: 0 0 .2rem 0;
             border-bottom: solid .2rem transparent;
+            border: none;
+            background-color: transparent;
         }
     }
     &__logo{
