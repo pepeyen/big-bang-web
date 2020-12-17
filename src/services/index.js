@@ -220,6 +220,7 @@ export const renderSearchModal = (canvasId) => {
 
         const modal = document.createElement('div');
         const modalHeaders = document.createElement('div');
+        const modalInputArea = document.createElement('div');
         const modalSubmitButton = document.createElement('button');
         const modalInput = document.createElement('input');
         const modalExitButton = document.createElement('button');
@@ -231,12 +232,15 @@ export const renderSearchModal = (canvasId) => {
         modal.classList.add('modal');
         modal.classList.add('--search');
         modalHeaders.classList.add('modal__headers');
+        modalInputArea.classList.add('modal__input-area');
         modalSubmitButton.classList.add('modal__button');
         modalInput.classList.add('modal__input');
         modalExitButton.classList.add('modal__button');
         modalResults.classList.add('modal__results');
 
         const fetchSearch = () => {
+            modalInputArea.classList.add('--result-is-loading');
+
             fetchFromBackEnd('search', `search_query=${modalInput.value}`, {method: 'GET'})
             .then(data => {
                 while(modalResults.childNodes.length > 0){
@@ -300,20 +304,16 @@ export const renderSearchModal = (canvasId) => {
                         modalResults.appendChild(resultTypeDivisor);
                     });
                 }
-            })
-        };
 
-        exitButtonImage.setAttribute('viewBox', '0 0 512.001 512.001');
-        exitButtonImage.setAttribute('fill', 'none');
+                modalInputArea.classList.remove('--result-is-loading');
+            });
+        };
+        modalInput.setAttribute('placeholder', 'Type to search');
+
         submitButtonImage.setAttribute('viewBox', '0 0 24 24');
         submitButtonImage.setAttribute('fill', 'none');
-
-        const exitButtonSVGPaths = [
-            {
-                d: "M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717 L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859 c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287 l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285 L284.286,256.002z",
-                fill: '#666666'
-            }
-        ];
+        exitButtonImage.setAttribute('viewBox', '0 0 512.001 512.001');
+        exitButtonImage.setAttribute('fill', 'none');
 
         const submitButtonSVGPaths = [
             {
@@ -322,11 +322,18 @@ export const renderSearchModal = (canvasId) => {
             }
         ];
 
-        insertSVGPaths(exitButtonImage , exitButtonSVGPaths);
-        insertSVGPaths(submitButtonImage ,submitButtonSVGPaths);
+        const exitButtonSVGPaths = [
+            {
+                d: "M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717 L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859 c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287 l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285 L284.286,256.002z",
+                fill: '#666666'
+            }
+        ];
 
-        modalExitButton.appendChild(exitButtonImage);
+        insertSVGPaths(submitButtonImage ,submitButtonSVGPaths);
+        insertSVGPaths(exitButtonImage , exitButtonSVGPaths);
+
         modalSubmitButton.appendChild(submitButtonImage);
+        modalExitButton.appendChild(exitButtonImage);
 
         modalSubmitButton.onclick = (() => {
             fetchSearch();
@@ -342,7 +349,13 @@ export const renderSearchModal = (canvasId) => {
             targetCanvas.removeChild(modal)
         });
 
-        const modalPendingHeaderList = [modalExitButton, modalInput, modalSubmitButton];
+        const modalInputAreaList = [modalSubmitButton, modalInput];
+
+        modalInputAreaList.forEach(pendingInputArea => {
+            modalInputArea.appendChild(pendingInputArea);
+        });
+
+        const modalPendingHeaderList = [modalInputArea, modalExitButton];
 
         modalPendingHeaderList.forEach(pendingHeader => {
             modalHeaders.appendChild(pendingHeader);
