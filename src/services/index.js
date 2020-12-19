@@ -202,6 +202,21 @@ export const moveInArray = function (arr, from, to){
 	arr.splice(to, 0, item[0]);
 };
 
+export const redirectorTypeTranslator = (redirectorType) => {
+    const redirectorTypeList = {
+        'post': 'blog',
+        'product': 'store',
+        'podcast': 'podcasts',
+        'course': 'crouses'
+    };
+
+    for(const [type, typeTranslated] of Object.entries(redirectorTypeList)){
+        if(redirectorType === type){
+            return typeTranslated;
+        }
+    }
+};
+
 const insertSVGPaths = (targetSVG, pathList) => {
     for(const currentPath of pathList){
         const pathElement = document.createElementNS('http://www.w3.org/2000/svg','path');
@@ -212,7 +227,60 @@ const insertSVGPaths = (targetSVG, pathList) => {
 
         targetSVG.appendChild(pathElement);
     }
-}
+};
+
+const generateModalHeadline = ({modalDivisorComponent, headlineType, headlineID, headLineTitle, headlineSecondaryTitle, headLineRedirectorLink}) => {
+    const modalHeadline = document.createElement('a');
+    const modalHeadlineContent = document.createElement('div');
+    const modalHeadlineInfo = document.createElement('p');
+    const modalHeadlineMedia = document.createElement('div'); // When it's user Show the first letter of the headlineTitle otherwhise fetch from BLOB
+
+    modalHeadline.classList.add('modal__divisor-headline');
+    modalHeadline.href = headLineRedirectorLink;
+    modalHeadlineContent.classList.add('modal__divisor-content');
+    modalHeadlineInfo.classList.add('modal__divisor-info');
+    modalHeadlineMedia.classList.add('modal__divisor-media');
+
+    if(headLineTitle){
+        const modalHeadlineTitle = document.createElement('span');
+
+        modalHeadlineTitle.classList.add('modal__divisor-title');
+
+        modalHeadlineTitle.textContent = headLineTitle;
+
+        modalHeadlineInfo.appendChild(modalHeadlineTitle);
+    }
+
+    if(headlineSecondaryTitle){
+        const modalHeadlineSecondaryTitle = document.createElement('span');
+
+        modalHeadlineSecondaryTitle.classList.add('modal__divisor-sec-title');
+
+        modalHeadlineSecondaryTitle.textContent = headlineSecondaryTitle;
+
+        modalHeadlineInfo.appendChild(modalHeadlineSecondaryTitle);
+    }
+
+    if(headlineType === 'user' || !headlineID){
+        const profileName = document.createElement('span');
+
+        profileName.textContent = headLineTitle[0];
+
+        modalHeadlineMedia.appendChild(profileName);
+    }else{
+        const profilePicture = document.createElement('img');
+
+        profilePicture.src = `${process.env.REACT_APP_BLOB_HOST}/jpeg/${headlineType}/bg-${headlineID}.jpg`;
+
+        modalHeadlineMedia.appendChild(profilePicture);
+    }
+
+    [modalHeadlineInfo, modalHeadlineMedia].forEach((pendingModalHeadlineContent) => {
+        modalHeadlineContent.appendChild(pendingModalHeadlineContent);
+    });
+    modalHeadline.appendChild(modalHeadlineContent);
+    modalDivisorComponent.appendChild(modalHeadline);
+};
 
 export const renderSearchModal = (canvasId) => {
     if(!document.getElementById('modal-search')){
@@ -262,36 +330,54 @@ export const renderSearchModal = (canvasId) => {
                         const resultTypeDivisorButton = document.createElement('button');
                         const resultTypeDivisorButtonTitle = document.createElement('span');
                         const resultTypeDivisorButtonCount = document.createElement('span');
+                        const resultTypeDivisorContent = document.createElement('div');
 
                         resultTypeDivisor.classList.add('modal__divisor');
                         resultTypeDivisorButton.classList.add('modal__divisor-header');
                         resultTypeDivisorButtonTitle.textContent = resultType.charAt(0).toUpperCase() + resultType.slice(1).toLowerCase();
                         resultTypeDivisorButtonCount.textContent = data.searchResult[resultType].length;
+                        resultTypeDivisorContent.classList.add('modal__divisor-content');
 
                         resultTypeDivisorButton.appendChild(resultTypeDivisorButtonTitle);
                         resultTypeDivisorButton.appendChild(resultTypeDivisorButtonCount);
                         resultTypeDivisor.appendChild(resultTypeDivisorButton);
 
                         resultTypeDivisor.onclick = (() => {
-                            if(resultTypeDivisor.childNodes.length === 1){
+                            if(resultTypeDivisor.childNodes.length >= 1){
                                 for(const currentResult of data.searchResult[resultType]){
-                                    const divisorHeadline = document.createElement('p');
-                                    divisorHeadline.classList.add('modal__divisor-headline');
+                                    let currentResultHeadlineTitle, currentResultHeadlineSecTitle;
+                                    
+                                    //BUG - this is generating a new modalheadlines since the rendered modalheadlines count are bbased the currentResult length
+                                    for(const key of Object.keys(currentResult)){
+                                        const currentKeyID = currentResult[`${key.split('_')[0]}_id`];
 
-                                    for(const [key, value] of Object.entries(currentResult)){
-                                        const currentKeyType = key.split('_')[key.split('_').length - 1];
-
-                                        if(currentKeyType === 'name' || currentKeyType === 'title'){
-                                            const divisorHeadlineText = document.createElement('span');
-
-                                            divisorHeadlineText.textContent = value;
-
-                                            divisorHeadline.appendChild(divisorHeadlineText);
+                                        if(currentResult[`${key.split('_')[0]}_name`]){
+                                            currentResultHeadlineTitle = currentResult[`${key.split('_')[0]}_name`];
+                                        }else{
+                                            if(currentResult[`${key.split('_')[0]}_title`]){
+                                                currentResultHeadlineTitle = currentResult[`${key.split('_')[0]}_title`];
+                                            }else{
+                                                if(currentResult[`${key.split('_')[0]}_author`]){
+                                                    currentResultHeadlineSecTitle = currentResult[`${key.split('_')[0]}_author`];
+                                                }else{
+                                                    if(currentResult[`${key.split('_')[0]}_description`]){
+                                                        currentResultHeadlineSecTitle = currentResult[`${key.split('_')[0]}_description`];
+                                                    }
+                                                }
+                                            }
                                         }
-    
-                                        resultTypeDivisor.appendChild(divisorHeadline);
+
+                                        generateModalHeadline({
+                                            modalDivisorComponent: resultTypeDivisorContent,
+                                            headlineType: key.split('_')[0],
+                                            headlineID: currentKeyID,
+                                            headLineTitle: currentResultHeadlineTitle,
+                                            headlineSecondaryTitle: currentResultHeadlineSecTitle,
+                                            headLineRedirectorLink: `${window.location.origin}/${redirectorTypeTranslator(key.split('_')[0])}/post?id=${currentKeyID}&type=${key.split('_')[0]}}`
+                                        });
                                     }
                                 }
+                                //END-BUG
                             }else{
                                 while(resultTypeDivisor.childNodes.length > 1){
                                     if(resultTypeDivisor.childNodes[1].tag !== 'button'){
@@ -300,7 +386,8 @@ export const renderSearchModal = (canvasId) => {
                                 }
                             }
                         });
-
+                        
+                        resultTypeDivisor.appendChild(resultTypeDivisorContent);
                         modalResults.appendChild(resultTypeDivisor);
                     });
                 }
