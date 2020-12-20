@@ -18,7 +18,8 @@ import {
     getCurrentPageURIManual,
     getCurrentPageType,
     translatePageType,
-    moveInArray
+    moveInArray,
+    renderSearchModal
 } from '../services';
 
 const Navbar = (props) => {
@@ -219,9 +220,9 @@ const Navbar = (props) => {
                 >
                     <NavbarLink 
                         redirector="search"
-                        clickHandle={navbarLinkUpdate}
+                        clickHandle={() => renderSearchModal('root')}
                         isActive={activeNavLink === "search"}
-                    disabled>
+                    button>
                         <svg
                             viewBox="0 0 24 24"
                             fill="none"

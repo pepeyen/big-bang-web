@@ -12,20 +12,34 @@ const NavbarLink = (props) => {
         }
     },[props.disabled,props.redirector]);
 
-    return(
-        <li
-            id={`${props.redirector}-redirector`}
-            className="navbar__redirector"
-            onClick={() => {props.clickHandle(props.redirector)}}
-        >
-            <Link
-                className={props.isActive ? '--active' : ''}
-                to={`/${props.redirector}`}
-            replace>
-                {props.children}
-            </Link>
-        </li>
-    );
+    if(props.button){
+        return(
+            <li
+                id={`${props.redirector}-redirector`}
+                className="navbar__redirector"
+                onClick={() => {props.clickHandle(props.redirector)}}
+            >
+                <button className={props.isActive ? '--active' : ''}>
+                    {props.children}
+                </button>
+            </li>
+        );
+    }else{
+        return(
+            <li
+                id={`${props.redirector}-redirector`}
+                className="navbar__redirector"
+                onClick={() => {props.clickHandle(props.redirector)}}
+            >
+                <Link
+                    className={props.isActive ? '--active' : ''}
+                    to={`/${props.redirector}`}
+                replace>
+                    {props.children}
+                </Link>
+            </li>
+        );
+    }
 }
 
 export default NavbarLink;
