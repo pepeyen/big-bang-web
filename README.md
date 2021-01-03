@@ -1,4 +1,4 @@
-[![namah](https://repository-images.githubusercontent.com/293850098/ea1a7980-3278-11eb-9f1a-3ff1f4cf768d)](https://pepeyen.github.io/namah)
+[![namah](https://raw.githubusercontent.com/pepeyen/namah/master/.github/images/project-thumbnail.png)](https://pepeyen.github.io/namah)
 
 # namah
 
