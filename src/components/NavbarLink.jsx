@@ -19,7 +19,10 @@ const NavbarLink = (props) => {
                 className="navbar__redirector"
                 onClick={() => {props.clickHandle(props.redirector)}}
             >
-                <button className={props.isActive ? '--active' : ''}>
+                <button
+                    className={props.isActive ? '--active' : ''}
+                    title={props.redirectorTitle}
+                >
                     {props.children}
                 </button>
             </li>
@@ -34,6 +37,7 @@ const NavbarLink = (props) => {
                 <Link
                     className={props.isActive ? '--active' : ''}
                     to={`/${props.redirector}`}
+                    title={props.redirectorTitle}
                 replace>
                     {props.children}
                 </Link>

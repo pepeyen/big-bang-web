@@ -5,6 +5,7 @@ const FloatingButton = (props) => {
         <button
             className="button__floating --pulse-one-time"
             onClick={props.floatingButtonHandler}
+            title={props.floatingButtonTitle}
         >
             {props.children}
         </button>
