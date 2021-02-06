@@ -31,14 +31,14 @@ const Banner = (props) => {
         return(
             <div 
                 className="page__banner --thin-borders"
-                style={{backgroundImage: `url(${process.env.REACT_APP_BLOB_HOST}/jpeg/banner/bg-${banner.banner_id}.jpg`}}
+                style={{backgroundImage: `url(${process.env.REACT_APP_BLOB_HOST}/jpeg/banner/bg-${banner.bannerId}.jpg`}}
             >
                 <div className="page__banner-headline --flex-end-self">
                     <p className="page__banner-title --centralized-text --dark-text">
-                        {banner.banner_title}
+                        {banner.bannerTitle}
                     </p>
                     <p className="page__banner-text --centralized-text --grey-text">
-                        {banner.banner_description}
+                        {banner.bannerDescription}
                     </p>
                     {props.children}
                 </div>

@@ -42,10 +42,10 @@ const Course = (props) => {
                         <img 
                             className="page__course-image"
                             src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/course/bg-${currentPageId}.jpg`} 
-                            alt={course.course_title ? course.course_title : ''}  
+                            alt={course.courseTitle ? course.courseTitle : ''}  
                         />
                         <span className="page__course-info">
-                            <h3 className="page__course-title">{course.course_title ? course.course_title : ''}</h3>
+                            <h3 className="page__course-title">{course.courseTitle ? course.courseTitle : ''}</h3>
                             <p className="page__course-type">CURSO</p>
                             <p className="page__course-duration">
                                 <svg
@@ -62,13 +62,13 @@ const Course = (props) => {
                                         fill="#73A8A0"
                                     />
                                 </svg>
-                                {course.course_date ? calcDateDiff(course.course_date.course_start_date,course.course_date.course_end_date) + ' Days' : ''}
+                                {course.courseDate ? calcDateDiff(course.courseDate.courseStartDate,course.courseDate.courseEndDate) + ' Days' : ''}
                             </p>
                         </span>
                     </div>
                     <div className="page__course-content">
                         <p className="page__course-description">
-                            <span>{course.course_description ? course.course_description : ''}</span>
+                            <span>{course.courseDescription ? course.courseDescription : ''}</span>
                         </p>
                     </div>
                 </Post>

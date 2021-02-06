@@ -9,27 +9,27 @@ import {
 const CardContent = (props) => {
     if(props.cardType === 'course'){
         const courseInfo = {
-            courseStartDate: timeConverter(props.card.course_date.course_start_date),
-            courseEndDate: timeConverter(props.card.course_date.course_end_date)
+            courseStartDate: timeConverter(props.card.courseDate.courseStartDate),
+            courseEndDate: timeConverter(props.card.courseDate.courseEndDate)
         };
         
         return(
             <React.Fragment>
                 <div className="card-course__banner">
                     <img
-                        src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/banner/crs-${props.card.course_id}.jpg`}
-                        alt={props.card.course_title}
+                        src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/banner/crs-${props.card.courseId}.jpg`}
+                        alt={props.card.courseTitle}
                     />
                 </div>
                 <div className="card-course__description">
                     <div className="card-course__header">
                         <span>{courseInfo.courseStartDate.day} {courseInfo.courseStartDate.month.charAt(0).toUpperCase() + courseInfo.courseStartDate.month.slice(1).toLowerCase()} - {courseInfo.courseEndDate.day} {courseInfo.courseEndDate.month.charAt(0).toUpperCase() + courseInfo.courseEndDate.month.slice(1).toLowerCase()}</span>
-                        <h4 className="card-course__title">{props.card.course_title}</h4>
+                        <h4 className="card-course__title">{props.card.courseTitle}</h4>
                     </div>
                     <div className="card-course__footer">
                         <div className="card-course__info">
-                            <p>Por {props.card.course_author}</p>
-                            <p>{calcDateDiff(props.card.course_date.course_start_date,props.card.course_date.course_end_date)} Dias de curso</p>
+                            <p>Por {props.card.courseAuthor}</p>
+                            <p>{calcDateDiff(props.card.courseDate.courseStartDate,props.card.courseDate.courseEndDate)} Dias de curso</p>
                         </div>
                         <svg
                             className="card-course__redirector"
@@ -51,18 +51,18 @@ const CardContent = (props) => {
             <React.Fragment>
                 <div className="card-course__banner">
                     <img
-                        src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/podcast/bg-${props.card.podcast_id}.jpg`}
-                        alt={props.card.podcast_title}
+                        src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/podcast/bg-${props.card.podcastId}.jpg`}
+                        alt={props.card.podcastTitle}
                     />
                 </div>
                 <div className="card-course__description">
                     <div className="card-course__header">
-                        <span>{props.card.podcast_author} #{props.card.podcast_id}</span>
-                        <h4 className="card-course__title">{props.card.podcast_title}</h4>
+                        <span>{props.card.podcastAuthor} #{props.card.podcastId}</span>
+                        <h4 className="card-course__title">{props.card.podcastTitle}</h4>
                     </div>
                     <div className="card-course__footer">
                         <div className="card-course__info">
-                            <p>{props.card.podcast_description}</p>
+                            <p>{props.card.podcastDescription}</p>
                         </div>
                         <div className="card-course__button">
                             <svg

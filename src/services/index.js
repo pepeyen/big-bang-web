@@ -311,7 +311,7 @@ export const renderSearchModal = (canvasId) => {
         const fetchSearch = () => {
             modalInputArea.classList.add('--result-is-loading');
 
-            fetchFromBackEnd('search', `search_query=${modalInput.value}`, {method: 'GET'})
+            fetchFromBackEnd('search', `q=${modalInput.value}`, {method: 'GET'})
             .then(data => {
                 while(modalResults.childNodes.length > 0){
                     modalResults.removeChild(modalResults.childNodes[0]);
@@ -349,34 +349,36 @@ export const renderSearchModal = (canvasId) => {
                                 for(const currentResult of data.searchResult[resultType]){
                                     let currentResultHeadlineTitle, currentResultHeadlineSecTitle, i = 0;
                                     
-                                    for(const key of Object.keys(currentResult)){
-                                        const currentKeyID = currentResult[`${key.split('_')[0]}_id`];
+                                    for(let key of Object.keys(currentResult)){
+                                        key = key.replace(/([A-Z])/g, (g) => ` ${g[0]}`);
 
-                                        if(currentResult[`${key.split('_')[0]}_name`]){
-                                            currentResultHeadlineTitle = currentResult[`${key.split('_')[0]}_name`];
-                                        }
+                                        const currentKeyID = currentResult[`${key.split(' ')[0]}Id`];
+                                        
+                                        if(currentResult[`${key.split(' ')[0]}Name`]){
+                                            currentResultHeadlineTitle = currentResult[`${key.split(' ')[0]}Name`];
+                                        };
 
-                                        if(currentResult[`${key.split('_')[0]}_title`]){
-                                            currentResultHeadlineTitle = currentResult[`${key.split('_')[0]}_title`];
-                                        }
+                                        if(currentResult[`${key.split(' ')[0]}Title`]){
+                                            currentResultHeadlineTitle = currentResult[`${key.split(' ')[0]}Title`];
+                                        };
 
-                                        if(currentResult[`${key.split('_')[0]}_author`]){
-                                            currentResultHeadlineSecTitle = currentResult[`${key.split('_')[0]}_author`];
-                                        }
+                                        if(currentResult[`${key.split(' ')[0]}Author`]){
+                                            currentResultHeadlineSecTitle = currentResult[`${key.split(' ')[0]}Author`];
+                                        };
 
-                                        if(currentResult[`${key.split('_')[0]}_description`]){
-                                            currentResultHeadlineSecTitle = currentResult[`${key.split('_')[0]}_description`];
-                                        }
+                                        if(currentResult[`${key.split(' ')[0]}Description`]){
+                                            currentResultHeadlineSecTitle = currentResult[`${key.split(' ')[0]}Description`];
+                                        };
 
                                         if(i === Object.keys(currentResult).length - 1){
                                             generateModalHeadline({
                                                 modalDivisorComponent: resultTypeDivisorContent,
-                                                headlineType: key.split('_')[0],
+                                                headlineType: key.split(' ')[0],
                                                 headlineID: currentKeyID,
                                                 headLineTitle: currentResultHeadlineTitle,
                                                 headlineSecondaryTitle: currentResultHeadlineSecTitle,
-                                                headLineRedirectorLink: redirectorTypeTranslator(key.split('_')[0]) === 'user' ? `#/${redirectorTypeTranslator(key.split('_')[0])}/${currentResultHeadlineTitle}` : 
-                                                    `#/${redirectorTypeTranslator(key.split('_')[0])}/post?id=${currentKeyID}&type=${key.split('_')[0]}`
+                                                headLineRedirectorLink: redirectorTypeTranslator(key.split(' ')[0]) === 'user' ? `#/${redirectorTypeTranslator(key.split(' ')[0])}/${currentResultHeadlineTitle}` : 
+                                                    `#/${redirectorTypeTranslator(key.split(' ')[0])}/post?id=${currentKeyID}&type=${key.split(' ')[0]}`
                                             });
 
                                             resultTypeDivisor.setAttribute('active', true);
@@ -439,12 +441,16 @@ export const renderSearchModal = (canvasId) => {
             }
         });
 
-        window.onhashchange = () => { 
-            targetCanvas.removeChild(modal);
+        window.onhashchange = () => {
+            if(modal && modal.parentNode === targetCanvas){
+                targetCanvas.removeChild(modal);
+            };
         };
 
         modalExitButton.onclick = (() => {
-            targetCanvas.removeChild(modal);
+            if(modal && modal.parentNode === targetCanvas){
+                targetCanvas.removeChild(modal);
+            };
         });
 
         const modalInputAreaList = [modalSubmitButton, modalInput];

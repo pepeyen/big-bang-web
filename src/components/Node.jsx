@@ -49,14 +49,14 @@ const Node = (props) => {
                         return(
                             <React.Fragment>
                                 <p className="page__banner-title">
-                                    {node.post_title}
+                                    {node.postTitle}
                                 </p>
                                 <div className="page__banner-info">
                                     <p className="page__banner-text --underlined">
-                                        {node.post_theme.toUpperCase()}
+                                        {node.postTheme.toUpperCase()}
                                     </p>
                                     <p className="page__banner-text">
-                                        por <span className="--underlined">{node.post_author}</span>
+                                        por <span className="--underlined">{node.postAuthor}</span>
                                     </p>
                                 </div>
                             </React.Fragment>
@@ -65,17 +65,17 @@ const Node = (props) => {
                         return(
                             <React.Fragment>
                                 <img 
-                                    src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/post/bg-${node.post_id}.jpg`}
-                                    alt={node.post_title}
+                                    src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/post/bg-${node.postId}.jpg`}
+                                    alt={node.postTitle}
                                 />
                                 <p className="page__banner-title">
-                                    {node.post_title}
+                                    {node.postTitle}
                                 </p>
                                 <p className="page__banner-text --underlined">
-                                    {node.post_theme.toUpperCase()}
+                                    {node.postTheme.toUpperCase()}
                                 </p>
                                 <span className="page__banner-text">
-                                    {node.post_title}
+                                    {node.postTitle}
                                 </span>
                             </React.Fragment>
                         );
@@ -85,11 +85,11 @@ const Node = (props) => {
                         <React.Fragment>
                             <div className="page__banner-info">
                                 <p className="page__banner-text">
-                                    {node.podcast_author} #{node.podcast_id}
+                                    {node.podcastAuthor} #{node.podcastId}
                                 </p>
                             </div>
                             <p className="page__banner-title">
-                                {node.podcast_title}
+                                {node.podcastTitle}
                             </p>
                         </React.Fragment>
                     );
@@ -98,11 +98,11 @@ const Node = (props) => {
                         <React.Fragment>
                             <div className="page__banner-info">
                                 <p className="page__banner-text">
-                                    CURSO - {timeConverter(node.course_date.course_start_date).day} {timeConverter(node.course_date.course_start_date).month}
+                                    CURSO - {timeConverter(node.courseDate.courseStartDate).day} {timeConverter(node.courseDate.courseStartDate).month}
                                 </p>
                             </div>
                             <p className="page__banner-title">
-                                {node.course_title}
+                                {node.courseTitle}
                             </p>
                         </React.Fragment>
                     );
@@ -110,7 +110,7 @@ const Node = (props) => {
                     return(
                         <React.Fragment>
                             <p className="page__banner-title">
-                                {node.product_name}
+                                {node.productName}
                             </p>
                             <div className="page__banner-info">
                                 <p className="page__banner-text">COMPRE AGORA</p>
@@ -148,7 +148,7 @@ const Node = (props) => {
             <Link
                 className={`page__node --${props.size}-${props.position} --${props.type} --${props.theme}-text`}
                 style={isLoading ? null : {backgroundImage: props.theme === 'light' ? `url(${process.env.REACT_APP_BLOB_HOST}/jpeg/${props.type}/bg-${props.ID}.jpg)` : ''}}
-                to={`/${translatePageType(props.type)}/post?id=${node[`${props.type}_id`]}&type=${props.type}`}
+                to={`/${translatePageType(props.type)}/post?id=${node[`${props.type}Id`]}&type=${props.type}`}
             >
                 <div className={props.theme === 'light' ? `page__banner-content --flex-end-self ${isLoading === true ? '' : '--fade-up'}` : "page__banner-content --flex-end-self"}>
                     {nodeChildren}  

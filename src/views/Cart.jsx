@@ -65,7 +65,7 @@ const Cart = () => {
                                         <tr className="products-listing__items">
                                             <td>
                                                 <div>
-                                                    {element.product.product_name}
+                                                    {element.product.productName}
                                                 </div>
                                             </td>
                                             <td>
@@ -87,12 +87,12 @@ const Cart = () => {
                                             </td>
                                             <td>
                                                 <div>
-                                                    {element.product.product_price.toFixed(2)}
+                                                    {element.product.productPrice.toFixed(2)}
                                                 </div>
                                             </td>
                                             <td>
                                                 <div>
-                                                    {(element.product.product_price * element.productCartCount).toFixed(2)}
+                                                    {(element.product.productPrice * element.productCartCount).toFixed(2)}
                                                 </div>
                                             </td>
                                         </tr>

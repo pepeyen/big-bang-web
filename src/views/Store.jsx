@@ -41,25 +41,25 @@ const Store = () => {
                         <Redirector 
                             key={index}
                             redirectorType='product'
-                            redirectorID={element.product_id}
+                            redirectorID={element.productId}
                         >
                             <RedirectorInfo>
                                 <RedirectorText
                                     infoType="title"
                                     color="dark"
                                 >
-                                    {element.product_name}
+                                    {element.productName}
                                 </RedirectorText>
                                 <RedirectorText
                                     infoType="price"
                                     color="grey"
                                 >
-                                    R$ {element.product_price.toFixed(2)}
+                                    R$ {element.productPrice.toFixed(2)}
                                 </RedirectorText>
                             </RedirectorInfo>
                             <RedirectorBanner 
-                                url={`${process.env.REACT_APP_BLOB_HOST}/jpeg/product/bg-${element.product_id}.jpg`}
-                                alt={element.product_name}
+                                url={`${process.env.REACT_APP_BLOB_HOST}/jpeg/product/bg-${element.productId}.jpg`}
+                                alt={element.productName}
                             />
                         </Redirector>
                     );

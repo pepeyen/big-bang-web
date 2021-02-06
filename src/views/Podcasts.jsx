@@ -40,25 +40,25 @@ const Podcasts = () => {
                         <Redirector 
                             key={index}
                             redirectorType='podcast'
-                            redirectorID={element.podcast_id}
+                            redirectorID={element.podcastId}
                         >
                             <RedirectorInfo>
                                 <RedirectorText
                                     infoType="title"
                                     color="dark"
                                 >
-                                    {element.podcast_title}
+                                    {element.podcastTitle}
                                 </RedirectorText>
                                 <RedirectorText
                                     infoType="user"
                                     color="grey"
                                 >
-                                    {element.podcast_author} #{element.podcast_id}
+                                    {element.podcastAuthor} #{element.podcastId}
                                 </RedirectorText>  
                             </RedirectorInfo>
                             <RedirectorBanner
-                                url={`${process.env.REACT_APP_BLOB_HOST}/jpeg/podcast/bg-${element.podcast_id}.jpg`}
-                                alt={element.podcast_title}
+                                url={`${process.env.REACT_APP_BLOB_HOST}/jpeg/podcast/bg-${element.podcastId}.jpg`}
+                                alt={element.podcastTitle}
                                 type='podcast'
                             />
                         </Redirector >

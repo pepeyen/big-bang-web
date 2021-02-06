@@ -36,20 +36,20 @@ const ProductCard = (props) => {
             <div className="card__product">
                 <div 
                     className="card__product-banner"
-                    style={{backgroundImage: `url(${`${process.env.REACT_APP_BLOB_HOST}/jpeg/product/bg-${product.product_id}.jpg`})`}}
+                    style={{backgroundImage: `url(${`${process.env.REACT_APP_BLOB_HOST}/jpeg/product/bg-${product.productId}.jpg`})`}}
                 >
                     <LikeButton 
-                        toBeLiked={product.product_id}
+                        toBeLiked={product.productId}
                         itemType="product"
                     />
                 </div>
                 <Link
-                    to={`/store/post?id=${product.product_id}&type=product`}
+                    to={`/store/post?id=${product.productId}&type=product`}
                     className="card__product-info"
                 >
-                    <span className="card__product-title --dark-text">{product.product_name}</span>
-                    <span className="card__product-description --grey-text">{product.product_description === '' ? '\u00A0' : product.product_description}</span>
-                    <span className="card__product-price --medium-grey-text">R$ {product.product_price.toFixed(2)}</span>
+                    <span className="card__product-title --dark-text">{product.productName}</span>
+                    <span className="card__product-description --grey-text">{product.productDescription === '' ? '\u00A0' : product.productDescription}</span>
+                    <span className="card__product-price --medium-grey-text">R$ {product.productPrice.toFixed(2)}</span>
                 </Link>
             </div>
         );
