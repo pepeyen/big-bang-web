@@ -42,24 +42,24 @@ const Courses = () => {
                        <Redirector 
                            key={index}
                            redirectorType='course'
-                           redirectorID={element.course_id}
+                           redirectorID={element.courseId}
                        >
                             <RedirectorBanner
-                                url={`${process.env.REACT_APP_BLOB_HOST}/jpeg/course/bg-${element.course_id}.jpg`} 
-                                alt={element.course_title} 
+                                url={`${process.env.REACT_APP_BLOB_HOST}/jpeg/course/bg-${element.courseId}.jpg`} 
+                                alt={element.courseTitle} 
                             />
                             <RedirectorInfo>
                                 <RedirectorText
                                     infoType="title"
                                     color="dark"
                                 >
-                                    {element.course_title}
+                                    {element.courseTitle}
                                 </RedirectorText>
                                 <RedirectorText
                                     infoType="user"
                                     color="grey"
                                 >
-                                    CURSO - {timeConverter(element.course_date.course_start_date).day} {timeConverter(element.course_date.course_start_date).month} 
+                                    CURSO - {timeConverter(element.courseDate.courseStartDate).day} {timeConverter(element.courseDate.courseStartDate).month} 
                                 </RedirectorText>
                             </RedirectorInfo>
                         </Redirector>

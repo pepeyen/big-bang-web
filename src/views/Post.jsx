@@ -29,11 +29,11 @@ const Post = (props) => {
                 setPostMarkdown(-1);
             }else{
                 setPostHeaders({
-                    postTitle: data.posts[0].post_title,
-                    postTheme: data.posts[0].post_theme.toUpperCase(),
-                    postAuthor: data.posts[0].post_author
+                    postTitle: data.posts[0].postTitle,
+                    postTheme: data.posts[0].postTheme.toUpperCase(),
+                    postAuthor: data.posts[0].postAuthor
                 });
-                fetchFromBlob(data.posts[0].post_id, 'markdown', 'posts', 'id', 'md')
+                fetchFromBlob(data.posts[0].postId, 'markdown', 'posts', 'id', 'md')
                 .then(response => {
                     return response.text();
                 })

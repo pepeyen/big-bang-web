@@ -34,15 +34,15 @@ const FillerProduct = (props) => {
                         key={index}
                         className="page__filler-product --centralized-text"
                     >
-                        <Link to={`/store/post?id=${element.product_id}&type=product`}>
+                        <Link to={`/store/post?id=${element.productId}&type=product`}>
                             <img
                                 className="page__filler-product-image"
-                                src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/product/bg-${element.product_id}.jpg`}
-                                alt={element.product_name}
+                                src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/product/bg-${element.productId}.jpg`}
+                                alt={element.productName}
                             />
-                            <span className="page__filler-product-name --dark-text">{element.product_name}</span>
-                            <p className="page__filler-product-info --grey-text">{element.product_description === null ? '\u00A0' : element.product_description}</p>
-                            <span className="page__filler-product-price --dark-text">R$ {element.product_price.toFixed(2)}</span>
+                            <span className="page__filler-product-name --dark-text">{element.productName}</span>
+                            <p className="page__filler-product-info --grey-text">{element.productDescription === null ? '\u00A0' : element.productDescription}</p>
+                            <span className="page__filler-product-price --dark-text">R$ {element.productPrice.toFixed(2)}</span>
                         </Link>
                     </li>
                 );

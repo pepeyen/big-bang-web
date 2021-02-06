@@ -194,7 +194,7 @@ const Home = () => {
                                 return(
                                     <img
                                         key={index}
-                                        src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/concepts/bg-${element.concept_id}.jpg`}
+                                        src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/concepts/bg-${element.conceptId}.jpg`}
                                         alt="A concept"
                                         className="page__concept-image"
                                     />

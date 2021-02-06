@@ -39,31 +39,31 @@ const Blog = () => {
                         <Redirector 
                             key={index}
                             redirectorType='post'
-                            redirectorID={element.post_id}    
+                            redirectorID={element.postId}    
                         >
                             <RedirectorInfo>
                                 <RedirectorText 
                                     infoType="type"
                                     color="dark"
                                 >
-                                    {element.post_theme}
+                                    {element.postTheme}
                                 </RedirectorText>
                                 <RedirectorText 
                                     infoType="title"
                                     color="dark"
                                 >
-                                    {element.post_title}
+                                    {element.postTitle}
                                 </RedirectorText>
                                 <RedirectorText 
                                     infoType="user"
                                     color="grey"
                                 >
-                                    {element.post_author}
+                                    {element.postAuthor}
                                 </RedirectorText>
                             </RedirectorInfo>
                             <RedirectorBanner
-                                url={`${process.env.REACT_APP_BLOB_HOST}/jpeg/post/bg-${element.post_id}.jpg`}
-                                alt={element.post_title}
+                                url={`${process.env.REACT_APP_BLOB_HOST}/jpeg/post/bg-${element.postId}.jpg`}
+                                alt={element.postTitle}
                             />
                         </Redirector>
                     );
