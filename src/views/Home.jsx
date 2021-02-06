@@ -204,7 +204,10 @@ const Home = () => {
                     </TableListing>
                 </Post>
             </Page>
-            <FloatingButton floatingButtonHandler={(() => {window.scroll({top: 0, behavior: 'smooth'})})}>
+            <FloatingButton
+                floatingButtonHandler={(() => {window.scroll({top: 0, behavior: 'smooth'})})}
+                floatingButtonTitle="Scroll to the top"
+            >
                 <svg 
                     viewBox="0 0 21 22"
                     fill="none"

@@ -18,7 +18,7 @@ const AudioPlayer = (props) => {
     const [isAudioPlaying, setIsAudioPlaying] = useState(false);
     const [audioDuration,setAudioDuration] = useState(0);
     const [audioCurrentTime,setAudioCurrentTime] = useState(0);
-    const [audioCurrentVolume,setAudioCurrentVolume] = useState(0.6);
+    const [audioCurrentVolume,setAudioCurrentVolume] = useState(0.5);
 
     audio.ontimeupdate = () => {
         setAudioCurrentTime(audio.currentTime);
@@ -61,6 +61,8 @@ const AudioPlayer = (props) => {
             audio.removeEventListener('ended', () => {
                 setIsAudioPlaying(false);
             });
+
+            audio.pause();
         };
     }, [audio,isAudioPlaying,audioCurrentVolume]);
 

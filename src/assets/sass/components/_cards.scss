@@ -106,6 +106,7 @@
 @media (min-width: 801px){
     .card__product{
         padding: 0 0 2vh 0;
+        border-bottom: .1vh solid transparent;
         -webkit-transition: border-bottom ease-in-out .2s;
         -moz-transition: border-bottom ease-in-out .2s;
         -ms-transition: border-bottom ease-in-out .2s;
@@ -113,7 +114,7 @@
         transition: border-bottom ease-in-out .2s;
 
         &:hover{
-            border-bottom: .1vh solid #73A8A0;
+            border-color: #73A8A0;
         }
         &:hover &-banner{
             -webkit-transition: transform ease-in-out .2s;

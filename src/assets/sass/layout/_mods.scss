@@ -320,6 +320,7 @@
 .--message-box{
     height: 10rem;
     padding-top: 1rem;
+    resize: none;
 }
 @-webkit-keyframes pulse {
     0% {
@@ -691,7 +692,7 @@
     }
     .--message-box{
         height: 20vh;
-        padding-top: 2.5vh;
+        padding-top: 3vh;
     }
     @-webkit-keyframes pulse {
         0% {

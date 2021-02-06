@@ -222,6 +222,7 @@ const Navbar = (props) => {
                         redirector="search"
                         clickHandle={() => renderSearchModal('root')}
                         isActive={activeNavLink === "search"}
+                        redirectorTitle='Search'
                     button>
                         <svg
                             viewBox="0 0 24 24"
@@ -238,6 +239,7 @@ const Navbar = (props) => {
                         redirector={window.sessionStorage.getItem('loggedUser') === null ? 'login' : `user/${window.sessionStorage.getItem('loggedUser')}`}
                         clickHandle={navbarLinkUpdate}
                         isActive={activeNavLink === (window.sessionStorage.getItem('loggedUser') === null ? 'login' : 'user')}
+                        redirectorTitle='Login'
                     >
                         <svg
                             viewBox="0 0 24 24"
@@ -254,6 +256,7 @@ const Navbar = (props) => {
                         redirector="orders"
                         clickHandle={navbarLinkUpdate}
                         isActive={activeNavLink === "orders"}
+                        redirectorTitle='Orders list'
                     disabled>
                         <svg
                             viewBox="0 0 28 28"
@@ -294,6 +297,7 @@ const Navbar = (props) => {
                         redirector="wishlist"
                         clickHandle={navbarLinkUpdate}
                         isActive={activeNavLink === "wishlist"}
+                        redirectorTitle='Wishlist'
                     >
                         <svg
                             viewBox="0 0 512 456" 
@@ -334,6 +338,7 @@ const Navbar = (props) => {
                         redirector="cart"
                         clickHandle={navbarLinkUpdate}
                         isActive={activeNavLink === "cart"}
+                        redirectorTitle='Cart'
                     >
                         <React.Fragment>
                             <CartStatus />
@@ -353,6 +358,7 @@ const Navbar = (props) => {
                         redirector="logout"
                         clickHandle={navbarLinkUpdate}
                         isActive={activeNavLink === "logout"}
+                        redirectorTitle='Logout'
                     >
                         <svg
                             viewBox="0 0 24 18"
