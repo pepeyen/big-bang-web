@@ -3,7 +3,7 @@
     background-color: transparent;
     width: 100%;
     border-bottom: .05rem solid #C4C4C4;
-    padding: 0 0 1rem 0;
+    padding: 0 0 .7rem 0;
 
     &__buttons{
         display: flex;
@@ -16,7 +16,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 0 1.5rem;
+        gap: 0 1.6rem;
         font-size: .8rem;
     }
     &__redirector{
@@ -69,6 +69,10 @@
         &__buttons{
             margin: 2vh 0 0 0;
             padding: 0 10vh;
+
+            & ul:nth-of-type(1){
+               gap: 0 5vh; 
+            }
         }
         &__redirector{
             -webkit-transition: fill ease-in-out .2s;

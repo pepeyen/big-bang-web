@@ -55,6 +55,8 @@
 }
 .--is-active{
     & .hamburguer-menu__button svg{
+        overflow: hidden;
+        
         & path{
             -webkit-transition: transform ease-in-out .2s;
             -moz-transition: transform ease-in-out .2s;
