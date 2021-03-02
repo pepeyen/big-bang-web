@@ -1,8 +1,8 @@
 .page{
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
+    min-height: 40rem;
 
     &__place-holder{
         font-family: 'ProximaNova-Regular';
@@ -169,13 +169,14 @@
     }
     &__product{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem 0;
         margin: 3rem 0 0 0;
         width: 100%;
-        height: 25rem;
         
         &-image{
-            align-self: flex-start;
             margin: auto 0 auto 0;
         }
         &-info{
@@ -350,6 +351,8 @@
 }
 @media (min-width: 801px){
     .page{
+        min-height: 80vh;
+        
         &__place-holder{
             margin: 5vh 0 5vh 0;
             font-size: 3vh;
@@ -414,6 +417,7 @@
                     border-bottom: .1vh solid #c4c4c4;
                 }
                 &-image{
+                    align-self: flex-start;
                     height: 15vh;
                 }
                 &-name{
@@ -468,8 +472,8 @@
             } 
         }
         &__product{
+            flex-direction: row;
             margin: 6vh 0 0 0;
-            height: 60vh;
 
             &-button{
                 margin: 8.5vh 0 0 0;
@@ -530,7 +534,7 @@
                     height: 16vh;
                 }
             }
-            &-podcast{ 
+            &-podcast{
                 &:hover .page__redirector-banner{
                     opacity: 0.8;
                 }
