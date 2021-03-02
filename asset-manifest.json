@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/namah/static/css/main.d2cd0cb4.chunk.css",
-    "main.js": "/namah/static/js/main.1f5928ad.chunk.js",
-    "main.js.map": "/namah/static/js/main.1f5928ad.chunk.js.map",
+    "main.css": "/namah/static/css/main.aeb90782.chunk.css",
+    "main.js": "/namah/static/js/main.2c7a6955.chunk.js",
+    "main.js.map": "/namah/static/js/main.2c7a6955.chunk.js.map",
     "runtime-main.js": "/namah/static/js/runtime-main.aa108ed1.js",
     "runtime-main.js.map": "/namah/static/js/runtime-main.aa108ed1.js.map",
     "static/js/2.4cce7a3f.chunk.js": "/namah/static/js/2.4cce7a3f.chunk.js",
     "static/js/2.4cce7a3f.chunk.js.map": "/namah/static/js/2.4cce7a3f.chunk.js.map",
     "index.html": "/namah/index.html",
-    "precache-manifest.f3e75cdaedf1ec22245c4ae42132afb4.js": "/namah/precache-manifest.f3e75cdaedf1ec22245c4ae42132afb4.js",
+    "precache-manifest.6325284b9fd2afeac8ac5b977df1d2f9.js": "/namah/precache-manifest.6325284b9fd2afeac8ac5b977df1d2f9.js",
     "service-worker.js": "/namah/service-worker.js",
-    "static/css/main.d2cd0cb4.chunk.css.map": "/namah/static/css/main.d2cd0cb4.chunk.css.map",
+    "static/css/main.aeb90782.chunk.css.map": "/namah/static/css/main.aeb90782.chunk.css.map",
     "static/js/2.4cce7a3f.chunk.js.LICENSE.txt": "/namah/static/js/2.4cce7a3f.chunk.js.LICENSE.txt",
     "static/media/main.scss": "/namah/static/media/ProximaNova-Thin.7bb3b456.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.aa108ed1.js",
     "static/js/2.4cce7a3f.chunk.js",
-    "static/css/main.d2cd0cb4.chunk.css",
-    "static/js/main.1f5928ad.chunk.js"
+    "static/css/main.aeb90782.chunk.css",
+    "static/js/main.2c7a6955.chunk.js"
   ]
 }
