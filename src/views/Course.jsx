@@ -42,7 +42,7 @@ const Course = (props) => {
                         <img 
                             className="page__course-image"
                             src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/course/bg-${currentPageId}.jpg`} 
-                            alt={course.courseTitle ? course.courseTitle : ''}  
+                            alt={course.courseTitle ? course.courseTitle : 'Course'}  
                         />
                         <span className="page__course-info">
                             <h3 className="page__course-title">{course.courseTitle ? course.courseTitle : ''}</h3>
