@@ -6,6 +6,11 @@ import {
     redirectorTypeTranslator
 } from '.';
 
+/**
+ * Appends the generated search modal into the target element from a given id.
+ * 
+ * @param {string} canvasId Target canvas element ID.
+ */
 const renderSearchModal = (canvasId) => {
     if(!document.getElementById('modal-search')){
         const targetCanvas = document.getElementById(canvasId);
@@ -199,7 +204,7 @@ const renderSearchModal = (canvasId) => {
             modal.appendChild(pendingChild);
         });
         targetCanvas.appendChild(modal);
-    }
+    };
 };
 
 export default renderSearchModal;

@@ -1,5 +1,12 @@
+/**
+ * Returns a array containing all filtered types.
+ * 
+ * @param {any} type Target filtering.
+ * @param {any[]} iteratable Target array.
+ * @returns {any[]} Array of filtered elements.
+ */
 const filterByType = (type,iteratable) => {
-    let filteredType = [];
+    const filteredType = [];
 
     iteratable.forEach(element => {
         if(element.type === type){

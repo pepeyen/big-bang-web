@@ -1,3 +1,13 @@
+/**
+ * Appends the generated Modal Headling to a target Element.
+ * 
+ * @param {HTMLElement} modalDivisorComponent Target Element.
+ * @param {string} headlineType Target headline type.
+ * @param {number} headlineID Target headline ID.
+ * @param {string} headLineTitle Target headline title.
+ * @param {string} headlineSecondaryTitle Target headline secondary title.
+ * @param {string} headLineRedirectorLink Target headline anchor link.
+ */
 const generateModalHeadline = ({modalDivisorComponent, headlineType, headlineID, headLineTitle, headlineSecondaryTitle, headLineRedirectorLink}) => {
     const modalHeadline = document.createElement('a'),
           modalHeadlineContent = document.createElement('div'),

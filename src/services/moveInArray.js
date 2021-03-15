@@ -1,3 +1,11 @@
+/**
+ * Returns a array after changing an element position inside the array.
+ * 
+ * @param {any[]} arr Target array.
+ * @param {any} from Target element current position.
+ * @param {any} to Target element desired position.
+ * @returns {any[]} Array after the element position changes.
+ */
 const moveInArray = function (arr, from, to){
 	if(Object.prototype.toString.call(arr) !== '[object Array]') {
 		throw new Error('Please provide a valid array');
