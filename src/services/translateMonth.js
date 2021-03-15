@@ -1,0 +1,14 @@
+const translateMonth = (month) => {
+    const MONTHS = ['JAN', 'FEV', 'MAR', 'ABR', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'];
+    let translatedMonth = -1;
+
+    MONTHS.forEach((element,index) => {
+        if(index === month){
+            translatedMonth = element;
+        };
+    });
+
+    return  translatedMonth;
+};
+
+export default translateMonth;
